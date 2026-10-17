@@ -20,9 +20,9 @@ DECCAN LORDS is a stylised, historically inspired Deccan/Indian kingdom strategy
 
 ## Current phase
 
-The repository contains the source-of-truth design documents and reusable Codex skills. The actual Godot project has not yet been initialized; no full game implementation or playable slice is claimed.
+M0 bootstrap is complete: this repository is an importable Godot 4.7 project, with Blender 5.2.2 and project-local Codex skills available on the development Mac. M1 is a deliberately small visual and control benchmark: one plateau scene, one market house, a small fort wall, three movable characters, a camera, a readable HUD and a quiet ambient loop. It tests art and interaction direction; it does not lock the final art style or claim that the full game systems exist.
 
-The current high-level product format is agreed. The historical start date, final faction roster, visual benchmark, detailed simulation rules, and first-release content boundary remain open or proposed. The team should implement one gated milestone at a time and preserve a working, testable project between milestones.
+The current high-level product format is agreed. The historical start date, final faction roster, approved visual direction, detailed simulation rules and first-release content boundary remain open or proposed. Continue one gated milestone at a time and preserve a working, reviewable project between milestones.
 
 ## Recommended engine/workflow direction
 
@@ -33,12 +33,8 @@ The current high-level product format is agreed. The historical start date, fina
 - Git commits, reproducible tests, real scene/screenshot evidence, profiling and explicit risk reports at each milestone.
 - Optional local Ollama model for suitable low-risk support work; optional Godot MCP only after the project can import/run/test without it.
 
-## First setup sequence
+## Run the current benchmark
 
-1. Clone this repository on the Mac and open it as the Codex workspace.
-2. Install a stable Godot release, Blender LTS, Git and the preferred local Codex client.
-3. Create the smallest Godot project in this repository root (so the Game Bible, code and skills stay together) and verify it opens/imports/runs.
-4. Run `bash scripts/install_deccan_lords_skills.sh .` from the repository root. The script requires `project.godot` and will not overwrite already installed skill directories.
-5. Start with milestone M1 in the production pipeline only after M0 succeeds.
+Open the repository root in Godot 4.7 or run `godot --path .`. The main scene is the M1 field study. Blender source is in `assets/blender_source/`; the checked-in GLB is the runtime model. To regenerate the market-house model, run `blender --background --python tools/generate_m1_market_house.py`. To regenerate the ambient loop, run `python3 tools/generate_m1_ambience.py`.
 
-To validate the skill bundle itself, run `bash scripts/validate_deccan_lords_skills.sh`. GitHub Actions runs this check when the skill files or helper scripts change.
+M1 visual evidence is under `artifacts/m1/`. Regenerate both screenshots and verify selection, movement and building inspection with `godot --path . --script tools/m1_interaction_capture.gd`. The project-local skill suite is installed under `.agents/skills/` and can be validated with `bash scripts/validate_deccan_lords_skills.sh`. GitHub Actions runs the skill-bundle validation when the skills or helper scripts change.

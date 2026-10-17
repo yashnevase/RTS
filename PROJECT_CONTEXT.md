@@ -1,7 +1,13 @@
 # DECCAN LORDS — Project Context for ChatGPT / Codex
 
-**Last updated:** 2026-10-17 (campaign progression register, external RTS references and M0 setup instructions)
-**Phase:** Vision discovery and technology validation. No full production implementation authorized yet.
+**Last updated:** 2026-10-17 (M0 setup completed; M1 visual/control benchmark)
+**Phase:** Discovery / pre-production. The user authorized the bounded M1 benchmark after M0; this is not approval for full production or a final art-direction lock.
+
+## Current milestone status
+- M0 is complete: the Godot project lives at the repository root, imports and runs on the Mac, Blender is available, and the project-local specialist skills are installed.
+- M1 is a small 3D plateau visual/control study. The user's current exploration preference is grounded or historically informed forms with stylized readability (B plus some A), a mix of suitable licensed assets and original work, and local LLM use only for low-risk repetitive labor. These preferences guide this benchmark and workflow; the final art direction remains open.
+- The user asked for completed, reviewed milestones to be pushed to the dedicated `RTS` GitHub repository. Keep `RTS-Docs` as the design/reference source; use `RTS` for the playable project.
+- Current M1 evidence is under `artifacts/m1/`. Review the benchmark before selecting M2; do not treat the test scene as a promise of full feature scope.
 
 ## The user's end goal
 Create a polished, atmospheric, stylized 3D PC strategy game set in historical/alternate-history India, with a strong Deccan focus. The dream is to recover the feeling of playing Age of Empires, Rise of Nations, Anno, Bannerlord, Stronghold/Manor Lords, and some accessible progression appeal observed in Clash of Clans—but not simply clone any one of them.
@@ -80,14 +86,14 @@ The user approved a fixed, date-specific, researched strategic world that evolve
 
 ## Codex skills and stepwise execution
 
-The `skills/` folder contains a Godot-native project-local suite: director, gameplay simulation, visual assets, UI/UX, audio feedback, debugging/profiling and QA/release. `scripts/install_deccan_lords_skills.sh` copies them into `.agents/skills/` once an actual Godot project exists. The suite adapts workflow/evidence patterns from the Three.js Game Skills reference without its browser scaffold. The production pipeline document defines model/effort tiers, a one-milestone prompt template and QA evidence expectations. The actual Godot project has not yet been initialized, and the installer has not yet been run against a real project.
+The `skills/` folder contains a Godot-native project-local suite: director, gameplay simulation, visual assets, UI/UX, audio feedback, debugging/profiling and QA/release. It is installed under `.agents/skills/`. The suite adapts workflow/evidence patterns from the Three.js Game Skills reference without its browser scaffold. The production pipeline document defines model/effort tiers, a one-milestone prompt template and QA evidence expectations. Load only relevant skills for each task.
 
 ## Historical analysis and next design step
 The user supplied a preliminary historical story draft (mostly c. 1500–1700). `DECCAN_LORDS_GAME_BIBLE/design/17_historical_pattern_intake_story_draft_01.md` records the source-based reading, initial chronology checks, design opportunities and claims needing further research. The user intends to prepare a broader master history around c. 1500–1800. Read that master document fully when supplied, then reconcile its timeline and actor relationships against credible sources before making a broad history-driven rewrite of faction profiles, NPC attributes, political institutions or system formulas. In parallel, use the game-format document to guide a small visual/technical benchmark; do not begin a huge content build. Keep the start date, map, art direction and specific formulas open until discussed. Do not turn the user's interpretations into verified history or final game rules without discussion.
 
-## Next local execution step
+## Next execution step
 
-The user will open this repository in a dedicated local Codex workspace with suitable permissions. Start with [M0_BOOTSTRAP_PROMPT.md](M0_BOOTSTRAP_PROMPT.md): inspect current files and tools; install official stable Godot and Blender only if missing; treat Ollama as optional until the engine/asset smoke test works; create/validate `project.godot` at repository root; install the project skills; run the headless/import checks; stop and report M0 before starting M1. Do not assume browser ChatGPT itself can install software or access the Mac.
+Finish M1 with a reproducible run, an interaction screenshot, asset/license notes and a careful diff review. Push the milestone and let the user review the visual/control benchmark before discussing one next milestone. Keep local LLMs out of architecture and integration work; use them only for deterministic, low-risk labor with a clear quality check.
 
 The expanded progression inventory is in `DECCAN_LORDS_GAME_BIBLE/design/19_feature_register_and_campaign_progression.md`. The user’s long-term vision includes a lord-to-king/empire career, family/clan/companions and delegated administration, settlement development, production/warehouse/trade/credit, political relations, parties/armies, wages/patrols/fortifications, RTS battles/sieges, and intelligence/events. These are preserved as proposed long-term features, not all promised for the first playable slice.
 

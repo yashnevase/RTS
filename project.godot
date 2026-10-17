@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="DECCAN LORDS"
-run/main_scene="res://scenes/app/main.tscn"
+run/main_scene="res://scenes/benchmark/m1_field_study.tscn"
 config/features=PackedStringArray("4.7")
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/stretch/mode="canvas_items"
 
 [rendering]
 

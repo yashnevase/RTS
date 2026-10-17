@@ -1,6 +1,9 @@
 # Godot generated/imported data
 .godot/
 
+# Blender autosave backup generated when rebuilding the source model
+*.blend1
+
 # macOS metadata
 .DS_Store
 
