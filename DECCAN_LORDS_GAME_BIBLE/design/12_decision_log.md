@@ -39,6 +39,7 @@ Use one entry per meaningful decision. When a decision changes, keep the old ent
 | D-034 | 2026-10-17 | Main campaign map generation | LOCKED — high-level direction | Main campaign uses an authored, persistent strategic world with named cities, villages, forts, roads, rivers, terrain, factions, characters and relationships represented as data. Begin with a compact fixed region and expand it over milestones. Fully random maps are not the campaign foundation; optional skirmish map generation may be explored later. Exact boundaries, locations and map scale remain OPEN. | Implement a small fixed-region data model and benchmark before populating the full intended world |
 | D-035 | 2026-10-17 | M1 visual and control benchmark | PROPOSED — benchmark only | User chose a compact 3D benchmark combining historically grounded forms with stylized readability, original work and suitable licensed assets. The scene should test movement/selection, camera, basic light and restrained ambience; this exploration does not lock the final visual direction or asset pipeline. | Review the playable M1 scene before deciding whether to refine it or compare a different look |
 | D-032 | 2026-10-17 | External Godot RTS references | RESEARCH — not adopted | User provided a Godot RTS genre skill, a 3D RTS tutorial thread and an open-source Godot RTS repo. Treat these as learning/audit sources; check current version, licence, maintenance, security and scope before reuse. Don't adopt dependencies or merge whole projects without review. | Inspect each reference against the active milestone and document any isolated, tested technique worth adapting |
+| D-036 | 2026-10-17 | Gameplay-first production and world atmosphere | PROPOSED — sequencing preference | User wants the core game loops established before a broad cinematic/cosmetic art pass. Day/night, changing weather and varied terrain are desired later world features; their gameplay effects and implementation are still open. This preference does not lock a final art direction or system design. | Prove the next bounded gameplay loops; design weather, time-of-day and terrain effects with the world/campaign systems |
 
 ## Change log
 
@@ -126,3 +127,9 @@ Captured the user's expanded vision and key open questions. No detailed formulas
 - Clarified that the world is a fictional alternate-history Deccan setting rather than a strict historical reenactment; real historical figures and the Maratha/Shivaji story are not required.
 - Confirmed an authored, persistent strategic campaign map as the high-level direction, starting from a compact region and expanding through data-driven locations/factions/relationships. Random map generation remains a possible later skirmish option.
 - Kept faction count/names, chronology, exact map boundaries and the detailed historical roster open for later design.
+
+### v1.4 — 2026-10-17 — Gameplay-first sequence and M2 battle prototype
+
+- Recorded the user's current preference to prove core loops before a broad cinematic/cosmetic pass.
+- Preserved day/night, changing weather and varied terrain as desired future world features, with exact rules/effects still open.
+- Marked the M2 unit-role values and match setup as prototype tuning rather than final balance or historical rules.

@@ -1,13 +1,15 @@
 # DECCAN LORDS — Project Context for ChatGPT / Codex
 
-**Last updated:** 2026-10-17 (M0 setup completed; M1 visual/control benchmark)
-**Phase:** Discovery / pre-production. The user authorized the bounded M1 benchmark after M0; this is not approval for full production or a final art-direction lock.
+**Last updated:** 2026-10-17 (M2 standalone battle prototype completed)
+**Phase:** Discovery / pre-production. M0–M2 are complete bounded prototypes; this is not approval for full production or a final art-direction lock.
 
 ## Current milestone status
 - M0 is complete: the Godot project lives at the repository root, imports and runs on the Mac, Blender is available, and the project-local specialist skills are installed.
 - M1 is a small 3D plateau visual/control study. The user's current exploration preference is grounded or historically informed forms with stylized readability (B plus some A), a mix of suitable licensed assets and original work, and local LLM use only for low-risk repetitive labor. These preferences guide this benchmark and workflow; the final art direction remains open.
+- M2 is a standalone 5v5 RTS battle prototype with guard, archer and cavalry roles, group move spacing, contextual attack orders, retreat, health/damage, an explainable CPU force, victory/defeat and restart. Role values and this battle's starting composition are prototype placeholders, not final balance or historical rules. The battle is not yet connected to campaign state; that is M5 scope.
 - The user asked for completed, reviewed milestones to be pushed to the dedicated `RTS` GitHub repository. Keep `RTS-Docs` as the design/reference source; use `RTS` for the playable project.
-- Current M1 evidence is under `artifacts/m1/`. Review the benchmark before selecting M2; do not treat the test scene as a promise of full feature scope.
+- M1 evidence is under `artifacts/m1/`; M2 interaction evidence is under `artifacts/m2/`. Neither benchmark locks final art direction or promises full feature scope.
+- The user's current sequencing preference is to establish the core game loops before a broad cinematic/cosmetic art pass. Desired later world features include day/night, changing weather and varied terrain. Their rules and gameplay effects remain open; they are not in the M2 battle slice.
 
 ## The user's end goal
 Create a polished, atmospheric, stylized 3D PC strategy game set in historical/alternate-history India, with a strong Deccan focus. The dream is to recover the feeling of playing Age of Empires, Rise of Nations, Anno, Bannerlord, Stronghold/Manor Lords, and some accessible progression appeal observed in Clash of Clans—but not simply clone any one of them.
@@ -41,6 +43,7 @@ The exact year, father's fate, start location, holdings, cast, initial crisis an
 - Households have escalating needs; satisfying needs, security and fair governance can improve prosperity/loyalty/migration, while neglect and excessive taxes may cause unrest or flight.
 - Families/workforce can be assigned to farming, crafting, trade, military support and other roles. **The user has approved a hybrid household/workforce model as the working baseline**: households and housing matter, but the player assigns labour by role/category rather than manually controlling every individual. Exact housing capacities, needs and formulas remain open.
 - Suitable production facilities should depend on local terrain, soil, water, weather/season, forest or mineral resources, labour, routes and market access. Production chains, warehouses, stock security, buying/selling and caravans should create connected goods flows with manageable detail inspired by Anno.
+- Day/night, changing weather and varied regional terrain are desired world features to design after the core loops are proven. They may affect gameplay as well as atmosphere, but exact systems and effects remain open.
 - Prosperity and suitable housing may attract new families, while existing households may request better housing or services. Growth increases labour and revenue but also raises consumption and other demands.
 - Merchants/traders are persistent NPCs with capital, inventories, routes, friends, rivals, creditors/debtors and relationships with nobles. They may offer loans and contracts; trust, repayment/default and social connections affect opportunities and consequences. Exact finance rules remain open.
 - Noble appointments may combine salary, authority to administer/collect revenue from assigned land, a remittance to a superior, privileges and military/service obligations. A ruler's policy may change the arrangement. These are candidate mechanics, not a finalized historical/legal model.
@@ -93,7 +96,7 @@ The user supplied a preliminary historical story draft (mostly c. 1500–1700). 
 
 ## Next execution step
 
-Finish M1 with a reproducible run, an interaction screenshot, asset/license notes and a careful diff review. Push the milestone and let the user review the visual/control benchmark before discussing one next milestone. Keep local LLMs out of architecture and integration work; use them only for deterministic, low-risk labor with a clear quality check.
+M2 is complete and reviewable. The recommended next gate is M3: one settlement with household groups, labour assignments, a few production activities, storage, a simple market exchange, taxes/upkeep and prioritized notifications. Let the user review the battle prototype before starting M3. Keep local LLMs out of architecture and integration work; use them only for deterministic, low-risk labor with a clear quality check.
 
 The expanded progression inventory is in `DECCAN_LORDS_GAME_BIBLE/design/19_feature_register_and_campaign_progression.md`. The user’s long-term vision includes a lord-to-king/empire career, family/clan/companions and delegated administration, settlement development, production/warehouse/trade/credit, political relations, parties/armies, wages/patrols/fortifications, RTS battles/sieges, and intelligence/events. These are preserved as proposed long-term features, not all promised for the first playable slice.
 

@@ -127,6 +127,8 @@ Keep the end goal ambitious, but never ask Codex to build the entire game in one
 - Use deterministic test seeds for reproducible cases and a few variable seeds for robustness.
 - Gate: player can select, move, attack, reposition, retreat/lose a unit and finish/restart a battle. Automated checks cover core state transitions; capture actual gameplay evidence.
 
+**Current production preference — 2026-10-17:** The user wants core game loops established before a broad cinematic/cosmetic art pass. Day/night, changing weather and varied terrain remain desired later world features. Their gameplay effects are open and should be designed with the relevant world/campaign systems; M2 does not implement them.
+
 **M3 — Settlement/economy prototype**
 - Add one settlement with household groups, job categories, two or three land-suitable production activities, inventory/storehouse, a simple buying/selling or market exchange, taxes/upkeep and prioritised notifications.
 - Prosperity/housing may affect family attraction in later iterations; do not add every household need and a full Anno-like production web at once.
@@ -144,6 +146,7 @@ Keep the end goal ambitious, but never ask Codex to build the entire game in one
 
 **M6 — Polish and content growth**
 - Improve animation timing, formation readability, selection/order feedback, particles/VFX, soundscape, notification hierarchy, camera feel, lighting, materials, onboarding and accessibility.
+- Develop the desired day/night cycle, changing weather and regional terrain variety after the core loops are proven. Decide their actual gameplay effects with the relevant simulation systems; atmosphere alone does not determine those rules.
 - Add historical factions, more settlements/production, deeper politics, merchants, sieges and other systems only after their inputs, outputs and tests are designed.
 - Gate: fresh-eyes review with active-play screenshots, repeatable scenario/bot tests, performance measurements, asset-license audit and explicit known-issues list.
 

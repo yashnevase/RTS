@@ -11,10 +11,9 @@ Before editing anything, read:
 6. `DECCAN_LORDS_GAME_BIBLE/design/11_open_questions.md` when a rule is unclear
 7. `DECCAN_LORDS_GAME_BIBLE/design/18_game_format_and_ai_production_pipeline.md` when the task concerns format, production sequencing, model/effort, local models, MCP or QA gates
 8. Relevant project-local skill in `.agents/skills/` when installed; use `skills/README.md` in RTS-Docs to find the skill suite and installer
-7. `DECCAN_LORDS_GAME_BIBLE/design/18_game_format_and_ai_production_pipeline.md` when the task concerns product format, scene flow, art direction, local models, MCP, toolchain or the production roadmap
 
 ## Current collaboration phase
-The project is in **DISCOVERY / PRE-PRODUCTION**. The user authorized the bounded M1 visual/control benchmark after M0 completed; this does not authorize full production. Treat design content as `PROPOSED`, `OPEN`, `RESEARCH`, `DEFERRED`, or `LOCKED` exactly as recorded. Do not silently convert a proposal into a locked rule.
+The project is in **DISCOVERY / PRE-PRODUCTION**. M0 setup, M1 visual/control benchmark and M2 standalone battle prototype are complete. The user wants core gameplay loops proven before broad cinematic/cosmetic polish and wants day/night, weather and varied terrain retained as later world features; those systems and their gameplay effects are not yet specified. Treat design content as `PROPOSED`, `OPEN`, `RESEARCH`, `DEFERRED`, or `LOCKED` exactly as recorded. Do not silently convert a proposal into a locked rule.
 
 ## Design rules
 - Preserve the user's intended game rather than replacing it with a generic RTS template.

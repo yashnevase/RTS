@@ -20,7 +20,9 @@ DECCAN LORDS is a stylised, historically inspired Deccan/Indian kingdom strategy
 
 ## Current phase
 
-M0 bootstrap is complete: this repository is an importable Godot 4.7 project, with Blender 5.2.2 and project-local Codex skills available on the development Mac. M1 is a deliberately small visual and control benchmark: one plateau scene, one market house, a small fort wall, three movable characters, a camera, a readable HUD and a quiet ambient loop. It tests art and interaction direction; it does not lock the final art style or claim that the full game systems exist.
+M0 bootstrap, M1 visual/control benchmark and M2 standalone battle prototype are complete. The default scene is now a 5v5 field battle with guard, archer and cavalry roles, select/shift-select, group movement, contextual attacks, retreat, a simple CPU force and a victory/defeat/restart flow. M2 is a combat prototype with placeholder role tuning; it does not connect battles to campaign state. M1 remains available as a separate scene and does not lock final art direction.
+
+The user's current direction is to prove the core game loops before a broad cinematic/cosmetic art pass. Day/night, weather and varied terrain remain desired future world features; their exact rules and gameplay effects are still open.
 
 The current high-level product format is agreed. The historical start date, final faction roster, approved visual direction, detailed simulation rules and first-release content boundary remain open or proposed. Continue one gated milestone at a time and preserve a working, reviewable project between milestones.
 
@@ -35,6 +37,6 @@ The current high-level product format is agreed. The historical start date, fina
 
 ## Run the current benchmark
 
-Open the repository root in Godot 4.7 or run `godot --path .`. The main scene is the M1 field study. Blender source is in `assets/blender_source/`; the checked-in GLB is the runtime model. To regenerate the market-house model, run `blender --background --python tools/generate_m1_market_house.py`. To regenerate the ambient loop, run `python3 tools/generate_m1_ambience.py`.
+Open the repository root in Godot 4.7 or run `godot --path .`. The main scene is the M2 field battle. Left-click selects; Shift-click adds to the group; right-click moves on the ground or attacks an enemy; `R` retreats selected units; `Esc` clears selection. The camera pans with WASD/arrows, rotates with Q/E and zooms with the scroll wheel. The original M1 field study remains at `scenes/benchmark/m1_field_study.tscn`. Blender source is in `assets/blender_source/`; the checked-in GLB is the runtime model. To regenerate the market-house model, run `blender --background --python tools/generate_m1_market_house.py`. To regenerate the ambient loop, run `python3 tools/generate_m1_ambience.py`.
 
-M1 visual evidence is under `artifacts/m1/`. Regenerate both screenshots and verify selection, movement and building inspection with `godot --path . --script tools/m1_interaction_capture.gd`. The project-local skill suite is installed under `.agents/skills/` and can be validated with `bash scripts/validate_deccan_lords_skills.sh`. GitHub Actions runs the skill-bundle validation when the skills or helper scripts change.
+M1 visual evidence is under `artifacts/m1/`; M2 battle evidence is under `artifacts/m2/`. Run `godot --headless --path . --script tests/unit/test_m2_battle_simulation.gd` for deterministic combat checks and `godot --path . --script tools/m2_interaction_capture.gd` to exercise selection, movement, attack, victory, restart and retreat through the configured scene. M1 interaction checks remain available with `godot --path . --script tools/m1_interaction_capture.gd`. The project-local skill suite is installed under `.agents/skills/` and can be validated with `bash scripts/validate_deccan_lords_skills.sh`. GitHub Actions runs the skill-bundle validation when the skills or helper scripts change.

@@ -68,3 +68,9 @@
 - Added M0 local setup instructions for an assigned repository folder, official tool installation checks, a Godot-root directory convention and explicit quality gates.
 - Added a reference evaluation guide for the supplied Godot RTS skill/tutorial/open-source repo and guardrails for selective, licensed reuse.
 - Confirmed that the entire vision is preserved while the first playable slice is deliberately smaller; new features must pass evidence-based gates before scope expands.
+
+## v0.9 — 2026-10-17 — Gameplay-first sequence and M2 battle prototype
+
+- Recorded the user's current preference to establish core gameplay loops before broad cinematic/cosmetic polish.
+- Preserved day/night, changing weather and varied terrain as future world features with their gameplay effects still open.
+- Updated the production roadmap for the M2 battle prototype and marked its role values as temporary tuning rather than final rules.
