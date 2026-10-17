@@ -1,0 +1,15 @@
+; Engine configuration file.
+; DECCAN LORDS bootstrap project. See the Game Bible for current design status.
+
+config_version=5
+
+[application]
+
+config/name="DECCAN LORDS"
+run/main_scene="res://scenes/app/main.tscn"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.12, 0.15, 0.13, 1)

@@ -1,0 +1,1034 @@
+DECCAN LORDS — Game Design Document
+Version: 1.0 (Skeleton Locked)
+Date: 2026-10-14
+Status: Pre-production — overworld prototype next
+Setting: Deccan India, c. 1660
+Genre: 2D pixel strategy (Anno structure + AoE combat + Bannerlord politics + Stronghold castles)
+Stack: React + Canvas 2D + Vite
+Team: Solo dev + AI code generation
+
+TABLE OF CONTENTS
+One-Sentence Pitch
+
+The Design Journey — What We Rejected and Why
+
+The Final Design — Locked
+
+The Setting — Deccan, 1660
+
+The Map — Regions, Settlements, Forts
+
+The Five Systems
+
+The Population Model — Critical Decision
+
+The NPC Reaction Model — No ML
+
+UI Layout — Four Screens
+
+The Player's Action Menu
+
+What We Borrow From Where
+
+Technical Architecture
+
+The Graphics Question
+
+Scope, Timeline, and Phases
+
+What Is Locked vs. Flexible
+
+Rules of Engagement for Contributors
+
+Immediate Next Steps
+
+Appendix — Full Feature Ideation List
+
+1. ONE-SENTENCE PITCH
+A 2D pixel strategy game set in the Deccan, 1600s. You're a minor lord. You grow your village, manage your people, build your army, and navigate the politics of the Sultanate. You can serve, rebel, or rise. The world reacts to your decisions through simple math that feels alive. Battles are tactical. Castles are customizable. And if you play well, you become someone — maybe even a king.
+
+2. THE DESIGN JOURNEY
+This document is the product of a long design conversation. Understanding what was rejected is as important as understanding what was kept, because the rejected options represent traps that future contributors will be tempted to fall into again.
+
+2.1 The Original Prototype
+The project began as a wave-defense RTS in the style of Stronghold-lite. Working code exists:
+
+Game.js — full RTS engine: units, pathfinding, combat, structures, projectiles, waves
+
+PathFinder.js — A* with per-team terrain costs (enemies "pay" to break walls)
+
+render.js — depth-sorted sprite rendering, procedural pixel art
+
+terrain.js — procedurally generated ground
+
+App.jsx — React HUD layer
+
+constants.js — all tunable numbers
+
+This prototype is the foundation. The battle system, pathfinding, and rendering will be reused. The wave-defense framing will be replaced.
+
+2.2 Pitches Considered and Rejected
+Pitch	Why Rejected
+Full Bannerlord sandbox	2–4 year project. Character skills, dialogue trees, dynasty system, personal combat — each is a full game. Too much.
+Pure Stronghold castle sim	Too small. No political layer. Lacks the identity that makes this project unique.
+Pure AoE clone	Crowded market. AoE2:DE is free and 25 years polished. No differentiation.
+Pure Anno colony sim	No soul. Numbers puzzle. Also crowded (Manor Lords, Farthest Frontier, etc.).
+CoC/CR mobile multiplayer	Hardest option, not easiest. Multiplayer + live service = studio-scale.
+"AoE + all features"	The 10-system trap. Every game in the list cuts 3+ systems. Combining all of them = nothing ships.
+ML-trained NPCs	6–12 months of work for 10% improvement over rules. Black box, undebuggable, slow.
+2.3 The Winning Insight
+The final design emerged from a simple realization:
+
+Anno's structure is proven and shippable. Put the Deccan on top of it. Replace colonization with conquest-of-inhabited-land. Add Bannerlord's politics as simple numbers. Use the existing Game.js for battles.
+
+This respects both the ambition (a living world with politics, conquest, and consequence) and the reality (a solo dev shipping in ~1 year).
+
+3. THE FINAL DESIGN
+3.1 What The Game Is
+Anno's structure, Deccan's setting, AoE's combat, Bannerlord's politics.
+
+Layer	Inspired By	What It Provides
+Overworld map	Bannerlord / Total War	Move armies, manage settlements, conduct diplomacy
+Town building	Anno	Buildings, production, worker roles, upgrades
+Resources	Anno	5 resources, simple chains, trade
+Conquest	New mechanic	Villages are inhabited — take them, earn or crush loyalty
+Combat	AoE / existing Game.js	Tactical battles on a separate map
+Politics	Bannerlord	Relations, reputation, alliance, betrayal
+Setting	History	1600s Deccan — Mughals, Sultanates, Marathas, Europeans
+3.2 What Makes It Unique
+The single thing no other 2D game does:
+
+Conquest of inhabited land. In Anno, you settle empty islands. Here, you take villages full of people who already live there, owe allegiance to someone, and will resist, accept, or betray you. That one change turns "build a colony" into "build a kingdom by winning people over or crushing them."
+
+This is why the setting matters. The Deccan in 1660 was a patchwork of Sultanates, Mughal pressure, local Deshmukhs, hill tribes, and European trading posts. Every village had a lord. Every lord had a Sultan. Every Sultan had rivals. Taking land meant taking people.
+
+3.3 The Player's Role
+You are a minor lord. Not a named historical figure. A person with:
+
+One village
+
+A small garrison (~20 troops)
+
+A name and a reputation
+
+A sworn allegiance to a Sultan
+
+Through play, you can become:
+
+A general in the Sultan's army
+
+A rebel who breaks away
+
+A merchant prince
+
+A bandit lord
+
+A king
+
+A corpse
+
+Same systems. Different destinies. This is what makes it a life, not a campaign.
+
+4. THE SETTING
+4.1 Time and Place
+Western Deccan + Konkan coast, c. 1660.
+
+Roughly modern Maharashtra. ~200 km × 130 km.
+
+This is the region where Shivaji historically operated — the perfect size to hand-author, small enough to feel real, large enough to hold a full game.
+
+4.2 Historical Context
+Bijapur Sultanate — Adil Shahi dynasty, controls the southern plateau. Your overlord.
+
+Mughal Empire — Aurangzeb's forces to the north, expanding south.
+
+Golconda Sultanate — to the east, wealthy, distant.
+
+Portuguese — hold Chaul and coastal enclaves. Trade guns, powder, mercenaries.
+
+Dutch — trading posts, competing with Portuguese.
+
+British — small outpost (Bombay-like), quiet, watching.
+
+Local Deshmukhs — minor lords, self-interested, switch allegiances.
+
+Hill tribes — deep in the Sahyadri, neutral, paid for passage.
+
+4.3 Why This Setting
+Underused — no 2D RTS exists in this space.
+
+Rich in conflict — six factions with different goals.
+
+Real geography — the Sahyadri mountains, rivers, passes, ports.
+
+Real history — Shivaji's rise is a documented arc we can borrow from without scripting.
+
+Cheap content — history hands us names, places, events, units, and politics for free.
+
+5. THE MAP
+5.1 Dimensions
+World size: 150 × 100 cells. 12px per cell. 1800 × 1200 world pixels.
+
+Real-world scale: ~200 km × 130 km.
+
+5.2 The Five Regions
+Region	Cells	Terrain	Purpose
+Konkan coast	x: 0–35	Coastal plain, ports, coconut	Trade, foreign contact
+Sahyadri ridge	x: 35–65	Mountains, passes, hill forts	Defense, chokepoints
+Deccan plateau	x: 65–150	Farmland, towns, cavalry	Economy, population
+North frontier	y: 0–20	Dry, contested	Mughal pressure
+South frontier	y: 80–100	Rich, controlled	Sultan's power base
+The spine of the map is the Sahyadri ridge. Everything the player does is shaped by the mountains dividing coast from plateau.
+
+5.3 The 10 Hill Forts
+Every fort sits on the ridge. Every fort controls a pass. Every pass controls movement.
+
+Fort	Position	Controls	Notes
+Torna	x: 55, y: 18	Northernmost pass	Small, remote, easy to take
+Rajgad	x: 52, y: 28	Central-north pass	Classic "first capital" fort
+Sinhagad	x: 50, y: 38	Central pass, near Pune	Steep, nearly impregnable
+Purandar	x: 48, y: 48	Central-south pass	Large plateau, holds real garrison
+Pratapgad	x: 45, y: 58	Southern pass	Holds a valley
+Panhala	x: 42, y: 72	Far-south pass	Largest, Bijapur's anchor
+Vishalgad	x: 44, y: 82	South ridge	Rich hinterland
+Raigad	x: 38, y: 55	Coastal ridge	Close to sea, future capital
+Lohagad	x: 58, y: 44	Northern plateau approach	Lower, less defensible
+Junnar	x: 60, y: 12	Near Mughal border	First to see raids
+Each fort provides:
+
+Garrison capacity
+
+Archer range (hill forts get bonus)
+
+Hinterland of 3–5 villages
+
+Control of a pass — block it and armies cannot cross cheaply
+
+5.4 The 12 Towns
+Town	Region	Produces	Notable
+Pune	Plateau	Grain, horses	Likely start. Small, central.
+Junnar	North plateau	Grain, leather	Near Mughal border
+Nashik	North plateau	Wine, grain	On Godavari
+Ahmednagar	Plateau	Iron, cloth	Former Nizam capital
+Daund	Plateau	Grain, cattle	Crossroads
+Indapur	Plateau	Cotton, grain	Rich farmland
+Baramati	Plateau	Grain, sugar	Loyal to Bijapur
+Satara	Plateau	Grain, timber	Near Panhala
+Karad	Plateau	Grain, horses	Bijapur stronghold
+Chaul	Coast	Salt, spices	Portuguese enclave
+Kalyan	Coast	Cloth, timber	Major port
+Thane	Coast	Fish, timber	Near British outpost
+Each town:
+
+Has population that grows or shrinks
+
+Produces one primary resource
+
+Has loyalty to its current holder
+
+Can be taxed, protected, or raided
+
+5.5 The 3 Ports
+Port	Holder	Offers	Wants
+Surat (north)	Mughal	Textiles, silver, horses	Safe roads
+Chaul (central)	Portuguese	Guns, powder, mercenaries	Trade monopoly
+Kalyan (south)	Contested	Cloth, ships, contracts	Local ally
+At ports you can:
+
+Sell surplus at high prices
+
+Buy weapons, horses, gunpowder
+
+Hire European mercenaries
+
+Take foreign contracts
+
+5.6 Rivers and Passes
+Rivers (3):
+
+Godavari — north, crossings near Nashik/Junnar
+
+Bhima — central, crossings near Pune/Daund
+
+Krishna — south, crossings near Karad/Satara
+
+Rivers are chokepoints, not obstacles. Crossings are where armies meet, caravans pay tolls, bandits wait.
+
+Passes (4):
+
+Northern (Torna/Junnar) — Mughal route
+
+Central (Sinhagad) — main coast-to-plateau road
+
+Southern (Pratapgad) — Satara to coast
+
+Raigad approach — coastal route, safer, slower
+
+Whoever holds the passes holds the map.
+
+5.7 The Decisions the Map Creates
+Where do you start? Pune (safe, poor), Junnar (rich, exposed), Chaul (wealthy, foreign).
+
+Which fort do you take first? Torna (easy), Sinhagad (hard, impregnable), Rajgad (classic).
+
+Pass or town? Pass is defensible, earns nothing. Town earns, is exposed.
+
+Coast or plateau? Coast has trade, guns, ships. Plateau has grain, men, horses.
+
+Who do you raid? Mughal frontier (rich, dangerous), Bijapur towns (rich, yours), Portuguese port (rich, guns).
+
+Which foreign power? Portuguese (guns), Dutch (trade), British (contracts). Each alienates others.
+
+When do you break away? Every fort you take, the Sultan notices. Too slow → never break. Too fast → crushed.
+
+6. THE FIVE SYSTEMS
+6.1 The Map (Overworld)
+Fixed Deccan region
+
+Settlements, forts, ports, roads, rivers, passes
+
+Each location has a holder (you, another lord, the Sultan, foreign, independent)
+
+Armies and parties move on this map
+
+Time passes in days and seasons
+
+6.2 Population & Economy
+Villages have population, loyalty, prosperity
+
+You assign population to roles: farmers, workers, artisans, soldiers
+
+Buildings give roles and produce resources
+
+5 resources: grain, timber, iron, cloth, coin
+
+Demands: food (always), then cloth, then luxuries. Fulfilled = loyalty. Unfulfilled = unrest.
+
+6.3 Army & Combat
+3 unit types: infantry, cavalry, archers. Regional variants later.
+
+Recruit from population. Training takes time.
+
+Army has morale, wages, supply
+
+Battles resolve on a tactical map (existing Game.js)
+
+Terrain + weather matter: narrow passes, monsoon, hills
+
+6.4 Politics & Relations
+NPC lords with reputation, faction, goals
+
+Actions: serve, ally, betray, marry, spy
+
+The Sultan tracks your loyalty
+
+Rebellion and secession are options, with consequences
+
+6.5 The Living World
+NPC lords act on their own. Some conquer, some develop, some raid.
+
+Events fire based on world state: letters, betrayals, opportunities, crises.
+
+The world continues whether you're watching or not.
+
+That's it. Five systems. Each is numbers + state + UI.
+
+7. THE POPULATION MODEL
+This is the single most important design decision in the game.
+
+7.1 The Model
+Villages have people. You don't spawn them.
+
+In 1600s India, a lord didn't conjure villagers. What a lord did:
+
+Protect them → they stay, grow, pay tax, send recruits
+
+Tax them fairly → they're loyal, productive
+
+Tax them brutally → they flee, revolt, or die
+
+Attract new ones → better conditions bring migrants
+
+7.2 Population Growth/Shrink
+Factor	Effect
+Food surplus	+growth
+Security (no raids)	+growth
+Fair tax	+growth, +loyalty
+Heavy tax	+coin now, −growth, −loyalty
+Raided by enemy	−population, −loyalty
+Famine (bad monsoon)	−population
+Known as good lord	+migration
+7.3 What You Build
+You don't build houses to hold people. You build structures that give people roles:
+
+Farm — food
+
+Granary — stores surplus, prevents famine
+
+Well — health, growth
+
+Temple — loyalty, legitimacy
+
+Market — trade, artisan jobs
+
+Barracks — trains soldiers from population
+
+Workshop — craftsmen, goods
+
+Fort/Wall — security
+
+Population grows into these structures. If you have 3 farms and 1 granary, you can support 200 people. Build 2 more farms and a market → support 400. Population grows over time.
+
+7.4 Why This Is Right
+Historically accurate. Lords inherited land with people. They didn't spawn citizens.
+
+Simpler than Anno. No "build house, house fills, upgrade house."
+
+More meaningful than AoE. Population is a relationship, not a number.
+
+Sets up the reaction model. Every village is a mini-simulation.
+
+8. THE NPC REACTION MODEL
+No ML. No LLM. Rules + state + weighted randomness.
+
+8.1 Why Not ML
+Training a model requires: labeled data (which doesn't exist), months of training, integration into the game engine, and debugging via retraining. Total cost: 6–12 months for 10% improvement over rules.
+
+Rule-based systems are: debuggable, tunable, fast, deterministic, understandable, and take 2 weeks.
+
+8.2 Every NPC Lord Has
+Relations with you (−100 to +100)
+
+Ambition (1–10)
+
+Loyalty to Sultan (0–100)
+
+Fear of you (0–100)
+
+Greed (1–10)
+
+Memory of the last 10 actions you took toward them
+
+8.3 Every Action You Take Updates These
+Your Action	Effect
+Gift 50 coin	+5 relations, +2 greed
+Betray an ally	−30 relations with them, −10 with everyone
+Win a battle	+10 fear from neighbors
+Lose a battle	−10 fear, +5 ambition in rivals
+Tax heavily	+2 coin/day, −3 loyalty/day, +1 fear
+Marry into family	+20 relations, permanent alliance modifier
+Spy and get caught	−40 relations, −15 reputation
+Assassinate a lord	+5 fear, −20 reputation, blood feud chance
+8.4 The Six Rules Every Lord Runs Daily
+text
+If relations < -50 and ambition > 6    → plot against you
+If relations > +50 and fear < 30       → offer alliance
+If fear > 70 and loyalty < 40          → submit or flee
+If loyalty > 70 and Sultan weak        → scheme to dethrone
+If you're weak                          → raid you
+If you're strong                        → seek marriage/alliance
+That's it. Six rules. Every NPC runs them. The result is a living world.
+
+8.5 Weighted Randomness
+Instead of deterministic checks, use weighted probability:
+
+text
+plotChance = (ambition * 0.1) + (negativeRelations * 0.01) - (fear * 0.02)
+if random() < plotChance → begin plot
+This produces emergent behavior that feels alive. Two lords with the same stats will react differently (random roll), but consistently with their personality (weights depend on stats).
+
+This is the difference between "random" and "alive."
+
+9. UI LAYOUT
+Four screens. That's the whole game.
+
+9.1 Screen 1 — The Overworld (80% of time)
+text
+┌─────────────────────────────────────────────────────────┐
+│ [COIN 240] [GRAIN 180] [TIMBER 90] [IRON 40] [CLOTH 12] │
+│ Day 47 · Monsoon · 1663              [Speed 1x] [Pause]  │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│                    THE MAP                               │
+│                                                          │
+│   Your army →  ⚔                                        │
+│   Villages · Forts · Towns · Roads · Rivers · Hills      │
+│                                                          │
+├─────────────────────────────────────────────────────────┤
+│ [SELECTED: Pune Village]                                 │
+│ Pop: 320 · Loyalty: 72% · Tax: +8 coin/day              │
+│ [Manage] [Tax] [Recruit] [Build] [Garrison]             │
+└─────────────────────────────────────────────────────────┘
+9.2 Screen 2 — Village/Town Management (modal)
+Population, loyalty, prosperity
+
+Role assignments (farmers, workers, artisans, soldiers)
+
+Buildings and upgrade options
+
+Demands status (food/cloth/luxury)
+
+Unrest indicator
+
+Actions: Assign Roles, Build, Set Tax Rate, Recruit
+
+9.3 Screen 3 — Army Screen (modal)
+Unit counts (infantry, cavalry, archers)
+
+Morale, supply, wages
+
+Formation options (Line, Wedge, Skirmish)
+
+Actions: Recruit, Disband, Split, Merge, Train Elite
+
+9.4 Screen 4 — Battle (tactical)
+Uses existing Game.js. Top-down. Command troops. Terrain and weather matter. Win, lose, retreat.
+
+10. THE PLAYER'S ACTION MENU
+Every turn (a day), the player can:
+
+Category	Actions
+Move	Move army, move spies, move envoys
+Economy	Assign roles, build, set tax, trade
+Military	Recruit, train, garrison, march, siege
+Politics	Gift, marry, ally, betray, declare war, spy
+Diplomacy	Send envoy, propose treaty, offer tribute
+Intrigue	Spy, bribe, assassinate, spread rumor
+Personal	Build fort, customize castle (companions later)
+~25 actions total. Every one is numbers + UI. Every one has consequences.
+
+11. WHAT WE BORROW FROM WHERE
+From	We Take	We Leave
+AoE	Top-down map, base building, resources, combat	Ages, villagers-as-units, hard queues
+Anno	Demand-driven population, tiers, trade	Islands, ship logistics, 100 buildings
+Stronghold	Castle customization, fort design, siege	English setting, food-chain economy
+Bannerlord	Relations, diplomacy, reputation, politics	Character skills, dialogue trees, personal combat
+Rise of Nations	Fast pace, accessible rules, tech unlocks	Age system, territory borders
+Railway Empire	Nothing for v1	Logistics complexity (save for v2)
+Result: Plays like AoE + Anno at the surface, feels like Bannerlord in politics, looks like Stronghold in castles, runs like a fast RTS.
+
+12. TECHNICAL ARCHITECTURE
+12.1 Stack
+React 18 — UI layer (HUD, modals, menus)
+
+Canvas 2D — world rendering (map, units, buildings)
+
+Vite — build tool
+
+Plain JS — game logic (no framework inside the game loop)
+
+No Unity. No Godot. No Three.js. No WebGL.
+
+Canvas 2D is enough for this game's scope. Hundreds of units, not thousands.
+
+12.2 Existing Files
+File	Status	Purpose
+App.jsx	Keep, refactor	React HUD shell
+Game.js	Keep, refactor	Battle engine → tactical combat layer
+constants.js	Keep, extend	All tunables
+pathfinding.js	Keep as-is	A* with per-team costs
+render.js	Keep, extend	Sprite rendering
+terrain.js	Keep, extend	Map generation → fixed map loader
+util.js	Keep as-is	Utilities
+styles.css	Keep, extend	UI styling
+12.3 New Files Needed
+File	Purpose
+overworld/Overworld.js	The strategic map layer
+overworld/Settlement.js	Villages, towns, population model
+overworld/Lord.js	NPC lords, relations, memory
+overworld/Army.js	Armies on the map, movement, supply
+overworld/Diplomacy.js	Treaties, alliances, wars
+overworld/Events.js	Authored event table
+overworld/Season.js	Time, weather, monsoon
+ui/VillagePanel.jsx	Village management modal
+ui/ArmyPanel.jsx	Army management modal
+ui/DiplomacyPanel.jsx	Relations and treaties
+ui/EventModal.jsx	Event presentation
+12.4 Pathfinding
+A for units. Dijkstra for strategic layer queries.*
+
+A* — unit movement, one-to-one, heuristic-guided. Keep existing.
+
+Dijkstra — influence propagation, trade routes, threat mapping, recruitment reach. Cache results, recompute on world-state change.
+
+Do not replace A*. Do not use BFS or Greedy Best-First.
+
+When to upgrade: only if units exceed ~300 and frame time drops below 30fps. Then consider flow fields for groups. Not before.
+
+12.5 Architectural Rules
+The lord is an object from day 1, even if it's just a name and reputation. This allows the v2 character layer to be added without rewrite.
+
+Relations are tracked from day 1, even if they're just numbers.
+
+Battles are triggered from the overworld from day 1, even if they resolve simply.
+
+No system should depend on a system that doesn't exist. Build the skeleton; add content; never add a new kind of system in v1.
+
+13. THE GRAPHICS QUESTION
+13.1 Current State
+Procedural pixel art drawn in code with fillRect. Functional, readable, not beautiful.
+
+13.2 The Ceiling
+Realistic ceiling: Kingdoms and Castles / Rise to Ruins tier — systems-heavy 2D pixel strategy with functional art.
+
+Not reachable solo: Rimworld / They Are Billions tier (needs a real artist), Northgard / Anno tier (studio-scale).
+
+13.3 What AI Can/Cannot Do
+Task	AI Alone	AI + You
+Code	95%	100%
+Pixel art (static)	30%	70% (with your cleanup)
+Animation	5%	70% (procedural from static)
+Music	60%	85% (curated)
+Sound design	30%	70% (curated)
+Feel / tuning	5%	95% (you playtest)
+Level design	20–80% (genre)	90%
+Game design taste	40% (sparring)	100% (you decide)
+Long-term vision	0%	100%
+13.4 The AI Sprite Workflow
+AI generates base sprites (PixelLab, Stable Diffusion, Midjourney)
+
+You set a fixed palette (16 colors max)
+
+You recolor every sprite to match
+
+You enforce fixed proportions (all humans same height)
+
+You manually clean inconsistencies
+
+Result: 60–70% AI, 30–40% you
+
+Time cost: 60–100 hours for 200–400 sprites. Doable.
+
+13.5 Animation
+Keep procedural animation. Single sprite, moved and posed in code. This is what Dwarf Fortress, Prison Architect, and Rimworld do. Removes the animation bottleneck.
+
+13.6 What "Premium" Actually Means
+Not graphics horsepower. It means:
+
+Consistency — same world, same tone
+
+Restraint — no unnecessary effects
+
+Timing — everything feels intentional
+
+Sound — 50% of feel is audio
+
+Readable UI — clean fonts, clear hierarchy
+
+Polish on small things — button highlights, selection rings, placement animations
+
+A clean-looking game with tight timing and good sound feels more premium than a gorgeous game with sloppy feedback. Every time.
+
+14. SCOPE, TIMELINE, AND PHASES
+14.1 Realistic Timeline
+Part-time (20h/week), focused v1:
+
+Phase	Duration	What
+Overworld + map	6 weeks	Strategic layer, fixed Deccan map
+Towns + economy	6 weeks	Production, workers, buildings
+Villages + conquest	4 weeks	Loyalty, takeover, resistance
+AI lords	6 weeks	Opponents that act
+Battle trigger + Game.js integration	4 weeks	Connecting the layers
+Politics + relations	4 weeks	Numbers + UI
+Events + content	6 weeks	~30 authored events
+Polish + feel	8 weeks	Sound, timing, UI, balance
+Total	~11 months	Part-time
+Full-time (40h/week): ~5–6 months.
+
+Playable prototype: 2–3 months.
+
+14.2 v1 Scope — What Ships
+Map: Deccan, 1660. One region. ~8 villages, 3 towns, 4 hill forts, 1 port. Hand-authored.
+
+Start: Minor lord. One village, 20 troops, 100 coin.
+
+Population: Villages with people, roles, growth, loyalty.
+
+Resources: 5 (grain, timber, iron, cloth, coin).
+
+Buildings: ~20 total.
+
+Army: 3 unit types (infantry, cavalry, archers).
+
+Politics: 4–6 NPC lords, Sultan tracking loyalty, rebellion possible.
+
+Combat: Battle scene using existing Game.js.
+
+Death: Not a character. Lose army → flee. Lose land → wanderer. No land/army/coin for 3 seasons → game over.
+
+Win: 5+ villages, 2+ forts, independence declared or Sultan recognizes you.
+
+Content: ~30 events.
+
+Playtime: 8–12 hours.
+
+14.3 Growth Plan After v1
+Version	What It Adds
+v1.5	Battle map refinement, 2nd companion, deeper castle customization
+v2.0	Character layer (lord as entity, skills, personal reputation)
+v2.5	Mughal faction as full AI, more regions
+v3.0	Dynasty system (heirs, marriage, succession)
+v3.5	Naval layer (Portuguese, Dutch, British ships and ports)
+v4.0	Multiplayer (only if demand is proven)
+v4.5	Second starting position (different region, different noble)
+Each version reuses 90% of the last. That's how this project survives.
+
+15. WHAT IS LOCKED VS. FLEXIBLE
+15.1 Locked (Do Not Change)
+Setting: Deccan, 1660.
+
+Player role: Minor lord, not a named historical figure.
+
+Population model: Villages with people, not spawned units.
+
+Five systems: Map, Economy, Army, Politics, Living World.
+
+Four screens: Overworld, Village, Army, Battle.
+
+No ML. Rules + state + weighted randomness.
+
+No multiplayer in v1.
+
+Canvas 2D + React stack.
+
+Battle uses existing Game.js engine.
+
+Fixed map, hand-authored, not procedural.
+
+15.2 Flexible (Can Change)
+Number of villages, towns, forts (currently 8/3/4).
+
+Number of NPC lords (currently 4–6).
+
+Resource types (currently 5).
+
+Building list (currently ~20).
+
+Unit types (currently 3).
+
+Event count (currently ~30).
+
+Balance numbers (speeds, costs, growth rates).
+
+Specific historical events and their triggers.
+
+UI layout details.
+
+Art style within the pixel constraint.
+
+15.3 Forbidden (Do Not Add)
+These are systems that seem appealing but will kill the project:
+
+ML-trained NPCs
+
+LLM-driven dialogue
+
+Character skills and XP
+
+Dialogue trees
+
+Dynasty/marriage/heredity (v1)
+
+Naval layer (v1)
+
+Multiple regions (v1)
+
+Multiplayer (v1)
+
+Procedural map generation
+
+Per-soldier equipment
+
+Weather simulation beyond season effects
+
+Any system not in the Five Systems list
+
+16. RULES OF ENGAGEMENT FOR CONTRIBUTORS
+For any new person (or AI agent) joining this project:
+
+16.1 Before You Add Anything
+Ask these five questions:
+
+Does it change a decision the player makes? If no, it's decoration.
+
+Can it be tested in one 30-minute playtest? If no, it's too big.
+
+What does it cost in content, not code? Content is the real budget.
+
+Does it survive on its own? If it only matters when combined with unbuilt systems, park it.
+
+Is it a system or content? Content can be added anytime. Systems must be locked.
+
+16.2 The Rule of Scope
+The game is a year of work. Every new system adds a month. You do not have months.
+
+If you're tempted to add a system, ask: "Can this be added in v2 without rewriting v1?" If yes, park it. If no, redesign.
+
+16.3 The Rule of Commitment
+Do not change direction for 6 months. The most common failure mode of this project is changing direction before shipping. Every pivot costs 3 months. Every feature added costs 1 month. Every abandoned direction costs everything.
+
+16.4 The Rule of Building
+Plan for a week. Build for a month. Then plan again.
+
+Design documents have diminishing returns. After two weeks of planning, every additional week is a week not building. The skeleton is defined. Build it.
+
+17. IMMEDIATE NEXT STEPS
+17.1 The First Task
+Build the overworld map.
+
+Not the politics. Not the AI. Not the economy. The map.
+
+Because the map is the thing that makes every other system concrete. Until you can:
+
+See the Deccan region on screen
+
+Move an army around it
+
+Click on a village
+
+See what it produces
+
+...everything else is hypothetical.
+
+17.2 The First Two Weeks
+With AI's help, the following should exist by end of week 2:
+
+A canvas rendering the Deccan map (150×100 cells)
+
+5 regions visually distinct
+
+8 villages, 3 towns, 4 forts, 1 port placed and labeled
+
+Roads and rivers drawn
+
+One movable army party
+
+A day/night or season indicator
+
+Basic HUD showing resources
+
+That's the target. Two weeks. Then we build the next layer.
+
+17.3 What To Do After
+Week 3–4: Click a village, open a management panel, see population
+
+Week 5–6: Assign roles, build one building, see production
+
+Week 7–8: Add one NPC lord, one interaction (gift or raid)
+
+Week 9–10: Trigger a battle, resolve using Game.js, return to map
+
+Week 11–12: Add one event (a letter from the Sultan)
+
+By week 12, you have a playable vertical slice. Not a game. A slice. But it proves the systems work together.
+
+17.4 What To Do If Stuck
+If a system feels too big: cut it in half. Ship the half.
+
+If a feature is unclear: skip it. Add it in v2.
+
+If you're tempted to change direction: don't. Finish the current task.
+
+If you're bored: that's the signal to build, not plan.
+
+If you're stuck on art: use procedural sprites. Ship the mechanics first.
+
+18. APPENDIX — FULL FEATURE IDEATION LIST
+This section preserves the full range of ideas discussed during design. Not all of these are in v1. They are recorded for future reference.
+
+18.1 Historical Events and Figures
+Shivaji's rise (minor noble → kingdom founder)
+
+Afzal Khan's campaign (Sultan's general, killed at Pratapgad)
+
+Netaji Palkar (cavalry commander, converted to Islam, returned)
+
+Sambhaji (Shivaji's son, invented new tactics and weapons)
+
+Aurangzeb (Mughal emperor, invaded Deccan)
+
+Bajirao's Palkhed campaign (small cavalry, geographic advantage, captured lord without army)
+
+Umber Khind (narrow pass ambush)
+
+Pune's transformation (village → major city under the Peshwas)
+
+Goa and Mumbai (developed by foreign powers)
+
+Bengal's decline (wrong decisions led to ruin)
+
+European trading companies competing for influence
+
+18.2 Player Paths (All Possible Through Play)
+Minor noble → loyal general
+
+Minor noble → rebel → king
+
+Noble → merchant prince
+
+Commoner → bandit lord
+
+Commoner → soldier → commander
+
+Loyal vassal → treacherous dethroner
+
+Any → corpse
+
+Any → founder of a dynasty (v2+)
+
+18.3 Political Mechanics
+Four states: total vassal / mixed / semi-autonomous / independent-aligned
+
+Reputation with each faction
+
+Relations with individual lords
+
+Marriage alliances (v2)
+
+Secret diplomacy (letters, envoys)
+
+Bribery as distinct from generosity
+
+Bribery produces "bought" loyalty, generosity produces "earned" loyalty
+
+Revolt if loyalty too low for too long
+
+Dethronement if influence + army + support high enough
+
+Secession if Sultan weak
+
+Blood feuds from assassinations
+
+18.4 Military Mechanics
+Personal secret army (trained quietly, boosts main army when revealed)
+
+Unit upgrade trees by region
+
+Custom troop rules (patrol routes, guard posts)
+
+Fort customization (Stronghold-style)
+
+Hill forts get range bonus
+
+Plain forts cover more area
+
+River/sea forts get trade bonuses
+
+Terrain matters (narrow passes, hills, monsoon)
+
+Weather affects march speed, farm output
+
+Bandits can team with pursuers against you
+
+Parties move at different speeds based on terrain/weather
+
+Capturing enemy lords (Bajirao's Palkhed style)
+
+Fake retreats, feigned weakness
+
+Ambushes in passes
+
+Spy networks for intel
+
+Assassination attempts
+
+Elite training (slower, expensive, stronger)
+
+18.5 Economic Mechanics
+Population assignment to roles
+
+Building upgrade tiers (hut → house → wada)
+
+Demand fulfillment (food → cloth → luxuries)
+
+Tax rate affecting loyalty and coin
+
+Trade with ports (foreign prices)
+
+Loans (creates pressure and deadlines)
+
+Famine from bad monsoon
+
+Migration from better-governed lands
+
+Artisan production (craftsmen working for you)
+
+Regional specialties (each region produces different goods)
+
+Market access affecting prices
+
+18.6 Living World Mechanics
+NPC lords pursuing their own goals
+
+Some lords focus on conquest, some on development
+
+Some milk their territories for quick tax, some invest
+
+Sultan's power fluctuates with his wars
+
+Mughal pressure from the north
+
+European powers competing
+
+Hill tribes as neutral parties
+
+Bandit groups forming and raiding
+
+Villages migrating between lords
+
+Historical events firing based on world state
+
+Letters and envoys from NPCs
+
+Betrayals triggered by ambition + opportunity
+
+Alliances formed by mutual benefit
+
+Rebellions triggered by neglect or oppression
+
+18.7 Rejected Ideas (Keep Out)
+ML-trained NPCs (rules are better)
+
+LLM dialogue (state machines are enough)
+
+Character XP and leveling (v2+)
+
+Dynasty system (v2+)
+
+Naval layer (v2+)
+
+Multiple continents (v3+)
+
+Multiplayer (v4+, only if demanded)
+
+Procedural maps (fixed map is better)
+
+Per-soldier inventory (abstract units are enough)
+
+Real-time weather simulation (season effects are enough)
+
+Voice acting (text is fine)
+
+Cinematic cutscenes (not this game)
+
+Mobile version (wrong platform)
+
+VR/AR (wrong genre)
+
+19. FINAL THOUGHTS
+19.1 The Vision in Three Sentences
+A 2D pixel strategy game set in the Deccan, 1600s, where you live a life as a minor lord.
+
+You grow your village, manage your people, build your army, and navigate politics through simple math that produces emergent, alive-feeling behavior.
+
+The game ships in ~1 year with AI writing the code, and grows into a full Bannerlord-style sandbox over multiple versions — without ever rewriting v1.
+
+19.2 The One Rule
+Do not change direction for 6 months. Build the skeleton. Ship the vertical slice. Then decide what's next.
+
+Every previous design conversation that never resulted in a shipped game failed for the same reason: the designer changed direction before finishing. This document exists so that doesn't happen again.
+
+19.3 The Promise to the Player
+You will not play a game about winning battles. You will play a game about living a life in a world that notices what you do, and reacts. You will not always win. You will sometimes lose everything. You will sometimes become someone you didn't expect. And that is the point.
+
+Document ends.

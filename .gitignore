@@ -1,0 +1,9 @@
+# Godot generated/imported data
+.godot/
+
+# macOS metadata
+.DS_Store
+
+# Local editor settings and logs
+.vscode/
+*.log
