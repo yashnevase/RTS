@@ -1,13 +1,18 @@
 extends Control
 
 signal travel_requested(destination_id: String)
+signal recruit_requested
+signal prepare_patrol_requested
+signal encounter_requested
+signal stop_requested
 signal contract_requested
 signal advance_requested
 signal save_requested
 signal load_requested
 
 const MAP_SCRIPT := preload("res://src/campaign/m4_campaign_map.gd")
-const LOCATION_ORDER := ["keshavwadi", "kaldar_pass", "nandipur", "suryagarh"]
+const REGION := preload("res://src/world/region_definition.gd")
+const UI := preload("res://src/ui/game_ui.gd")
 
 const COLOR_BG := Color("#17211d")
 const COLOR_PANEL := Color("#222f29")
@@ -18,18 +23,28 @@ const COLOR_ACCENT := Color("#d3ae68")
 const COLOR_GOOD := Color("#9bb98b")
 const COLOR_ALERT := Color("#e2a073")
 
+var recruit_button: Button
+var prepare_button: Button
+var recovery_label: Label
+var encounter_button: Button
+var encounter_label: Label
 var tabs: TabContainer
 var map_board: Control
 var day_label: Label
 var party_label: Label
 var destination_label: Label
-var destination_buttons: Dictionary = {}
+var travel_button: Button
+var stop_button: Button
+var route_label: Label
+var objective_label: Label
+var resource_label: Label
+var contract_reason: Label
+var _simulation: RefCounted
 var contract_button: Button
 var advance_button: Button
 var save_button: Button
 var load_button: Button
-var travel_target_id := ""
-var destination_buttons_for_test: Dictionary = {}
+var travel_target_id := "nandipur"
 var briefing_label: Label
 var caravan_label: Label
 var lord_label: Label
@@ -47,6 +62,7 @@ func _ready() -> void:
 func refresh(simulation: RefCounted) -> void:
 	if day_label == null:
 		return
+	_simulation = simulation
 	var campaign_state: Dictionary = simulation.state
 	var party: Dictionary = campaign_state["player_party"]
 	var caravan: Dictionary = campaign_state["caravan"]
@@ -61,13 +77,30 @@ func refresh(simulation: RefCounted) -> void:
 	else:
 		destination_label.text = "Travelling to %s  ·  next %s" % [simulation.location_name(str(party["destination_id"])), simulation.location_name(str(remaining_route[0]))]
 	map_board.set_campaign_state(campaign_state)
-	for location_id in LOCATION_ORDER:
-		var location: Dictionary = simulation.LOCATION_DATA[location_id]
-		var button: Button = destination_buttons[location_id]
-		button.text = "%s\n%s" % [str(location["name"]), str(location["kind"])]
-		button.disabled = not remaining_route.is_empty() or str(party["location_id"]) == location_id
-		button.button_pressed = travel_target_id == location_id and not remaining_route.is_empty()
-	contract_button.disabled = str(party["location_id"]) != str(merchant["location_id"]) or str(caravan["status"]) != "idle" or int(simulation.settlement.state["treasury"]) < simulation.CARAVAN_PRICE or int(merchant["inventory_grain"]) < simulation.CARAVAN_GRAIN
+	encounter_label.text = simulation.encounter_block_reason()
+	if encounter_label.text.is_empty():
+		encounter_label.text = "Opposing patrol: 5 troops. Casualties and wounds persist. Campaign time pauses. Save before entering; saving resumes after battle."
+	var roster_lines: PackedStringArray = []
+	for soldier in campaign_state["encounter"]["roster"]:
+		roster_lines.append("%s · %d health" % [soldier["role"], int(soldier["health"])])
+	encounter_label.text += "\nRetinue: " + ("; ".join(roster_lines) if not roster_lines.is_empty() else "No surviving troops.")
+	encounter_button.disabled = not simulation.encounter_block_reason().is_empty()
+	recruit_button.text = "Hire replacement · %d coin + %d grain" % [simulation.ENCOUNTER.RECRUIT_COIN, simulation.ENCOUNTER.RECRUIT_GRAIN]
+	recruit_button.disabled = not simulation.recruit_block_reason().is_empty()
+	recruit_button.tooltip_text = simulation.recruit_block_reason()
+	prepare_button.disabled = not simulation.prepare_patrol_block_reason().is_empty()
+	prepare_button.tooltip_text = simulation.prepare_patrol_block_reason()
+	var wounded: int = simulation.ENCOUNTER.wounded_count(campaign_state["encounter"])
+	var missing: int = simulation.ENCOUNTER.missing_soldiers(campaign_state["encounter"]).size()
+	recovery_label.text = "%d wounded · %d vacant places\nRest at home: +%d health per wounded troop/day, %d grain each after household food.\n%s" % [wounded, missing, simulation.ENCOUNTER.HEAL_PER_DAY, simulation.ENCOUNTER.HEAL_GRAIN, simulation.home_service_block_reason()]
+	if not simulation.prepare_patrol_block_reason().is_empty():
+		recovery_label.text += "\n" + simulation.prepare_patrol_block_reason()
+	_refresh_route()
+	objective_label.text = simulation.next_objective()
+	resource_label.text = "Treasury %d coin  ·  Grain %d  ·  Free storage %d" % [int(simulation.settlement.state["treasury"]), int(simulation.settlement.state["inventory"]["grain"]), simulation.settlement.free_storage()]
+	contract_reason.text = simulation.contract_block_reason()
+	contract_button.disabled = not contract_reason.text.is_empty()
+	contract_button.text = "Arrange %d grain · %d coin" % [simulation.CARAVAN_GRAIN, simulation.CARAVAN_PRICE]
 	advance_button.text = "Advance to day %02d" % (simulation.current_day() + 1)
 	briefing_label.text = str(superior["obligation"])
 	caravan_label.text = _caravan_summary(simulation, caravan)
@@ -78,11 +111,9 @@ func refresh(simulation: RefCounted) -> void:
 	_refresh_settlement_tab(simulation)
 
 
-func refresh_settlement(simulation: RefCounted) -> void:
-	_refresh_settlement_tab(simulation)
-
-
 func set_status(message: String, is_error: bool = false) -> void:
+	if settlement_hud != null:
+		settlement_hud.set_status(message, is_error)
 	if status_label != null:
 		status_label.text = message
 		status_label.add_theme_color_override("font_color", Color("#e17b70") if is_error else COLOR_MUTED)
@@ -128,7 +159,7 @@ func _build_header(parent: VBoxContainer) -> void:
 	header.add_child(identity)
 	var title := _label("THE KALDAR MARCHES", 26, COLOR_ACCENT)
 	identity.add_child(title)
-	var subtitle := _label("STRATEGIC CAMPAIGN  ·  M4 PROTOTYPE REGION", 12, COLOR_MUTED)
+	var subtitle := _label("DECCAN LORDS  ·  CAMPAIGN", 12, COLOR_MUTED)
 	identity.add_child(subtitle)
 	day_label = _label("DAY 01", 17, COLOR_TEXT)
 	day_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -136,6 +167,8 @@ func _build_header(parent: VBoxContainer) -> void:
 	var divider := HSeparator.new()
 	divider.add_theme_color_override("color", COLOR_PANEL_EDGE)
 	parent.add_child(divider)
+	resource_label = _label("", 14, COLOR_TEXT)
+	parent.add_child(resource_label)
 
 
 func _build_campaign_tab() -> void:
@@ -150,6 +183,9 @@ func _build_campaign_tab() -> void:
 	left.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	left.add_theme_constant_override("separation", 9)
 	campaign_page.add_child(left)
+	objective_label = _label("", 15, COLOR_ACCENT)
+	objective_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	left.add_child(objective_label)
 	party_label = _label("Rao's Retinue", 15, COLOR_TEXT)
 	left.add_child(party_label)
 	destination_label = _label("At Keshavwadi", 12, COLOR_MUTED)
@@ -163,25 +199,12 @@ func _build_campaign_tab() -> void:
 	map_board.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	map_board.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	map_panel.add_child(map_board)
-	var map_footer := _label("GOLD: public route  ·  CIRCLE: your party  ·  GREEN MARKER: caravan", 11, COLOR_MUTED)
+	map_board.location_selected.connect(func(id: String) -> void:
+		travel_target_id = id
+		_refresh_route()
+	)
+	var map_footer := _label("GOLD FLAG: retinue  ·  GREEN WAGON: caravan  ·  GOLD ROAD: selected route", 11, COLOR_MUTED)
 	left.add_child(map_footer)
-	var location_row := HBoxContainer.new()
-	location_row.add_theme_constant_override("separation", 6)
-	left.add_child(location_row)
-	for location_id in LOCATION_ORDER:
-		var button := _button("", false)
-		button.custom_minimum_size = Vector2(0, 54)
-		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		button.toggle_mode = true
-		button.pressed.connect(func() -> void:
-			travel_target_id = location_id
-			for other_id in destination_buttons:
-				(destination_buttons[other_id] as Button).button_pressed = str(other_id) == location_id
-			travel_requested.emit(location_id)
-		)
-		location_row.add_child(button)
-		destination_buttons[location_id] = button
-		destination_buttons_for_test[location_id] = button
 	advance_button = _button("Advance one day", true)
 	advance_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	advance_button.pressed.connect(func() -> void: advance_requested.emit())
@@ -211,11 +234,38 @@ func _build_right_panel(parent: HBoxContainer) -> void:
 	sections.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	sections.add_theme_constant_override("separation", 10)
 	scroll.add_child(sections)
-	_build_section(sections, "YOUR PARTY", func(content: VBoxContainer) -> void:
-		var current_party_label := _label("", 13, COLOR_TEXT)
-		current_party_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		content.add_child(current_party_label)
-		party_status_label = current_party_label
+	_build_section(sections, "LOCATION & ORDERS", func(content: VBoxContainer) -> void:
+		party_status_label = _label("", 13, COLOR_TEXT)
+		party_status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		content.add_child(party_status_label)
+		route_label = _label("", 13, COLOR_MUTED)
+		route_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		content.add_child(route_label)
+		travel_button = _button("Travel", true)
+		travel_button.pressed.connect(func() -> void: travel_requested.emit(travel_target_id))
+		content.add_child(travel_button)
+		stop_button = _button("Halt at current location", false)
+		stop_button.pressed.connect(func() -> void: stop_requested.emit())
+		content.add_child(stop_button)
+	)
+	_build_section(sections, "KALDAR PASS · OPTIONAL SKIRMISH", func(content: VBoxContainer) -> void:
+		encounter_label = _label("", 12, COLOR_MUTED)
+		encounter_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		content.add_child(encounter_label)
+		encounter_button = _button("Confront patrol", false)
+		encounter_button.pressed.connect(func() -> void: encounter_requested.emit())
+		content.add_child(encounter_button)
+	)
+	_build_section(sections, "RETINUE · HOME SERVICES", func(content: VBoxContainer) -> void:
+		recovery_label = _label("", 12, COLOR_MUTED)
+		recovery_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		content.add_child(recovery_label)
+		recruit_button = _button("Hire replacement · 12 coin + 2 grain", false)
+		recruit_button.pressed.connect(func() -> void: recruit_requested.emit())
+		content.add_child(recruit_button)
+		prepare_button = _button("Prepare next patrol", false)
+		prepare_button.pressed.connect(func() -> void: prepare_patrol_requested.emit())
+		content.add_child(prepare_button)
 	)
 	_build_section(sections, "SUPERIOR'S OBLIGATION", func(content: VBoxContainer) -> void:
 		briefing_label = _label("", 13, COLOR_TEXT)
@@ -236,6 +286,9 @@ func _build_right_panel(parent: HBoxContainer) -> void:
 		contract_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		contract_button.pressed.connect(func() -> void: contract_requested.emit())
 		content.add_child(contract_button)
+		contract_reason = _label("", 12, COLOR_MUTED)
+		contract_reason.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		content.add_child(contract_reason)
 	)
 	_build_section(sections, "MERCHANT DECISION · WHY", func(content: VBoxContainer) -> void:
 		decision_label = _label("", 12, COLOR_GOOD)
@@ -250,56 +303,36 @@ func _build_right_panel(parent: HBoxContainer) -> void:
 
 
 func _build_settlement_tab() -> void:
-	var settlement_page := HBoxContainer.new()
-	settlement_page.name = "Keshavwadi Settlement"
-	settlement_page.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	settlement_page.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	settlement_page.add_theme_constant_override("separation", 12)
-	tabs.add_child(settlement_page)
-	var nav := VBoxContainer.new()
-	nav.custom_minimum_size.x = 220
-	nav.add_theme_constant_override("separation", 8)
-	settlement_page.add_child(nav)
-	var nav_title := _label("SETTLEMENT VIEW", 15, COLOR_ACCENT)
-	nav.add_child(nav_title)
-	var explanation := _label("This view reads the same Keshavwadi simulation. Campaign time continues to settle its economy.", 12, COLOR_MUTED)
-	explanation.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	nav.add_child(explanation)
-	var location_title := _label("SETTLEMENT", 12, COLOR_TEXT)
-	nav.add_child(location_title)
-	_settlement_status_label = _label("Keshavwadi ledger · day 01", 12, COLOR_GOOD)
-	_settlement_status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	nav.add_child(_settlement_status_label)
-	var ledger_host := VBoxContainer.new()
-	ledger_host.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	ledger_host.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	settlement_page.add_child(ledger_host)
-	var heading := _label("KESHAVWADI  ·  SHARED CAMPAIGN STATE", 14, COLOR_ACCENT)
-	ledger_host.add_child(heading)
-	var ledger_scroll := ScrollContainer.new()
-	ledger_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	ledger_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	ledger_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	ledger_host.add_child(ledger_scroll)
-	settlement_hud = Control.new()
-	settlement_hud.set_script(load("res://src/settlement/m3_settlement_hud.gd"))
-	settlement_hud.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	settlement_hud.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	settlement_hud.custom_minimum_size = Vector2(980, 720)
-	ledger_scroll.add_child(settlement_hud)
+	settlement_hud = preload("res://src/settlement/m3_settlement_hud.gd").new()
+	settlement_hud.name = "Keshavwadi Settlement"
+	tabs.add_child(settlement_hud)
 
 
 func _refresh_settlement_tab(simulation: RefCounted) -> void:
-	if settlement_hud != null:
-		settlement_hud.refresh(simulation.settlement)
-		_settlement_status_label.text = "Keshavwadi ledger · campaign day %02d" % simulation.current_day()
+	settlement_hud.refresh(simulation.settlement)
+
+
+func _refresh_route() -> void:
+	if _simulation == null:
+		return
+	var origin: String = _simulation.player_location_id()
+	var route: Array = REGION.find_route(origin, travel_target_id)
+	var names: PackedStringArray = []
+	for id in route:
+		names.append(_simulation.location_name(id))
+	var busy: bool = not _simulation.state["player_party"]["route"].is_empty()
+	route_label.text = "%s\n%s\n%s" % [_simulation.location_name(travel_target_id), REGION.LOCATION_DATA[travel_target_id]["description"], "Already here." if route.is_empty() else " → ".join(names) + " · %d days" % route.size()]
+	travel_button.text = "Halt before changing route" if busy else "Issue travel order"
+	travel_button.disabled = busy or route.is_empty()
+	stop_button.disabled = not busy
+	map_board.select_location(travel_target_id, route)
 
 
 func _refresh_activity(entries: Array) -> void:
 	for child in activity_list.get_children():
 		activity_list.remove_child(child)
 		child.queue_free()
-	for index in range(maxi(0, entries.size() - 5), entries.size()):
+	for index in range(entries.size() - 1, maxi(-1, entries.size() - 6), -1):
 		var entry: Dictionary = entries[index]
 		var label := _label("D%02d · %s" % [int(entry["day"]), str(entry["message"])], 11, COLOR_MUTED)
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -313,7 +346,7 @@ func _caravan_summary(simulation: RefCounted, caravan: Dictionary) -> String:
 	if status == "awaiting_escort":
 		return "12 grain reserved at Nandipur · waiting for your return escort order."
 	if status == "travelling":
-		return "12 grain caravan · at %s · escorted days %d" % [simulation.location_name(str(caravan["location_id"])), int(caravan["escorted_days"])]
+		return "%d grain · at %s · escorted days %d\nMoves only while your retinue accompanies it toward Keshavwadi." % [int(caravan["cargo_grain"]), simulation.location_name(str(caravan["location_id"])), int(caravan["escorted_days"])]
 	if status == "awaiting_unload":
 		return "At Keshavwadi · clear storehouse space to unload 12 grain."
 	return "Delivered to Keshavwadi · 12 grain transferred and route obligation fulfilled."
@@ -336,47 +369,16 @@ func _build_section(parent: VBoxContainer, title: String, populate: Callable) ->
 
 
 func _panel_style() -> StyleBoxFlat:
-	var style := StyleBoxFlat.new()
-	style.bg_color = COLOR_PANEL
-	style.border_color = COLOR_PANEL_EDGE
-	style.set_border_width_all(1)
-	style.set_corner_radius_all(8)
-	style.content_margin_left = 12
-	style.content_margin_right = 12
-	style.content_margin_top = 9
-	style.content_margin_bottom = 9
-	return style
+	return UI.panel_style()
 
 
 func _label(text_value: String, size: int, color: Color) -> Label:
-	var label := Label.new()
-	label.text = text_value
-	label.add_theme_font_size_override("font_size", size)
-	label.add_theme_color_override("font_color", color)
-	return label
+	return UI.label(text_value, size, color)
 
 
 func _button(text_value: String, prominent: bool) -> Button:
-	var button := Button.new()
-	button.text = text_value
-	button.custom_minimum_size = Vector2(70, 36)
-	button.add_theme_color_override("font_color", COLOR_BG if prominent else COLOR_TEXT)
-	button.add_theme_color_override("font_hover_color", COLOR_BG if prominent else COLOR_TEXT)
-	button.add_theme_color_override("font_disabled_color", Color("#778179"))
-	var normal := StyleBoxFlat.new()
-	normal.bg_color = COLOR_ACCENT if prominent else Color("#35443b")
-	normal.set_corner_radius_all(5)
-	button.add_theme_stylebox_override("normal", normal)
-	var hover := normal.duplicate() as StyleBoxFlat
-	hover.bg_color = Color("#e0bf80") if prominent else Color("#45574b")
-	button.add_theme_stylebox_override("hover", hover)
-	button.add_theme_stylebox_override("pressed", hover)
-	var disabled := normal.duplicate() as StyleBoxFlat
-	disabled.bg_color = Color("#2a342f")
-	button.add_theme_stylebox_override("disabled", disabled)
-	return button
+	return UI.button(text_value, prominent)
 
 
 var party_status_label: Label
 var settlement_hud: Control
-var _settlement_status_label: Label

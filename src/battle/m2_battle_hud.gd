@@ -6,6 +6,8 @@ signal restart_requested
 const PLAYER_TEAM := 0
 const CPU_TEAM := 1
 
+var campaign_mode := false
+var play_again: Button
 var selection_label: Label
 var status_label: Label
 var counts_label: Label
@@ -29,6 +31,9 @@ func set_message(message: String) -> void:
 func update_battle(simulation: RefCounted, selected_unit_ids: Array[String]) -> void:
 	if not is_instance_valid(status_label):
 		return
+	if campaign_mode:
+		restart_button.text = "WITHDRAW ALL" if simulation.outcome == "ongoing" else "RETURN TO CAMPAIGN"
+		play_again.text = "RETURN TO CAMPAIGN"
 	counts_label.text = "YOUR FORCE  %d     •     OPPOSING FORCE  %d" % [simulation.unit_count(PLAYER_TEAM), simulation.unit_count(CPU_TEAM)]
 	if simulation.outcome == "ongoing":
 		status_label.text = "FIELD BATTLE  •  %02d:%02d" % [int(simulation.elapsed_seconds) / 60, int(simulation.elapsed_seconds) % 60]
@@ -67,7 +72,7 @@ func _build_hud() -> void:
 
 	var heading := _panel(root, "BattleTitle", Vector2(30.0, 24.0), Vector2(390.0, 78.0))
 	_label(heading, "DECCAN LORDS", 22, Color(0.91, 0.77, 0.50), Vector2(18.0, 7.0), Vector2(350.0, 32.0))
-	_label(heading, "M2  /  FIELD BATTLE PROTOTYPE", 12, Color(0.79, 0.76, 0.69), Vector2(20.0, 43.0), Vector2(350.0, 22.0))
+	_label(heading, "KALDAR PASS  /  CAMPAIGN ENCOUNTER" if campaign_mode else "M2  /  FIELD BATTLE PROTOTYPE", 12, Color(0.79, 0.76, 0.69), Vector2(20.0, 43.0), Vector2(350.0, 22.0))
 
 	status_label = _label(root, "FIELD BATTLE", 17, Color(0.94, 0.88, 0.74), Vector2(550.0, 24.0), Vector2(500.0, 42.0), HORIZONTAL_ALIGNMENT_CENTER)
 	var force_panel := _panel(root, "ForceSummary", Vector2(600.0, 75.0), Vector2(400.0, 50.0))
@@ -103,7 +108,7 @@ func _build_hud() -> void:
 	root.add_child(result_overlay)
 	result_title = _label(result_overlay, "VICTORY", 30, Color(0.92, 0.77, 0.48), Vector2(32.0, 34.0), Vector2(536.0, 48.0), HORIZONTAL_ALIGNMENT_CENTER)
 	result_detail = _label(result_overlay, "Your force holds the field.", 16, Color(0.90, 0.86, 0.77), Vector2(46.0, 96.0), Vector2(508.0, 48.0), HORIZONTAL_ALIGNMENT_CENTER)
-	var play_again := _button(result_overlay, "FIGHT AGAIN", Vector2(183.0, 174.0), Vector2(234.0, 54.0))
+	play_again = _button(result_overlay, "FIGHT AGAIN", Vector2(183.0, 174.0), Vector2(234.0, 54.0))
 	play_again.pressed.connect(func(): restart_requested.emit())
 
 

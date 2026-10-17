@@ -5,6 +5,9 @@ const UNIT_ACTOR_SCRIPT := preload("res://src/battle/battle_unit_actor.gd")
 const HUD_SCRIPT := preload("res://src/battle/m2_battle_hud.gd")
 const CAMERA_SCRIPT := preload("res://src/benchmark/rts_camera.gd")
 
+signal campaign_return_requested
+var campaign_simulation: RefCounted
+
 const PLAYER_TEAM := 0
 const CPU_TEAM := 1
 
@@ -17,11 +20,14 @@ var _seed := 173
 
 
 func _ready() -> void:
-	simulation = SIMULATION_SCRIPT.new()
+	simulation = campaign_simulation if campaign_simulation != null else SIMULATION_SCRIPT.new()
 	_build_world()
 	_build_camera()
 	_build_hud()
-	_restart_battle(_seed)
+	if campaign_simulation == null:
+		_restart_battle(_seed)
+	else:
+		_spawn_unit_actors()
 
 
 func _process(delta: float) -> void:
@@ -139,7 +145,8 @@ func _build_hud() -> void:
 	battle_hud = HUD_SCRIPT.new()
 	battle_hud.name = "BattleHUD"
 	battle_hud.retreat_requested.connect(_order_retreat)
-	battle_hud.restart_requested.connect(_restart_battle.bind(_seed))
+	battle_hud.campaign_mode = campaign_simulation != null
+	battle_hud.restart_requested.connect(_campaign_action if campaign_simulation != null else _restart_battle.bind(_seed))
 	add_child(battle_hud)
 
 
@@ -216,6 +223,10 @@ func _restart_battle(seed_value: int = 173) -> void:
 	unit_actors.clear()
 	selected_unit_ids.clear()
 	simulation.reset(seed_value)
+	_spawn_unit_actors()
+
+
+func _spawn_unit_actors() -> void:
 	for unit_id in simulation.units:
 		var actor: Node3D = UNIT_ACTOR_SCRIPT.new()
 		actor.configure(simulation.units[unit_id])
@@ -317,3 +328,15 @@ func _material(color: Color, roughness: float) -> StandardMaterial3D:
 	material.albedo_color = color
 	material.roughness = roughness
 	return material
+
+
+func _campaign_action() -> void:
+	if simulation.outcome != "ongoing":
+		campaign_return_requested.emit()
+		return
+	var ids: Array[String] = []
+	for id in simulation.units:
+		if int(simulation.units[id]["team"]) == PLAYER_TEAM:
+			ids.append(str(id))
+	simulation.issue_retreat(ids)
+	battle_hud.set_message("All surviving troops are withdrawing. Return when the battle ends.")

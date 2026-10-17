@@ -50,14 +50,16 @@ func _run_capture() -> void:
 	if not _save_frame(world, "res://artifacts/m4/campaign_initial_%s.png" % suffix):
 		await _fail("Could not save M4 initial campaign screen.", world)
 		return
+	world.hud.map_board.location_buttons["nandipur"].pressed.emit()
+	world.hud.travel_button.pressed.emit()
 	for day in range(2):
-		world.hud.destination_buttons_for_test["nandipur"].pressed.emit()
 		world.hud.advance_button.pressed.emit()
 	if world.simulation.player_location_id() != "nandipur":
 		await _fail("Campaign map travel control did not move the party to Nandipur.", world)
 		return
 	world.hud.contract_button.pressed.emit()
-	world.hud.destination_buttons_for_test["keshavwadi"].pressed.emit()
+	world.hud.map_board.location_buttons["keshavwadi"].pressed.emit()
+	world.hud.travel_button.pressed.emit()
 	for day in range(2):
 		world.hud.advance_button.pressed.emit()
 	if not world.simulation.state["caravan"]["status"] == "delivered":

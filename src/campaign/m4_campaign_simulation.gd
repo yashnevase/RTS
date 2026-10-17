@@ -6,24 +6,17 @@ extends RefCounted
 
 const SETTLEMENT_SIMULATION_SCRIPT := preload("res://src/settlement/settlement_simulation.gd")
 
-const SAVE_VERSION := 1
-const KESHVWADI_ID := "keshavwadi"
-const NANDIPUR_ID := "nandipur"
-const KALDAR_PASS_ID := "kaldar_pass"
-const SURYAGARH_ID := "suryagarh"
-const LOCATION_ORDER := [KESHVWADI_ID, KALDAR_PASS_ID, NANDIPUR_ID, SURYAGARH_ID]
-const LOCATION_DATA := {
-	KESHVWADI_ID: {"name": "Keshavwadi", "kind": "Settlement", "description": "The player's fictional settlement and household stores."},
-	KALDAR_PASS_ID: {"name": "Kaldar Pass", "kind": "Pass", "description": "A public route junction between the market and the settlement."},
-	NANDIPUR_ID: {"name": "Nandipur Market", "kind": "Market", "description": "A fictional merchant hub where escorted contracts are arranged."},
-	SURYAGARH_ID: {"name": "Suryagarh Fort", "kind": "Fort", "description": "The superior's nearby hill-fort seat."},
-}
-const CONNECTIONS := {
-	KESHVWADI_ID: [KALDAR_PASS_ID],
-	KALDAR_PASS_ID: [KESHVWADI_ID, NANDIPUR_ID, SURYAGARH_ID],
-	NANDIPUR_ID: [KALDAR_PASS_ID],
-	SURYAGARH_ID: [KALDAR_PASS_ID],
-}
+const SAVE_VERSION := 3
+const ENCOUNTER := preload("res://src/campaign/campaign_encounter.gd")
+var active_battle: RefCounted
+const REGION := preload("res://src/world/region_definition.gd")
+const KESHVWADI_ID := REGION.KESHVWADI_ID
+const NANDIPUR_ID := REGION.NANDIPUR_ID
+const KALDAR_PASS_ID := REGION.KALDAR_PASS_ID
+const SURYAGARH_ID := REGION.SURYAGARH_ID
+const LOCATION_ORDER := REGION.LOCATION_ORDER
+const LOCATION_DATA := REGION.LOCATION_DATA
+const CONNECTIONS := REGION.CONNECTIONS
 const CARAVAN_GRAIN := 12
 const CARAVAN_PRICE := 24
 const MAX_ACTIVITY_LOG := 18
@@ -32,6 +25,7 @@ const MAX_KNOWLEDGE_RECORDS := 8
 var settlement: RefCounted
 var state: Dictionary = {}
 var last_error := ""
+var _party_departed_from := ""
 
 
 func _init() -> void:
@@ -40,6 +34,7 @@ func _init() -> void:
 
 func reset() -> void:
 	last_error = ""
+	active_battle = null
 	settlement.reset()
 	state = {
 		"day": int(settlement.state["day"]),
@@ -79,6 +74,7 @@ func reset() -> void:
 			"obligation": "Keep the Kaldar route open for the settlement and market.",
 		},
 		"activity_log": [],
+		"encounter": ENCOUNTER.initial_state(),
 	}
 	_record("briefing", "Governor Amara expects the Kaldar route to remain usable. Leela trades from Nandipur Market.")
 
@@ -97,6 +93,8 @@ func player_location_id() -> String:
 
 
 func request_travel(destination_id: String) -> bool:
+	if active_battle != null:
+		return _reject("Finish the battle before issuing campaign orders.")
 	last_error = ""
 	if not LOCATION_DATA.has(destination_id):
 		return _reject("Unknown destination.")
@@ -119,17 +117,11 @@ func request_travel(destination_id: String) -> bool:
 
 func accept_escort_contract() -> bool:
 	last_error = ""
-	var party: Dictionary = state.get("player_party", {})
-	var merchant: Dictionary = state.get("merchant", {})
-	var caravan: Dictionary = state.get("caravan", {})
-	if str(party.get("location_id", "")) != str(merchant.get("location_id", "")):
-		return _reject("Travel to Nandipur Market to arrange Leela's contract.")
-	if str(caravan.get("status", "")) != "idle":
-		return _reject("Leela has no new grain caravan available.")
-	if int(merchant.get("inventory_grain", 0)) < CARAVAN_GRAIN:
-		return _reject("Leela does not have enough grain for this contract.")
-	if int(settlement.state.get("treasury", 0)) < CARAVAN_PRICE:
-		return _reject("Keshavwadi's treasury cannot pay the %d-coin contract." % CARAVAN_PRICE)
+	var blocked := contract_block_reason()
+	if not blocked.is_empty():
+		return _reject(blocked)
+	var merchant: Dictionary = state["merchant"]
+	var caravan: Dictionary = state["caravan"]
 	merchant["inventory_grain"] = int(merchant["inventory_grain"]) - CARAVAN_GRAIN
 	merchant["capital"] = int(merchant["capital"]) + CARAVAN_PRICE
 	merchant["last_decision"] = "Contract accepted; waiting for a public escort order back to Keshavwadi."
@@ -149,8 +141,54 @@ func accept_escort_contract() -> bool:
 	return true
 
 
+func stop_travel() -> bool:
+	if active_battle != null:
+		return _reject("Finish the battle before issuing campaign orders.")
+	if state["player_party"]["route"].is_empty():
+		return _reject("The party has no active travel order.")
+	state["player_party"]["route"] = []
+	state["player_party"]["destination_id"] = ""
+	last_error = ""
+	_record("order", "Retinue halted at %s. The caravan waits at its own location until accompanied." % location_name(player_location_id()))
+	return true
+
+
+func contract_block_reason() -> String:
+	if active_battle != null:
+		return "Finish the battle before arranging a shipment."
+	if state["caravan"]["status"] != "idle":
+		return "This shipment has already been commissioned."
+	if player_location_id() != NANDIPUR_ID:
+		return "Meet Leela at Nandipur Market."
+	if not state["player_party"]["route"].is_empty():
+		return "Halt your travel order before arranging a shipment."
+	if int(state["merchant"]["inventory_grain"]) < CARAVAN_GRAIN:
+		return "Leela has insufficient grain."
+	if int(settlement.state["treasury"]) < CARAVAN_PRICE:
+		return "The treasury needs %d coin." % CARAVAN_PRICE
+	return ""
+
+
+func next_objective() -> String:
+	var caravan: Dictionary = state["caravan"]
+	match str(caravan["status"]):
+		"idle":
+			return "Secure supplies • Meet Leela at Nandipur Market and commission a grain shipment."
+		"awaiting_escort":
+			return "Escort the shipment • Order your retinue home to Keshavwadi."
+		"travelling":
+			return "Keep the convoy together • Escort it from %s to Keshavwadi." % location_name(str(caravan["location_id"]))
+		"awaiting_unload":
+			return "Make room • Free %d storage units, and bring the retinue to Keshavwadi." % maxi(0, int(caravan["cargo_grain"]) - settlement.free_storage())
+		_:
+			return "Route secured • Grain delivered. Review the settlement's labour, food and finances."
+
+
 func advance_day() -> Dictionary:
 	last_error = ""
+	if active_battle != null:
+		_reject("Campaign time is paused during battle.")
+		return {"day": current_day(), "merchant_decision": "", "party_movement": "", "delivery_completed": false}
 	var settlement_report: Dictionary = settlement.advance_day()
 	state["day"] = int(settlement.state["day"])
 	var report := {
@@ -161,6 +199,7 @@ func advance_day() -> Dictionary:
 		"caravan_movement": "",
 		"delivery_completed": false,
 	}
+	report["recovery"] = _recover_retinue()
 	report["merchant_decision"] = _merchant_decide()
 	report["party_movement"] = _advance_player_party()
 	report["caravan_movement"] = _advance_caravan()
@@ -178,10 +217,12 @@ func to_save_data() -> Dictionary:
 
 func load_save_data(save_data: Variant) -> bool:
 	last_error = ""
+	if active_battle != null:
+		return _reject("Finish the battle before loading a campaign.")
 	if typeof(save_data) != TYPE_DICTIONARY:
 		return _reject("Campaign save data must be a dictionary.")
 	var root_data: Dictionary = save_data
-	if int(root_data.get("schema_version", -1)) != SAVE_VERSION:
+	if not _is_positive_int(root_data.get("schema_version")) or int(root_data["schema_version"]) not in [1, 2, SAVE_VERSION]:
 		return _reject("This campaign save uses an unsupported version.")
 	if typeof(root_data.get("campaign_state")) != TYPE_DICTIONARY or typeof(root_data.get("settlement")) != TYPE_DICTIONARY:
 		return _reject("Campaign save is missing campaign or settlement state.")
@@ -189,6 +230,15 @@ func load_save_data(save_data: Variant) -> bool:
 	if not candidate_settlement.load_save_data(root_data["settlement"]):
 		return _reject("Settlement state is invalid: %s" % candidate_settlement.last_error)
 	var candidate: Dictionary = _normalize_json_numbers((root_data["campaign_state"] as Dictionary).duplicate(true))
+	if int(root_data["schema_version"]) == 1:
+		candidate["encounter"] = ENCOUNTER.initial_state()
+	elif int(root_data["schema_version"]) == 2:
+		if typeof(candidate.get("encounter")) != TYPE_DICTIONARY:
+			return _reject("Encounter data is missing.")
+		candidate["encounter"]["completed"] = 1 if candidate["encounter"].get("status") == "resolved" else 0
+	var encounter_error := ENCOUNTER.validate(candidate.get("encounter"))
+	if not encounter_error.is_empty():
+		return _reject(encounter_error)
 	var validation_error := _validate_campaign_state(candidate, candidate_settlement)
 	if not validation_error.is_empty():
 		return _reject(validation_error)
@@ -205,7 +255,7 @@ func _merchant_decide() -> String:
 		return ""
 	var party: Dictionary = state.get("player_party", {})
 	var merchant: Dictionary = (state.get("merchant", {}) as Dictionary).duplicate(true)
-	var party_is_ready := str(party.get("location_id", "")) == NANDIPUR_ID and str(party.get("destination_id", "")) == KESHVWADI_ID and not (party.get("route", []) as Array).is_empty()
+	var party_is_ready := str(party.get("location_id", "")) == NANDIPUR_ID and str(party.get("destination_id")) == KESHVWADI_ID and not (party.get("route", []) as Array).is_empty()
 	caravan["last_decision_day"] = current_day()
 	if party_is_ready:
 		caravan["status"] = "travelling"
@@ -226,11 +276,13 @@ func _merchant_decide() -> String:
 
 
 func _advance_player_party() -> String:
+	_party_departed_from = ""
 	var party: Dictionary = (state.get("player_party", {}) as Dictionary).duplicate(true)
 	var route: Array = party.get("route", [])
 	if route.is_empty():
 		return ""
 	var previous_id := str(party["location_id"])
+	_party_departed_from = previous_id
 	var next_id := str(route.pop_front())
 	party["location_id"] = next_id
 	party["route"] = route
@@ -250,6 +302,11 @@ func _advance_caravan() -> String:
 	if route.is_empty():
 		return ""
 	var previous_id := str(caravan["location_id"])
+	# Only follow a party that actually moved from this location this day.
+	# A cancelled or diverted order must never send the escort on alone.
+	var party: Dictionary = state["player_party"]
+	if _party_departed_from != previous_id or str(party["location_id"]) != str(route[0]):
+		return ""
 	var next_id := str(route.pop_front())
 	caravan["location_id"] = next_id
 	caravan["route"] = route
@@ -270,7 +327,7 @@ func _resolve_delivery() -> bool:
 		return false
 	var party: Dictionary = state.get("player_party", {})
 	if str(party.get("location_id", "")) != KESHVWADI_ID:
-		caravan["status"] = "awaiting_escort"
+		caravan["status"] = "awaiting_unload"
 		state["caravan"] = caravan
 		_record("caravan", "Leela's caravan is waiting at Keshavwadi until the contracted escort arrives.")
 		return false
@@ -293,23 +350,7 @@ func _resolve_delivery() -> bool:
 
 
 func _find_route(origin_id: String, destination_id: String) -> Array:
-	if not CONNECTIONS.has(origin_id) or not CONNECTIONS.has(destination_id):
-		return []
-	var frontier: Array = [origin_id]
-	var paths := {origin_id: []}
-	while not frontier.is_empty():
-		var current_id := str(frontier.pop_front())
-		if current_id == destination_id:
-			return paths[current_id]
-		for neighbour_value in CONNECTIONS[current_id]:
-			var neighbour_id := str(neighbour_value)
-			if paths.has(neighbour_id):
-				continue
-			var next_path: Array = (paths[current_id] as Array).duplicate()
-			next_path.append(neighbour_id)
-			paths[neighbour_id] = next_path
-			frontier.append(neighbour_id)
-	return []
+	return REGION.find_route(origin_id, destination_id)
 
 
 func _append_merchant_knowledge(merchant: Dictionary, record: String) -> void:
@@ -367,8 +408,12 @@ func _validate_party(value: Variant) -> String:
 	var party: Dictionary = value
 	if not _valid_entity_text(party, ["id", "name"]) or not _valid_location_id(str(party.get("location_id", ""))):
 		return "Player party identity or location is invalid."
-	if not _valid_optional_location_id(party.get("destination_id", "")) or not _valid_route(party.get("route", [])):
+	if not _valid_optional_location_id(party.get("destination_id")) or not _valid_route(party.get("route")):
 		return "Player party route is invalid."
+	if not REGION.valid_path(str(party["location_id"]), party["route"], str(party["destination_id"])):
+		return "Player route crosses an unconnected location or ends at the wrong destination."
+	if party["route"].is_empty() and not str(party["destination_id"]).is_empty():
+		return "Stationary party has an unfinished destination."
 	return ""
 
 
@@ -398,8 +443,10 @@ func _validate_caravan(value: Variant, candidate_day: int) -> String:
 		return "Caravan identity or location is invalid."
 	if not ["idle", "awaiting_escort", "travelling", "awaiting_unload", "delivered"].has(str(caravan.get("status", ""))):
 		return "Caravan status is invalid."
-	if not _valid_optional_location_id(caravan.get("destination_id", "")) or not _valid_route(caravan.get("route", [])):
+	if not _valid_optional_location_id(caravan.get("destination_id")) or not _valid_route(caravan.get("route")):
 		return "Caravan route is invalid."
+	if not REGION.valid_path(str(caravan["location_id"]), caravan["route"], str(caravan["destination_id"])):
+		return "Caravan route crosses an unconnected location or ends at the wrong destination."
 	for key in ["cargo_grain", "contract_price", "escorted_days", "last_decision_day"]:
 		if not _is_nonnegative_int(caravan.get(key)):
 			return "Caravan '%s' is invalid." % key
@@ -475,3 +522,115 @@ func _normalize_json_numbers(value: Variant) -> Variant:
 func _reject(message: String) -> bool:
 	last_error = message
 	return false
+
+
+func encounter_block_reason() -> String:
+	if active_battle != null:
+		return "Battle in progress."
+	if state["encounter"]["status"] == "resolved":
+		return "Last patrol: %s; %d current troops, %d battle casualties. Recover at Keshavwadi." % [state["encounter"]["outcome"], state["encounter"]["roster"].size(), state["encounter"]["losses"]]
+	if player_location_id() != KALDAR_PASS_ID:
+		return "Travel to Kaldar Pass to confront the opposing patrol."
+	if not state["player_party"]["route"].is_empty():
+		return "Halt your travel order before entering battle."
+	return ""
+
+
+func begin_encounter() -> bool:
+	var reason := encounter_block_reason()
+	if not reason.is_empty():
+		return _reject(reason)
+	active_battle = ENCOUNTER.create_battle(state["encounter"])
+	last_error = ""
+	return true
+
+
+func finish_encounter() -> bool:
+	if active_battle == null or active_battle.outcome == "ongoing":
+		return _reject("The battle must end before returning to the campaign.")
+	var encounter: Dictionary = state["encounter"]
+	if encounter["status"] != "available":
+		return _reject("This encounter was already resolved.")
+	var survivors := ENCOUNTER.roster_from(active_battle)
+	encounter["losses"] = encounter["roster"].size() - survivors.size()
+	encounter["roster"] = survivors
+	encounter["status"] = "resolved"
+	encounter["outcome"] = active_battle.outcome
+	encounter["completed"] = int(encounter["completed"]) + 1
+	_record("battle", "Kaldar Pass: %s. %d survive, %d lost. Surviving troops retain their wounds." % [active_battle.outcome, survivors.size(), encounter["losses"]])
+	active_battle = null
+	last_error = ""
+	return true
+
+
+func home_service_block_reason() -> String:
+	if active_battle != null:
+		return "Finish the battle first."
+	if player_location_id() != KESHVWADI_ID:
+		return "Return to Keshavwadi for recovery and replacements."
+	if not state["player_party"]["route"].is_empty():
+		return "Halt the retinue at home first."
+	return ""
+
+
+func recruit_block_reason() -> String:
+	var reason := home_service_block_reason()
+	if not reason.is_empty():
+		return reason
+	if ENCOUNTER.missing_soldiers(state["encounter"]).is_empty():
+		return "All five retinue places are filled."
+	if int(settlement.state["treasury"]) < ENCOUNTER.RECRUIT_COIN or int(settlement.state["inventory"]["grain"]) < ENCOUNTER.RECRUIT_GRAIN:
+		return "A replacement needs %d coin and %d grain." % [ENCOUNTER.RECRUIT_COIN, ENCOUNTER.RECRUIT_GRAIN]
+	return ""
+
+
+func recruit_replacement() -> bool:
+	var reason := recruit_block_reason()
+	if not reason.is_empty():
+		return _reject(reason)
+	var soldier: Dictionary = ENCOUNTER.missing_soldiers(state["encounter"])[0]
+	settlement.state["treasury"] -= ENCOUNTER.RECRUIT_COIN
+	settlement.state["inventory"]["grain"] -= ENCOUNTER.RECRUIT_GRAIN
+	state["encounter"]["roster"].append(soldier)
+	_record("recruitment", "Hired a replacement %s for %d coin and %d grain." % [soldier["role"], ENCOUNTER.RECRUIT_COIN, ENCOUNTER.RECRUIT_GRAIN])
+	last_error = ""
+	return true
+
+
+func prepare_patrol_block_reason() -> String:
+	var reason := home_service_block_reason()
+	if not reason.is_empty():
+		return reason
+	if state["encounter"]["status"] != "resolved":
+		return "A patrol encounter is already available at Kaldar Pass."
+	if not ENCOUNTER.missing_soldiers(state["encounter"]).is_empty():
+		return "Replace fallen troops before preparing another patrol."
+	if ENCOUNTER.wounded_count(state["encounter"]) > 0:
+		return "Rest at home until all surviving troops recover."
+	return ""
+
+
+func prepare_patrol() -> bool:
+	var reason := prepare_patrol_block_reason()
+	if not reason.is_empty():
+		return _reject(reason)
+	state["encounter"]["status"] = "available"
+	_record("patrol", "Retinue ready. A new opposing patrol is available at Kaldar Pass.")
+	last_error = ""
+	return true
+
+
+func _recover_retinue() -> int:
+	if not home_service_block_reason().is_empty():
+		return 0
+	var healed := 0
+	for soldier in state["encounter"]["roster"]:
+		var maximum := int(ENCOUNTER.BATTLE.UNIT_ROLES[soldier["role"]]["max_health"])
+		if int(soldier["health"]) >= maximum or int(settlement.state["inventory"]["grain"]) < ENCOUNTER.HEAL_GRAIN:
+			continue
+		soldier["health"] = mini(maximum, int(soldier["health"]) + ENCOUNTER.HEAL_PER_DAY)
+		settlement.state["inventory"]["grain"] -= ENCOUNTER.HEAL_GRAIN
+		healed += 1
+	if healed > 0:
+		_record("recovery", "%d wounded troops rested at home; used %d grain after household consumption." % [healed, healed * ENCOUNTER.HEAL_GRAIN])
+	return healed

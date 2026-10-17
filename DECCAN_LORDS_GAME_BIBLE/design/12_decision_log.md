@@ -149,3 +149,25 @@ Captured the user's expanded vision and key open questions. No detailed formulas
 - Campaign time now advances the same M3 settlement instance; a single versioned save stores campaign and settlement state together.
 - Logged the merchant's choice from information available at Nandipur and made goods, treasury and standing consequences observable.
 - Documented all M4 names, figures, timing and outcome as temporary prototype content; the M5 tactical-battle connection remains next.
+
+### 2026-10-17 — Gameplay foundation and maintainability pass
+
+- User direction: improve the existing gameplay and structure before broad graphics/physics work; retain later day/night, weather, water and terrain ambitions.
+- Implementation choice: share geography, JSON transport and UI construction; keep campaign/settlement rules separate from presentation. Preserve prior benchmark scenes as references.
+- Provisional behavior: halt cancels a party route; convoy movement requires the escort to traverse the same road on the same day. Existing shipment quantities and standing effects remain prototype tuning.
+- Current evidence: Godot editor import only. Gameplay regression and visual review are outstanding; M5 encounter/battle integration remains unimplemented.
+
+### 2026-10-17 — M5 campaign battle connection
+
+- User approved proceeding with the recommended campaign-to-battle step.
+- Provisional slice: one optional encounter at Kaldar Pass, using the existing M2 scenario, with paused campaign time and persistent player casualties/wounds. No new economic rewards or final combat balance implied.
+- Campaign owns the active combat simulation; scene return applies its result once. Standalone battle restart remains separate.
+- Schema 2 adds encounter state and migrates schema 1. Mid-battle saves are not supported.
+- Implementation/import only; interaction, gameplay regression and migration verification are pending. See `23_m5_campaign_battle_prototype.md`.
+
+### 2026-10-17 — M5 recovery/repeat gate before M6
+
+- User requested the next step according to the document. The M5 gate explicitly requires recovery and repetition; the one-shot implementation did not satisfy that gate.
+- Added provisional home rest (+20 health/day for 1 grain per wounded troop), external replacement hiring (12 coin + 2 grain per missing roster slot), and preparing another patrol after all five troops are healthy. These are tunable prototype values, not locked rules.
+- Campaign schema 3 migrates versions 1 and 2 and retains completed patrol count. Fixed integer/float health differences that broke exact save round trips.
+- The bounded repeat/recover/save loop is covered by deterministic simulation and real viewport mouse-input checks. Evidence and remaining limits are in `../../artifacts/m5/README.md`. No broad M6 art/content expansion started.

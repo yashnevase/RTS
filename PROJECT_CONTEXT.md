@@ -1,12 +1,12 @@
 # DECCAN LORDS — Project Context for ChatGPT / Codex
 
-**Last updated:** 2026-10-17 (M4 strategic campaign prototype completed)
-**Phase:** Discovery / pre-production. M0–M4 are complete bounded prototypes; this is not approval for full production or a final art-direction lock.
+**Last updated:** 2026-10-17 (bounded M5 recovery/repeat loop verified)
+**Phase:** Discovery / pre-production. M0–M4 are complete bounded prototypes; the M5 patrol/recovery loop is now verified within its documented limits; this is not approval for full production or a final art-direction lock.
 
 ## Current milestone status
 - M0 is complete: the Godot project lives at the repository root, imports and runs on the Mac, Blender is available, and the project-local specialist skills are installed.
 - M1 is a small 3D plateau visual/control study. The user's current exploration preference is grounded or historically informed forms with stylized readability (B plus some A), a mix of suitable licensed assets and original work, and local LLM use only for low-risk repetitive labor. These preferences guide this benchmark and workflow; the final art direction remains open.
-- M2 is a standalone 5v5 RTS battle prototype with guard, archer and cavalry roles, group move spacing, contextual attack orders, retreat, health/damage, an explainable CPU force, victory/defeat and restart. Role values and this battle's starting composition are prototype placeholders, not final balance or historical rules. The battle is not yet connected to campaign state; that is M5 scope.
+- M2 is a standalone 5v5 RTS battle prototype with guard, archer and cavalry roles, group move spacing, contextual attack orders, retreat, health/damage, an explainable CPU force, victory/defeat and restart. Role values and this battle's starting composition are prototype placeholders, not final balance or historical rules. The battle is now connected through the bounded M5 encounter/recovery prototype described below.
 - M3 is a playable single-settlement economy prototype with three household groups, pooled labour, farming/woodcutting/milling, grain consumption, bounded storage, a finite market, prototype taxes/upkeep, priority notices and versioned JSON save/load. Its fictional settlement and all starting values/formulas are explicitly temporary and documented in `DECCAN_LORDS_GAME_BIBLE/design/21_m3_settlement_prototype.md`.
 - M4 is a compact strategic-region prototype with four fictional named locations, graph travel, a player party, superior standing/obligation, a persistent merchant and an explainable grain-caravan escort contract. Campaign day advancement settles the same owned M3 settlement simulation shown in the settlement tab; campaign save/load contains both states. M4's names, route, starting figures, price and +2 standing consequence are temporary prototype content, documented in `DECCAN_LORDS_GAME_BIBLE/design/22_m4_strategic_campaign_prototype.md`.
 - The user asked for completed, reviewed milestones to be pushed to the dedicated `RTS` GitHub repository. Keep `RTS-Docs` as the design/reference source; use `RTS` for the playable project.
@@ -98,7 +98,7 @@ The user supplied a preliminary historical story draft (mostly c. 1500–1700). 
 
 ## Next execution step
 
-M4 is complete and reviewable as a strategic-region prototype. The recommended next gate is M5: connect a campaign encounter to the existing tactical battle, then write casualties and other outcomes back into the same saved campaign state. Keep the M3/M4 placeholder values out of final balance and historical claims. Keep local LLMs out of architecture and integration work; use them only for deterministic, low-risk labor with a clear quality check.
+M5 now supports repeated patrols, persistent casualties/wounds, home healing, paid replacements and schema 1/2 migration to schema 3. Next is a bounded M6 readability/onboarding pass; broader battle consequences (politics, loot, military supply and holdings damage) remain unimplemented and need designed rules. Keep the M3/M4 placeholder values out of final balance and historical claims. Keep local LLMs out of architecture and integration work; use them only for deterministic, low-risk labor with a clear quality check.
 
 The expanded progression inventory is in `DECCAN_LORDS_GAME_BIBLE/design/19_feature_register_and_campaign_progression.md`. The user’s long-term vision includes a lord-to-king/empire career, family/clan/companions and delegated administration, settlement development, production/warehouse/trade/credit, political relations, parties/armies, wages/patrols/fortifications, RTS battles/sieges, and intelligence/events. These are preserved as proposed long-term features, not all promised for the first playable slice.
 
@@ -108,3 +108,15 @@ The expanded progression inventory is in `DECCAN_LORDS_GAME_BIBLE/design/19_feat
 DECCAN LORDS is a fictional alternate-history game inspired by the Deccan and neighbouring powers, not a strict reenactment. No real historical hero or specific Maratha/Shivaji storyline is required. Fictional Deccan kingdoms, clans, rulers and characters may be paired with broadly inspired imperial powers, including a Mughal-style empire. Historical research should be selective—used for geography, architecture, economy, logistics and plausibility when it helps the game—not a prerequisite to starting the RTS prototype.
 
 The main campaign should use an authored persistent strategic map, with cities, villages, forts, terrain, roads, rivers, factions, characters and relationships stored as data. Start with one compact fixed region, then expand it in stages. This is more aligned with the campaign/political sandbox than designing the game around random maps. Random maps may be considered later for a separate skirmish mode. Exact region size, settlement count, faction count and roster remain open.
+
+## Current foundation pass — 2026-10-17
+
+The user requested stronger gameplay, maintainability and coherent controls before environment polish. The working tree now centralizes region geography, save-file transport and UI factories; adds named map selection with route previews, explicit travel/halt controls, objectives and resources; removes nested settlement scrolling; and requires caravans to follow actual escorted road movement. Connected-route save validation is stricter. Prototype tuning remains provisional. Editor import completed; gameplay regression and visual review remain pending. Do not treat this pass as a verified release or M5 completion. See `ARCHITECTURE.md`.
+
+## M5 connection implementation — 2026-10-17
+
+The working tree now connects an optional Kaldar Pass encounter to the existing tactical battle. Campaign owns the battle simulation; return records survivor IDs/health, casualties and outcome once. Combat pauses campaign time and blocks save/load. Schema 2 migrates schema 1 campaign saves with fresh encounter data. Standalone M2 remains available. See `DECCAN_LORDS_GAME_BIBLE/design/23_m5_campaign_battle_prototype.md`. Import only has been checked; gameplay and visual verification remain pending. Earlier statements that battles are wholly disconnected describe the previous milestone. Recruitment, recovery and repeatable encounters remain future scope.
+
+## M5 recovery and repeat-loop update — 2026-10-17
+
+Supersedes the earlier pending-verification/one-shot status above. Home rest restores up to 20 health per wounded troop/day for 1 grain each after households eat. Missing roster slots can be replaced at home for 12 coin + 2 grain each; this is external hiring, not household recruitment. Five healthy troops can prepare another optional patrol. Schema 3 preserves completed patrol count and last casualties; versions 1/2 migrate. The previous health numeric-type save-roundtrip bug is fixed. See `artifacts/m5/README.md` for current evidence. All tuning remains provisional, and this is not the complete M5 consequence list or a release claim.

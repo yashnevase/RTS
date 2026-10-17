@@ -7,6 +7,7 @@ signal save_requested
 signal load_requested
 signal trade_requested(good: String, direction: String, quantity: int)
 
+const UI := preload("res://src/ui/game_ui.gd")
 const SIMULATION_SCRIPT := preload("res://src/settlement/settlement_simulation.gd")
 const GOODS := ["grain", "timber", "flour"]
 const GOOD_LABELS := {"grain": "Grain", "timber": "Timber", "flour": "Flour"}
@@ -342,38 +343,12 @@ func _make_section(parent: VBoxContainer, title: String) -> VBoxContainer:
 
 
 func _panel_style() -> StyleBoxFlat:
-	var style := StyleBoxFlat.new()
-	style.bg_color = COLOR_PANEL
-	style.border_color = COLOR_PANEL_EDGE
-	style.set_border_width_all(1)
-	style.set_corner_radius_all(8)
-	style.content_margin_left = 14
-	style.content_margin_right = 14
-	style.content_margin_top = 11
-	style.content_margin_bottom = 11
-	return style
+	return UI.panel_style()
 
 
 func _label(text_value: String, size: int, color: Color) -> Label:
-	var label := Label.new()
-	label.text = text_value
-	label.add_theme_font_size_override("font_size", size)
-	label.add_theme_color_override("font_color", color)
-	return label
+	return UI.label(text_value, size, color)
 
 
 func _button(text_value: String, prominent: bool) -> Button:
-	var button := Button.new()
-	button.text = text_value
-	button.custom_minimum_size = Vector2(70, 34)
-	button.add_theme_color_override("font_color", COLOR_BG if prominent else COLOR_TEXT)
-	button.add_theme_color_override("font_hover_color", COLOR_BG if prominent else COLOR_TEXT)
-	var normal := StyleBoxFlat.new()
-	normal.bg_color = COLOR_ACCENT if prominent else Color("#35443b")
-	normal.set_corner_radius_all(5)
-	button.add_theme_stylebox_override("normal", normal)
-	var hover := normal.duplicate() as StyleBoxFlat
-	hover.bg_color = Color("#e0bf80") if prominent else Color("#45574b")
-	button.add_theme_stylebox_override("hover", hover)
-	button.add_theme_stylebox_override("pressed", hover)
-	return button
+	return UI.button(text_value, prominent)
