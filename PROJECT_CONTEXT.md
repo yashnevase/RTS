@@ -1,15 +1,16 @@
 # DECCAN LORDS — Project Context for ChatGPT / Codex
 
-**Last updated:** 2026-10-17 (M2 standalone battle prototype completed)
-**Phase:** Discovery / pre-production. M0–M2 are complete bounded prototypes; this is not approval for full production or a final art-direction lock.
+**Last updated:** 2026-10-17 (M3 settlement/economy prototype completed)
+**Phase:** Discovery / pre-production. M0–M3 are complete bounded prototypes; this is not approval for full production or a final art-direction lock.
 
 ## Current milestone status
 - M0 is complete: the Godot project lives at the repository root, imports and runs on the Mac, Blender is available, and the project-local specialist skills are installed.
 - M1 is a small 3D plateau visual/control study. The user's current exploration preference is grounded or historically informed forms with stylized readability (B plus some A), a mix of suitable licensed assets and original work, and local LLM use only for low-risk repetitive labor. These preferences guide this benchmark and workflow; the final art direction remains open.
 - M2 is a standalone 5v5 RTS battle prototype with guard, archer and cavalry roles, group move spacing, contextual attack orders, retreat, health/damage, an explainable CPU force, victory/defeat and restart. Role values and this battle's starting composition are prototype placeholders, not final balance or historical rules. The battle is not yet connected to campaign state; that is M5 scope.
+- M3 is a playable single-settlement economy prototype with three household groups, pooled labour, farming/woodcutting/milling, grain consumption, bounded storage, a finite market, prototype taxes/upkeep, priority notices and versioned JSON save/load. Its fictional settlement and all starting values/formulas are explicitly temporary and documented in `DECCAN_LORDS_GAME_BIBLE/design/21_m3_settlement_prototype.md`.
 - The user asked for completed, reviewed milestones to be pushed to the dedicated `RTS` GitHub repository. Keep `RTS-Docs` as the design/reference source; use `RTS` for the playable project.
-- M1 evidence is under `artifacts/m1/`; M2 interaction evidence is under `artifacts/m2/`. Neither benchmark locks final art direction or promises full feature scope.
-- The user's current sequencing preference is to establish the core game loops before a broad cinematic/cosmetic art pass. Desired later world features include day/night, changing weather and varied terrain. Their rules and gameplay effects remain open; they are not in the M2 battle slice.
+- M1 evidence is under `artifacts/m1/`; M2 interaction evidence is under `artifacts/m2/`; M3 interaction evidence is under `artifacts/m3/`. These prototypes do not lock final art direction or promise full feature scope.
+- The user's current sequencing preference is to establish the core game loops before a broad cinematic/cosmetic art pass. Desired later world features include day/night, changing weather and varied terrain. Their rules and gameplay effects remain open; they are not in M3.
 
 ## The user's end goal
 Create a polished, atmospheric, stylized 3D PC strategy game set in historical/alternate-history India, with a strong Deccan focus. The dream is to recover the feeling of playing Age of Empires, Rise of Nations, Anno, Bannerlord, Stronghold/Manor Lords, and some accessible progression appeal observed in Clash of Clans—but not simply clone any one of them.
@@ -96,7 +97,7 @@ The user supplied a preliminary historical story draft (mostly c. 1500–1700). 
 
 ## Next execution step
 
-M2 is complete and reviewable. The recommended next gate is M3: one settlement with household groups, labour assignments, a few production activities, storage, a simple market exchange, taxes/upkeep and prioritized notifications. Let the user review the battle prototype before starting M3. Keep local LLMs out of architecture and integration work; use them only for deterministic, low-risk labor with a clear quality check.
+M3 is complete and reviewable. The recommended next gate is M4: a compact authored strategic region with a few locations, one player lord, one rival or superior, one moving party, and time-driven travel over shared settlement state. Keep local LLMs out of architecture and integration work; use them only for deterministic, low-risk labor with a clear quality check. Review M3's prototype numbers before allowing them to become campaign defaults.
 
 The expanded progression inventory is in `DECCAN_LORDS_GAME_BIBLE/design/19_feature_register_and_campaign_progression.md`. The user’s long-term vision includes a lord-to-king/empire career, family/clan/companions and delegated administration, settlement development, production/warehouse/trade/credit, political relations, parties/armies, wages/patrols/fortifications, RTS battles/sieges, and intelligence/events. These are preserved as proposed long-term features, not all promised for the first playable slice.
 

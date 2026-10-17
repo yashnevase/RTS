@@ -1,5 +1,7 @@
 extends SceneTree
 
+const SCENE_PATH := "res://scenes/battle/m2_field_battle.tscn"
+
 
 func _initialize() -> void:
 	call_deferred("_run_capture")
@@ -19,10 +21,9 @@ func _save_frame(world: Node3D, path: String) -> bool:
 
 
 func _run_capture() -> void:
-	var main_scene_path := str(ProjectSettings.get_setting("application/run/main_scene"))
-	var packed_scene := load(main_scene_path) as PackedScene
+	var packed_scene := load(SCENE_PATH) as PackedScene
 	if packed_scene == null:
-		push_error("M2 interaction capture could not load the configured main scene: %s" % main_scene_path)
+		push_error("M2 interaction capture could not load its battle scene: %s" % SCENE_PATH)
 		quit(1)
 		return
 	var world := packed_scene.instantiate() as Node3D

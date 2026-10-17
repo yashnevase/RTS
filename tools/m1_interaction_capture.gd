@@ -1,5 +1,7 @@
 extends SceneTree
 
+const SCENE_PATH := "res://scenes/benchmark/m1_field_study.tscn"
+
 func _initialize() -> void:
 	call_deferred("_run_capture")
 
@@ -13,15 +15,14 @@ func _fail_and_quit(message: String, world: Node3D) -> void:
 
 
 func _run_capture() -> void:
-	var main_scene_path := str(ProjectSettings.get_setting("application/run/main_scene"))
-	var main_scene := load(main_scene_path) as PackedScene
+	var main_scene := load(SCENE_PATH) as PackedScene
 	if main_scene == null:
-		push_error("M1 interaction capture could not load the configured main scene: %s" % main_scene_path)
+		push_error("M1 interaction capture could not load its benchmark scene: %s" % SCENE_PATH)
 		quit(1)
 		return
 	var world := main_scene.instantiate() as Node3D
 	if world == null:
-		push_error("The configured main scene root is not Node3D: %s" % main_scene_path)
+		push_error("The M1 benchmark scene root is not Node3D: %s" % SCENE_PATH)
 		quit(1)
 		return
 	root.add_child(world)

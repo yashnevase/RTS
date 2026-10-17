@@ -119,7 +119,7 @@ These are hypotheses to validate through playtesting, not proven retention outco
 |---|---|---|---|
 | World/camera/identity | Small Deccan visual benchmark | Wider map, more terrain, locations and seasonal/weather variants | PROPOSED |
 | Tactical RTS | Bounded battle, a few unit roles, move/attack/hold/retreat, basic CPU | More formations, siege, command hierarchy, varied factions | PROPOSED |
-| Settlement | One settlement, households/workforce categories, 2–3 production activities, storage | More goods/chains, household tiers, markets, town specialisation | Hybrid household/workforce baseline approved; exact rules OPEN |
+| Settlement | One settlement, households/workforce categories, 3 production activities, storage, basic market, tax/upkeep, notices and save/load | More goods/chains, household tiers, dynamic markets, town specialisation | M3 prototype implemented; all quantities and formulas remain temporary tuning |
 | Campaign travel | A few named map locations and one moving party | Broad fixed map, many parties, travel risk and routes | PROPOSED |
 | Politics | One ruler/overlord relationship and one meaningful obligation/favour | Court, rank progression, changing allegiance, king/emperor legitimacy | Structure principles partly agreed; historical rules OPEN |
 | Merchants | One trader, inventory, simple trade/escort event | Credit, loans, business network, contracts, rivals | PROPOSED |

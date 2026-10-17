@@ -134,6 +134,8 @@ Keep the end goal ambitious, but never ask Codex to build the entire game in one
 - Prosperity/housing may affect family attraction in later iterations; do not add every household need and a full Anno-like production web at once.
 - Gate: production consumes correct inputs/labour; goods move to/from storage correctly; insufficient inputs stop production; money/goods accounting is consistent; save/load preserves state.
 
+**M3 status — completed as an implementation prototype on 2026-10-17.** The exact fictional starting data, prices, yields, tax/upkeep formulas and scope boundaries are recorded in [M3 settlement and economy prototype rules](21_m3_settlement_prototype.md); these are not final design decisions.
+
 **M4 — Strategic campaign prototype**
 - Add a strategic-map representation, travel between a handful of named locations, one player lord, one superior/rival, one merchant and one mobile party/caravan.
 - Use explainable AI decisions and log why an actor chose an action. Test one trade/escort/raid or diplomacy event.
