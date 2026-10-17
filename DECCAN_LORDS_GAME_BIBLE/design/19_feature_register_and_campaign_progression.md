@@ -120,9 +120,9 @@ These are hypotheses to validate through playtesting, not proven retention outco
 | World/camera/identity | Small Deccan visual benchmark | Wider map, more terrain, locations and seasonal/weather variants | PROPOSED |
 | Tactical RTS | Bounded battle, a few unit roles, move/attack/hold/retreat, basic CPU | More formations, siege, command hierarchy, varied factions | PROPOSED |
 | Settlement | One settlement, households/workforce categories, 3 production activities, storage, basic market, tax/upkeep, notices and save/load | More goods/chains, household tiers, dynamic markets, town specialisation | M3 prototype implemented; all quantities and formulas remain temporary tuning |
-| Campaign travel | A few named map locations and one moving party | Broad fixed map, many parties, travel risk and routes | PROPOSED |
-| Politics | One ruler/overlord relationship and one meaningful obligation/favour | Court, rank progression, changing allegiance, king/emperor legitimacy | Structure principles partly agreed; historical rules OPEN |
-| Merchants | One trader, inventory, simple trade/escort event | Credit, loans, business network, contracts, rivals | PROPOSED |
+| Campaign travel | Four fictional named locations, authored route graph, one moving party and campaign time shared with M3 settlement | Broad fixed map, many parties, travel risk and routes | M4 prototype implemented; names and route timings are temporary |
+| Politics | One superior, visible route obligation and a standing change for a protected delivery | Court, rank progression, changing allegiance, king/emperor legitimacy | M4 prototype implemented; relationship values are temporary; historical rules OPEN |
+| Merchants | One persistent trader and an escorted grain contract with explainable public-information decision | Credit, loans, business network, wider contracts and rivals | M4 prototype implemented; prices/amounts are temporary |
 | Army/world integration | One campaign encounter connected to a tactical battle | Patrols, coalition armies, recovery, sieges, logistics and captured stock | PROPOSED |
 | AI | Goal/constraint/relationship data, logged choice reasons | richer planning, imperfect information, long-lived memory | Explainable rules first; ML not assumed |
 | Family/clan | One player's clan identity and few companions if needed | Dynasty, marriages, succession, delegated estates and companion families | OPEN / RESEARCH |

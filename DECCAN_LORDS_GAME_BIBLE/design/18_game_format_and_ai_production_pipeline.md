@@ -136,6 +136,8 @@ Keep the end goal ambitious, but never ask Codex to build the entire game in one
 
 **M3 status — completed as an implementation prototype on 2026-10-17.** The exact fictional starting data, prices, yields, tax/upkeep formulas and scope boundaries are recorded in [M3 settlement and economy prototype rules](21_m3_settlement_prototype.md); these are not final design decisions.
 
+**M4 status — completed as an implementation prototype on 2026-10-17.** The fictional four-location region, route graph, contract values, explainable merchant decision and temporary relationship outcome are recorded in [M4 strategic campaign prototype](22_m4_strategic_campaign_prototype.md). Campaign time updates the same M3 settlement instance; M4 does not yet connect to battle.
+
 **M4 — Strategic campaign prototype**
 - Add a strategic-map representation, travel between a handful of named locations, one player lord, one superior/rival, one merchant and one mobile party/caravan.
 - Use explainable AI decisions and log why an actor chose an action. Test one trade/escort/raid or diplomacy event.

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DECCAN LORDS"
-run/main_scene="res://scenes/settlement/m3_settlement.tscn"
+run/main_scene="res://scenes/campaign/m4_strategic_campaign.tscn"
 config/features=PackedStringArray("4.7")
 
 [display]

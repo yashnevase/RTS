@@ -41,6 +41,7 @@ Use one entry per meaningful decision. When a decision changes, keep the old ent
 | D-032 | 2026-10-17 | External Godot RTS references | RESEARCH — not adopted | User provided a Godot RTS genre skill, a 3D RTS tutorial thread and an open-source Godot RTS repo. Treat these as learning/audit sources; check current version, licence, maintenance, security and scope before reuse. Don't adopt dependencies or merge whole projects without review. | Inspect each reference against the active milestone and document any isolated, tested technique worth adapting |
 | D-036 | 2026-10-17 | Gameplay-first production and world atmosphere | PROPOSED — sequencing preference | User wants the core game loops established before a broad cinematic/cosmetic art pass. Day/night, changing weather and varied terrain are desired later world features; their gameplay effects and implementation are still open. This preference does not lock a final art direction or system design. | Prove the next bounded gameplay loops; design weather, time-of-day and terrain effects with the world/campaign systems |
 | D-037 | 2026-10-17 | M3 settlement/economy prototype | IMPLEMENTED PROTOTYPE — tuning not locked | Built a fictional single settlement with aggregate household groups, pooled labour, farm/woodcut/mill activities, finite storage and market inventories, grain consumption, taxes/upkeep, priority notices and versioned save/load. Every starting quantity, yield, price, tax/upkeep formula and the Keshavwadi name are temporary implementation tuning, not historical claims or approved final rules. | Review the playable M3 loop and decide which economy relationships need revision before a campaign map connects to it |
+| D-038 | 2026-10-17 | M4 strategic campaign prototype | IMPLEMENTED PROTOTYPE — tuning not locked | Built a compact fictional authored region with four named locations, travel graph, a player party, superior obligation/standing, persistent merchant, explainable escorted-grain decision and versioned campaign save containing the same M3 settlement state. Contract amounts, route time and relationship effect remain temporary tuning. | Review the campaign slice; M5 should connect a campaign encounter to the existing tactical battle and return persistent consequences |
 
 ## Change log
 
@@ -141,3 +142,10 @@ Captured the user's expanded vision and key open questions. No detailed formulas
 - Recorded every prototype name, initial holding, formula and price in a separate implementation note; none is promoted to a locked historical or design rule.
 - Added versioned JSON save/load and checks for accounting, constraints, malformed data and the actual scene interaction at two window sizes.
 - Kept weather, day/night, varied terrain, household welfare, dynamic prices and campaign/battle integration in later design scope.
+
+### v1.6 — 2026-10-17 — M4 strategic campaign prototype
+
+- Added a compact authored route map with four fictional locations, a moving player party, one superior obligation, persistent merchant and escorted grain delivery.
+- Campaign time now advances the same M3 settlement instance; a single versioned save stores campaign and settlement state together.
+- Logged the merchant's choice from information available at Nandipur and made goods, treasury and standing consequences observable.
+- Documented all M4 names, figures, timing and outcome as temporary prototype content; the M5 tactical-battle connection remains next.

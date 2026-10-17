@@ -13,7 +13,7 @@ Before editing anything, read:
 8. Relevant project-local skill in `.agents/skills/` when installed; use `skills/README.md` in RTS-Docs to find the skill suite and installer
 
 ## Current collaboration phase
-The project is in **DISCOVERY / PRE-PRODUCTION**. M0 setup, M1 visual/control benchmark, M2 standalone battle prototype and M3 settlement/economy prototype are complete. The user wants core gameplay loops proven before broad cinematic/cosmetic polish and wants day/night, weather and varied terrain retained as later world features; those systems and their gameplay effects are not yet specified. Treat design content as `PROPOSED`, `OPEN`, `RESEARCH`, `DEFERRED`, or `LOCKED` exactly as recorded. M3's exact numbers and formulas are prototype-only; do not silently convert them into locked rules.
+The project is in **DISCOVERY / PRE-PRODUCTION**. M0 setup, M1 visual/control benchmark, M2 standalone battle prototype, M3 settlement/economy prototype and M4 strategic campaign prototype are complete bounded prototypes. The user wants core gameplay loops proven before broad cinematic/cosmetic polish and wants day/night, weather and varied terrain retained as later world features; those systems and their gameplay effects are not yet specified. Treat design content as `PROPOSED`, `OPEN`, `RESEARCH`, `DEFERRED`, or `LOCKED` exactly as recorded. M3/M4 exact numbers, names and formulas are prototype-only; do not silently convert them into locked rules. M2 battle remains standalone; M5 connects it to campaign state.
 
 ## Design rules
 - Preserve the user's intended game rather than replacing it with a generic RTS template.
