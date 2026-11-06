@@ -32,4 +32,8 @@ Every active entity now has id, record_version, source_ids, confidence and statu
 
 ## Consolidate doubts without changing legacy IDs
 
-Merged 80 input doubt entries (76 supplied plus 5 cleanup entries) into 42 unique-ID review records. Reused D1–D13 IDs are grouped by unchanged ID, with origin-labelled questions and complete verbatim originals in legacy_entries. All archived loose doubts were checked for exact preservation. No issue was dropped. Resolved only S1 and doubt_item4_missing_sites_v2 because the actual v2 and master files are now present; historical uncertainty remains open. A collision aggregate may close only when every constituent issue is resolved. The old all_doubts.json is replaced by doubts.json; baseline preserves its original bytes.
+Merged 80 input doubt entries (76 supplied plus 4 cleanup entries) into 42 unique-ID review records. Reused D1–D13 IDs are grouped by unchanged ID, with origin-labelled questions and complete verbatim originals in legacy_entries. All archived loose doubts were checked for exact preservation. No issue was dropped. Resolved only S1 and doubt_item4_missing_sites_v2 because the actual v2 and master files are now present; historical uncertainty remains open. A collision aggregate may close only when every constituent issue is resolved. The old all_doubts.json is replaced by doubts.json; baseline preserves its original bytes.
+
+## Clear second mistyped Chaul beneficiary
+
+The validator found the same polity_portuguese beneficiary error on fort_chaul, beyond the named site defect. Set that field to null, incremented record_version, preserved the original value in doubt_cleanup_chaul_fort_revenue_type, and kept all sovereignty/controller values unchanged.

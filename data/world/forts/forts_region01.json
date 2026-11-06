@@ -885,7 +885,7 @@
   },
   {
     "id": "fort_chaul",
-    "record_version": 2,
+    "record_version": 3,
     "name": "Fortaleza de Chaul",
     "name_variants": [
       "Chaul Fort",
@@ -903,7 +903,7 @@
       "controller_polity_id": "polity_portuguese",
       "owner_clan_id": null,
       "governor_character_id": null,
-      "revenue_beneficiary_id": "polity_portuguese",
+      "revenue_beneficiary_id": null,
       "garrison_commander_id": null,
       "overlord_polity_id": "polity_nizam_shahi"
     },

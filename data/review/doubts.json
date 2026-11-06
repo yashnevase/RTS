@@ -1335,5 +1335,19 @@
         "from": "cleanup"
       }
     ]
+  },
+  {
+    "id": "doubt_cleanup_chaul_fort_revenue_type",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "severity": "high",
+    "entity_ids": [
+      "fort_chaul",
+      "polity_portuguese"
+    ],
+    "question": "The same mistyped polity revenue beneficiary occurs on fort_chaul. Should the future revenue schema support polity beneficiaries or separate revenue-right records?",
+    "resolution": "Set only the invalid beneficiary to null; the original value was polity_portuguese. Sovereign/controller and original fort notes are unchanged. Await the same schema decision as site_chaul.",
+    "status": "open"
   }
 ]
