@@ -17,3 +17,7 @@ Added 37 exact referenced source IDs as status=stub. No bibliographic facts were
 ## clear mistyped Chaul revenue beneficiary
 
 Set only site_chaul.ownership.revenue_beneficiary_id from polity_portuguese to null (record_version 2). Retained original revenue-privilege notes and added doubt_cleanup_chaul_revenue_type with the exact old value. Did not convert a revenue privilege into sovereignty/control. The family/clan beneficiary contract is provisional pending user review.
+
+## flag unresolved Panhala region membership
+
+Kept both Panhala region_id values null, following the supplied site warning. Added an explicit linked doubt instead of inventing a geographic assignment.

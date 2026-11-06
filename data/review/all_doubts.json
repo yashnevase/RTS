@@ -579,5 +579,17 @@
     "resolution": "The invalid family/clan field is null. The original value and notes are preserved; sovereignty/controller are unchanged. Schema choice requires user review.",
     "status": "open",
     "from": "cleanup"
+  },
+  {
+    "id": "doubt_cleanup_panhala_region",
+    "severity": "high",
+    "entity_ids": [
+      "site_panhala",
+      "fort_panhala"
+    ],
+    "question": "Which existing or new researched region should contain Panhala, and is this southern edge inside Region Pack 01?",
+    "resolution": "Both region_id values remain null. Site notes explicitly prohibit an adjacent-region assignment; fort notes only describe the southern pack edge. No existing region is supported by those notes.",
+    "status": "open",
+    "from": "cleanup"
   }
 ]
