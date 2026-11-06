@@ -1,0 +1,571 @@
+[
+  {
+    "id": "S1",
+    "issue": "Sites v2 file not present in the available uploads",
+    "verify": "The accessible uploads contain the starter pack and the forts batch, but not the 57-record sites v2 JSON. These additions therefore follow settlement.example.json from the starter pack. Its coordinate field is singular (coordinate), whereas forts.json and new_sites_needed.json use plural coordinates. Reconcile against the actual sites v2 schema before merging; no existing site IDs were edited.",
+    "from": "item01"
+  },
+  {
+    "id": "S2",
+    "issue": "Panhala site versus Panhala Fort",
+    "verify": "Panhala is attested as a Shilahara place/seat by the Bhoja II 1191–1192 tradition and the fort is medieval. The evidence found does not establish a separately bounded market town with its own population in 1622. The proposed market_town type is retained from the supplied need-list only as a provisional classification; confirm whether the settlement should instead be represented as a fort-associated locality or whether site_panhala should be omitted as duplicative.",
+    "from": "item01"
+  },
+  {
+    "id": "S3",
+    "issue": "Velhe historical settlement identity",
+    "verify": "The supplied data gives Velhe as the Torna base, but no dated pre-1622 evidence for a settlement named Velhe was established. The 2011 Census source identifies Velhe as a sub-district, not enough by itself to prove a distinct 1622 village. Confirm exact historic name and village/town classification.",
+    "from": "item01"
+  },
+  {
+    "id": "S4",
+    "issue": "Malavli name collision and location",
+    "verify": "The supplied coordinates are for the Lohagad-side Malavli anchor, but no period attestation was established. Census material also lists a similarly spelled Malavali under Velhe sub-district, which may be a different place. Confirm exact village/census code or historical spelling before attaching demographic or ownership data.",
+    "from": "item01"
+  },
+  {
+    "id": "S5",
+    "issue": "Tikona Peth period attestation",
+    "verify": "Modern visitor material calls Tikona Peth the nearest village to Tikona Fort. No pre-1622 attestation of the settlement or the compound name Tikona Peth was established. Keep valid_from null until a dated record is found.",
+    "from": "item01"
+  },
+  {
+    "id": "S6",
+    "issue": "Gunjavane period attestation",
+    "verify": "The 2011 Census confirms a present-day village named Gunjavane in Pune district, but not its existence or name in 1622. The site is a provisional locality anchor for Murumbdev Fort only.",
+    "from": "item01"
+  },
+  {
+    "id": "S7",
+    "issue": "Donaje period attestation and naming",
+    "verify": "The Pune District government identifies Kondhana Fort at present-day Donaje, and the 2011 Census lists Donaje. These references do not date Donaje as a settlement in 1622. Keep Kondhana as the period fort name; do not backdate Sinhagad.",
+    "from": "item01"
+  },
+  {
+    "id": "S8",
+    "issue": "Korlai/Kôrlê spelling and foundation date",
+    "verify": "Chaudenson (1997) states that Korlai village was founded around 1595; it is an approximate date summarized from earlier work, not a dated foundation inscription presented in the article. HPIP records Korlai/Kôrlê as forms. Confirm the exact spelling used locally in 1622.",
+    "from": "item01"
+  },
+  {
+    "id": "S9",
+    "issue": "Murud 1622 status versus Rajapuri",
+    "verify": "Modern government tourism material locates Janjira Fort near Murud, but no source in this pass dates a separate Murud town to 1622. The existing site_rajapuri remains the immediate shore/landing anchor; site_murud is a secondary mainland support locator only. Verify historical status and whether both sites are needed.",
+    "from": "item01"
+  },
+  {
+    "id": "S10",
+    "issue": "Approximate coordinate provenance",
+    "verify": "All eight coordinate pairs are copied exactly from the supplied new_sites_needed.json and are treated as modern approximate map locators, not as surveyed historical settlement centroids or proof of seventeenth-century footprints.",
+    "from": "item01"
+  },
+  {
+    "id": "S11",
+    "issue": "No additional settlements added beyond the eight requested anchors",
+    "verify": "No further missing local settlements were added in this pass because the 57-site base file is not available for a complete coverage check, and no additional candidate met the evidence threshold without guessing.",
+    "from": "item01"
+  },
+  {
+    "id": "S12",
+    "issue": "Ownership and demographic fields intentionally unresolved",
+    "verify": "All ownership roles, population, language/culture/religion shares, economy and security quantities remain null/empty. These are not inferred from geography or the associated fort and should be resolved only in the relevant later ownership or demographic work.",
+    "from": "item01"
+  },
+  {
+    "id": "S13",
+    "issue": "Fort links are map relationships, not sovereignty claims",
+    "verify": "protecting_fort_ids identifies the supplied local fort association for navigation/map purposes. It does not assert that the fort legally owned, administered, garrisoned or collected revenue from the site in 1622. Murud–Janjira is especially provisional as a regional support relation.",
+    "from": "item01"
+  },
+  {
+    "id": "D1",
+    "priority": "high",
+    "issue": "Missing sites v2 (57-site file)",
+    "verify": "Only the starter pack, the forts batch archive and the previous item-1 ZIP are present in the current conversation uploads. The separate sites v2 file (57 sites) is not available. Pass/crossing references therefore use only site IDs visible in the forts archive and item-1 additions; reconcile them against the canonical v2 sites before merge.",
+    "impact": "Some intermediate route endpoints and exact links may be missing; no unknown site IDs have been invented.",
+    "from": "item02"
+  },
+  {
+    "id": "D2",
+    "priority": "high",
+    "issue": "Nane Ghat 1622 traffic continuity",
+    "verify": "Ancient and medieval use is attested and Jivdhan commanded the pass, but a source directly documenting traffic, tolls or military movement in 1622 was not located.",
+    "impact": "Keep active_in_1622 as probable rather than certain; army class and seasonal constraints remain inferred.",
+    "from": "item02"
+  },
+  {
+    "id": "D3",
+    "priority": "high",
+    "issue": "Malshej Ghat historic alignment and 1622 control",
+    "verify": "Confirm whether the gazetteer spelling 'Malsej-Ana pass road' is the same route/alignment as the modern Malshej Ghat and identify any fort with a directly evidenced command relationship. Harishchandragad is referenced by current official tourism material but is not present in the supplied 23-fort dataset.",
+    "impact": "No controlling_fort_id is assigned; route remains uncertain for the 1622 graph.",
+    "from": "item02"
+  },
+  {
+    "id": "D4",
+    "priority": "high",
+    "issue": "Bor/Bhor Ghat exact 1622 track and fort command",
+    "verify": "The historical pack-animal route and later 1804 artillery improvement/1830 carriage road are documented retrospectively. Establish the exact pre-1804 line and whether Lohagad alone or a wider fort network controlled it in 1622.",
+    "impact": "Lohagad is the supplied candidate controlling fort; Visapur is excluded because the official page dates it to 1713–1720.",
+    "from": "item02"
+  },
+  {
+    "id": "D5",
+    "priority": "high",
+    "issue": "Tamhini versus Tamni/Sathpayri",
+    "verify": "The Poona Gazetteer documents a Tamni or Sathpayri footpath in the Mulshi tract, used by pedestrians carrying head-loads. Confirm whether it physically corresponds to modern Tamhini Ghat; do not assume spelling similarity establishes identity.",
+    "impact": "This record is a candidate only and should remain disabled as a 1622 army corridor until geospatial and historical corroboration.",
+    "from": "item02"
+  },
+  {
+    "id": "D6",
+    "priority": "medium",
+    "issue": "Kumbharli / Kumbha pass identification",
+    "verify": "The Konkan Gazetteer gives the Bijapur–Dabhol route via Kumbharli and separately describes Shahji's 1630s movement through a pass called Kumbha. Confirm whether Kumbha is a textual/short form of Kumbharli or a distinct pass.",
+    "impact": "Kumbha is listed only as a possible name variant, not as a confirmed synonym.",
+    "from": "item02"
+  },
+  {
+    "id": "D7",
+    "priority": "medium",
+    "issue": "Kumbharli 1622 access class",
+    "verify": "Pre-modern trade and later military use are plausible; the available detailed terrain description is from 1826 and later road records. Find a pre-1622 itinerary or campaign account establishing whether cavalry, baggage animals or guns used the pass.",
+    "impact": "Only foot and pack-train access is treated as supported for a pre-cart-road model; artillery/cart access is not asserted.",
+    "from": "item02"
+  },
+  {
+    "id": "D8",
+    "priority": "medium",
+    "issue": "Pass monsoon availability",
+    "verify": "No 1622 month-by-month pass closure or army movement records were located for Nane Ghat, Malshej, Bor Ghat or Kumbharli. Gazetteer and modern monsoon descriptions cannot supply a seventeenth-century schedule.",
+    "impact": "All monsoon modifiers are labelled inference or unknown, not hard closure rules.",
+    "from": "item02"
+  },
+  {
+    "id": "D9",
+    "priority": "high",
+    "issue": "Public ferry date versus 1622 service",
+    "verify": "The Poona Gazetteer says all listed public ferries except Induri and Sangrun were established before 1875. That wording does not demonstrate operation in 1622. Locate earlier references to each crossing separately.",
+    "impact": "None of the ferry nodes is asserted as an active 1622 ferry; all have active_in_1622 unknown unless established after 1622.",
+    "from": "item02"
+  },
+  {
+    "id": "D10",
+    "priority": "high",
+    "issue": "Indrayani at Induri and Mutha at Sangrun",
+    "verify": "The gazetteer explicitly dates these ferry services to 1877–78. Confirm whether any earlier ford, boat or other crossing existed at either locality; the later ferry itself must not be backdated.",
+    "impact": "Both are marked no_1622_service; established_1877_78.",
+    "from": "item02"
+  },
+  {
+    "id": "D11",
+    "priority": "medium",
+    "issue": "Chandgaon ferry is year-round in the 19th century",
+    "verify": "The gazetteer says the Chandgaon ferry worked throughout the year because the water was always unfordable. This describes the late 19th-century condition only; do not infer a 1622 ferry or permanent channel depth.",
+    "impact": "Season field is restricted to the 19th-century attestation.",
+    "from": "item02"
+  },
+  {
+    "id": "D12",
+    "priority": "medium",
+    "issue": "Ferry class is service frequency, not load capacity",
+    "verify": "The gazetteer defines 2nd/3rd/4th class by number of trips in a 14-hour day, not boat size or military carrying capacity. Search for ferry boat dimensions or military crossing accounts only if needed.",
+    "impact": "The class field must not be converted into a troop-strength fact. Practical army class remains unknown/inferred.",
+    "from": "item02"
+  },
+  {
+    "id": "D13",
+    "priority": "medium",
+    "issue": "Mula-Mutha private ferry and Netva / Pushpavati ferry",
+    "verify": "The Poona Gazetteer also mentions several private ferries and a local-fund ferry at Netva across the Pushpavati in Junnar, but the current batch includes only the 13 public ferries in the main crossing list. Determine whether these should be added as secondary crossing nodes.",
+    "impact": "Not included in crossings.json to keep this first pass to the clearly tabulated public services.",
+    "from": "item02"
+  },
+  {
+    "id": "D14",
+    "priority": "medium",
+    "issue": "No controlling forts for river ferries",
+    "verify": "The consulted ferry table does not assign any of the named ferries to a fort commander. Check any local fort or estate record before assigning a controlling fort to an individual crossing.",
+    "impact": "controlling_fort_id is null for all crossings; no nearby fort has been substituted without evidence.",
+    "from": "item02"
+  },
+  {
+    "id": "D15",
+    "priority": "low",
+    "issue": "Exact crossing coordinates and historical banks",
+    "verify": "The gazetteer supplies locality names and road alignments, not coordinates, bank profiles or seventeenth-century landing positions. Georeference each crossing against historic route maps and modern hydrography before building graph edges.",
+    "impact": "Coordinates are omitted rather than guessed; terrain descriptions remain conservative.",
+    "from": "item02"
+  },
+  {
+    "id": "D1",
+    "priority": "high",
+    "issue": "Canonical sites v2 (57-site file) is not available in the accessible uploads",
+    "verify": "The available files include the starter pack, forts batch and prior item-1/item-2 outputs, but not the separate sites v2 dataset. Only site IDs explicitly present in those files are used in waypoint arrays. Reconcile every waypoint against the canonical 57-site file before merge.",
+    "impact": "The full Burhanpur–Daulatabad–Ahmadnagar–Pune line, Bijapur–Karad–Chiplun–Guhagar route and western endpoints of the Nane/Malshej/Bor corridors cannot be completed without guessing IDs.",
+    "from": "item03"
+  },
+  {
+    "id": "D2",
+    "priority": "high",
+    "issue": "Burhanpur–Daulatabad–Ahmadnagar–Pune example corridor is not emitted as a complete waypoint list",
+    "verify": "Maharashtra in Maps describes a North-to-Deccan approach via the Burhanpur gap and Tapi crossing, then a Dhule–Malegaon or Jalgaon–Aurangabad approach; it separately names the Aurangabad–Ahmadnagar–Pune corridor. The available files do not expose the canonical Burhanpur site ID or all intermediate nodes, and the sources reviewed do not prove Daulatabad as a mandatory intermediate stop on a single road.",
+    "impact": "Do not build a route with an assumed site_burhanpur/site_tapi_ford or silently treat Daulatabad and Khirki as the same settlement. Add exact v2 nodes and corroborate the junction sequence first.",
+    "from": "item03"
+  },
+  {
+    "id": "D3",
+    "priority": "high",
+    "issue": "Khirki versus Aurangabad naming and chronology",
+    "verify": "The regional road synthesis uses the later name Aurangabad. For a 1622 scenario the waypoint is site_khirki. Preserve Aurangabad only as a later name variant with a dated validity interval, not as the 1622 primary label.",
+    "impact": "All 1622 corridors in this pack use site_khirki and do not introduce a site_aurangabad waypoint.",
+    "from": "item03"
+  },
+  {
+    "id": "D4",
+    "priority": "high",
+    "issue": "Khirki–Solapur–Bijapur route is only partially represented",
+    "verify": "The 1986 regional synthesis names the full Aurangabad–Solapur–Bijapur corridor, but the canonical Bijapur site ID and intermediate node IDs are not present in the accessible data. Obtain the IDs from sites v2 before completing the waypoint list.",
+    "impact": "The record is explicitly a Khirki–Solapur section and must not be treated as the full corridor.",
+    "from": "item03"
+  },
+  {
+    "id": "D5",
+    "priority": "high",
+    "issue": "Nane Ghat in 1622",
+    "verify": "Ancient trade use and Jivdhan's commanding position are supported, and a later gazetteer documents Junnar–Ghatghar traffic with the Konkan. A direct 1622 itinerary, toll record or seasonal operating schedule was not located.",
+    "impact": "The corridor is a historically grounded candidate, not a verified 1622 route with fixed traffic volume. The west-side terminal remains unrepresented pending canonical site IDs.",
+    "from": "item03"
+  },
+  {
+    "id": "D6",
+    "priority": "high",
+    "issue": "Bor Ghat pre-1804 route alignment and 1622 status",
+    "verify": "Sources establish a strategic pass and pack-animal traffic before later artillery/carriage-road works; they do not fix the exact 1622 track. Lohagad is identified as guarding the trade route, but a fort should not be treated as a mandatory linear stop without a surveyed alignment.",
+    "impact": "Lohagad is a related fort, not a forced road waypoint. Exclude the 1804 artillery road, 1830 carriage road and Visapur (1713–1720) from 1622.",
+    "from": "item03"
+  },
+  {
+    "id": "D7",
+    "priority": "high",
+    "issue": "Malshej / Malsej-Ana historic alignment",
+    "verify": "The 1885 gazetteer describes a western route down the Malsej pass via Belha, Ale, Otur and Madh, while modern official sources describe Malshej Ghat. Confirm whether the historic spelling and route are identical to the modern pass alignment and obtain canonical IDs for intermediate and western-side settlements.",
+    "impact": "The route is retained only as a low-confidence segment. No controlling fort or complete Konkan endpoint is assigned.",
+    "from": "item03"
+  },
+  {
+    "id": "D8",
+    "priority": "medium",
+    "issue": "Tamhini / Tamni / Sathpayri road not included",
+    "verify": "The prior pass pack notes that the Poona Gazetteer records a pedestrian Tamni/Sathpayri footpath in the Mulshi tract but does not prove identity with modern Tamhini Ghat. A period-specific route and valid endpoint IDs remain unestablished.",
+    "impact": "No Tamhini road corridor is asserted for 1622.",
+    "from": "item03"
+  },
+  {
+    "id": "D9",
+    "priority": "medium",
+    "issue": "Kumbharli corridor not included as a waypoint list",
+    "verify": "The earlier pass pack cites nineteenth-century Satara/Ratnagiri gazetteers for Kumbharli. Canonical Karad/Patan/Chiplun node IDs are not visible in the uploaded data, and a 1622 itinerary or traffic record was not established in this research pass.",
+    "impact": "Do not invent site IDs or present the later route alignment as a verified 1622 road. Add after sites v2 IDs and earlier evidence are checked.",
+    "from": "item03"
+  },
+  {
+    "id": "D10",
+    "priority": "medium",
+    "issue": "Poona–Sholapur / other nineteenth-century road alignments",
+    "verify": "The 1885 gazetteer records later Poona–Sholapur and local road routes, but those late-century alignments cannot be assumed to represent an identical 1622 corridor. Identify an earlier itinerary, campaign record or dated route evidence before adding them to the 1622 map.",
+    "impact": "Later roads are not silently backdated in this pack.",
+    "from": "item03"
+  },
+  {
+    "id": "doubt_item4_missing_sites_v2",
+    "severity": "blocking",
+    "entity_ids": [],
+    "question": "Where is the referenced sites v2 file containing 57 site records? It is not among the accessible uploaded files; the accessible uploads contain the starter pack, the 23-fort batch, and the outputs from Items 1–3 only.",
+    "resolution": "No IDs or records have been invented. This package covers the seven null-bearing fort records and the eight site additions from Item 1 only. A complete site ownership patch for the original 57 sites requires the exact sites v2 JSON file.",
+    "from": "item04"
+  },
+  {
+    "id": "doubt_item4_udgir_split_authority",
+    "severity": "high",
+    "entity_ids": [
+      "fort_udgir"
+    ],
+    "question": "Was Udgir under Nizam Shahi sovereign title, Adil Shahi sovereign title, or a Nizam Shahi title with an Adil Shahi-backed local command in 1622?",
+    "resolution": "Leave sovereign_polity_id and controller_polity_id null/unknown. The historical accounts disagree and do not date the split precisely to 1622.",
+    "from": "item04"
+  },
+  {
+    "id": "doubt_item4_torna_pre1646",
+    "severity": "medium",
+    "entity_ids": [
+      "fort_torna"
+    ],
+    "question": "Which polity held sovereign title and practical command at Torna in 1622, before the reported 1646 capture from an Adil Shahi commandant?",
+    "resolution": "Leave both fields null/unknown; the 1646 event must not be backdated.",
+    "from": "item04"
+  },
+  {
+    "id": "doubt_item4_jivdhan_chronology",
+    "severity": "medium",
+    "entity_ids": [
+      "fort_jivdhan"
+    ],
+    "question": "Can a date-specific source establish Jivdhan's sovereign/controller pair in 1622? A local article has a conflicting 1663 date for the Shahaji-era sequence.",
+    "resolution": "Leave both fields null/unknown until the chronology is independently resolved.",
+    "from": "item04"
+  },
+  {
+    "id": "doubt_item4_hadsar_pre1637",
+    "severity": "medium",
+    "entity_ids": [
+      "fort_hadsar"
+    ],
+    "question": "Does the reference to Hadsar in Shahaji's 1637 treaty prove who held it in 1622?",
+    "resolution": "No. Leave both fields null/unknown; the 1637 notice is not backdated.",
+    "from": "item04"
+  },
+  {
+    "id": "doubt_item4_dabhol_controller",
+    "severity": "medium",
+    "entity_ids": [
+      "fort_dabhol"
+    ],
+    "question": "Who controlled the specific Dabhol old-castle/harbour-battery asset in 1622, and was it an operational fort at that date?",
+    "resolution": "Keep controller_polity_id null/unknown and retain the supplied Adil Shahi sovereign value unchanged. Do not infer Portuguese control from the 1615 factory.",
+    "from": "item04"
+  },
+  {
+    "id": "doubt_item4_site_level_jurisdiction",
+    "severity": "medium",
+    "entity_ids": [
+      "site_panhala",
+      "site_velhe",
+      "site_malavli",
+      "site_tikona_peth",
+      "site_gunjavane",
+      "site_donaje",
+      "site_korlai",
+      "site_murud"
+    ],
+    "question": "Do the nearby fort polities or modern settlement names establish the sovereign/controller pair for each distinct settlement in 1622?",
+    "resolution": "No. Keep all eight site ownership fields unknown until village-level grants, revenue records, boundary descriptions, or dated administrative evidence are located.",
+    "from": "item04"
+  },
+  {
+    "id": "doubt_item4_janjira_official_vs_commander",
+    "severity": "low",
+    "entity_ids": [
+      "fort_janjira"
+    ],
+    "question": "Does assigning Nizam Shahi as sovereign/controller conflict with Siddi Ambar Sanak's existing governor and garrison commander fields?",
+    "resolution": "No. The academic chronology identifies the Siddi as the fort commander appointed by Malik Ambar; preserve the character fields as separate from sovereign/controller polity fields.",
+    "from": "item04"
+  },
+  {
+    "id": "D1",
+    "priority": "high",
+    "issue": "Canonical 57-site v2 file is not available in the accessible attachments",
+    "verify": "The accessible attachments contain the starter pack and 23-fort file, and the prior item-1 output contains only eight additions. No canonical 57-site dataset was available for seat-ID matching. Seats such as Kari, Sindkhed, Phaltan, Javli, Malavdi, Mhasvad, Jath, Kapshi and Mudhol are therefore text-only; no site IDs were invented.",
+    "impact": "Before merge, map each textual seat to the exact canonical site ID or add a site record if absent.",
+    "from": "item05"
+  },
+  {
+    "id": "D2",
+    "priority": "high",
+    "issue": "Jedhe patronage in 1622 is not established by the accessible chronicle catalogue",
+    "verify": "The published catalogue identifies the Jedhes as Kari Deshmukhs and the chronicle's coverage as 1618-1697, but the accessible metadata does not reveal a date-specific 1622 patronage act. Inspect the full chronicle and contemporary deeds before adding a patron.",
+    "impact": "The clan is registered as a documented local house, with patronage_relationships left empty.",
+    "from": "item05"
+  },
+  {
+    "id": "D3",
+    "priority": "high",
+    "issue": "Jadhav service chronology and family genealogy require primary-source confirmation",
+    "verify": "Rawlinson identifies Lukaji/Lakhuji Jadhav Rao as a Nizam Shahi feudatory and the Sindkhed house, but the exact start year and complete branch succession are not established in the accessible text. Check Persian farmans, sanad collections and contemporary records for the family's local rights and 1622 head.",
+    "impact": "Only the Nizam Shahi tie is represented; the start year and genealogy are left open.",
+    "from": "item05"
+  },
+  {
+    "id": "D4",
+    "priority": "high",
+    "issue": "Bhosle claimed Rajput/Chitor descent is disputed and excluded",
+    "verify": "Rawlinson treats the Chitor descent as an unverified family origin claim. The 1622 record is limited to Maloji's documented family and Shahaji's known service and assignments. Separate Bhosle branches should not be merged without a sourced genealogy.",
+    "impact": "No Rajput ancestry, unverified pedigree, hereditary ownership of forts or unrelated Bhosle branch is assigned.",
+    "from": "item05"
+  },
+  {
+    "id": "D5",
+    "priority": "medium",
+    "issue": "Nimbalkar patronage status and Phaltan's legal relation to Bijapur need dated deeds",
+    "verify": "The Phaltan official ruler list places Vangoji II/Jagpalrao in office 1570-1630; the Satara Gazetteer places the family among Bijapur-era chiefs. The exact date, service terms and tribute status in 1622 should be checked against Phaltan sanad and Bijapur records.",
+    "impact": "The record is dated to Vangoji's tenure; the Adil Shahi relation is marked without fabricated start/end years.",
+    "from": "item05"
+  },
+  {
+    "id": "D6",
+    "priority": "medium",
+    "issue": "More of Javli: 1622 head and exact appointment date unresolved",
+    "verify": "The Gazetteer places the founding/appointment under Yusuf Adil Shah (1490-1510), reports nominal tribute and seven generations of succession, but does not securely name the 1622 Chandrarao in this evidence set.",
+    "impact": "The More house is included with its broad date bracket; no invented personal head or exact founding date is added.",
+    "from": "item05"
+  },
+  {
+    "id": "D7",
+    "priority": "high",
+    "issue": "Ghatge title grant is explicitly dated 1626, after the scenario year",
+    "verify": "The Gazetteer states that Nagoji Ghatge received the sardeshmukhi and Junjharrav titles from Ibrahim Adil Shah II in 1626. This cannot be backdated to 1622, and the text does not prove that Nagoji and the earlier named Junjharrav Ghatge are the same person.",
+    "impact": "The 1626 Adil Shahi relationship is stored as a later dated fact only; 1622 head and title status remain unresolved.",
+    "from": "item05"
+  },
+  {
+    "id": "D8",
+    "priority": "medium",
+    "issue": "Mane and Daphle evidence gives offices and Bijapur ties without precise tenure dates",
+    "verify": "The Satara Gazetteer and state-published Ghorpade history identify Mane as Mhasvad deshmukh and Bijapur shiledars, and Daphle as Jath deshmukhs with a Bijapur command. Verify the relevant sanad dates and the names of the 1622 incumbents.",
+    "impact": "Their patron records have null start/end years, and no specific individual or fort is assigned.",
+    "from": "item05"
+  },
+  {
+    "id": "D9",
+    "priority": "high",
+    "issue": "Ghorpade branches must remain distinct; claimed common Bhosle origin is a family legend",
+    "verify": "The Satara Gazetteer distinguishes Kapshi and Mudhol families. The Ghorpade family history itself presents Bhonsle descent as a family legend. Verify branch genealogies and their independent 1622 officeholders from sanad records.",
+    "impact": "Kapshi and Mudhol have separate clan/family IDs. No common founder, branch-parent edge or Bhonsle kinship is asserted.",
+    "from": "item05"
+  },
+  {
+    "id": "D10",
+    "priority": "high",
+    "issue": "Shirke continuity from the fifteenth century into 1622 is unproven",
+    "verify": "A nineteenth-century journal account describes a Shirke chief in 1453; the Satara Gazetteer says the More chief dispossessed the Shirkes during Yusuf Adil Shah's reign. Later 17th-century family references do not identify which branch held what rights in 1622.",
+    "impact": "Shirke is a low-confidence legacy candidate with no 1622 patron, seat or holdings.",
+    "from": "item05"
+  },
+  {
+    "id": "D11",
+    "priority": "high",
+    "issue": "Mohite references belong to different dates and cannot be merged into a single branch",
+    "verify": "The Satara Gazetteer gives an early-sixteenth-century Mohite reference; Vaidya discusses Sambhaji and Dharoji Mohite in a 10 January 1626 document and only suggests probable kinship with Shahaji's later wife's family. More primary-source genealogy is needed.",
+    "impact": "The Mohite entry is a low-confidence family-reference candidate; no 1622 seat, patron or marriage tie is asserted.",
+    "from": "item05"
+  },
+  {
+    "id": "D12",
+    "priority": "high",
+    "issue": "Mahadik is only supported here by an early-sixteenth-century reference",
+    "verify": "The Satara Gazetteer lists Mahadik among local chiefs associated with Shirke's earlier depredations before/under Yusuf Adil Shah. It does not establish a continuous line, 1622 head, seat or patron.",
+    "impact": "Mahadik remains a low-confidence legacy candidate, not a confirmed 1622 political clan.",
+    "from": "item05"
+  },
+  {
+    "id": "D13",
+    "priority": "medium",
+    "issue": "The clan template's gameplay fields are not historical facts",
+    "verify": "Treasury, influence, renown and cohesion are left null; holdings and member arrays remain empty unless directly evidenced. No personality scores, troops or game-balance data have been added.",
+    "impact": "These records are historical scaffolds only, with no simulated numbers filled in.",
+    "from": "item05"
+  },
+  {
+    "id": "D1",
+    "issue": "Cleaned Batch 1 file/IDs",
+    "verify": "The only Batch 1 file visible to me in this conversation is the earlier 58-record JSON; it uses site_ahilyanagar and site_chhatrapati_sambhajinagar and has no site_khed. Your prompt explicitly provides site_ahmadnagar, site_khirki and site_khed, so those IDs are used as instructed. Please verify the remaining site_* references against your cleaned 57-site file before merging.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D2",
+    "issue": "Ahmadnagar Fort in 1622",
+    "verify": "Malik Ambar is reported to have expelled Mughal forces from Ahmadnagar Fort in 1610. Confirm that the citadel and the settlement had the same Nizam Shahi controller in 1622 and identify the killedar if possible.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D3",
+    "issue": "Udgir Fort sovereignty/controller",
+    "verify": "Sources point to a pre-Bahmani fort, Barid Shahi-era assignment and contested 1635–36 claims/holdouts. Exact 1622 sovereignty and de facto command remain unproven; both ownership fields are null.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D4",
+    "issue": "Ausa Fort 1622 transfer",
+    "verify": "The Latur District page says Malik Ambar captured Ausa in 1014 AH and renamed it Ambarapur. Verify the Hijri-to-Gregorian conversion and whether Nizam Shahi command was still effective in 1622.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D5",
+    "issue": "Parenda/Paranda control chronology",
+    "verify": "The Maharashtra State Gazetteer calls Parenda the capital of the surviving Ahmadnagar state after 1600; district sources differ on whether Adil Shahi capture occurred in 1630 or later in the 1630s. Confirm exact transfer chronology and 1622 commandant.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D6",
+    "issue": "Torna Fort political controller",
+    "verify": "Torna existed before 1622 and is described as an Adil Shahi stronghold before 1646, but the consulted source does not date the exact transition. Sovereign/controller are left null.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D7",
+    "issue": "Murumbdev/Rajgad historical name and works",
+    "verify": "Use Murumbdev for the 1622 name. Maharashtra government material dates Haibatrao's Adil Shahi capture from Nizam Shahi to 1625. The major Rajgad fortification programme and Rajgad name belong to the post-1647 period and must not be backdated.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D8",
+    "issue": "Jivdhan, Hadsar and Chavand",
+    "verify": "The Marathi Vishwakosh places these with Shivneri in the old Nane Ghat/Malshej defensive complex, but exact 1622 political command, active garrison state and construction dates are not established. Hadsar and Chavand should remain inactive until further verification.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D9",
+    "issue": "Korlai Fort sovereignty/controller",
+    "verify": "UNESCO's tentative-list description says Burhan Nizamshah built Korlai opposite Portuguese Revdanda and also says both forts were in Portuguese control. Verify the date and legal/political sequence of Korlai's transfer before treating the 1622 controller as settled.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D10",
+    "issue": "Janjira Fort sovereignty and commander",
+    "verify": "Local records and the 2019 study identify Siddi Ambar Sanak as the commander/governor from 1621, while the UNESCO summary describes an Adil Shahi-to-Siddi transition during Ibrahim II's reign. Confirm whether 1622 suzerainty was Nizam Shahi, Adil Shahi or effectively Siddi autonomous. Confirm the character spelling before Batch 5.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D11",
+    "issue": "Dabhol as an active fort in 1622",
+    "verify": "The Konkan Gazetteer reports forts/redoubts in the sixteenth century, a 1615 account saying the Portuguese had a factory but no fort, a 1626 account mentioning an old castle, and 1639 fortifications in ruin. The 1622 fort's existence and readiness are unproven; do not activate this low-confidence record without evidence.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D12",
+    "issue": "Rajapuri land fort versus Janjira island fort",
+    "verify": "The 1489 Danda-Rajapuri wooden kot and the later island fortress are discussed in overlapping accounts. This batch represents the island fortress as fort_janjira and does not create a second fort_rajapuri record to avoid double-counting; verify whether a separate mainland fort existed in 1622.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D13",
+    "issue": "Panhala scope",
+    "verify": "Panhala is included as the southern Sahyadri edge of this pack. Confirm that your actual region boundary includes it; it is not in the visible Batch 1 site list, so site_panhala is listed as a new required site.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D14",
+    "issue": "Garrison sizes",
+    "verify": "All garrison_size_range values are inferred gameplay planning bands, not historical muster figures. Replace them if a dated fort muster or reliable contemporary account is found.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D15",
+    "issue": "Coordinates and elevation",
+    "verify": "Coordinates are approximate modern fort-centre locators. Elevation is null where a reliable value was not confirmed in the consulted sources; do not treat these as historic surveyed positions.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D16",
+    "issue": "Later forts excluded",
+    "verify": "Visapur (eighteenth-century construction/development), Pratapgad (mid-seventeenth-century construction) and Sindhudurg (1660s) are intentionally excluded from the 1622 records. Confirm any alternate evidence for a separate pre-existing fortification on those sites before adding them.",
+    "from": "batch2a"
+  },
+  {
+    "id": "D17",
+    "issue": "No fort template in starter pack",
+    "verify": "The starter ZIP contains no fort.example.json. The records therefore use the settlement template's coordinate/ownership conventions and the field names explicitly requested in your prompt. Add a formal fort schema to the starter pack before code validation.",
+    "from": "batch2a"
+  }
+]

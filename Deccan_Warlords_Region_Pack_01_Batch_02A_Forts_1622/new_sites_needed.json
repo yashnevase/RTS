@@ -1,0 +1,82 @@
+[
+  {
+    "id": "site_panhala",
+    "name": "Panhala",
+    "coordinates": {
+      "latitude": 16.8123,
+      "longitude": 74.1105
+    },
+    "type": "market_town",
+    "notes": "Needed as the settlement anchor for Panhala Fort; modern locator name, historical settlement name should be checked."
+  },
+  {
+    "id": "site_velhe",
+    "name": "Velhe",
+    "coordinates": {
+      "latitude": 18.282,
+      "longitude": 73.621
+    },
+    "type": "village",
+    "notes": "Needed as the nearest local settlement/base for Torna Fort."
+  },
+  {
+    "id": "site_malavli",
+    "name": "Malavli",
+    "coordinates": {
+      "latitude": 18.724,
+      "longitude": 73.486
+    },
+    "type": "village",
+    "notes": "Needed as the local settlement/base for Lohagad Fort and the nearby pass/fort cluster."
+  },
+  {
+    "id": "site_tikona_peth",
+    "name": "Tikona Peth",
+    "coordinates": {
+      "latitude": 18.628,
+      "longitude": 73.514
+    },
+    "type": "village",
+    "notes": "Needed as the local settlement/base for Tikona Fort."
+  },
+  {
+    "id": "site_gunjavane",
+    "name": "Gunjavane",
+    "coordinates": {
+      "latitude": 18.244,
+      "longitude": 73.68
+    },
+    "type": "village",
+    "notes": "Needed as the local settlement/base for Murumbdev/Rajgad Fort."
+  },
+  {
+    "id": "site_donaje",
+    "name": "Donaje",
+    "coordinates": {
+      "latitude": 18.366,
+      "longitude": 73.744
+    },
+    "type": "village",
+    "notes": "Needed as the local settlement/base for Kondhana Fort; historical settlement name and 1622 presence require checking."
+  },
+  {
+    "id": "site_korlai",
+    "name": "Korlai",
+    "coordinates": {
+      "latitude": 18.532,
+      "longitude": 72.914
+    },
+    "type": "village",
+    "notes": "Needed to represent the settlement at the foot of Korlai Fort separately from Chaul and Revdanda."
+  },
+  {
+    "id": "site_murud",
+    "name": "Murud",
+    "coordinates": {
+      "latitude": 18.328,
+      "longitude": 72.965
+    },
+    "type": "market_town",
+    "notes": "Needed as the mainland settlement/support point for Janjira Fort; verify period name and 1622 size/type."
+  }
+]

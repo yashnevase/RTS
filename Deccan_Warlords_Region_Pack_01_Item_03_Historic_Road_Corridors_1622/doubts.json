@@ -1,0 +1,72 @@
+[
+  {
+    "id": "D1",
+    "priority": "high",
+    "issue": "Canonical sites v2 (57-site file) is not available in the accessible uploads",
+    "verify": "The available files include the starter pack, forts batch and prior item-1/item-2 outputs, but not the separate sites v2 dataset. Only site IDs explicitly present in those files are used in waypoint arrays. Reconcile every waypoint against the canonical 57-site file before merge.",
+    "impact": "The full Burhanpur–Daulatabad–Ahmadnagar–Pune line, Bijapur–Karad–Chiplun–Guhagar route and western endpoints of the Nane/Malshej/Bor corridors cannot be completed without guessing IDs."
+  },
+  {
+    "id": "D2",
+    "priority": "high",
+    "issue": "Burhanpur–Daulatabad–Ahmadnagar–Pune example corridor is not emitted as a complete waypoint list",
+    "verify": "Maharashtra in Maps describes a North-to-Deccan approach via the Burhanpur gap and Tapi crossing, then a Dhule–Malegaon or Jalgaon–Aurangabad approach; it separately names the Aurangabad–Ahmadnagar–Pune corridor. The available files do not expose the canonical Burhanpur site ID or all intermediate nodes, and the sources reviewed do not prove Daulatabad as a mandatory intermediate stop on a single road.",
+    "impact": "Do not build a route with an assumed site_burhanpur/site_tapi_ford or silently treat Daulatabad and Khirki as the same settlement. Add exact v2 nodes and corroborate the junction sequence first."
+  },
+  {
+    "id": "D3",
+    "priority": "high",
+    "issue": "Khirki versus Aurangabad naming and chronology",
+    "verify": "The regional road synthesis uses the later name Aurangabad. For a 1622 scenario the waypoint is site_khirki. Preserve Aurangabad only as a later name variant with a dated validity interval, not as the 1622 primary label.",
+    "impact": "All 1622 corridors in this pack use site_khirki and do not introduce a site_aurangabad waypoint."
+  },
+  {
+    "id": "D4",
+    "priority": "high",
+    "issue": "Khirki–Solapur–Bijapur route is only partially represented",
+    "verify": "The 1986 regional synthesis names the full Aurangabad–Solapur–Bijapur corridor, but the canonical Bijapur site ID and intermediate node IDs are not present in the accessible data. Obtain the IDs from sites v2 before completing the waypoint list.",
+    "impact": "The record is explicitly a Khirki–Solapur section and must not be treated as the full corridor."
+  },
+  {
+    "id": "D5",
+    "priority": "high",
+    "issue": "Nane Ghat in 1622",
+    "verify": "Ancient trade use and Jivdhan's commanding position are supported, and a later gazetteer documents Junnar–Ghatghar traffic with the Konkan. A direct 1622 itinerary, toll record or seasonal operating schedule was not located.",
+    "impact": "The corridor is a historically grounded candidate, not a verified 1622 route with fixed traffic volume. The west-side terminal remains unrepresented pending canonical site IDs."
+  },
+  {
+    "id": "D6",
+    "priority": "high",
+    "issue": "Bor Ghat pre-1804 route alignment and 1622 status",
+    "verify": "Sources establish a strategic pass and pack-animal traffic before later artillery/carriage-road works; they do not fix the exact 1622 track. Lohagad is identified as guarding the trade route, but a fort should not be treated as a mandatory linear stop without a surveyed alignment.",
+    "impact": "Lohagad is a related fort, not a forced road waypoint. Exclude the 1804 artillery road, 1830 carriage road and Visapur (1713–1720) from 1622."
+  },
+  {
+    "id": "D7",
+    "priority": "high",
+    "issue": "Malshej / Malsej-Ana historic alignment",
+    "verify": "The 1885 gazetteer describes a western route down the Malsej pass via Belha, Ale, Otur and Madh, while modern official sources describe Malshej Ghat. Confirm whether the historic spelling and route are identical to the modern pass alignment and obtain canonical IDs for intermediate and western-side settlements.",
+    "impact": "The route is retained only as a low-confidence segment. No controlling fort or complete Konkan endpoint is assigned."
+  },
+  {
+    "id": "D8",
+    "priority": "medium",
+    "issue": "Tamhini / Tamni / Sathpayri road not included",
+    "verify": "The prior pass pack notes that the Poona Gazetteer records a pedestrian Tamni/Sathpayri footpath in the Mulshi tract but does not prove identity with modern Tamhini Ghat. A period-specific route and valid endpoint IDs remain unestablished.",
+    "impact": "No Tamhini road corridor is asserted for 1622."
+  },
+  {
+    "id": "D9",
+    "priority": "medium",
+    "issue": "Kumbharli corridor not included as a waypoint list",
+    "verify": "The earlier pass pack cites nineteenth-century Satara/Ratnagiri gazetteers for Kumbharli. Canonical Karad/Patan/Chiplun node IDs are not visible in the uploaded data, and a 1622 itinerary or traffic record was not established in this research pass.",
+    "impact": "Do not invent site IDs or present the later route alignment as a verified 1622 road. Add after sites v2 IDs and earlier evidence are checked."
+  },
+  {
+    "id": "D10",
+    "priority": "medium",
+    "issue": "Poona–Sholapur / other nineteenth-century road alignments",
+    "verify": "The 1885 gazetteer records later Poona–Sholapur and local road routes, but those late-century alignments cannot be assumed to represent an identical 1622 corridor. Identify an earlier itinerary, campaign record or dated route evidence before adding them to the 1622 map.",
+    "impact": "Later roads are not silently backdated in this pack."
+  }
+]

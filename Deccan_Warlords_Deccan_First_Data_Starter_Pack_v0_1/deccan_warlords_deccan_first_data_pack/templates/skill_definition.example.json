@@ -1,0 +1,18 @@
+{
+  "id": "skill_leadership",
+  "record_version": 1,
+  "name": "Leadership",
+  "category": "military_command",
+  "description": "Ability to organise people, maintain cohesion and lead a party.",
+  "primary_attributes": ["presence", "insight"],
+  "experience_sources": ["command_party", "lead_successful_campaign", "resolve_morale_crisis"],
+  "effects": [
+    { "target_system": "party_morale", "effect_type": "bounded_modifier", "rule_id": "effect_leadership_party_morale" },
+    { "target_system": "party_cohesion", "effect_type": "bounded_modifier", "rule_id": "effect_leadership_cohesion" }
+  ],
+  "soft_cap": 100,
+  "diminishing_returns_profile": "standard_skill_curve",
+  "source_ids": [],
+  "confidence": "fictional_game_rule",
+  "status": "draft"
+}

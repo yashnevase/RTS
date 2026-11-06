@@ -1,0 +1,315 @@
+[
+  {
+    "id": "family_jedhe_main_line",
+    "record_version": 1,
+    "name": "Jedhe of Kari",
+    "name_variants": [
+      "Jedhe",
+      "Kari Jedhe"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_jedhe_shakavali_kari_1618_1697"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. The Jedhe Shakavali is identified as the chronicle preserved by the Jedhes, described as Deshmukhs of Kari near Bhor, with coverage beginning in 1618. This is sufficient to register the Kari house and its local documentary/office identity, but not to assign a specific 1622 sovereign patron, head, estate boundary or branch genealogy. No site ID for Kari occurs in the accessible site additions/fort files, so the seat is recorded in text only. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_jadhav_sindkhed_line",
+    "record_version": 1,
+    "name": "Jadhav of Sindkhed",
+    "name_variants": [
+      "Yadavrao",
+      "Jadav Rao",
+      "Lakhuji Jadhav Rao"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_rawlinson_1915_shivaji_maratha"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. Lukaji/Lakhuji Jadhav Rao of Sindkhed is described as a feudatory in Nizam Shahi service. The same account places him as an important patron to whom Maloji Bhosle was subordinate. Lakhuji and his family were killed in 1629 in later accounts, so that is an upper bound for this recorded patronage, not an invented start date. The family's claimed descent from the medieval Yadavas is a claim, not an established genealogical fact. Sindkhed is the textual seat; no matching canonical site ID is present in the accessible files. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_bhosale_shahaji_line",
+    "record_version": 1,
+    "name": "Bhosle household",
+    "name_variants": [
+      "Bhosale",
+      "Bhonsle",
+      "Bhosle"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_rawlinson_1915_shivaji_maratha",
+      "source_vaidya_1931_founder_swaraj"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. This record is restricted to the documented Maloji-to-Shahaji line, not every person sharing the Bhosle/Bhosale surname. Rawlinson records Maloji's 1604 grants of Poona and Supé jagirs and Chakan and Shivneri forts, his death in 1619, and Shahaji's return to Ahmadnagar service. Vaidya dates a later Adil Shahi service interval to about October 1625 through about the end of 1627, after which Shahaji returned to Nizam Shahi service. Thus Nizam Shahi service is the supported 1622 position. The alleged Chitor/Rajput descent is expressly treated by Rawlinson as an unverified origin claim and is excluded. Grants and jagirs are not represented as outright clan ownership of each fort. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_nimbalkar_phaltan_line",
+    "record_version": 1,
+    "name": "Naik Nimbalkar of Phaltan",
+    "name_variants": [
+      "Nimbalkar",
+      "Nimbhalkar",
+      "Phaltan Naik",
+      "Phaltanrav"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_satara_gazetteer_1885_history",
+      "source_phaltan_state_report_1945",
+      "source_rawlinson_1915_shivaji_maratha"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. The Phaltan official ruler list places Vangoji II alias Jagpalrao in office from 1570 to 1630, so he is the named house head in the 1622 period. The Satara Gazetteer identifies the Naik Nimbalkars among the principal chiefs under Bijapur and records Dipabai, sister of Jagpalrao, as Maloji Bhosle's wife; it also credits Jagpalrao with helping arrange Shahaji and Jijabai's marriage. The exact beginning and legal form of the Bijapur tie are not dated, so no start/end year is fabricated. Phaltan is the textual seat; no matching canonical site ID is available in the accessible site data. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_more_javli_line",
+    "record_version": 1,
+    "name": "More of Javli",
+    "name_variants": [
+      "Mores of Javli",
+      "Chandrarao More"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_satara_gazetteer_1885_history"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. The Satara Gazetteer says a More chief was appointed under Yusuf Adil Shah (reign 1490-1510) to command troops in the Javli tract, was given the title Chandrarao, and that descendants held the tract for seven generations. It describes the family's loyalty to Bijapur and nominal tribute. This supports a long-standing Adil Shahi-linked More house, but the personal name and exact estate boundary of its 1622 head are not securely specified here. The date 1490 is the lower bound of the appointing ruler's reign, not a claimed exact appointment date. Javli is a textual seat only. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_ghatge_malavdi_line",
+    "record_version": 1,
+    "name": "Ghatge of Malavdi",
+    "name_variants": [
+      "Ghatge",
+      "Ghatage",
+      "Junjharrav Ghatge"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_satara_gazetteer_1885_history"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. The Satara Gazetteer identifies Junjharrav Ghatge as deshmukh of Malavdi, and the Ghatges as deshmukhs/sardeshmukhs of the Man pargana. It specifically dates Nagoji Ghatge's grant of the sardeshmukhi title and Junjharrav title by Ibrahim Adil Shah II to 1626. That grant is after the 1622 scenario and must not be backdated. The source does not identify the precise 1622 holder or prove that Nagoji and Junjharrav were the same individual. Malavdi is a textual seat only. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_mane_mhasvad_line",
+    "record_version": 1,
+    "name": "Mane of Mhasvad",
+    "name_variants": [
+      "Mane",
+      "Manay"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_satara_gazetteer_1885_history"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. The Satara Gazetteer identifies the head of the Mane family as deshmukh of Mhasvad and describes Manes as shiledars (self-equipped cavalrymen) under Bijapur. This supports a Bijapur service relationship and a Mhasvad seat, but the Gazetteer passage does not date its beginning/end or name the 1622 head. No character, personal traits, troop count or estate acreage is assigned. Mhasvad is a textual seat only. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_daphle_jath_line",
+    "record_version": 1,
+    "name": "Daphle of Jath",
+    "name_variants": [
+      "Daphale",
+      "Dafle",
+      "Daphle",
+      "Chavhan of Daphalapur"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_satara_gazetteer_1885_history",
+      "source_ghorpade_house_history_1989"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. The sources identify Daphles as deshmukhs of the Jath pargana, say their earlier surname was Chavhan, and report that they took the name Daphle from Daphalapur, where the family held hereditary patil rights; they also state that they held a command from the Bijapur kings. The account does not date the surname change or the command, so it is not assigned an invented start date. Do not conflate this line with all Chavhan families. Daphalapur/Jath are textual locations; no matching canonical site ID is available. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_ghorpade_kapshi_line",
+    "record_version": 1,
+    "name": "Ghorpade of Kapshi",
+    "name_variants": [
+      "Kapshi Ghorpade",
+      "Kapshikar Ghorpade"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_satara_gazetteer_1885_history",
+      "source_ghorpade_house_history_1989"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. The Satara Gazetteer lists the Ghorpades of Kapshi on the Varna as a principal Bijapur-era chief house and distinguishes the Kapshi family from the Mudhol family. It also reports that the Kapshi line held deshmukhi rights under Bijapur and that a member received the high title Amir-ul-umra. The specific recipient and date are not fixed here. The family legend that Ghorpades were originally Bhonsles is not accepted as established kinship. Kapshi is a textual seat only. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_ghorpade_mudhol_line",
+    "record_version": 1,
+    "name": "Ghorpade of Mudhol",
+    "name_variants": [
+      "Mudhol Ghorpade",
+      "Mudholkar Ghorpade"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_satara_gazetteer_1885_history",
+      "source_ghorpade_house_history_1989"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. This is a separate Mudhol line, not merged with Kapshi. The Satara Gazetteer distinguishes the Mudhol Ghorpades near the Ghatprabha from the Kapshi Ghorpades near the Varna, gives them separate traditional 'touch' designations, and places the two within Bijapur's deshmukh network. Mudhol lies in the Karnataka/Adil Shahi sphere rather than the core western Maharashtra map; it is included only as a distinct adjacent Deccan patronage house. The alleged Bhonsle origin is a family legend, not proven descent. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_shirke_khelna_legacy_line",
+    "record_version": 1,
+    "name": "Shirke of Khelna household (1622 status unresolved)",
+    "name_variants": [
+      "Sirke",
+      "Shirke"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_indian_antiquary_shirke_khelna_1453",
+      "source_satara_gazetteer_1885_history"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. A Shirke chief is reported in the 1453 account of the Bahmani expedition toward Khelna/Vishalgad. The Satara Gazetteer later says the More chief displaced the Shirkes during Yusuf Adil Shah's reign. These sources do not prove which Shirke branch, if any, retained rights or a distinct patron in 1622. This candidate must not be treated as a confirmed 1622 territorial lord. Khelna/Vishalgad is historical context only, not a 1622 seat assignment. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_mohite_early_record_line",
+    "record_version": 1,
+    "name": "Mohite family-reference record",
+    "name_variants": [
+      "Mohite"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_satara_gazetteer_1885_history",
+      "source_vaidya_1931_founder_swaraj"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. The Satara Gazetteer mentions Mohite among the chiefs associated with Shirke's earlier depredations in the period of More's rise under Yusuf Adil Shah. Vaidya's discussion of a 10 January 1626 grant mentions Sambhaji and Dharoji Mohite and says they were probably relatives of Shahaji's second wife's family. These are separate chronological references; evidence here does not establish a continuous branch, a 1622 seat or a 1622 patron. The later Mohite kin connection is not backdated into 1622. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  },
+  {
+    "id": "family_mahadik_early_record_line",
+    "record_version": 1,
+    "name": "Mahadik family-reference record",
+    "name_variants": [
+      "Mahadik",
+      "Mahadik family"
+    ],
+    "founding_year": null,
+    "founder_character_id": null,
+    "head_character_id": null,
+    "branch_ids": [],
+    "member_character_ids": [],
+    "succession_profile_id": null,
+    "inheritance_profile_id": null,
+    "ancestral_seat_id": null,
+    "source_ids": [
+      "source_satara_gazetteer_1885_history"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Family-level placeholder linked to the corresponding clan candidate. The Satara Gazetteer lists Mahadik among the chiefs associated with Shirke's earlier depredations and suppressed by the More chief during Yusuf Adil Shah's reign. It does not establish a continuous Mahadik line, a 1622 head, seat, estate or patron. This record preserves the historical name as a research candidate only; it is not a claim that a 1622 Mahadik polity or lordship existed. No founder, genealogical links, current head or branch membership is filled without direct evidence."
+  }
+]

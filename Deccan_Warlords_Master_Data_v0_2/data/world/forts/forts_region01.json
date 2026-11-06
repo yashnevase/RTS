@@ -1,0 +1,1076 @@
+[
+  {
+    "id": "fort_ahmadnagar",
+    "record_version": 1,
+    "name": "Ahmadnagar Fort",
+    "name_variants": [
+      "Ahmednagar Fort",
+      "Kot Bagh Nizam"
+    ],
+    "fort_type": "citadel",
+    "coordinates": {
+      "latitude": 19.0947,
+      "longitude": 74.7484
+    },
+    "elevation_m": null,
+    "region_id": "region_ahmadnagar_core",
+    "protects_site_ids": [
+      "site_ahmadnagar"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": 1490,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 400,
+      "max": 1200,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "medium",
+    "water_security": "unknown",
+    "strategic_role": "The principal Nizam Shahi citadel at the dynasty's namesake capital; controls the immediate fortified urban core and a key western Deccan political centre.",
+    "source_ids": [
+      "source_ahmadnagar_fort_asi",
+      "source_ahmadnagar_mughal_recovery_eaton",
+      "source_maharashtra_gazetteer_mughals_deccan"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Founded/built by Ahmad Nizam Shah around 1490. The Mughals captured the fort in 1600; Malik Ambar recovered it in 1610 according to the Eaton account summarized by Indian Express, so Nizam Shahi control is plausible for 1622. Confirm the exact control transition and 1622 killedar. The fort's 1490 construction date is repeated in government-linked references. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_daulatabad",
+    "record_version": 1,
+    "name": "Daulatabad Fort",
+    "name_variants": [
+      "Devagiri Fort",
+      "Deogiri Fort",
+      "Deogad"
+    ],
+    "fort_type": "citadel",
+    "coordinates": {
+      "latitude": 19.9436,
+      "longitude": 75.221
+    },
+    "elevation_m": null,
+    "region_id": "region_khirki_daulatabad",
+    "protects_site_ids": [
+      "site_daulatabad",
+      "site_khirki"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 500,
+      "max": 1500,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "very_high",
+    "water_security": "high",
+    "strategic_role": "Major hill citadel and secondary Nizam Shahi capital/treasury stronghold; its steep isolated hill, controlled approach and fortified galleries make it a major defensive and logistical anchor.",
+    "source_ids": [
+      "source_asi_daulatabad_ncf",
+      "source_census_aurangabad_daulatabad",
+      "source_imperial_gazetteer_daulatabad"
+    ],
+    "confidence": "high",
+    "status": "draft",
+    "notes": "The fort long predates 1622 and was the Yadava capital before later Sultanate control. It passed to the Nizam Shahis in the sixteenth century and remained with Malik Ambar's Nizam Shahi regime until the Mughal capture in 1633. Exact original construction date is not established here. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_solapur",
+    "record_version": 1,
+    "name": "Sonalpur Fort",
+    "name_variants": [
+      "Solapur Bhuikot Fort",
+      "Sholapur Fort",
+      "Sandalpur Fort"
+    ],
+    "fort_type": "citadel",
+    "coordinates": {
+      "latitude": 17.674,
+      "longitude": 75.9062
+    },
+    "elevation_m": null,
+    "region_id": "region_solapur_frontier",
+    "protects_site_ids": [
+      "site_solapur"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_adil_shahi",
+      "controller_polity_id": "polity_adil_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 150,
+      "max": 500,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "medium",
+    "water_security": "unknown",
+    "strategic_role": "Fortified urban centre and frontier strongpoint guarding the Bhima–Sina corridor and the approach between Bijapur's northern districts and Ahmadnagar's southern sphere.",
+    "source_ids": [
+      "source_solapur_gazetteer_places",
+      "source_solapur_tourism_bhuikot"
+    ],
+    "confidence": "high",
+    "status": "draft",
+    "notes": "The fort is documented by the late fourteenth century. Solapur was assigned to Bijapur in 1562; the Maharashtra Gazetteer dates Malik Ambar's storming of the fort to 1623, so Adil Shahi control is the best-supported position for the 1622 snapshot. Do not move it to Nizam Shahi on the basis of the 1623 event. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_paranda",
+    "record_version": 1,
+    "name": "Parenda Fort",
+    "name_variants": [
+      "Paranda Fort",
+      "Parinda Fort"
+    ],
+    "fort_type": "citadel",
+    "coordinates": {
+      "latitude": 18.2705,
+      "longitude": 75.4552
+    },
+    "elevation_m": null,
+    "region_id": "region_marathwada_southwest",
+    "protects_site_ids": [
+      "site_paranda"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 250,
+      "max": 700,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "high",
+    "water_security": "unknown",
+    "strategic_role": "Nizam Shahi refuge-capital and major stronghold after the Mughal capture of Ahmadnagar in 1600; a key anchor for the southern and eastern defensive network.",
+    "source_ids": [
+      "source_maharashtra_gazetteer_mughals_deccan",
+      "source_dharashiv_gov_paranda",
+      "source_osmanabad_gazetteer_history"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "The Maharashtra State Gazetteer identifies Parenda as the capital of the surviving Ahmadnagar territory after 1600. A district tourism account says it was captured by the Adil Shah in 1630; another Gazetteer narrative describes further changes during the 1630s. Nizam Shahi control in 1622 is strongly indicated, but the exact transfer sequence and the first construction date need checking. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_naldurg",
+    "record_version": 1,
+    "name": "Naldurg Fort",
+    "name_variants": [
+      "Naldrug",
+      "Naldurg Land Fort"
+    ],
+    "fort_type": "citadel",
+    "coordinates": {
+      "latitude": 17.816,
+      "longitude": 76.282
+    },
+    "elevation_m": null,
+    "region_id": "region_solapur_frontier",
+    "protects_site_ids": [
+      "site_naldurg"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_adil_shahi",
+      "controller_polity_id": "polity_adil_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 250,
+      "max": 800,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "high",
+    "water_security": "high",
+    "strategic_role": "Adil Shahi border fortress guarding approaches north of the Bhima and the route network toward Solapur and the Ahmadnagar frontier; the Bori River dam and water works strengthen its defensive value.",
+    "source_ids": [
+      "source_morrelle_naldurg_2022",
+      "source_maharashtra_tourism_naldurg",
+      "source_osmanabad_gazetteer_naldurg"
+    ],
+    "confidence": "high",
+    "status": "draft",
+    "notes": "The fort has earlier medieval/Bahmani origins. The Adil Shahis took control and specifically strengthened it in 1558; an Ahmadnagar siege in 1580 failed. The Bori dam and Pani Mahal were developed across the sixteenth and early seventeenth centuries; their exact operational status in 1622 should be confirmed from the architectural study. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_ausa",
+    "record_version": 1,
+    "name": "Ausa (Ambarapur) Fort",
+    "name_variants": [
+      "Ausa Fort",
+      "Ambarapur",
+      "Amrapur"
+    ],
+    "fort_type": "citadel",
+    "coordinates": {
+      "latitude": 18.2468,
+      "longitude": 76.5
+    },
+    "elevation_m": null,
+    "region_id": "region_marathwada_south",
+    "protects_site_ids": [
+      "site_ausa"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 100,
+      "max": 400,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "high",
+    "water_security": "unknown",
+    "strategic_role": "Fortified low-lying citadel controlling the Balaghat approaches and the southern Nizam Shahi defensive belt; the surrounding higher ground conceals much of the fort from distant observation.",
+    "source_ids": [
+      "source_latur_district_ausa",
+      "source_imperial_gazetteer_mughals_deccan"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "The Latur District government page says Malik Ambar captured the fort in 1014 AH and renamed it Ambarapur; conversion of the Hijri year and the exact capture episode should be checked. The moat is about 120 feet wide, but a moat is not proof of potable water security. Nizam Shahi control in 1622 is plausible; the later 1636 transfer situation is complex. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_udgir",
+    "record_version": 1,
+    "name": "Udgir Fort",
+    "name_variants": [
+      "Udgiri Fort"
+    ],
+    "fort_type": "citadel",
+    "coordinates": {
+      "latitude": 18.3935,
+      "longitude": 77.1128
+    },
+    "elevation_m": null,
+    "region_id": "region_marathwada_south",
+    "protects_site_ids": [
+      "site_udgir"
+    ],
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 100,
+      "max": 350,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "medium",
+    "water_security": "unknown",
+    "strategic_role": "Deep inland citadel on the eastern Balaghat frontier, controlling approaches between the Nizam Shahi, former Barid Shahi and Bijapur spheres.",
+    "source_ids": [
+      "source_latur_district_udgir",
+      "source_imperial_gazetteer_udgir",
+      "source_history_udgir_barid_shahi"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "The fort predates the Bahmanis; a modern district tourism page gives a twelfth-century date, while a local history summary places its construction around 1493 and says it was held by Qasim Barid. The 1635–36 sources report a contested handover and remaining Nizam Shahi officers, with Adil Shahi claims. No reliable date-specific source found here settles the sovereign/controller in 1622; leave both null pending verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_shivneri",
+    "record_version": 1,
+    "name": "Shivneri Fort",
+    "name_variants": [
+      "Sivneri",
+      "Shivner"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 19.199,
+      "longitude": 73.8568
+    },
+    "elevation_m": null,
+    "region_id": "region_junnar_sahyadri",
+    "protects_site_ids": [
+      "site_junnar",
+      "site_khed"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": 1445,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 80,
+      "max": 300,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "very_high",
+    "water_security": "high",
+    "strategic_role": "Junnar-area hill citadel protecting the old Nane Ghat/Malshej approaches and the plateau routes; a major local stronghold under the Nizam Shahi state.",
+    "source_ids": [
+      "source_marathi_vishwakosh_shivneri",
+      "source_pune_gazetteer_1984",
+      "source_pune_district_shivneri_tourism"
+    ],
+    "confidence": "high",
+    "status": "draft",
+    "notes": "The Marathi Vishwakosh suggests very early origins, reports rebuilding by Malik-ul-Tujar in 1445, and Nizam Shahi control from about 1490. The Pune Gazetteer records Malik Ahmad's capture in 1486. Springs and the Badami tank are visible/recorded today, but their exact 1622 condition is not separately documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_purandar",
+    "record_version": 1,
+    "name": "Purandar Fort",
+    "name_variants": [
+      "Purandhar",
+      "Purandara"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 18.2788,
+      "longitude": 73.9752
+    },
+    "elevation_m": 1374,
+    "region_id": "region_purandar_nira_basin",
+    "protects_site_ids": [
+      "site_saswad",
+      "site_pune"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": 1350,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 150,
+      "max": 500,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "very_high",
+    "water_security": "unknown",
+    "strategic_role": "High hill fortress controlling the Saswad–Pune approaches and routes from the plateau toward the western Ghats; an important state-held fort rather than an assumed Bhosale family possession.",
+    "source_ids": [
+      "source_imperial_gazetteer_purandar",
+      "source_maharashtra_tourism_purandar"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "The Imperial Gazetteer traces an early fortification to the first Bahmani reign (about 1350) and says that under early Ahmadnagar rule Purandar was among forts reserved to the government, not assigned to jagirdars. A conflicting older account associates it with Maloji Bhosale's Pune/Supe grant. For 1622, state control is the safer working assignment; no individual commander is identified. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_kondhana",
+    "record_version": 1,
+    "name": "Kondhana Fort",
+    "name_variants": [
+      "Kondhana",
+      "Kondana",
+      "Sinhagad (name adopted after 1647)"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 18.3664,
+      "longitude": 73.755
+    },
+    "elevation_m": null,
+    "region_id": "region_pune_plateau",
+    "protects_site_ids": [
+      "site_pune"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": 1340,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 150,
+      "max": 500,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "very_high",
+    "water_security": "high",
+    "strategic_role": "Defensive hill fort overlooking the Pune basin and routes between the plateau and Konkan; its steep access and stored water make it a strong regional redoubt.",
+    "source_ids": [
+      "source_poona_gazetteer_saswad",
+      "source_poona_gazetteer_places",
+      "source_pune_gazetteer_1984"
+    ],
+    "confidence": "high",
+    "status": "draft",
+    "notes": "The Pune Gazetteer records a siege in 1340 and says Kondhana fell to Malik Ahmad in the 1480s; it remained associated with the Nizam Shahi sphere. The name Sinhagad was adopted only after Shivaji's capture in 1647, so use Kondhana for the 1622 scenario. A Gazetteer describes ample water, but exact 1622 garrison and commandant remain unknown. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_rajgad",
+    "record_version": 1,
+    "name": "Murumbdev Fort",
+    "name_variants": [
+      "Murumbdev",
+      "Rajgad (later name, associated with Shivaji's capture/refortification from 1647)"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 18.2458,
+      "longitude": 73.6818
+    },
+    "elevation_m": 1323,
+    "region_id": "region_sahyadri_east",
+    "protects_site_ids": [
+      "site_bhor"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 50,
+      "max": 250,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "very_high",
+    "water_security": "unknown",
+    "strategic_role": "High Sahyadri hill position controlling the Velvandi and Gunjavane valley approaches; in 1622 it should be represented as the earlier Murumbdev stronghold, not as Shivaji's later expanded capital.",
+    "source_ids": [
+      "source_maharashtra_ahead_rajgad_2015",
+      "source_maharashtra_tourism_rajgad"
+    ],
+    "confidence": "high",
+    "status": "draft",
+    "notes": "Maharashtra government material reports that Nizam Shahi forces captured the fort before 1490 and that Haibatrao, an Adil Shahi chief, captured it from Nizam Shahi in 1625. Thus Nizam Shahi control in 1622 is supported. The large machis, citadel works and Rajgad identity relate to Shivaji's later development; do not backdate those improvements to 1622. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_torna",
+    "record_version": 1,
+    "name": "Torna Fort",
+    "name_variants": [
+      "Prachandagad",
+      "Tornagad"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 18.2757,
+      "longitude": 73.622
+    },
+    "elevation_m": 1403,
+    "region_id": "region_sahyadri_east",
+    "protects_site_ids": [
+      "site_bhor"
+    ],
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 50,
+      "max": 250,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "very_high",
+    "water_security": "unknown",
+    "strategic_role": "High ridge fort overlooking the upper Nira and Sahyadri approaches; a natural defensive anchor between the western plateau and the Ghats.",
+    "source_ids": [
+      "source_maharashtra_tourism_torna",
+      "source_pune_gazetteer_1984"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "The fort existed before 1622; Maharashtra Tourism traces origins to the thirteenth century and says it later became an Adil Shahi stronghold before Shivaji captured it in 1646. The 1622 sovereign/controller is not established precisely by the consulted sources, so ownership is left null. Do not apply the 1646 or later works to the 1622 structure without evidence. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_lohagad",
+    "record_version": 1,
+    "name": "Lohagad Fort",
+    "name_variants": [
+      "Lohgad",
+      "Lohgarh"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 18.7102,
+      "longitude": 73.4813
+    },
+    "elevation_m": 1033,
+    "region_id": "region_sahyadri_east",
+    "protects_site_ids": [
+      "site_pune"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 75,
+      "max": 250,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "high",
+    "water_security": "medium",
+    "strategic_role": "Hill fort guarding the western edge of the plateau and the routes between the Maval uplands and Konkan; a strong observation and refuge position.",
+    "source_ids": [
+      "source_maharashtra_ahead_lohagad_2015",
+      "source_pune_gazetteer_1984"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Maharashtra government material reports that Lohagad was under the Nizam Shahis in the early fifteenth century and was captured by Shivaji only in 1657–58. The fort existed in 1622, but the exact killedar and local controller are unknown. A central water tank is visible today; its 1622 capacity is not measured. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_tikona",
+    "record_version": 1,
+    "name": "Tikona Fort",
+    "name_variants": [
+      "Vitandgad",
+      "Tikona Gad"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 18.6285,
+      "longitude": 73.5125
+    },
+    "elevation_m": 1060,
+    "region_id": "region_sahyadri_east",
+    "protects_site_ids": [
+      "site_pune"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": 1585,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 50,
+      "max": 200,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "high",
+    "water_security": "medium",
+    "strategic_role": "Observation and defensive hill position overlooking the Pawna basin and routes linking Maval to the plateau; complements nearby Sahyadri forts.",
+    "source_ids": [
+      "source_fortsmaharashtra_tikona",
+      "source_pune_gazetteer_1984"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "A secondary fort history dates Malik Ahmad Nizam Shah's capture of Tikona to about 1585, supporting pre-1622 Nizam Shahi possession. The exact date and named 1622 commander are not independently corroborated here. Later Maratha/Mughal control events must not be projected backward. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_chakan",
+    "record_version": 1,
+    "name": "Chakan Fort",
+    "name_variants": [
+      "Chakan Bhuikot",
+      "Sangram Durg (later/local designation; verify period use)"
+    ],
+    "fort_type": "fortified_town",
+    "coordinates": {
+      "latitude": 18.7602,
+      "longitude": 73.864
+    },
+    "elevation_m": null,
+    "region_id": "region_pune_plateau",
+    "protects_site_ids": [
+      "site_chakan",
+      "site_khed"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 100,
+      "max": 350,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "medium",
+    "water_security": "unknown",
+    "strategic_role": "Fortified market town on the Pune–Junnar/Nashik road; controls an important northbound road junction and the entry to the Pune plateau from the north.",
+    "source_ids": [
+      "source_poona_gazetteer_chakan",
+      "source_pune_gazetteer_1984"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "The Poona Gazetteer records Chakan as Malik-ul-Tujar's headquarters in 1443 and describes a substantial fort, with a tradition of an earlier mud fort. The 1622 sovereign assignment to the Nizam Shahi polity is a regional inference; no 1622 fort commandant or clan owner is identified. The well-known 1662 siege is later and must not shape the 1622 garrison value. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_jivdhan",
+    "record_version": 1,
+    "name": "Jivdhan Fort",
+    "name_variants": [
+      "Jivdhan Gad",
+      "Jeevdhan"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 19.266,
+      "longitude": 73.74
+    },
+    "elevation_m": 1145,
+    "region_id": "region_junnar_sahyadri",
+    "protects_site_ids": [
+      "site_junnar"
+    ],
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 25,
+      "max": 120,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "very_high",
+    "water_security": "unknown",
+    "strategic_role": "One of the old Junnar-area hill forts associated with the Nane Ghat/Malshej route complex; likely used for observation and local route defence rather than as a large urban garrison centre.",
+    "source_ids": [
+      "source_marathi_vishwakosh_shivneri"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "The Marathi Vishwakosh groups Jivdhan with Shivneri, Hadsar and Chavand as old forts guarding the Nane Ghat and Malshej Ghat routes. Its exact 1622 sovereign, controller, earliest date and garrison are not established in the consulted source; ownership remains null. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_hadsar",
+    "record_version": 1,
+    "name": "Hadsar Fort",
+    "name_variants": [
+      "Hadsar Gad",
+      "Harishchandragad region Hadsar"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 19.276,
+      "longitude": 73.72
+    },
+    "elevation_m": null,
+    "region_id": "region_junnar_sahyadri",
+    "protects_site_ids": [
+      "site_junnar"
+    ],
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 25,
+      "max": 120,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "high",
+    "water_security": "unknown",
+    "strategic_role": "Small hill strongpoint in the Junnar–Malshej upland cluster, useful for local surveillance and route denial.",
+    "source_ids": [
+      "source_marathi_vishwakosh_shivneri"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Included because the Marathi Vishwakosh identifies Hadsar among the old forts in the Junnar/Nane Ghat–Malshej corridor. The source does not establish its exact 1622 command, garrison, or fortification state. Confirm it was an operational fort in 1622 before enabling it as a full garrison node. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_chavand",
+    "record_version": 1,
+    "name": "Chavand Fort",
+    "name_variants": [
+      "Chavandgad",
+      "Prasannagad (later/local name; verify period use)"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 19.205,
+      "longitude": 73.735
+    },
+    "elevation_m": null,
+    "region_id": "region_junnar_sahyadri",
+    "protects_site_ids": [
+      "site_junnar"
+    ],
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 25,
+      "max": 120,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "high",
+    "water_security": "unknown",
+    "strategic_role": "Junnar-area hill fort forming part of the historic hill-fort screen along the old plateau-to-Konkan approaches.",
+    "source_ids": [
+      "source_marathi_vishwakosh_shivneri"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Included as an old Junnar-area fort associated by the Marathi Vishwakosh with the Nane Ghat/Malshej defensive cluster. Exact date, 1622 controller and garrison condition are unverified; keep the record inactive until confirmed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_panhala",
+    "record_version": 1,
+    "name": "Panhala Fort",
+    "name_variants": [
+      "Panhalgad",
+      "Panhalla"
+    ],
+    "fort_type": "hill_fort",
+    "coordinates": {
+      "latitude": 16.8123,
+      "longitude": 74.1105
+    },
+    "elevation_m": null,
+    "region_id": null,
+    "protects_site_ids": [],
+    "ownership": {
+      "sovereign_polity_id": "polity_adil_shahi",
+      "controller_polity_id": "polity_adil_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 250,
+      "max": 800,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "very_high",
+    "water_security": "high",
+    "strategic_role": "Southern Sahyadri frontier fortress guarding the routes between the western plateau and Konkan; a major Adil Shahi stronghold and an important southern boundary anchor for this region pack.",
+    "source_ids": [
+      "source_india_cine_hub_panhala",
+      "source_maharashtra_tourism_panhala",
+      "source_asi_panhala_inscription_review"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Panhala is a twelfth-century fort, later held and expanded by the Adil Shahis. ASI's 1963–64 archaeology review cites Adil Shahi inscriptions recording a bastion and reservoir in 1539–40 and repairs/new construction in 1547–48. Included as the southern edge of this pack; a site_panhala settlement record is needed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_chaul",
+    "record_version": 1,
+    "name": "Fortaleza de Chaul",
+    "name_variants": [
+      "Chaul Fort",
+      "Revdanda Fort",
+      "Fort of Chaul de Baixo"
+    ],
+    "fort_type": "fortified_town",
+    "coordinates": {
+      "latitude": 18.5472,
+      "longitude": 72.9277
+    },
+    "elevation_m": null,
+    "region_id": "region_konkan_north",
+    "protects_site_ids": [
+      "site_chaul"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_portuguese",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": "polity_portuguese",
+      "garrison_commander_id": null,
+      "overlord_polity_id": "polity_nizam_shahi"
+    },
+    "valid_from": 1524,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 200,
+      "max": 600,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "medium",
+    "water_security": "medium",
+    "strategic_role": "Portuguese fortified enclave at the lower Chaul/Revdanda port and mouth of the Kundalika creek; protects maritime trade, anchorage and the Portuguese factory/settlement against inland and naval threats.",
+    "source_ids": [
+      "source_hpip_chaul_revdanda",
+      "source_apics_korlai_sociohistory",
+      "source_unesco_konkan_2024"
+    ],
+    "confidence": "high",
+    "status": "draft",
+    "notes": "HPIP states that the Portuguese obtained permission from the Nizam Shahi ruler to build a factory in 1516, received permission for a fort five years later, and had the fort ready in 1524. This supports Portuguese military control while retaining a separate Nizam Shahi hinterland/suzerainty relationship in the ownership model; the precise legal boundary of the enclave needs cartographic verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_korlai",
+    "record_version": 1,
+    "name": "Korlai Fort",
+    "name_variants": [
+      "Morro de Chaul",
+      "Korlai Sea Fort"
+    ],
+    "fort_type": "sea_fort",
+    "coordinates": {
+      "latitude": 18.5364,
+      "longitude": 72.9081
+    },
+    "elevation_m": null,
+    "region_id": "region_konkan_north",
+    "protects_site_ids": [
+      "site_chaul"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_portuguese",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": "polity_nizam_shahi"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 100,
+      "max": 350,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "high",
+    "water_security": "high",
+    "strategic_role": "Promontory fortress opposite Revdanda, commanding the Kundalika creek entrance and the seaward approach to Chaul; the elevated battery and cistern make it a strategic coastal observation point.",
+    "source_ids": [
+      "source_unesco_konkan_2024",
+      "source_dgll_korlai_lighthouse"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "UNESCO's 2024 tentative-list description says Burhan Nizamshah built the fort opposite the Portuguese Revdanda fort, but also states that Korlai and Revdanda were both in Portuguese control. The construction authority and later controller are distinct; exact date and 1622 legal sovereignty/control sequence need verification. A large rainwater cistern is documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_janjira",
+    "record_version": 1,
+    "name": "Jazirah Fort",
+    "name_variants": [
+      "Janjira Fort",
+      "Murud-Janjira",
+      "Jazira"
+    ],
+    "fort_type": "sea_fort",
+    "coordinates": {
+      "latitude": 18.2999,
+      "longitude": 72.9644
+    },
+    "elevation_m": null,
+    "region_id": "region_konkan_south",
+    "protects_site_ids": [
+      "site_rajapuri"
+    ],
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": "character_siddi_ambar_sanak",
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": "character_siddi_ambar_sanak",
+      "overlord_polity_id": null
+    },
+    "valid_from": 1576,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 200,
+      "max": 600,
+      "confidence": "inferred",
+      "basis": "Gameplay planning range only; no 1622 muster roll identified."
+    },
+    "approach_difficulty": "very_high",
+    "water_security": "high",
+    "strategic_role": "Island fortress at the Danda-Rajapuri creek entrance, controlling the anchorage and sea lane; in 1622 it had a Siddi commander and operated as a powerful local naval command.",
+    "source_ids": [
+      "source_kadiri_inscriptions_siddi_chiefs_1967",
+      "source_sohoni_siddi_janjira_2019",
+      "source_unesco_konkan_2024",
+      "source_kolaba_gazetteer_janjira"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "An inscription published by A.A. Kadiri dates an earlier fort-wall/bastion construction to AH 984 (1576–77) under Murtada I and Fahim Khan. Local records list Siddi Ambar Sanak as the Janjira commander from 1621. A later UNESCO summary describes Adil Shahi control until the fort passed to the Siddis during Ibrahim II's reign; sovereignty in 1622 is therefore left null rather than guessed. Two freshwater tanks are recorded. Confirm the exact spelling/name of the 1621 commander before Batch 5. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  },
+  {
+    "id": "fort_dabhol",
+    "record_version": 1,
+    "name": "Dabhol Old Castle and Harbour Batteries",
+    "name_variants": [
+      "Dabul Fortifications",
+      "Dabhol Castle",
+      "Dabhol Port Defences"
+    ],
+    "fort_type": "fortified_town",
+    "coordinates": {
+      "latitude": 17.5894,
+      "longitude": 73.1803
+    },
+    "elevation_m": null,
+    "region_id": "region_konkan_south",
+    "protects_site_ids": [
+      "site_dabhol"
+    ],
+    "ownership": {
+      "sovereign_polity_id": "polity_adil_shahi",
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "garrison_size_range": {
+      "min": 0,
+      "max": 100,
+      "confidence": "inferred",
+      "basis": "Conditional gameplay placeholder only, assuming a minimal watch/battery presence; do not treat as a documented 1622 garrison."
+    },
+    "approach_difficulty": "medium",
+    "water_security": "unknown",
+    "strategic_role": "Potential remains of an older port castle and harbour batteries guarding the Dabhol estuary and maritime trade; should not be treated as a major active fort without more evidence.",
+    "source_ids": [
+      "source_bombay_gazetteer_konkan_dabhol",
+      "source_ratnagiri_gazetteer_dabhol"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The Konkan Gazetteer describes Dabhol as walled and protected by a castle in the early sixteenth century, reports two forts/redoubts in 1547, and records a 1615 account saying the Portuguese had a factory but no fort. A 1626 account mentions an old castle; 1639 reports ruined fortifications and two river-side batteries. Existence and operability of a distinct fort in 1622 are unproven; keep this record disabled/provisional until verified. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+  }
+]

@@ -1,0 +1,100 @@
+{
+  "id": "character_example_sardar_001",
+  "record_version": 1,
+  "identity": {
+    "primary_name": "Example Sardar",
+    "name_variants": [],
+    "title_ids": [],
+    "birth_year": 1588,
+    "birth_year_confidence": "fictional",
+    "death_year": null,
+    "gender": "male",
+    "portrait_id": "portrait_placeholder_01"
+  },
+  "background": {
+    "culture_id": "culture_example_maratha_identity",
+    "language_proficiencies": [{ "language_id": "language_marathi", "level": 75 }],
+    "religion_id": null,
+    "community_tags": [],
+    "social_position_id": null,
+    "home_region_id": "region_example_western_deccan",
+    "home_settlement_id": "site_example_market_town"
+  },
+  "family_membership": {
+    "family_id": "family_example_house",
+    "branch_id": "branch_example_main",
+    "clan_memberships": [
+      { "clan_id": "clan_example_household", "from_year": 1605, "to_year": null, "status": "member" }
+    ]
+  },
+  "political_roles": [
+    { "polity_id": "polity_example_sultanate", "office_id": "office_example_commander", "from_year": 1615, "to_year": null, "status": "serving" }
+  ],
+  "attributes": {
+    "might": 55,
+    "agility": 48,
+    "endurance": 62,
+    "insight": 64,
+    "learning": 43,
+    "presence": 68
+  },
+  "skills": {
+    "leadership": 65,
+    "tactics": 59,
+    "infantry_command": 50,
+    "cavalry_command": 57,
+    "riding": 52,
+    "scouting": 40,
+    "logistics": 46,
+    "stewardship": 42,
+    "governance": 32,
+    "trade": 20,
+    "finance": 18,
+    "persuasion": 54,
+    "diplomacy": 49,
+    "intrigue": 35,
+    "medicine": 16,
+    "engineering": 28,
+    "siegecraft": 30
+  },
+  "personality": {
+    "ambition": 72,
+    "courage": 66,
+    "aggression": 58,
+    "prudence": 51,
+    "greed": 44,
+    "generosity": 48,
+    "honour": 63,
+    "loyalty": 57,
+    "mercy": 46,
+    "patience": 41,
+    "suspicion": 55,
+    "sociability": 62,
+    "pragmatism": 70,
+    "religious_zeal": 45,
+    "pluralism": 52
+  },
+  "condition": {
+    "health": 100,
+    "fatigue": 0,
+    "morale": 65,
+    "wealth": 120,
+    "debt": 0,
+    "renown": 15,
+    "influence": 5,
+    "life_state": "adult"
+  },
+  "current_state": {
+    "location_id": "site_example_market_town",
+    "party_id": null,
+    "household_id": "household_example_01",
+    "current_goal_ids": [],
+    "memory_event_ids": []
+  },
+  "valid_from": 1588,
+  "valid_to": null,
+  "source_ids": [],
+  "confidence": "fictional",
+  "status": "fictional_example",
+  "notes": "Entire example is invented to demonstrate data structure. Attribute, skill and personality values are illustrative only."
+}

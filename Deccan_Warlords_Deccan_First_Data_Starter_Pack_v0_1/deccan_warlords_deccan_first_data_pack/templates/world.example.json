@@ -1,0 +1,19 @@
+{
+  "id": "world_deccan_first",
+  "record_version": 1,
+  "title": "Deccan Warlords — Deccan-first campaign world",
+  "coordinate_reference_system": "EPSG:4326",
+  "game_projection": "TO_BE_SELECTED_AFTER_MAP_TEST",
+  "provisional_bounds": {
+    "south_latitude": 8.0,
+    "north_latitude": 24.5,
+    "west_longitude": 70.5,
+    "east_longitude": 87.5,
+    "status": "provisional_not_locked"
+  },
+  "primary_scenario_id": "scenario_1622",
+  "future_expansion_policy": "append_regions_and_route_edges_without_replacing_existing_ids",
+  "source_ids": [],
+  "confidence": "inferred",
+  "status": "draft"
+}

@@ -1,0 +1,258 @@
+[
+  {
+    "id": "pass_nane_ghat",
+    "record_version": 1,
+    "name": "Nane Ghat",
+    "name_variants": [
+      "Naneghat",
+      "Nana Ghat",
+      "Nane Pass"
+    ],
+    "feature_type": "mountain_pass",
+    "coordinate": {
+      "latitude": null,
+      "longitude": null
+    },
+    "region_id": "region_junnar_sahyadri",
+    "terrain_description": "A steep, rock-cut escarpment route through the Sahyadri, about 5 km long and reported at about 860 m elevation. The pass lies at the foot of Jivdhan; the Pune Gazetteer describes the approach from Junnar as passable but the fort ascent as very steep and difficult.",
+    "season_availability": {
+      "1622_status": "not established by a dated source",
+      "fair_season": "likely the more dependable campaigning window (inferred)",
+      "southwest_monsoon": "likely hazardous and slower on the steep exposed path; no 1622 closure schedule located",
+      "confidence": "inferred",
+      "basis": "Terrain and later descriptions only; no season-by-season 1622 traffic record located."
+    },
+    "practical_army_class": {
+      "class": "foot_column_and_pack_train; not suitable for a wheeled artillery train on current evidence",
+      "confidence": "inferred",
+      "basis": "The route is described as a steep, difficult pass and as an ancient trade path. Pack-animal use is plausible; no evidence supports wheeled artillery or a large baggage train in 1622."
+    },
+    "connections": {
+      "site_ids": [
+        "site_junnar"
+      ],
+      "fort_ids": [
+        "fort_jivdhan",
+        "fort_hadsar",
+        "fort_chavand",
+        "fort_shivneri"
+      ],
+      "external_endpoints": [
+        "Murbad / Kalyan-side Konkan approaches"
+      ]
+    },
+    "controlling_fort_id": "fort_jivdhan",
+    "active_in_1622": "probable_but_not_directly_dated",
+    "source_ids": [
+      "source_marathi_vishwakosh_naneghat",
+      "source_pune_gazetteer_trade_communications",
+      "source_pune_gazetteer_jivdhan"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "The Marathi Vishwakosh states that the pass was created in the Satavahana period, served as a major Desh–Konkan trade route, follows the Junnar–Murbad road, lies at Jivdhan's foot, and could be controlled from Jivdhan. The Poona Gazetteer says Jivdhan commanded Nane Ghat and records the fort as Nizam Shahi until the dynasty's extinction, but does not prove uninterrupted traffic or a named 1622 garrison. The other listed forts are the defensive cluster in the Junnar/Nane Ghat valley, not co-equal controlling forts. Exact saddle coordinate omitted pending GIS verification."
+  },
+  {
+    "id": "pass_malshej_ghat",
+    "record_version": 1,
+    "name": "Malshej Ghat",
+    "name_variants": [
+      "Malsej Ghat",
+      "Malshej Pass",
+      "Malsej-Ana Pass Road (gazetteer spelling; exact equivalence to the modern alignment unverified)"
+    ],
+    "feature_type": "mountain_pass",
+    "coordinate": {
+      "latitude": null,
+      "longitude": null
+    },
+    "region_id": "region_junnar_sahyadri",
+    "terrain_description": "Sahyadri escarpment pass linking the Junnar plateau toward Murbad and Kalyan. Present district routing reaches it from Junnar on the Kalyan–Nagar road. The western escarpment is steep and forested; exact seventeenth-century track alignment is not documented in the sources reviewed.",
+    "season_availability": {
+      "1622_status": "not established by a dated source",
+      "fair_season": "likely more reliable (inferred)",
+      "southwest_monsoon": "wet-season movement likely more difficult; no historical closure dates located",
+      "confidence": "inferred",
+      "basis": "Modern official sources describe the rainy-season landscape; this is not a dated 1622 travel record."
+    },
+    "practical_army_class": {
+      "class": "light_foot_column_with_pack_animals; mounted and artillery passage unverified",
+      "confidence": "inferred",
+      "basis": "A mountain track is documented as a route, but no source gives a seventeenth-century military capacity or artillery passage."
+    },
+    "connections": {
+      "site_ids": [
+        "site_junnar"
+      ],
+      "fort_ids": [
+        "fort_hadsar",
+        "fort_chavand",
+        "fort_shivneri",
+        "fort_jivdhan"
+      ],
+      "external_endpoints": [
+        "Murbad",
+        "Kalyan"
+      ]
+    },
+    "controlling_fort_id": null,
+    "active_in_1622": "uncertain",
+    "source_ids": [
+      "source_thane_district_malshej",
+      "source_maharashtra_tourism_malshej",
+      "source_pune_gazetteer_trade_communications",
+      "source_maharashtra_ahead_junnar_forts"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Official Thane routing confirms the present Kalyan–Nagar road and its Junnar approach. Maharashtra Tourism describes old trade routes and the strategic importance of the Malshej area, while the Poona Gazetteer mentions a Malsej-Ana pass road and rest-houses. None of these sources independently establishes the exact modern saddle/alignment as an operational route in 1622. The provided 23-fort file has no Harishchandragad; no controlling_fort_id is assigned rather than borrowing an unrelated fort. The Junnar forts listed are nearby strategic nodes only. Verify whether Malsej-Ana is the same historic route as the present Malshej Ghat."
+  },
+  {
+    "id": "pass_bor_ghat",
+    "record_version": 1,
+    "name": "Bor Ghat",
+    "name_variants": [
+      "Bhor Ghat",
+      "Borghat",
+      "Khandala Ghat"
+    ],
+    "feature_type": "mountain_pass",
+    "coordinate": {
+      "latitude": null,
+      "longitude": null
+    },
+    "region_id": "region_sahyadri_east",
+    "terrain_description": "A steep Sahyadri descent between the Deccan plateau near Khandala/Lonavala and the Konkan side near Karjat/Panvel. Later descriptions distinguish the old pack-animal track from the engineered road and railway incline; do not reuse the modern road geometry as a 1622 track without surveying the older line.",
+    "season_availability": {
+      "1622_status": "no dated seasonal timetable located",
+      "fair_season": "likely the more dependable period (inferred)",
+      "southwest_monsoon": "likely slower and more hazardous on the steep escarpment; no 1622 closure schedule located",
+      "confidence": "inferred",
+      "basis": "Historical accounts describe difficult pre-road pack-animal traffic; monsoon-specific 1622 evidence was not located."
+    },
+    "practical_army_class": {
+      "class": "foot_column_and_pack_bullock_train; wheeled artillery not evidenced for 1622",
+      "confidence": "medium",
+      "basis": "The Imperial Gazetteer says Wellesley made the pass practicable for artillery in 1804 and the carriage road was not completed until 1830; it recalls pack-bullock traffic before the road. This supports excluding a 1622 wheeled-artillery road assumption, not an exact army-size limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune",
+        "site_malavli"
+      ],
+      "fort_ids": [
+        "fort_lohagad"
+      ],
+      "external_endpoints": [
+        "Khandala / Lonavala plateau approach",
+        "Karjat / Panvel-side Konkan approach"
+      ]
+    },
+    "controlling_fort_id": "fort_lohagad",
+    "active_in_1622": "probable_but_not_directly_dated",
+    "source_ids": [
+      "source_imperial_gazetteer_bhor_ghat",
+      "source_pune_gazetteer_trade_communications",
+      "source_goi_incredible_india_lohagad_bor_ghat"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "The Imperial Gazetteer calls Bhor Ghat the key of the Deccan, reports pack-bullock use before the carriage road, states Wellesley made it practicable for artillery in 1804, and dates the completed carriage road to 1830. The Poona Gazetteer separately records the Bor pass and the old Poona–Panvel alignment. Incredible India says Lohagad and Visapur guarded the trade route; Visapur was built in 1713–20 and is deliberately not backdated or included as a 1622 controlling fort. Lohagad is the supplied fort candidate. The exact 1622 trail line and its controller are not independently dated."
+  },
+  {
+    "id": "pass_tamhini_ghat",
+    "record_version": 1,
+    "name": "Tamhini Ghat",
+    "name_variants": [
+      "Tamni (possible older local form)",
+      "Sathpayri (gazetteer footpath name; equivalence unconfirmed)"
+    ],
+    "feature_type": "mountain_pass_candidate",
+    "coordinate": {
+      "latitude": null,
+      "longitude": null
+    },
+    "region_id": "region_sahyadri_east",
+    "terrain_description": "Modern Tamhini is a Sahyadri crossing between the Mulshi/Pune plateau and the Mangaon-side Konkan. The Poona Gazetteer records a Tamni or Sathpayri footpath in the Mulshi tract, used by pedestrians carrying head-loads; the source does not prove it is identical to the modern Tamhini Ghat alignment.",
+    "season_availability": {
+      "1622_status": "unknown; do not mark as a confirmed 1622 corridor",
+      "gazetteer_footpath_pattern": "year-round schedule not stated",
+      "southwest_monsoon": "unknown for the historic Tamni/Sathpayri path; modern rainfall hazards cannot be projected as a 1622 closure rule",
+      "confidence": "low",
+      "basis": "The historic gazetteer records pedestrian use but supplies no season schedule."
+    },
+    "practical_army_class": {
+      "class": "foot_passengers_and_headload_porters_only_on_the_attested_path; mounted_column_or_artillery_unverified",
+      "confidence": "medium",
+      "basis": "The Poona Gazetteer describes Tamni/Sathpayri among footpaths used by pedestrians carrying head-loads. Identity with modern Tamhini is uncertain."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Mulshi tract",
+        "Tamni / Tamhini-side villages",
+        "Mangaon-side Konkan (modern road corridor; exact historic endpoint unverified)"
+      ]
+    },
+    "controlling_fort_id": null,
+    "active_in_1622": "unverified_candidate_only",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications",
+      "source_konkan_division_tamhini_modern"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Do not treat the modern Tamhini Ghat road as a proven 1622 military corridor. The strongest historic analogue found is the Poona Gazetteer's Tamni or Sathpayri footpath in the Mulshi petty division, used by foot passengers carrying head-loads of goods. The identity between that footpath and the modern Tamhini alignment is unresolved. This is included as a candidate record because requested, but should remain disabled in the 1622 route graph until mapped and sourced. No fort in the supplied 23-fort list is shown to control it."
+  },
+  {
+    "id": "pass_kumbharli_ghat",
+    "record_version": 1,
+    "name": "Kumbharli Ghat",
+    "name_variants": [
+      "Kumbharli Pass",
+      "Kumbha Pass (possible related form in the Konkan Gazetteer; identity not proven)"
+    ],
+    "feature_type": "mountain_pass",
+    "coordinate": {
+      "latitude": null,
+      "longitude": null
+    },
+    "region_id": "region_konkan_south",
+    "terrain_description": "A Sahyadri pass connecting the Chiplun/Dabhol-side Konkan with the Karad–Satara plateau. The Ratnagiri Gazetteer describes the old pass as winding and long, with an easy ascent but generally rocky and bad before later road improvements.",
+    "season_availability": {
+      "1622_status": "probable route corridor, but precise seasonal access not dated",
+      "fair_season": "likely more reliable (inferred)",
+      "southwest_monsoon": "historical availability unknown; steep/rocky approach likely more difficult during heavy rain (inferred)",
+      "confidence": "inferred",
+      "basis": "The gazetteers describe early trade routes and later conditions; no 1622 seasonal operating calendar located."
+    },
+    "practical_army_class": {
+      "class": "foot_column_and_pack_train; wheeled_cart_or_artillery_train_not_supported_for_the_pre_1864_track",
+      "confidence": "medium",
+      "basis": "The Ratnagiri Gazetteer cites an 1826 itinerary describing a long, winding, rocky and bad pass; the Konkan Gazetteer records a Bijapur–Dabhol route by Kumbharli and a later military movement through a Kumbha pass. A cart road was built in 1864, so do not backdate cart access."
+    },
+    "connections": {
+      "site_ids": [],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Chiplun",
+        "Dabhol",
+        "Karad / Karhad",
+        "Satara plateau"
+      ]
+    },
+    "controlling_fort_id": null,
+    "active_in_1622": "probable_corridor_but_not_directly_dated",
+    "source_ids": [
+      "source_bombay_gazetteer_ratnagiri_passes",
+      "source_bombay_gazetteer_satara_trade_roads",
+      "source_bombay_gazetteer_history_konkan"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "The Bombay Gazetteer says early trade routes used Kumbharli toward the Konkan ports and gives a Bijapur–Dabhol route by the Kumbharli pass; it also describes Chiplun's trade as dependent on this road. A later account of Shahji's movements in the 1630s uses the term Kumbha pass, but equivalence with Kumbharli is not certain. The Ratnagiri Gazetteer quotes Clunes's 1826 description of a long, winding, rocky and bad pass; later cart-road works (1864) must not be projected to 1622. No supplied fort is established as the controlling fort; Bhairavgad is named in a broader pass zone in gazetteer material but is not in the supplied fort list."
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "id": "troop_example_deccan_spearman_01",
+  "record_version": 1,
+  "name": "Example Deccan Spearman",
+  "role": "infantry_spear",
+  "tier": 1,
+  "culture_recruitment_tags": ["culture_example_maratha_identity"],
+  "recruitment_sources": ["village", "market_town"],
+  "recruitment_cost": 20,
+  "daily_wage": 1,
+  "training_days": 10,
+  "upgrade_from": [],
+  "upgrade_to": ["troop_example_deccan_veteran_spearman_02"],
+  "equipment_package_id": "equipment_example_spear_shield",
+  "combat_profile": {
+    "melee": 25,
+    "ranged": 0,
+    "defence": 25,
+    "mobility": 30,
+    "discipline": 25,
+    "morale": 45
+  },
+  "supply_profile": { "food_per_day": 1, "mounts_required": 0 },
+  "availability": { "from_year": 1600, "to_year": null, "scenario_ids": [] },
+  "source_ids": [],
+  "confidence": "fictional_game_rule",
+  "status": "draft",
+  "notes": "Illustrative gameplay troop; not a historical unit name or stat block."
+}

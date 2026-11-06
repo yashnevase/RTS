@@ -1,0 +1,17 @@
+{
+  "id": "family_example_house",
+  "record_version": 1,
+  "name": "Example House",
+  "name_variants": [],
+  "founding_year": 1570,
+  "founder_character_id": "character_example_sardar_001",
+  "head_character_id": "character_example_sardar_001",
+  "branch_ids": ["branch_example_main"],
+  "member_character_ids": ["character_example_sardar_001"],
+  "succession_profile_id": "succession_example_household",
+  "inheritance_profile_id": "inheritance_example_estate",
+  "ancestral_seat_id": "site_example_market_town",
+  "source_ids": [],
+  "confidence": "fictional",
+  "status": "fictional_example"
+}

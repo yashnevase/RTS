@@ -1,0 +1,202 @@
+[
+  {
+    "id": "source_project_input_batch02a",
+    "title": "Region Pack 01 Batch 02A — new_sites_needed.json",
+    "author": null,
+    "publisher": "User-supplied project input",
+    "year": 2026,
+    "url": null,
+    "source_type": "project_input",
+    "claim_scope": "Supplied site IDs, proposed names, proposed site types, approximate coordinates, and intended nearby-fort relationships only. Not an independent historical source."
+  },
+  {
+    "id": "source_forts_maharashtra_panhala",
+    "title": "The Fort of Panhala",
+    "author": null,
+    "publisher": "Forts Maharashtra",
+    "year": null,
+    "url": "https://www.fortsmaharashtra.com/panhala-fort/",
+    "source_type": "secondary_historical_summary",
+    "claim_scope": "Reports a 12th-century Panhala stronghold and the 1191–1192 Bhoja II court/copper-plate tradition. Not evidence of a separate market-town footprint."
+  },
+  {
+    "id": "source_incredible_india_panhala",
+    "title": "Panhala Fort",
+    "author": null,
+    "publisher": "Incredible India, Government of India",
+    "year": null,
+    "url": "https://www.incredibleindia.gov.in/en/maharashtra/kolhapur/panhala-fort",
+    "source_type": "government_heritage_summary",
+    "claim_scope": "States that the fort dates to the Shilahara period under Bhoja II and that copper plates evidence Panhala under his rule; does not independently attest a distinct market settlement."
+  },
+  {
+    "id": "source_tikona_peth_trawell",
+    "title": "Tikona Fort, Lonavala — visitor information",
+    "author": null,
+    "publisher": "Trawell.in",
+    "year": null,
+    "url": "https://www.trawell.in/maharashtra/lonavala/tikona-fort",
+    "source_type": "modern_place_reference",
+    "claim_scope": "Identifies Tikona Peth as the nearest present-day village to Tikona Fort; not evidence of a 1622 settlement."
+  },
+  {
+    "id": "source_census_2011_pune",
+    "title": "PCA TV: Primary Census Abstract at town, village and ward level, Maharashtra — District Pune, 2011",
+    "author": "Office of the Registrar General & Census Commissioner, India",
+    "publisher": "Census of India",
+    "year": 2011,
+    "url": "https://censusindia.gov.in/nada/index.php/catalog/6712",
+    "source_type": "official_census",
+    "claim_scope": "Lists Donaje and Gunjavane as present-day Pune district villages. Also lists Malavali under Velhe sub-district; because this may not be the supplied Lohagad-side coordinate, it is used only as a name-collision warning. Not evidence for 1622."
+  },
+  {
+    "id": "source_pune_district_sinhagad",
+    "title": "Sinhagad",
+    "author": "District Administration, Pune",
+    "publisher": "Government of Maharashtra",
+    "year": null,
+    "url": "https://pune.gov.in/en/tourist-place/sinhagad/",
+    "source_type": "government_place_reference",
+    "claim_scope": "Identifies Kondhana as the earlier name of Sinhagad Fort and locates it at present-day village Donaje; not evidence that Donaje was the 1622 village name."
+  },
+  {
+    "id": "source_chaudenson_1997_korlai",
+    "title": "Un parler exogène en situation d’endogénéité : le créole portugais de Korlai",
+    "author": "Robert Chaudenson",
+    "publisher": "Études Créoles, 20(1), pp. 117–129; Persée",
+    "year": 1997,
+    "url": "https://www.persee.fr/doc/ecreo_0708-2398_1997_num_20_1_1582",
+    "source_type": "scholarly_article",
+    "claim_scope": "States that the village of Korlai was founded around 1595. The date is approximate and the article summarizes earlier historical material."
+  },
+  {
+    "id": "source_hpip_korlai_village",
+    "title": "Korlai Village",
+    "author": null,
+    "publisher": "Heritage of Portuguese Influence Portal (HPIP)",
+    "year": null,
+    "url": "https://hpip.org/en/heritage/details/931",
+    "source_type": "heritage_reference",
+    "claim_scope": "Notes the older designation Korlai/Kôrlê and its rural character beside Chaul; used for spelling and settlement context, not as a precise 1622 date."
+  },
+  {
+    "id": "source_maharashtra_tourism_murud_janjira",
+    "title": "Murud-Janjira",
+    "author": null,
+    "publisher": "Department of Tourism, Government of Maharashtra",
+    "year": null,
+    "url": "https://maharashtratourism.gov.in/fort/murud-janjira/",
+    "source_type": "government_tourism_reference",
+    "claim_scope": "Locates Janjira Fort on an offshore rock near Murud and summarizes its fort history; does not establish when the mainland town of Murud arose."
+  },
+  {
+    "id": "source_junnar_forest_chavand",
+    "title": "किल्ला चावंड (Chavand Fort)",
+    "author": null,
+    "publisher": "Junnar Forest Division, Government of Maharashtra",
+    "year": null,
+    "url": "https://junnarforest.in/%E0%A4%9A%E0%A4%BE%E0%A4%B5%E0%A4%82%E0%A4%A1/",
+    "source_type": "government_heritage_history",
+    "claim_scope": "States that Nizam Ahmad took Chavand after the Bahmani breakup, that Bahadur Shah was confined there in 1594, and that the fort passed to the Mughals in the 1636 Nizam Shahi settlement. Supports a medium-confidence bracket for Nizam Shahi title/control in 1622."
+  },
+  {
+    "id": "source_sohoni_siddi_janjira_2019",
+    "title": "Memorials of Sovereignty: Funerary Architecture of the Siddis of Janjira at Khokri (Maharashtra)",
+    "author": "Pushkar Sohoni",
+    "publisher": "Arts Asiatiques, tome 74, pp. 149–156; Persée",
+    "year": 2019,
+    "url": "https://www.persee.fr/doc/arasi_0004-3958_2019_num_74_1_2051?pageId=T21_151",
+    "source_type": "scholarly_article",
+    "claim_scope": "States that Janjira's Siddi commanders were appointed by Malik Ambar; names Surur (1618), Yaqut (1620), and Ambar Sanak (1621); and says Siddi officials declared autonomy after the Nizam Shahi kingdom ended in 1636. Strong support for Nizam Shahi sovereign/controller status in 1622, with commander identity kept separate."
+  },
+  {
+    "id": "source_kadiri_inscriptions_siddi_chiefs_1967",
+    "title": "Inscriptions of the Sidi Chiefs of Janjira",
+    "author": "A. A. Kadiri",
+    "publisher": "Indira Gandhi National Centre for the Arts digital text/PDF",
+    "year": 1967,
+    "url": "https://ignca.gov.in/Asi_data/75179.pdf",
+    "source_type": "epigraphic_study",
+    "claim_scope": "Provides inscriptional and local-record chronology for Janjira command, including Siddi Ambar Sanak's succession in 1621; also discusses the earlier Nizam Shahi/Mughal relationship."
+  },
+  {
+    "id": "source_maharashtra_state_gazetteer_mughal_history_ch9",
+    "title": "Maharashtra State Gazetteers, History Part II, Chapter 9: The Moghals in Maharashtra",
+    "author": null,
+    "publisher": "Government of Maharashtra",
+    "year": null,
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/History%20Part/History_II/chapter_9.pdf",
+    "source_type": "government_gazetteer_history",
+    "claim_scope": "Its 1636 narrative calls Udgir and Ausa forts of the former Ahmadnagar kingdom, but records Bijapur noble reinforcements being sent to their commanders. Used to expose, not erase, the uncertainty in Udgir's 1622 sovereign/controller status."
+  },
+  {
+    "id": "source_imperial_gazetteer_udgir_1908",
+    "title": "The Imperial Gazetteer of India, Vol. XXIV: Udgiri entry",
+    "author": null,
+    "publisher": "Clarendon Press, Oxford",
+    "year": 1908,
+    "url": "https://library.bjp.org/jspui/bitstream/123456789/1911/1/The%20Imperial%20Gazetteer%20of%20India%20Vol-24%20%28Travankore%20to%20Zira%29.pdf",
+    "source_type": "gazetteer_reference",
+    "claim_scope": "Describes Udgir Fort as belonging to the Bijapur kings and records its surrender to Shah Jahan's general in 1635. This conflicts with other regional historical narratives and is retained as a counter-claim rather than accepted as decisive for 1622."
+  },
+  {
+    "id": "source_indian_antiquary_nizam_history_1921",
+    "title": "The History of the Nizam Shahi Kings of Ahmadnagar, Indian Antiquary, Vol. 50",
+    "author": null,
+    "publisher": "The Indian Antiquary / Jain Quantum digital text",
+    "year": 1921,
+    "url": "https://jainqq.org/booktext/Indian_Antiquary_Vol_50/032542",
+    "source_type": "historical_study_primary_chronicle_excerpt",
+    "claim_scope": "Its account of Udgir describes a Barid Shahi phase followed by its acquisition by the Nizam Shahi dynasty under Murtaza I. It contributes to the conflicting Udgir chronology; it does not resolve the exact 1622 split between sovereign title and practical command."
+  },
+  {
+    "id": "source_maharashtra_state_gazetteer_torna_1646",
+    "title": "Maharashtra State Gazetteers, History Part III, Chapter 1: Rise of the Maratha Power",
+    "author": "Jadunath Sarkar (chapter contributor, as credited in the volume)",
+    "publisher": "Government of Maharashtra",
+    "year": null,
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/History%20Part/History_III/chapter_1.pdf",
+    "source_type": "government_gazetteer_history",
+    "claim_scope": "Says that around 1646 Shivaji gained Torna by tricking its Adil Shahi commandant. Used only to establish the later 1646 commandant, not as proof of 1622 ownership."
+  },
+  {
+    "id": "source_discovermh_jivdhan",
+    "title": "जिवधन | Jivdhan Fort",
+    "author": "Discover Maharashtra (article credits Suresh Kisan Nimbalkar in the text)",
+    "publisher": "Discover Maharashtra",
+    "year": null,
+    "url": "https://www.discovermh.com/jivdhan-fort/",
+    "source_type": "secondary_local_history_and_heritage_article",
+    "claim_scope": "Attributes a 1487 capture to Malik Ahmad and reports later Nizam Shahi events; the article's 1663 date for Shahaji-era events appears inconsistent with the accepted 1636 end of the Nizam Shahi state. Not treated as decisive for 1622 ownership."
+  },
+  {
+    "id": "source_junnar_forest_forts",
+    "title": "किल्ले (Junnar Forest Division forts page)",
+    "author": null,
+    "publisher": "Junnar Forest Division, Government of Maharashtra",
+    "year": null,
+    "url": "https://junnarforest.in/forts/",
+    "source_type": "government_heritage_reference",
+    "claim_scope": "Identifies Jivdhan, Hadsar and associated Junnar/Nane Ghat forts; says Hadsar was included in Shahaji's 1637 treaty with the Mughals. This later fact is not backdated to 1622."
+  },
+  {
+    "id": "source_bombay_gazetteer_konkan_dabhol",
+    "title": "Gazetteer of the Bombay Presidency: Konkan / Dabhol historical notices",
+    "author": null,
+    "publisher": "Bombay Presidency Gazetteer series",
+    "year": null,
+    "url": null,
+    "source_type": "gazetteer_reference",
+    "claim_scope": "Source identifier already present in the supplied fort record. The supplied record summarizes the early-sixteenth-century castle, 1547 fortifications, and 1615 Portuguese factory/no Portuguese fort account. No 1622 controller is established."
+  },
+  {
+    "id": "source_ratnagiri_gazetteer_dabhol",
+    "title": "Ratnagiri District Gazetteer: Dabhol historical notices",
+    "author": null,
+    "publisher": "Government of Maharashtra district gazetteer series",
+    "year": null,
+    "url": null,
+    "source_type": "gazetteer_reference",
+    "claim_scope": "Source identifier already present in the supplied fort record. The supplied record summarizes references to the 1626 old castle and 1639 ruined fortifications. These do not resolve the controller in 1622."
+  }
+]

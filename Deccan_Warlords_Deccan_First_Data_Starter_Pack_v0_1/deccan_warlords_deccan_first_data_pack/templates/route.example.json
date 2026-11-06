@@ -1,0 +1,20 @@
+{
+  "id": "route_example_valley_to_market",
+  "record_version": 1,
+  "from_node_id": "node_example_pass",
+  "to_node_id": "node_example_market_town",
+  "route_type": "track",
+  "distance_km": 42,
+  "base_movement_cost": 1.0,
+  "seasonal_modifiers": {
+    "monsoon": 1.25,
+    "dry_season": 1.0
+  },
+  "capacity_class": "medium_army",
+  "risk_profile_id": "risk_profile_example_hills",
+  "toll_policy_id": null,
+  "blockade_state": "open",
+  "source_ids": [],
+  "confidence": "inferred",
+  "status": "draft"
+}

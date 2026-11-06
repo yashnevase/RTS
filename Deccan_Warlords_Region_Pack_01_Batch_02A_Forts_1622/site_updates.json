@@ -1,0 +1,120 @@
+[
+  {
+    "site_id": "site_ahmadnagar",
+    "protecting_fort_ids": [
+      "fort_ahmadnagar"
+    ]
+  },
+  {
+    "site_id": "site_khirki",
+    "protecting_fort_ids": [
+      "fort_daulatabad"
+    ]
+  },
+  {
+    "site_id": "site_daulatabad",
+    "protecting_fort_ids": [
+      "fort_daulatabad"
+    ]
+  },
+  {
+    "site_id": "site_solapur",
+    "protecting_fort_ids": [
+      "fort_solapur"
+    ]
+  },
+  {
+    "site_id": "site_paranda",
+    "protecting_fort_ids": [
+      "fort_paranda"
+    ]
+  },
+  {
+    "site_id": "site_naldurg",
+    "protecting_fort_ids": [
+      "fort_naldurg"
+    ]
+  },
+  {
+    "site_id": "site_ausa",
+    "protecting_fort_ids": [
+      "fort_ausa"
+    ]
+  },
+  {
+    "site_id": "site_udgir",
+    "protecting_fort_ids": [
+      "fort_udgir"
+    ]
+  },
+  {
+    "site_id": "site_junnar",
+    "protecting_fort_ids": [
+      "fort_shivneri",
+      "fort_jivdhan",
+      "fort_hadsar",
+      "fort_chavand"
+    ]
+  },
+  {
+    "site_id": "site_khed",
+    "protecting_fort_ids": [
+      "fort_shivneri",
+      "fort_chakan"
+    ]
+  },
+  {
+    "site_id": "site_pune",
+    "protecting_fort_ids": [
+      "fort_kondhana",
+      "fort_purandar",
+      "fort_lohagad",
+      "fort_tikona"
+    ]
+  },
+  {
+    "site_id": "site_chakan",
+    "protecting_fort_ids": [
+      "fort_chakan"
+    ]
+  },
+  {
+    "site_id": "site_saswad",
+    "protecting_fort_ids": [
+      "fort_purandar"
+    ]
+  },
+  {
+    "site_id": "site_bhor",
+    "protecting_fort_ids": [
+      "fort_rajgad",
+      "fort_torna"
+    ]
+  },
+  {
+    "site_id": "site_chaul",
+    "protecting_fort_ids": [
+      "fort_chaul",
+      "fort_korlai"
+    ]
+  },
+  {
+    "site_id": "site_revdanda",
+    "protecting_fort_ids": [
+      "fort_chaul",
+      "fort_korlai"
+    ]
+  },
+  {
+    "site_id": "site_rajapuri",
+    "protecting_fort_ids": [
+      "fort_janjira"
+    ]
+  },
+  {
+    "site_id": "site_dabhol",
+    "protecting_fort_ids": [
+      "fort_dabhol"
+    ]
+  }
+]

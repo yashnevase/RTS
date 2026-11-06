@@ -1,0 +1,107 @@
+[
+  {
+    "id": "D1",
+    "priority": "high",
+    "issue": "Missing sites v2 (57-site file)",
+    "verify": "Only the starter pack, the forts batch archive and the previous item-1 ZIP are present in the current conversation uploads. The separate sites v2 file (57 sites) is not available. Pass/crossing references therefore use only site IDs visible in the forts archive and item-1 additions; reconcile them against the canonical v2 sites before merge.",
+    "impact": "Some intermediate route endpoints and exact links may be missing; no unknown site IDs have been invented."
+  },
+  {
+    "id": "D2",
+    "priority": "high",
+    "issue": "Nane Ghat 1622 traffic continuity",
+    "verify": "Ancient and medieval use is attested and Jivdhan commanded the pass, but a source directly documenting traffic, tolls or military movement in 1622 was not located.",
+    "impact": "Keep active_in_1622 as probable rather than certain; army class and seasonal constraints remain inferred."
+  },
+  {
+    "id": "D3",
+    "priority": "high",
+    "issue": "Malshej Ghat historic alignment and 1622 control",
+    "verify": "Confirm whether the gazetteer spelling 'Malsej-Ana pass road' is the same route/alignment as the modern Malshej Ghat and identify any fort with a directly evidenced command relationship. Harishchandragad is referenced by current official tourism material but is not present in the supplied 23-fort dataset.",
+    "impact": "No controlling_fort_id is assigned; route remains uncertain for the 1622 graph."
+  },
+  {
+    "id": "D4",
+    "priority": "high",
+    "issue": "Bor/Bhor Ghat exact 1622 track and fort command",
+    "verify": "The historical pack-animal route and later 1804 artillery improvement/1830 carriage road are documented retrospectively. Establish the exact pre-1804 line and whether Lohagad alone or a wider fort network controlled it in 1622.",
+    "impact": "Lohagad is the supplied candidate controlling fort; Visapur is excluded because the official page dates it to 1713–1720."
+  },
+  {
+    "id": "D5",
+    "priority": "high",
+    "issue": "Tamhini versus Tamni/Sathpayri",
+    "verify": "The Poona Gazetteer documents a Tamni or Sathpayri footpath in the Mulshi tract, used by pedestrians carrying head-loads. Confirm whether it physically corresponds to modern Tamhini Ghat; do not assume spelling similarity establishes identity.",
+    "impact": "This record is a candidate only and should remain disabled as a 1622 army corridor until geospatial and historical corroboration."
+  },
+  {
+    "id": "D6",
+    "priority": "medium",
+    "issue": "Kumbharli / Kumbha pass identification",
+    "verify": "The Konkan Gazetteer gives the Bijapur–Dabhol route via Kumbharli and separately describes Shahji's 1630s movement through a pass called Kumbha. Confirm whether Kumbha is a textual/short form of Kumbharli or a distinct pass.",
+    "impact": "Kumbha is listed only as a possible name variant, not as a confirmed synonym."
+  },
+  {
+    "id": "D7",
+    "priority": "medium",
+    "issue": "Kumbharli 1622 access class",
+    "verify": "Pre-modern trade and later military use are plausible; the available detailed terrain description is from 1826 and later road records. Find a pre-1622 itinerary or campaign account establishing whether cavalry, baggage animals or guns used the pass.",
+    "impact": "Only foot and pack-train access is treated as supported for a pre-cart-road model; artillery/cart access is not asserted."
+  },
+  {
+    "id": "D8",
+    "priority": "medium",
+    "issue": "Pass monsoon availability",
+    "verify": "No 1622 month-by-month pass closure or army movement records were located for Nane Ghat, Malshej, Bor Ghat or Kumbharli. Gazetteer and modern monsoon descriptions cannot supply a seventeenth-century schedule.",
+    "impact": "All monsoon modifiers are labelled inference or unknown, not hard closure rules."
+  },
+  {
+    "id": "D9",
+    "priority": "high",
+    "issue": "Public ferry date versus 1622 service",
+    "verify": "The Poona Gazetteer says all listed public ferries except Induri and Sangrun were established before 1875. That wording does not demonstrate operation in 1622. Locate earlier references to each crossing separately.",
+    "impact": "None of the ferry nodes is asserted as an active 1622 ferry; all have active_in_1622 unknown unless established after 1622."
+  },
+  {
+    "id": "D10",
+    "priority": "high",
+    "issue": "Indrayani at Induri and Mutha at Sangrun",
+    "verify": "The gazetteer explicitly dates these ferry services to 1877–78. Confirm whether any earlier ford, boat or other crossing existed at either locality; the later ferry itself must not be backdated.",
+    "impact": "Both are marked no_1622_service; established_1877_78."
+  },
+  {
+    "id": "D11",
+    "priority": "medium",
+    "issue": "Chandgaon ferry is year-round in the 19th century",
+    "verify": "The gazetteer says the Chandgaon ferry worked throughout the year because the water was always unfordable. This describes the late 19th-century condition only; do not infer a 1622 ferry or permanent channel depth.",
+    "impact": "Season field is restricted to the 19th-century attestation."
+  },
+  {
+    "id": "D12",
+    "priority": "medium",
+    "issue": "Ferry class is service frequency, not load capacity",
+    "verify": "The gazetteer defines 2nd/3rd/4th class by number of trips in a 14-hour day, not boat size or military carrying capacity. Search for ferry boat dimensions or military crossing accounts only if needed.",
+    "impact": "The class field must not be converted into a troop-strength fact. Practical army class remains unknown/inferred."
+  },
+  {
+    "id": "D13",
+    "priority": "medium",
+    "issue": "Mula-Mutha private ferry and Netva / Pushpavati ferry",
+    "verify": "The Poona Gazetteer also mentions several private ferries and a local-fund ferry at Netva across the Pushpavati in Junnar, but the current batch includes only the 13 public ferries in the main crossing list. Determine whether these should be added as secondary crossing nodes.",
+    "impact": "Not included in crossings.json to keep this first pass to the clearly tabulated public services."
+  },
+  {
+    "id": "D14",
+    "priority": "medium",
+    "issue": "No controlling forts for river ferries",
+    "verify": "The consulted ferry table does not assign any of the named ferries to a fort commander. Check any local fort or estate record before assigning a controlling fort to an individual crossing.",
+    "impact": "controlling_fort_id is null for all crossings; no nearby fort has been substituted without evidence."
+  },
+  {
+    "id": "D15",
+    "priority": "low",
+    "issue": "Exact crossing coordinates and historical banks",
+    "verify": "The gazetteer supplies locality names and road alignments, not coordinates, bank profiles or seventeenth-century landing positions. Georeference each crossing against historic route maps and modern hydrography before building graph edges.",
+    "impact": "Coordinates are omitted rather than guessed; terrain descriptions remain conservative."
+  }
+]

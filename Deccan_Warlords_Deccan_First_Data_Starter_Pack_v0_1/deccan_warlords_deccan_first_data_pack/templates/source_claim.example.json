@@ -1,0 +1,12 @@
+{
+  "id": "claim_example_001",
+  "subject_entity_id": "site_example_market_town",
+  "claim_type": "historical_place_identity",
+  "statement": "Illustrative claim; replace with a source-supported statement.",
+  "valid_from": null,
+  "valid_to": null,
+  "source_ids": ["source_example_001"],
+  "confidence": "low",
+  "dispute_notes": "Record conflicting spellings, dates or interpretations here.",
+  "review_status": "needs_review"
+}

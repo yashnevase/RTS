@@ -1,0 +1,22 @@
+{
+  "id": "polity_example_sultanate",
+  "record_version": 1,
+  "name": "Example Sultanate",
+  "name_variants": [],
+  "polity_type": "sultanate",
+  "valid_from": 1580,
+  "valid_to": null,
+  "capital_site_id": "site_example_market_town",
+  "ruler_character_id": "character_example_ruler_003",
+  "territory_region_ids": ["region_example_western_deccan"],
+  "controlled_settlement_ids": ["site_example_market_town"],
+  "overlord_polity_id": null,
+  "government_profile_id": "government_example_court",
+  "treasury": 100000,
+  "ai_profile_id": "ai_profile_example_cautious_expansionist",
+  "vassal_polity_ids": [],
+  "treaty_ids": [],
+  "source_ids": [],
+  "confidence": "fictional",
+  "status": "fictional_example"
+}

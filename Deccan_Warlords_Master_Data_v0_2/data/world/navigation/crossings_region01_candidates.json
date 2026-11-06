@@ -1,0 +1,583 @@
+[
+  {
+    "id": "crossing_ghod_kalamb",
+    "record_version": 1,
+    "name": "Ghod at Kalamb Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Ghod River",
+    "locality": "Kalamb, Junnar subdivision",
+    "road_alignment": "Poona–Nasik road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "flying bridge (gazetteer wording)",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_junnar"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Poona–Nasik road",
+        "Junnar-side approaches"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_kukdi_pimpalvandi",
+    "record_version": 1,
+    "name": "Kukdi at Pimpalvandi Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Kukdi River",
+    "locality": "Pimpalvandi, Junnar subdivision",
+    "road_alignment": "Poona–Nasik road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "flying bridge (gazetteer wording)",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_junnar"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Poona–Nasik road",
+        "Narayangaon/Junnar-side approaches"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_bhima_khed",
+    "record_version": 1,
+    "name": "Bhima at Khed Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Bhima River",
+    "locality": "Khed, Khed subdivision",
+    "road_alignment": "Poona–Nasik road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "flying bridge (gazetteer wording)",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_khed"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Khed–Poona–Nasik road"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_bhima_vaki",
+    "record_version": 1,
+    "name": "Bhima at Vaki Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Bhima River",
+    "locality": "Vaki, Khed subdivision",
+    "road_alignment": "Poona–Nasik road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "ordinary ferry-boat (gazetteer wording)",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_khed"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Poona–Nasik road"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source. The ferry inventory reads Bhima at Vaki; a road-route passage elsewhere in the same gazetteer has a possible 'Bhama' spelling. River normalization to Bhima follows the ferry inventory and remains open to map-level verification."
+  },
+  {
+    "id": "crossing_indrayani_induri",
+    "record_version": 1,
+    "name": "Indrayani at Induri Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Indrayani River",
+    "locality": "Induri, Maval subdivision",
+    "road_alignment": "Talegaon Station road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "ferry; specific construction not stated",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Talegaon / Maval approaches"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "1877–78",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "no_1622_service; established_1877_78",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_bhima_koregaon",
+    "record_version": 1,
+    "name": "Bhima at Koregaon Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Bhima River",
+    "locality": "Koregaon, Sirur subdivision",
+    "road_alignment": "Poona–Ahmadnagar road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "ferry; specific construction not stated",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Koregaon / Sirur-side approaches",
+        "Ahmadnagarward road corridor"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_indrayani_moshi",
+    "record_version": 1,
+    "name": "Indrayani at Moshi Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Indrayani River",
+    "locality": "Moshi, Haveli subdivision",
+    "road_alignment": "Poona–Nasik road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "flying bridge (gazetteer wording)",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune",
+        "site_khed"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Poona–Nasik road"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_mutha_sangrun",
+    "record_version": 1,
+    "name": "Mutha at Sangrun Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Mutha lake / Mutha River system",
+    "locality": "Sangrun, Haveli subdivision",
+    "road_alignment": "Sangrun crossing; road alignment not specified",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "ferry; specific construction not stated",
+    "season_availability": {
+      "19th_century_service": "year_round",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Sangrun / Haveli-side approaches"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "1877–78",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "no_1622_service; established_1877_78",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_nira_pimpri_khurd",
+    "record_version": 1,
+    "name": "Nira at Pimpri Khurd Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Nira River",
+    "locality": "Pimpri Khurd, Purandhar subdivision",
+    "road_alignment": "Old Poona–Satara road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "ferry; specific construction not stated",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune",
+        "site_saswad"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Old Poona–Satara road",
+        "Jejuri-side approaches"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_bhima_khanote",
+    "record_version": 1,
+    "name": "Bhima at Khanote Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Bhima River",
+    "locality": "Khanote, Bhimthadi subdivision",
+    "road_alignment": "Sirur–Satara road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "ferry; specific construction not stated",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Sirur–Satara road"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "3rd class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_bhima_pargaon",
+    "record_version": 1,
+    "name": "Bhima at Pargaon Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Bhima River",
+    "locality": "Pargaon, Bhimthadi subdivision",
+    "road_alignment": "Sirur–Satara road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "flying bridge (gazetteer wording)",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Sirur–Satara road",
+        "Kedgaon-side approaches"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_bhima_hingangaon",
+    "record_version": 1,
+    "name": "Bhima at Hingangaon Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Bhima River",
+    "locality": "Hingangaon, Indapur subdivision",
+    "road_alignment": "Poona–Sholapur road",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "ferry; specific construction not stated",
+    "season_availability": {
+      "19th_century_service": "rainy_season_only",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Hingangaon / Indapur-side approaches",
+        "Sholapurward road corridor"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "2nd class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  },
+  {
+    "id": "crossing_bhima_chandgaon",
+    "record_version": 1,
+    "name": "Bhima at Chandgaon Ferry",
+    "name_variants": [],
+    "crossing_type": "ferry",
+    "watercourse": "Bhima River",
+    "locality": "Chandgaon, Indapur subdivision",
+    "road_alignment": "Road to Pomalvadi railway station (nineteenth-century alignment)",
+    "terrain_description": "River-channel crossing by a nineteenth-century ferry service. Bank form, bed material, ford depth and exact landing points are not described in the gazetteer; do not label it a natural ford without further evidence.",
+    "crossing_mechanism_attested_19c": "ferry; specific construction not stated",
+    "season_availability": {
+      "19th_century_service": "year_round",
+      "1622_service": "unknown; service continuity to 1622 is not demonstrated",
+      "source_note": "Poona Gazetteer ferry table; except where separately noted, the service was seasonal in the late nineteenth century."
+    },
+    "practical_army_class": {
+      "class": "unknown_for_1622; at most a light_detachment_or_pack_elements_proxy (inferred), not an attested army crossing capacity",
+      "confidence": "inferred",
+      "basis": "Nineteenth-century passenger, animal and carriage fares / service classes establish local ferry use, not a seventeenth-century military load limit."
+    },
+    "connections": {
+      "site_ids": [
+        "site_pune"
+      ],
+      "fort_ids": [],
+      "external_endpoints": [
+        "Chandgaon / Indapur-side approaches",
+        "Pomalvadi railway-side alignment (19th century)"
+      ]
+    },
+    "controlling_fort_id": null,
+    "19th_century_attestation": {
+      "established_by": "before 1875",
+      "service_class": "4th class",
+      "class_meaning": "Frequency of trips per 14-hour day in the gazetteer, not vessel size or troop capacity."
+    },
+    "active_in_1622": "unknown",
+    "source_ids": [
+      "source_pune_gazetteer_trade_communications"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "The named ferry is attested in the late-nineteenth-century Poona Gazetteer. Its statement that the service was established before 1875 does not prove it existed in 1622. Ferry operation, a ford, boat type and military capacity in 1622 remain unknown. No controlling fort is identified in the source."
+  }
+]

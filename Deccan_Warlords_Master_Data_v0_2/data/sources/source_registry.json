@@ -1,0 +1,580 @@
+[
+  {
+    "id": "source_ahmednagar_gazetteer_1976",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_bombay_gazetteer_history_konkan",
+    "title": "Gazetteer of the Bombay Presidency: History of the Konkan, Section III",
+    "publisher": "Bombay Presidency / Maharashtra State Gazetteers",
+    "date": "late 19th century gazetteer synthesizing earlier accounts",
+    "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Gazetteer%20of%20Bombay%20Presidency/history_of_the_konkan/section_3.pdf",
+    "source_type": "historical_gazetteer_pdf",
+    "supports": "A Bijapur–Dabhol route via Kumbharli and Chiplun's traffic; a later 1630s Shahji movement through a pass called Kumbha; early modern Deccan–Konkan trade.",
+    "caveat": "Kumbha is not equated conclusively with Kumbharli; the Shahji episode is later than 1622. Route citation for Kumbharli is sourced through Ogilby and retrospective gazetteer synthesis."
+  },
+  {
+    "id": "source_bombay_gazetteer_konkan_dabhol",
+    "title": "Gazetteer of the Bombay Presidency: Konkan / Dabhol historical notices",
+    "author": null,
+    "publisher": "Bombay Presidency Gazetteer series",
+    "year": null,
+    "url": null,
+    "source_type": "gazetteer_reference",
+    "claim_scope": "Source identifier already present in the supplied fort record. The supplied record summarizes the early-sixteenth-century castle, 1547 fortifications, and 1615 Portuguese factory/no Portuguese fort account. No 1622 controller is established."
+  },
+  {
+    "id": "source_bombay_gazetteer_ratnagiri_passes",
+    "title": "Gazetteer of the Bombay Presidency: Ratnagiri and Savantvadi, Trade and Communications",
+    "publisher": "Bombay Presidency / Maharashtra State Gazetteers",
+    "date": "late 19th century gazetteer; includes Captain Clunes' 1826 itinerary",
+    "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Ratnagiri%20and%20Sawantwadi/ratnagiri/trade1_communications.html",
+    "source_type": "historical_gazetteer",
+    "supports": "Kumbharli as the principal northern Ratnagiri pass to Dabhol/Chiplun; Clunes' 1826 description of the old pass as long, winding, rocky and then a major high road after repair.",
+    "caveat": "Nineteenth-century description; no dated evidence for a 1622 pass commander or seasonal status."
+  },
+  {
+    "id": "source_bombay_gazetteer_satara_trade_roads",
+    "title": "Gazetteer of the Bombay Presidency: Satara District, Trade Roads",
+    "publisher": "Bombay Presidency / Maharashtra State Gazetteers",
+    "date": "late 19th century gazetteer",
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Satara%20District/trade_roads.html",
+    "source_type": "historical_gazetteer",
+    "supports": "Early trade routes to Konkan ports by Kumbharli and other passes; pass-network and fort relationships; later cart-road construction.",
+    "caveat": "The source explicitly describes the early route as a retrospective inference; distinguish ancient/pre-modern use from exact 1622 operation."
+  },
+  {
+    "id": "source_census_2011_pune",
+    "title": "PCA TV: Primary Census Abstract at town, village and ward level, Maharashtra — District Pune, 2011",
+    "author": "Office of the Registrar General & Census Commissioner, India",
+    "publisher": "Census of India",
+    "year": 2011,
+    "url": "https://censusindia.gov.in/nada/index.php/catalog/6712",
+    "source_type": "official_census",
+    "claim_scope": "Lists Donaje and Gunjavane as present-day Pune district villages. Also lists Malavali under Velhe sub-district; because this may not be the supplied Lohagad-side coordinate, it is used only as a name-collision warning. Not evidence for 1622."
+  },
+  {
+    "id": "source_chaudenson_1997_korlai",
+    "title": "Un parler exogène en situation d’endogénéité : le créole portugais de Korlai",
+    "author": "Robert Chaudenson",
+    "publisher": "Études Créoles, 20(1), pp. 117–129; Persée",
+    "year": 1997,
+    "url": "https://www.persee.fr/doc/ecreo_0708-2398_1997_num_20_1_1582",
+    "source_type": "scholarly_article",
+    "claim_scope": "States that the village of Korlai was founded around 1595. The date is approximate and the article summarizes earlier historical material."
+  },
+  {
+    "id": "source_discovermh_jivdhan",
+    "title": "जिवधन | Jivdhan Fort",
+    "author": "Discover Maharashtra (article credits Suresh Kisan Nimbalkar in the text)",
+    "publisher": "Discover Maharashtra",
+    "year": null,
+    "url": "https://www.discovermh.com/jivdhan-fort/",
+    "source_type": "secondary_local_history_and_heritage_article",
+    "claim_scope": "Attributes a 1487 capture to Malik Ahmad and reports later Nizam Shahi events; the article's 1663 date for Shahaji-era events appears inconsistent with the accepted 1636 end of the Nizam Shahi state. Not treated as decisive for 1622 ownership."
+  },
+  {
+    "id": "source_eaton_2005",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_forts_maharashtra_panhala",
+    "title": "The Fort of Panhala",
+    "author": null,
+    "publisher": "Forts Maharashtra",
+    "year": null,
+    "url": "https://www.fortsmaharashtra.com/panhala-fort/",
+    "source_type": "secondary_historical_summary",
+    "claim_scope": "Reports a 12th-century Panhala stronghold and the 1191–1192 Bhoja II court/copper-plate tradition. Not evidence of a separate market-town footprint."
+  },
+  {
+    "id": "source_ghorpade_house_history_1989",
+    "title": "Ghorpade Gharanyacha Itihas (History of the Ghorpade House)",
+    "author": "B. B. Raje Ghorpade",
+    "publisher": "Maharashtra Rajya Sahitya ani Sanskruti Mandal, Mumbai",
+    "date": "First edition, March 1989",
+    "url": "https://sahitya.marathi.gov.in/ebooks/%E0%A4%98%E0%A5%8B%E0%A4%B0%E0%A4%AA%E0%A4%A1%E0%A5%87%20%E0%A4%98%E0%A4%B0%E0%A4%BE%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%9A%E0%A4%BE%20%E0%A4%87%E0%A4%A4%E0%A4%BF%E0%A4%B9%E0%A4%BE%E0%A4%B8.pdf",
+    "source_type": "state_published_family_history_using_family_archive",
+    "supports": "Distinguishes Kapshi and Mudhol Ghorpade houses; identifies the Daphles as Jath deshmukhs with a Chavhan/Daphalapur origin tradition and Bijapur command; describes Shahaji's later 1637 Bijapur service and grant.",
+    "caveat": "A family history using a family archive. The text itself distinguishes family legend from documented grants; its origin tale that Ghorpades descended from Bhonsles is not treated here as proven kinship."
+  },
+  {
+    "id": "source_goi_incredible_india_lohagad_bor_ghat",
+    "title": "Lohagad and Visapur",
+    "publisher": "Incredible India, Government of India",
+    "date": "accessed 2026-11-06",
+    "url": "https://www.prod.incredibleindia.gov.in/content/incredible-india-v2/en/destinations/pune/lohagad-and-visapur.html",
+    "source_type": "government_tourism_webpage",
+    "supports": "States Lohagad and Visapur guarded the Bor Ghat trade route; dates Visapur construction to 1713–1720.",
+    "caveat": "Do not backdate Visapur to 1622; general tourism account does not specify the precise 1622 commanding arrangement."
+  },
+  {
+    "id": "source_hcu_daulatabad_2025",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_house_of_shivaji",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_hpip_korlai_village",
+    "title": "Korlai Village",
+    "author": null,
+    "publisher": "Heritage of Portuguese Influence Portal (HPIP)",
+    "year": null,
+    "url": "https://hpip.org/en/heritage/details/931",
+    "source_type": "heritage_reference",
+    "claim_scope": "Notes the older designation Korlai/Kôrlê and its rural character beside Chaul; used for spelling and settlement context, not as a precise 1622 date."
+  },
+  {
+    "id": "source_imperial_gazetteer_bhor_ghat",
+    "title": "The Imperial Gazetteer of India, Vol. II, entry 'Bhor Ghat'",
+    "publisher": "Government of India, Imperial Gazetteer",
+    "date": "1908 edition",
+    "url": "https://en.wikisource.org/wiki/Page%3AThe_Imperial_Gazetteer_of_India_-_Volume_2_%282nd_edition%29.pdf/417",
+    "source_type": "historical_gazetteer",
+    "supports": "Bhor Ghat as a strategic Deccan gateway; pack-bullock traffic before road construction; artillery access improved in 1804; carriage road completed in 1830.",
+    "caveat": "Retrospective nineteenth-century account; no direct 1622 road specification."
+  },
+  {
+    "id": "source_imperial_gazetteer_udgir_1908",
+    "title": "The Imperial Gazetteer of India, Vol. XXIV: Udgiri entry",
+    "author": null,
+    "publisher": "Clarendon Press, Oxford",
+    "year": 1908,
+    "url": "https://library.bjp.org/jspui/bitstream/123456789/1911/1/The%20Imperial%20Gazetteer%20of%20India%20Vol-24%20%28Travankore%20to%20Zira%29.pdf",
+    "source_type": "gazetteer_reference",
+    "claim_scope": "Describes Udgir Fort as belonging to the Bijapur kings and records its surrender to Shah Jahan's general in 1635. This conflicts with other regional historical narratives and is retained as a counter-claim rather than accepted as decisive for 1622."
+  },
+  {
+    "id": "source_incredible_india_panhala",
+    "title": "Panhala Fort",
+    "author": null,
+    "publisher": "Incredible India, Government of India",
+    "year": null,
+    "url": "https://www.incredibleindia.gov.in/en/maharashtra/kolhapur/panhala-fort",
+    "source_type": "government_heritage_summary",
+    "claim_scope": "States that the fort dates to the Shilahara period under Bhoja II and that copper plates evidence Panhala under his rule; does not independently attest a distinct market settlement."
+  },
+  {
+    "id": "source_indian_antiquary_nizam_history_1921",
+    "title": "The History of the Nizam Shahi Kings of Ahmadnagar, Indian Antiquary, Vol. 50",
+    "author": null,
+    "publisher": "The Indian Antiquary / Jain Quantum digital text",
+    "year": 1921,
+    "url": "https://jainqq.org/booktext/Indian_Antiquary_Vol_50/032542",
+    "source_type": "historical_study_primary_chronicle_excerpt",
+    "claim_scope": "Its account of Udgir describes a Barid Shahi phase followed by its acquisition by the Nizam Shahi dynasty under Murtaza I. It contributes to the conflicting Udgir chronology; it does not resolve the exact 1622 split between sovereign title and practical command."
+  },
+  {
+    "id": "source_indian_antiquary_shirke_khelna_1453",
+    "title": "The South Konkan (2): Ports south of Ratnagiri",
+    "author": "Indian Antiquary contributor; historical passage cites Ferishta as translated by Briggs",
+    "publisher": "The Indian Antiquary (later digitised by Wisdomlib)",
+    "date": "Nineteenth-century journal article; passage discusses the 1453 expedition",
+    "url": "https://www.wisdomlib.org/history/book/indian-antiquary-journal/d/doc1897842.html",
+    "source_type": "historical_journal_article_using_earlier_chronicle",
+    "supports": "Describes a Shirke chief in the 1453 Bahmani expedition toward Khelna/Vishalgad and the chief's role in guiding the army through the region.",
+    "caveat": "This is evidence for a fifteenth-century Shirke chief, not proof of the identity, holdings or patronage of a continuous Shirke branch in 1622."
+  },
+  {
+    "id": "source_jedhe_shakavali_kari_1618_1697",
+    "title": "Jedhe, śakāvalī-karīnā (Jedhe Shakavali of Kari)",
+    "author": "Edited/translated publication associated with A. R. Kulkarni",
+    "publisher": "Mānasanmāna Prakāśana",
+    "date": "1999 edition; chronicle coverage 1618-1697",
+    "url": "https://books.google.com/books/about/Jedhe_%C5%9Bak%C4%81val%C4%AB_kar%C4%ABnā.html?id=lhpuAAAAMAAJ",
+    "source_type": "published_family_chronicle_and_catalogue_record",
+    "supports": "Identifies the chronicle as preserved by the Jedhes, Deshmukhs of Kari near Bhor, and describes its 1618-1697 coverage. It supports the existence of a Kari Jedhe documentary/household tradition in the relevant period.",
+    "caveat": "The accessible bibliographic record establishes provenance and coverage, not every individual entry. It does not establish a precise 1622 patron or permit unsupported branch genealogies."
+  },
+  {
+    "id": "source_junnar_forest_chavand",
+    "title": "किल्ला चावंड (Chavand Fort)",
+    "author": null,
+    "publisher": "Junnar Forest Division, Government of Maharashtra",
+    "year": null,
+    "url": "https://junnarforest.in/%E0%A4%9A%E0%A4%BE%E0%A4%B5%E0%A4%82%E0%A4%A1/",
+    "source_type": "government_heritage_history",
+    "claim_scope": "States that Nizam Ahmad took Chavand after the Bahmani breakup, that Bahadur Shah was confined there in 1594, and that the fort passed to the Mughals in the 1636 Nizam Shahi settlement. Supports a medium-confidence bracket for Nizam Shahi title/control in 1622."
+  },
+  {
+    "id": "source_junnar_forest_forts",
+    "title": "किल्ले (Junnar Forest Division forts page)",
+    "author": null,
+    "publisher": "Junnar Forest Division, Government of Maharashtra",
+    "year": null,
+    "url": "https://junnarforest.in/forts/",
+    "source_type": "government_heritage_reference",
+    "claim_scope": "Identifies Jivdhan, Hadsar and associated Junnar/Nane Ghat forts; says Hadsar was included in Shahaji's 1637 treaty with the Mughals. This later fact is not backdated to 1622."
+  },
+  {
+    "id": "source_kadiri_inscriptions_siddi_chiefs_1967",
+    "title": "Inscriptions of the Sidi Chiefs of Janjira",
+    "author": "A. A. Kadiri",
+    "publisher": "Indira Gandhi National Centre for the Arts digital text/PDF",
+    "year": 1967,
+    "url": "https://ignca.gov.in/Asi_data/75179.pdf",
+    "source_type": "epigraphic_study",
+    "claim_scope": "Provides inscriptional and local-record chronology for Janjira command, including Siddi Ambar Sanak's succession in 1621; also discusses the earlier Nizam Shahi/Mughal relationship."
+  },
+  {
+    "id": "source_konkan_division_tamhini_modern",
+    "title": "Tamhini Ghat",
+    "publisher": "Divisional Commissioner, Konkan Division, Government of Maharashtra",
+    "date": "accessed 2026-11-06",
+    "url": "https://divcomkonkan.gov.in/en/places-centres/tamhini-ghat/",
+    "source_type": "government_location_page",
+    "supports": "Modern location reference for Tamhini Ghat near Mulshi and Mangaon.",
+    "caveat": "Does not attest a premodern path or 1622 use."
+  },
+  {
+    "id": "source_maharashtra_ahead_junnar_forts",
+    "title": "Shivneri and Junnar-area forts, Maharashtra Ahead",
+    "publisher": "Directorate General of Information and Public Relations, Government of Maharashtra",
+    "date": "January 2020",
+    "url": "https://dgipr.maharashtra.gov.in/sites/default/files/2020-07/MAhead-Jan2020.pdf",
+    "source_type": "government_magazine_pdf",
+    "supports": "Modern description of Shivneri/Junnar and its surrounding route setting.",
+    "caveat": "Tourism-oriented government magazine; not a direct 1622 route source."
+  },
+  {
+    "id": "source_maharashtra_city_renames_2023_2025",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_maharashtra_in_maps",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_maharashtra_in_maps_1986",
+    "title": "Maharashtra in Maps",
+    "author": "K. R. Dikshit; assisted by Charulata Patil",
+    "publisher": "Maharashtra State Board for Literature and Culture, Bombay",
+    "date": "First edition, June 1986",
+    "url": "https://sahitya.marathi.gov.in/ebooks/MAHARASHTRA%20IN%20MAPS.pdf",
+    "source_type": "government_published_historical_geography_synthesis",
+    "supports": "Chapter XIII identifies the North-to-Deccan approach via the Burhanpur gap and Tapi crossing, with Dhule–Malegaon or Jalgaon–Aurangabad routes; it identifies Aurangabad–Solapur–Bijapur, Aurangabad–Ahmadnagar–Pune, and Bijapur–Karad–Chiplun–Guhagar as strategically important traditional routes. It states that these routes assumed added importance in the late seventeenth and eighteenth centuries.",
+    "caveat": "Retrospective regional synthesis, not a 1622 itinerary or surveyed historical road map. Its use of 'Aurangabad' is later than the scenario's Khirki-era naming. The statement about routes gaining importance cautions against assuming identical traffic or maintenance in 1622."
+  },
+  {
+    "id": "source_maharashtra_state_gazetteer_mughal_history_ch9",
+    "title": "Maharashtra State Gazetteers, History Part II, Chapter 9: The Moghals in Maharashtra",
+    "author": null,
+    "publisher": "Government of Maharashtra",
+    "year": null,
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/History%20Part/History_II/chapter_9.pdf",
+    "source_type": "government_gazetteer_history",
+    "claim_scope": "Its 1636 narrative calls Udgir and Ausa forts of the former Ahmadnagar kingdom, but records Bijapur noble reinforcements being sent to their commanders. Used to expose, not erase, the uncertainty in Udgir's 1622 sovereign/controller status."
+  },
+  {
+    "id": "source_maharashtra_state_gazetteer_torna_1646",
+    "title": "Maharashtra State Gazetteers, History Part III, Chapter 1: Rise of the Maratha Power",
+    "author": "Jadunath Sarkar (chapter contributor, as credited in the volume)",
+    "publisher": "Government of Maharashtra",
+    "year": null,
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/History%20Part/History_III/chapter_1.pdf",
+    "source_type": "government_gazetteer_history",
+    "claim_scope": "Says that around 1646 Shivaji gained Torna by tricking its Adil Shahi commandant. Used only to establish the later 1646 commandant, not as proof of 1622 ownership."
+  },
+  {
+    "id": "source_maharashtra_tourism_malshej",
+    "title": "Malshej Ghat",
+    "publisher": "Department of Tourism, Government of Maharashtra",
+    "date": "accessed 2026-11-06",
+    "url": "https://maharashtratourism.gov.in/nature/malshej-ghat/",
+    "source_type": "government_tourism_webpage",
+    "supports": "Official tourism overview describes Malshej as a mountain pass, references historic strategic movements and old trade routes, and identifies Harishchandragad nearby.",
+    "caveat": "General historical statement; no 1622 route date or operational details."
+  },
+  {
+    "id": "source_maharashtra_tourism_murud_janjira",
+    "title": "Murud-Janjira",
+    "author": null,
+    "publisher": "Department of Tourism, Government of Maharashtra",
+    "year": null,
+    "url": "https://maharashtratourism.gov.in/fort/murud-janjira/",
+    "source_type": "government_tourism_reference",
+    "claim_scope": "Locates Janjira Fort on an offshore rock near Murud and summarizes its fort history; does not establish when the mainland town of Murud arose."
+  },
+  {
+    "id": "source_maharashtra_tourism_naldurg",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_marathi_vishwakosh_naneghat",
+    "title": "Nane Ghat (नाणेघाट)",
+    "publisher": "Marathi Vishwakosh / Maharashtra Rajya Marathi Vishwakosh Nirmiti Mandal",
+    "date": "online entry, accessed 2026-11-06",
+    "url": "https://vishwakosh.marathi.gov.in/19524/",
+    "source_type": "reference_encyclopedia",
+    "supports": "Satavahana-period formation, Nane Ghat's ancient Desh–Konkan trade role, route between Junnar and Murbad, its position at Jivdhan, and Jivdhan's ability to control the pass.",
+    "caveat": "Modern reference article, not a 1622 itinerary."
+  },
+  {
+    "id": "source_naldurg_morelle_2022",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_osm_locator",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_paranda_dharashiv_gov",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_phaltan_state_report_1945",
+    "title": "Report on the General Administration of the Phaltan State, 1942-43 (including Annex I: Names of the Rulers of the Phaltan State)",
+    "author": "Government of Phaltan; Dewan's Office",
+    "publisher": "Rajamudranalaya, Phaltan",
+    "date": "1945",
+    "url": "https://dspace.gipe.ac.in/xmlui/bitstream/handle/10973/38142/GIPE-070882.pdf?isAllowed=y&sequence=3",
+    "source_type": "former_princely_state_official_report_and_dynastic_list",
+    "supports": "Records the Naik-Nimbalkar house as the ruling house of Phaltan and lists Vangoji II alias Jagpalrao as ruler from 1570 to 1630, placing him in office in 1622.",
+    "caveat": "A twentieth-century official retrospective chronology; use the named tenure as a dated house chronology, not as proof of every alleged earlier ancestor or exact annual political status."
+  },
+  {
+    "id": "source_project_input_batch02a",
+    "title": "Region Pack 01 Batch 02A — new_sites_needed.json",
+    "author": null,
+    "publisher": "User-supplied project input",
+    "year": 2026,
+    "url": null,
+    "source_type": "project_input",
+    "claim_scope": "Supplied site IDs, proposed names, proposed site types, approximate coordinates, and intended nearby-fort relationships only. Not an independent historical source."
+  },
+  {
+    "id": "source_pune_district_sinhagad",
+    "title": "Sinhagad",
+    "author": "District Administration, Pune",
+    "publisher": "Government of Maharashtra",
+    "year": null,
+    "url": "https://pune.gov.in/en/tourist-place/sinhagad/",
+    "source_type": "government_place_reference",
+    "claim_scope": "Identifies Kondhana as the earlier name of Sinhagad Fort and locates it at present-day village Donaje; not evidence that Donaje was the 1622 village name."
+  },
+  {
+    "id": "source_pune_gazetteer_1885_trade_communications",
+    "title": "Gazetteer of the Bombay Presidency, Poona District, Volume III, Communications and Traffic",
+    "publisher": "Bombay Presidency; reprint by Maharashtra State Gazetteers",
+    "date": "Original volume 1885; facsimile reprint 1991",
+    "url": "https://ocrdigitalfile.nvli.in/snarepository/other/Watermarked-Poona-District-Part-III-ocr.pdf",
+    "source_type": "historical_district_gazetteer",
+    "supports": "Pages 109–110 describe the Poona–Nasik road, branches to Junnar, the Malsej route via Belha/Ale/Otur/Madh, Junnar–Ghatghar–Nana pass, and pack-animal trade with the Konkan.",
+    "caveat": "Nineteenth-century description. It establishes later route use and names, not continuous operation, exact alignments or facilities in 1622."
+  },
+  {
+    "id": "source_pune_gazetteer_1984",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_pune_gazetteer_jivdhan",
+    "title": "Poona District Gazetteer, Places of Interest: Jivadhan Fort",
+    "publisher": "Maharashtra State Gazetteers",
+    "date": "20th-century district gazetteer based on earlier district records",
+    "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Poona/PART%20VI/Chap%20%2820%29/Places%20Of%20Interest.htm",
+    "source_type": "district_gazetteer",
+    "supports": "Jivdhan described as commanding Nane Ghat; recorded as a Nizam Shahi fort until the dynasty's extinction and included in a Mughal transfer in 1637.",
+    "caveat": "Does not establish exact 1622 killedar or the pass's daily traffic."
+  },
+  {
+    "id": "source_pune_gazetteer_trade_communications",
+    "title": "Gazetteer of the Bombay Presidency: Poona District, Trade and Communications",
+    "publisher": "Bombay Presidency / Maharashtra State Gazetteers",
+    "date": "late 19th century gazetteer; digitized online",
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Poona%20District/Poona-II/trade_communication.html",
+    "source_type": "historical_gazetteer",
+    "supports": "Poona district historic roads and passes; Bor pass; Malsej-Ana pass road; Tamni/Sathpayri pedestrian footpath; the named ferry locations, routes, nineteenth-century service classes, seasons and establishment dates.",
+    "caveat": "The described ferries are 19th-century services. 'Established before 1875' does not mean established by 1622; Tamni/Sathpayri is not conclusively equated with modern Tamhini."
+  },
+  {
+    "id": "source_radhey_shyam_1968",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_ratnagiri_gazetteer_dabhol",
+    "title": "Ratnagiri District Gazetteer: Dabhol historical notices",
+    "author": null,
+    "publisher": "Government of Maharashtra district gazetteer series",
+    "year": null,
+    "url": null,
+    "source_type": "gazetteer_reference",
+    "claim_scope": "Source identifier already present in the supplied fort record. The supplied record summarizes references to the 1626 old castle and 1639 ruined fortifications. These do not resolve the controller in 1622."
+  },
+  {
+    "id": "source_rawlinson_1915_shivaji_maratha",
+    "title": "Shivaji the Maratha: His Life and Times",
+    "author": "H. G. Rawlinson",
+    "publisher": "Clarendon Press, Oxford",
+    "date": "1915",
+    "url": "https://ignca.gov.in/Asi_data/14085.pdf",
+    "source_type": "secondary_historical_monograph",
+    "supports": "Discusses the Bhosle family's early documented status, Lukaji Jadhav Rao of Sindkhed as a Nizam Shahi feudatory, Maloji Bhosle's subordinate service, the 1604 marriage and grant of Poona/Supe jagirs and Chakan/Shivneri forts, Maloji's death in 1619, and Shahaji's return to Ahmadnagar service.",
+    "caveat": "Early twentieth-century synthesis drawing in part on Bhosle family chronicles; it explicitly treats claimed Chitor descent as an unverified family origin story. Do not turn its anecdotal marriage narrative into a precise genealogical fact beyond what is stated."
+  },
+  {
+    "id": "source_satara_gazetteer_1885_history",
+    "title": "Satara District Gazetteer, Volume XIX (History)",
+    "author": "James M. Campbell, editor; Bombay Presidency Gazetteer series",
+    "publisher": "Government of Maharashtra, Gazetteer Department (facsimile reprint of 1885 volume; e-book edition 2006)",
+    "date": "Original edition 1885; Maharashtra reprint 1989; e-book 2006",
+    "url": "https://gazetteers.maharashtra.gov.in/Satara/english/BombayPresidancy/7%20History.pdf",
+    "source_type": "government_published_historical_gazetteer",
+    "supports": "Identifies the leading Satara-region chiefs under Bijapur: More of Javli, Naik Nimbalkar of Phaltan, Ghatge of Malavdi, Daphle of Jath, Mane of Mhasvad and Ghorpade of Kapshi. Describes the More appointment under Yusuf Adil Shah, Nimbalkar and Bhosle marriage connections, Ghatge deshmukhi and Nagoji's 1626 title, Mane's Mhasvad deshmukhi and Bijapur service, the two Ghorpade lines, Daphle origins/command, and early references to Mohite and Mahadik.",
+    "caveat": "Retrospective gazetteer, not a contemporary 1622 roster. It mixes early-sixteenth-century narrative with seventeenth-century facts; dates and scope are restricted to what it explicitly states."
+  },
+  {
+    "id": "source_satara_gazetteer_1963",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_sohoni_siddi_janjira_2019",
+    "title": "Memorials of Sovereignty: Funerary Architecture of the Siddis of Janjira at Khokri (Maharashtra)",
+    "author": "Pushkar Sohoni",
+    "publisher": "Arts Asiatiques, tome 74, pp. 149–156; Persée",
+    "year": 2019,
+    "url": "https://www.persee.fr/doc/arasi_0004-3958_2019_num_74_1_2051?pageId=T21_151",
+    "source_type": "scholarly_article",
+    "claim_scope": "States that Janjira's Siddi commanders were appointed by Malik Ambar; names Surur (1618), Yaqut (1620), and Ambar Sanak (1621); and says Siddi officials declared autonomy after the Nizam Shahi kingdom ended in 1636. Strong support for Nizam Shahi sovereign/controller status in 1622, with commander identity kept separate."
+  },
+  {
+    "id": "source_solapur_gazetteer_1884",
+    "title": null,
+    "author": null,
+    "year": null,
+    "url": null,
+    "licence": null,
+    "status": "stub",
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+  },
+  {
+    "id": "source_thane_district_malshej",
+    "title": "Malshej Ghat",
+    "publisher": "District Administration, Thane, Government of Maharashtra",
+    "date": "page last updated 2018-05-17",
+    "url": "https://thane.nic.in/en/tourist-place/malshej-ghat/",
+    "source_type": "government_district_webpage",
+    "supports": "Present Malshej location on the Kalyan–Nagar road and current route from Junnar via Narayangaon.",
+    "caveat": "Present road alignment; not proof of a 1622 route."
+  },
+  {
+    "id": "source_tikona_peth_trawell",
+    "title": "Tikona Fort, Lonavala — visitor information",
+    "author": null,
+    "publisher": "Trawell.in",
+    "year": null,
+    "url": "https://www.trawell.in/maharashtra/lonavala/tikona-fort",
+    "source_type": "modern_place_reference",
+    "claim_scope": "Identifies Tikona Peth as the nearest present-day village to Tikona Fort; not evidence of a 1622 settlement."
+  },
+  {
+    "id": "source_user_forts_batch_02a",
+    "title": "Region Pack 01 Batch 02A — forts.json, site_updates.json and new_sites_needed.json",
+    "publisher": "User-supplied project material",
+    "date": "uploaded 2026-11-06",
+    "url": null,
+    "source_type": "project_input",
+    "supports": "Exact fort IDs, site IDs visible in fort references, regional IDs and supplied site additions.",
+    "caveat": "The separate 57-site v2 file was not present in the conversation attachments available for this batch."
+  },
+  {
+    "id": "source_user_item1_new_sites",
+    "title": "Region Pack 01 Item 01 — new sites additions",
+    "publisher": "User-supplied project data / prior generated pack",
+    "date": "2026-11-06",
+    "url": null,
+    "source_type": "project_dataset",
+    "supports": "Exact ID site_malavli and its association with fort_lohagad.",
+    "caveat": "Site addition is a map anchor only; it does not prove the exact road centreline or a seventeenth-century settlement classification."
+  },
+  {
+    "id": "source_vaidya_1931_founder_swaraj",
+    "title": "Shivaji the Founder of Maratha Swaraj",
+    "author": "C. V. Vaidya",
+    "publisher": "C. V. Vaidya, Poona",
+    "date": "1931",
+    "url": "https://library.bjp.org/jspui/handle/123456789/827",
+    "source_type": "secondary_historical_monograph",
+    "supports": "Provides a dated outline of Shahaji's service: Adil Shahi service from about October 1625 to about the end of 1627, with a document dated 10 January 1626 mentioning a desagata and fort rights granted to Sambhaji and Dharoji Mohite; it then describes Shahaji's return to Nizam Shahi service.",
+    "caveat": "Retrospective monograph. The Mohite connection in this passage is described as probable kinship, not proven parentage; the 1625-1627 service dates are after the 1622 start date."
+  }
+]
