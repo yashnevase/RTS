@@ -41,3 +41,7 @@ The validator found the same polity_portuguese beneficiary error on fort_chaul, 
 ## Retain supplied source labels
 
 Copied nine source labels already visible verbatim in the fort notes into stub title fields (e.g. Marathi Vishwakosh, Poona Gazetteer, and ASI's 1963–64 archaeology review). These labels are explicitly not verified full bibliographic titles. The other 28 new stub titles remain null; every new author, year and URL remains null. No source research or identifier expansion was used.
+
+## Verification and CI
+
+Added 16 behavior tests and a push/PR workflow that runs npm test and npm run validate-data. Proposal assessment strings are validated as assessments rather than mistaken for entity IDs. Pinned the approved jsonschema dependency to available version 4.25.1 and froze its transitive dependencies for reproducible setup. Documented schema provenance, explicit stub status, null semantics, collision handling and the frozen-proposal exception. Local checks pass; hosted CI has not been run.

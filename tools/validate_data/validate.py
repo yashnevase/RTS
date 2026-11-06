@@ -103,7 +103,7 @@ def validate(data_root: Path = ROOT / 'data') -> dict:
                         errors.append(f'{location}/{key}: outside {low}..{high}')
             for key, item in value.items():
                 # Raw original doubt entries are preserved evidence, not live references.
-                if key == 'legacy_entries':
+                if key in {'legacy_entries', 'field_assessment'}:
                     continue
                 here = f'{location}/{key}'
                 if key == 'confidence' and item not in CONFIDENCE:
@@ -147,6 +147,13 @@ def validate(data_root: Path = ROOT / 'data') -> dict:
                 else:
                     for err in Draft202012Validator(ownership[key]).iter_errors(value):
                         errors.append(f'{location}/{target}/{key}: {err.message}')
+        assessment = proposal.get('field_assessment')
+        if not isinstance(assessment, dict):
+            errors.append(f'{location}/{target}: field_assessment must be an object')
+        else:
+            for key, value in assessment.items():
+                if key not in schemas['site']['properties']['ownership']['properties'] or value not in {'unknown', 'proposed'}:
+                    errors.append(f'{location}/{target}: invalid field assessment {key}={value}')
         walk(proposal, f'{location}/{target}')
     counts = Counter(kind for _, kind, _ in records)
     return {'errors': errors, 'warnings': warnings, 'record_counts': dict(sorted(counts.items())),
