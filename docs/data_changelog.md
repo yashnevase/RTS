@@ -25,3 +25,7 @@ Kept both Panhala region_id values null, following the supplied site warning. Ad
 ## infer eight missing development tiers
 
 Assigned Tier B to the two market_town and six village records under §1.4 standard town/village simulation. Set confidence=inferred and field_confidence.development_tier=inferred, preserving prior confidence in notes and all historical cautions. This does not approve activation of provisional anchors. IDs: site_panhala, site_velhe, site_malavli, site_tikona_peth, site_gunjavane, site_donaje, site_korlai, site_murud.
+
+## normalize metadata and resolve structural references
+
+Every active entity now has id, record_version, source_ids, confidence and status; stub remains an explicit permitted workflow status alongside §16.2 statuses. Fort coordinates → coordinate; corridor waypoints → waypoint_ids and 1622_status → active_in_1622; missing associated_fort_ids → []. All values are preserved, and nested season evidence retains its distinct source wording. Added 65 structural node stubs using existing IDs and one minimal Janjira commander stub using the existing referenced ID and supplied name. Added linked doubts. No Item 04 proposal applied.

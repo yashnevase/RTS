@@ -1,0 +1,587 @@
+[
+  {
+    "id": "node_ahmadnagar",
+    "record_version": 1,
+    "site_id": "site_ahmadnagar",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_akkalkot",
+    "record_version": 1,
+    "site_id": "site_akkalkot",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_alandi",
+    "record_version": 1,
+    "site_id": "site_alandi",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_ausa",
+    "record_version": 1,
+    "site_id": "site_ausa",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_baramati",
+    "record_version": 1,
+    "site_id": "site_baramati",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_barshi",
+    "record_version": 1,
+    "site_id": "site_barshi",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_beed",
+    "record_version": 1,
+    "site_id": "site_beed",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_bhingar",
+    "record_version": 1,
+    "site_id": "site_bhingar",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_bhor",
+    "record_version": 1,
+    "site_id": "site_bhor",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_chakan",
+    "record_version": 1,
+    "site_id": "site_chakan",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_chaul",
+    "record_version": 1,
+    "site_id": "site_chaul",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_dabhol",
+    "record_version": 1,
+    "site_id": "site_dabhol",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_daulatabad",
+    "record_version": 1,
+    "site_id": "site_daulatabad",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_daund",
+    "record_version": 1,
+    "site_id": "site_daund",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_dehu",
+    "record_version": 1,
+    "site_id": "site_dehu",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_dharashiv",
+    "record_version": 1,
+    "site_id": "site_dharashiv",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_indapur",
+    "record_version": 1,
+    "site_id": "site_indapur",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_jalna",
+    "record_version": 1,
+    "site_id": "site_jalna",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_jejuri",
+    "record_version": 1,
+    "site_id": "site_jejuri",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_junnar",
+    "record_version": 1,
+    "site_id": "site_junnar",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_kalamb",
+    "record_version": 1,
+    "site_id": "site_kalamb",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_kannad",
+    "record_version": 1,
+    "site_id": "site_kannad",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_karjat_ahmadnagar",
+    "record_version": 1,
+    "site_id": "site_karjat_ahmadnagar",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_karmala",
+    "record_version": 1,
+    "site_id": "site_karmala",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_khed",
+    "record_version": 1,
+    "site_id": "site_khed",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_khirki",
+    "record_version": 1,
+    "site_id": "site_khirki",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_kopargaon",
+    "record_version": 1,
+    "site_id": "site_kopargaon",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_latur",
+    "record_version": 1,
+    "site_id": "site_latur",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_loni_kalbhor",
+    "record_version": 1,
+    "site_id": "site_loni_kalbhor",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_mangalwedha",
+    "record_version": 1,
+    "site_id": "site_mangalwedha",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_mhaswad",
+    "record_version": 1,
+    "site_id": "site_mhaswad",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_mohol",
+    "record_version": 1,
+    "site_id": "site_mohol",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_naldurg",
+    "record_version": 1,
+    "site_id": "site_naldurg",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_nevasa",
+    "record_version": 1,
+    "site_id": "site_nevasa",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_paithan",
+    "record_version": 1,
+    "site_id": "site_paithan",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_pandharpur",
+    "record_version": 1,
+    "site_id": "site_pandharpur",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_paranda",
+    "record_version": 1,
+    "site_id": "site_paranda",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_parner",
+    "record_version": 1,
+    "site_id": "site_parner",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_pathardi",
+    "record_version": 1,
+    "site_id": "site_pathardi",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_phaltan",
+    "record_version": 1,
+    "site_id": "site_phaltan",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_pune",
+    "record_version": 1,
+    "site_id": "site_pune",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_rahuri",
+    "record_version": 1,
+    "site_id": "site_rahuri",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_rajapuri",
+    "record_version": 1,
+    "site_id": "site_rajapuri",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_sangamner",
+    "record_version": 1,
+    "site_id": "site_sangamner",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_sangola",
+    "record_version": 1,
+    "site_id": "site_sangola",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_saswad",
+    "record_version": 1,
+    "site_id": "site_saswad",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_shevgaon",
+    "record_version": 1,
+    "site_id": "site_shevgaon",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_shingnapur",
+    "record_version": 1,
+    "site_id": "site_shingnapur",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_shirur",
+    "record_version": 1,
+    "site_id": "site_shirur",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_shrigonda",
+    "record_version": 1,
+    "site_id": "site_shrigonda",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_solapur",
+    "record_version": 1,
+    "site_id": "site_solapur",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_supe",
+    "record_version": 1,
+    "site_id": "site_supe",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_theur",
+    "record_version": 1,
+    "site_id": "site_theur",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_tuljapur",
+    "record_version": 1,
+    "site_id": "site_tuljapur",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_udgir",
+    "record_version": 1,
+    "site_id": "site_udgir",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_verul",
+    "record_version": 1,
+    "site_id": "site_verul",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_wai",
+    "record_version": 1,
+    "site_id": "site_wai",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_panhala",
+    "record_version": 1,
+    "site_id": "site_panhala",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_velhe",
+    "record_version": 1,
+    "site_id": "site_velhe",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_malavli",
+    "record_version": 1,
+    "site_id": "site_malavli",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_tikona_peth",
+    "record_version": 1,
+    "site_id": "site_tikona_peth",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_gunjavane",
+    "record_version": 1,
+    "site_id": "site_gunjavane",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_donaje",
+    "record_version": 1,
+    "site_id": "site_donaje",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_korlai",
+    "record_version": 1,
+    "site_id": "site_korlai",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  },
+  {
+    "id": "node_murud",
+    "record_version": 1,
+    "site_id": "site_murud",
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "stub",
+    "notes": "Structural anchor for existing route_node_id. Not a researched route, surveyed junction or passable edge. Geometry and connectivity remain unbuilt."
+  }
+]

@@ -1,22 +1,16 @@
 [
   {
     "id": "route_khirki_ahmadnagar_pune",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Khirki–Ahmadnagar–Pune strategic corridor",
     "name_variants": [
       "Aurangabad–Ahmadnagar–Pune (later-name form in the 1986 regional synthesis; do not use Aurangabad as the 1622 primary name)"
     ],
     "corridor_type": "strategic_trade_military_road_corridor",
-    "waypoints": [
-      "site_khirki",
-      "site_ahmadnagar",
-      "site_pune"
-    ],
     "waypoint_order": "north-east to south-west; route is reversible",
     "associated_fort_ids": [
       "fort_daulatabad"
     ],
-    "1622_status": "plausible regional corridor; exact track, intermediate settlements and direct 1622 traffic record not established",
     "historical_basis": "A regional historical synthesis identifies the Aurangabad–Ahmadnagar–Pune corridor among Maharashtra's strategically important traditional routes. Khirki is used as the period-appropriate settlement name for the 1622 scenario; Aurangabad is not backdated.",
     "alignment_caveat": "The waypoint list represents a corridor between known settlement nodes, not a surveyed centreline. Daulatabad Fort is associated with the Khirki/Daulatabad area but is not asserted to be a mandatory linear stop on every journey.",
     "source_ids": [
@@ -25,22 +19,23 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "Do not infer a precise 1622 road surface, distance, toll, seasonal schedule or routine army capacity from the later regional synthesis. The source says these routes gained added importance in the late seventeenth and eighteenth centuries; this does not prove identical intensity in 1622."
+    "notes": "Do not infer a precise 1622 road surface, distance, toll, seasonal schedule or routine army capacity from the later regional synthesis. The source says these routes gained added importance in the late seventeenth and eighteenth centuries; this does not prove identical intensity in 1622.",
+    "waypoint_ids": [
+      "site_khirki",
+      "site_ahmadnagar",
+      "site_pune"
+    ],
+    "active_in_1622": "plausible regional corridor; exact track, intermediate settlements and direct 1622 traffic record not established"
   },
   {
     "id": "route_khirki_solapur_section",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Khirki–Solapur section of the northern Deccan–Bijapur corridor",
     "name_variants": [
       "Aurangabad–Solapur–Bijapur (later-name form in the 1986 regional synthesis)"
     ],
     "corridor_type": "strategic_trade_military_road_corridor_section",
-    "waypoints": [
-      "site_khirki",
-      "site_solapur"
-    ],
     "waypoint_order": "north-east to south-west; route is reversible",
-    "1622_status": "regional corridor is identified in a later synthesis; exact 1622 alignment and intermediate nodes are not established",
     "historical_basis": "A state-sponsored regional historical synthesis names Aurangabad–Solapur–Bijapur as one of the strategically important routes in Maharashtra. Only the Khirki-to-Solapur section is represented because the canonical Bijapur site ID and intermediate nodes are unavailable in the uploads.",
     "alignment_caveat": "Partial corridor only. No Bijapur waypoint has been fabricated. Khirki is the period-appropriate 1622 name; the later source's Aurangabad label is not adopted as the 1622 primary name.",
     "source_ids": [
@@ -49,27 +44,27 @@
     ],
     "confidence": "low",
     "status": "draft",
-    "notes": "Use as a regional corridor candidate, not as proof of an open or continuously maintained road in 1622. Add the Bijapur node and intermediate sites only after matching the canonical sites v2 IDs."
+    "notes": "Use as a regional corridor candidate, not as proof of an open or continuously maintained road in 1622. Add the Bijapur node and intermediate sites only after matching the canonical sites v2 IDs.",
+    "waypoint_ids": [
+      "site_khirki",
+      "site_solapur"
+    ],
+    "active_in_1622": "regional corridor is identified in a later synthesis; exact 1622 alignment and intermediate nodes are not established",
+    "associated_fort_ids": []
   },
   {
     "id": "route_pune_bor_ghat_konkan",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Pune–Bor Ghat–Konkan trade and military corridor",
     "name_variants": [
       "Poona–Bhor Ghat route",
       "Bor Ghat / Khandala Ghat trade route"
     ],
     "corridor_type": "mountain_trade_military_corridor",
-    "waypoints": [
-      "site_pune",
-      "site_malavli",
-      "pass_bor_ghat"
-    ],
     "waypoint_order": "Deccan plateau to Konkan descent; reverse direction possible",
     "associated_fort_ids": [
       "fort_lohagad"
     ],
-    "1622_status": "pre-modern pack-animal route is plausible; exact 1622 alignment and activity are not directly dated in the sources reviewed",
     "historical_basis": "The Imperial Gazetteer reports pack-bullock traffic before nineteenth-century carriage-road works and describes Bhor Ghat as a key Deccan gateway. Government of India's Incredible India page states that Lohagad and Visapur guarded the trade route through Bor Ghat. Visapur is excluded because that source dates its construction to 1713–1720.",
     "alignment_caveat": "Lohagad is an associated route-protection fort, not a mandatory linear stop. Malavli is a local anchor for the Lohagad cluster. The Konkan-side terminal is omitted because its canonical site ID is unavailable.",
     "post_1622_cautions": [
@@ -84,27 +79,27 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "A precise 1622 road line, traffic volume, artillery suitability, toll system and controlling arrangement are not established. Do not insert Visapur or the 1804/1830 road works into the 1622 map."
+    "notes": "A precise 1622 road line, traffic volume, artillery suitability, toll system and controlling arrangement are not established. Do not insert Visapur or the 1804/1830 road works into the 1622 map.",
+    "waypoint_ids": [
+      "site_pune",
+      "site_malavli",
+      "pass_bor_ghat"
+    ],
+    "active_in_1622": "pre-modern pack-animal route is plausible; exact 1622 alignment and activity are not directly dated in the sources reviewed"
   },
   {
     "id": "route_junnar_nane_ghat_konkan",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Junnar–Jivdhan–Nane Ghat Konkan trade corridor",
     "name_variants": [
       "Junnar–Nana Ghat route",
       "Junnar–Ghatghar–Nane Ghat route"
     ],
     "corridor_type": "mountain_trade_corridor",
-    "waypoints": [
-      "site_junnar",
-      "fort_jivdhan",
-      "pass_nane_ghat"
-    ],
     "waypoint_order": "Deccan plateau to Konkan descent; reverse direction possible",
     "associated_fort_ids": [
       "fort_jivdhan"
     ],
-    "1622_status": "the pass and ancient trade role are well established; continuous use specifically in 1622 is not directly documented",
     "historical_basis": "Nane Ghat is an ancient Desh–Konkan trade passage associated with Junnar. The supplied Jivdhan source says the fort commanded Nane Ghat. The 1885 Poona Gazetteer records a Junnar-to-Ghatghar road reaching the top of Nana pass and pack-animal trade with the Konkan, but this is a later observation, not a 1622 traffic return.",
     "alignment_caveat": "The pass is included as a named node. Ghatghar and Konkan-side settlement IDs are omitted because the canonical sites v2 file is unavailable; no substitute IDs have been guessed.",
     "source_ids": [
@@ -115,22 +110,23 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "This is a historic corridor, not a claim that Jivdhan controlled every approach or that the route was continuously passable to carts. Do not infer 1622 tolls, schedules, army class or a specific west-coast terminus."
+    "notes": "This is a historic corridor, not a claim that Jivdhan controlled every approach or that the route was continuously passable to carts. Do not infer 1622 tolls, schedules, army class or a specific west-coast terminus.",
+    "waypoint_ids": [
+      "site_junnar",
+      "fort_jivdhan",
+      "pass_nane_ghat"
+    ],
+    "active_in_1622": "the pass and ancient trade role are well established; continuous use specifically in 1622 is not directly documented"
   },
   {
     "id": "route_junnar_malshej_ghat_konkan",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Junnar–Malshej Ghat western corridor section",
     "name_variants": [
       "Junnar–Malsej pass road (gazetteer spelling)"
     ],
     "corridor_type": "mountain_trade_corridor_section",
-    "waypoints": [
-      "site_junnar",
-      "pass_malshej_ghat"
-    ],
     "waypoint_order": "Deccan plateau to western escarpment; reverse direction possible",
-    "1622_status": "not established; a later gazetteer documents east-west traffic and a route down the Malsej pass",
     "historical_basis": "The 1885 Poona Gazetteer describes a fair-weather road west toward the Konkan down the Malsej pass via Belha, Ale, Otur and Madh, and notes Junnar's road connections to this network. Later government sources describe the modern Malshej Ghat alignment, but do not prove it is identical to the older Malsej-Ana route.",
     "alignment_caveat": "Only supplied Junnar and Malshej pass IDs are used. Belha, Ale, Otur, Madh and the west-side landing are omitted because canonical site IDs are unavailable. Equivalence between the old Malsej-Ana track and modern Malshej Ghat remains unconfirmed.",
     "source_ids": [
@@ -140,6 +136,12 @@
     ],
     "confidence": "low",
     "status": "draft",
-    "notes": "Candidate corridor segment only. Do not activate as a verified 1622 route until the historic alignment, western endpoint and period-specific traffic are independently corroborated. No controlling fort is assigned."
+    "notes": "Candidate corridor segment only. Do not activate as a verified 1622 route until the historic alignment, western endpoint and period-specific traffic are independently corroborated. No controlling fort is assigned.",
+    "waypoint_ids": [
+      "site_junnar",
+      "pass_malshej_ghat"
+    ],
+    "active_in_1622": "not established; a later gazetteer documents east-west traffic and a route down the Malsej pass",
+    "associated_fort_ids": []
   }
 ]

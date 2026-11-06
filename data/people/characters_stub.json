@@ -1,0 +1,21 @@
+[
+  {
+    "id": "character_siddi_ambar_sanak",
+    "record_version": 1,
+    "identity": {
+      "primary_name": "Siddi Ambar Sanak",
+      "name_variants": [],
+      "birth_year": null,
+      "death_year": null
+    },
+    "source_ids": [
+      "source_kadiri_inscriptions_siddi_chiefs_1967",
+      "source_sohoni_siddi_janjira_2019",
+      "source_unesco_konkan_2024",
+      "source_kolaba_gazetteer_janjira"
+    ],
+    "confidence": "low",
+    "status": "stub",
+    "notes": "Reference placeholder only. Name copied verbatim from fort_janjira notes, which request spelling confirmation. No biography, age, kinship, personality or polity is inferred. Does not resolve Janjira sovereignty."
+  }
+]

@@ -7,7 +7,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_bombay_gazetteer_history_konkan",
@@ -17,7 +20,11 @@
     "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Gazetteer%20of%20Bombay%20Presidency/history_of_the_konkan/section_3.pdf",
     "source_type": "historical_gazetteer_pdf",
     "supports": "A Bijapur–Dabhol route via Kumbharli and Chiplun's traffic; a later 1630s Shahji movement through a pass called Kumbha; early modern Deccan–Konkan trade.",
-    "caveat": "Kumbha is not equated conclusively with Kumbharli; the Shahji episode is later than 1622. Route citation for Kumbharli is sourced through Ogilby and retrospective gazetteer synthesis."
+    "caveat": "Kumbha is not equated conclusively with Kumbharli; the Shahji episode is later than 1622. Route citation for Kumbharli is sourced through Ogilby and retrospective gazetteer synthesis.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_bombay_gazetteer_konkan_dabhol",
@@ -27,7 +34,11 @@
     "year": null,
     "url": null,
     "source_type": "gazetteer_reference",
-    "claim_scope": "Source identifier already present in the supplied fort record. The supplied record summarizes the early-sixteenth-century castle, 1547 fortifications, and 1615 Portuguese factory/no Portuguese fort account. No 1622 controller is established."
+    "claim_scope": "Source identifier already present in the supplied fort record. The supplied record summarizes the early-sixteenth-century castle, 1547 fortifications, and 1615 Portuguese factory/no Portuguese fort account. No 1622 controller is established.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_bombay_gazetteer_ratnagiri_passes",
@@ -37,7 +48,11 @@
     "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Ratnagiri%20and%20Sawantwadi/ratnagiri/trade1_communications.html",
     "source_type": "historical_gazetteer",
     "supports": "Kumbharli as the principal northern Ratnagiri pass to Dabhol/Chiplun; Clunes' 1826 description of the old pass as long, winding, rocky and then a major high road after repair.",
-    "caveat": "Nineteenth-century description; no dated evidence for a 1622 pass commander or seasonal status."
+    "caveat": "Nineteenth-century description; no dated evidence for a 1622 pass commander or seasonal status.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_bombay_gazetteer_satara_trade_roads",
@@ -47,7 +62,11 @@
     "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Satara%20District/trade_roads.html",
     "source_type": "historical_gazetteer",
     "supports": "Early trade routes to Konkan ports by Kumbharli and other passes; pass-network and fort relationships; later cart-road construction.",
-    "caveat": "The source explicitly describes the early route as a retrospective inference; distinguish ancient/pre-modern use from exact 1622 operation."
+    "caveat": "The source explicitly describes the early route as a retrospective inference; distinguish ancient/pre-modern use from exact 1622 operation.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_census_2011_pune",
@@ -57,7 +76,11 @@
     "year": 2011,
     "url": "https://censusindia.gov.in/nada/index.php/catalog/6712",
     "source_type": "official_census",
-    "claim_scope": "Lists Donaje and Gunjavane as present-day Pune district villages. Also lists Malavali under Velhe sub-district; because this may not be the supplied Lohagad-side coordinate, it is used only as a name-collision warning. Not evidence for 1622."
+    "claim_scope": "Lists Donaje and Gunjavane as present-day Pune district villages. Also lists Malavali under Velhe sub-district; because this may not be the supplied Lohagad-side coordinate, it is used only as a name-collision warning. Not evidence for 1622.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_chaudenson_1997_korlai",
@@ -67,7 +90,11 @@
     "year": 1997,
     "url": "https://www.persee.fr/doc/ecreo_0708-2398_1997_num_20_1_1582",
     "source_type": "scholarly_article",
-    "claim_scope": "States that the village of Korlai was founded around 1595. The date is approximate and the article summarizes earlier historical material."
+    "claim_scope": "States that the village of Korlai was founded around 1595. The date is approximate and the article summarizes earlier historical material.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_discovermh_jivdhan",
@@ -77,7 +104,11 @@
     "year": null,
     "url": "https://www.discovermh.com/jivdhan-fort/",
     "source_type": "secondary_local_history_and_heritage_article",
-    "claim_scope": "Attributes a 1487 capture to Malik Ahmad and reports later Nizam Shahi events; the article's 1663 date for Shahaji-era events appears inconsistent with the accepted 1636 end of the Nizam Shahi state. Not treated as decisive for 1622 ownership."
+    "claim_scope": "Attributes a 1487 capture to Malik Ahmad and reports later Nizam Shahi events; the article's 1663 date for Shahaji-era events appears inconsistent with the accepted 1636 end of the Nizam Shahi state. Not treated as decisive for 1622 ownership.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_eaton_2005",
@@ -87,7 +118,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_forts_maharashtra_panhala",
@@ -97,7 +131,11 @@
     "year": null,
     "url": "https://www.fortsmaharashtra.com/panhala-fort/",
     "source_type": "secondary_historical_summary",
-    "claim_scope": "Reports a 12th-century Panhala stronghold and the 1191–1192 Bhoja II court/copper-plate tradition. Not evidence of a separate market-town footprint."
+    "claim_scope": "Reports a 12th-century Panhala stronghold and the 1191–1192 Bhoja II court/copper-plate tradition. Not evidence of a separate market-town footprint.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_ghorpade_house_history_1989",
@@ -108,7 +146,11 @@
     "url": "https://sahitya.marathi.gov.in/ebooks/%E0%A4%98%E0%A5%8B%E0%A4%B0%E0%A4%AA%E0%A4%A1%E0%A5%87%20%E0%A4%98%E0%A4%B0%E0%A4%BE%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%9A%E0%A4%BE%20%E0%A4%87%E0%A4%A4%E0%A4%BF%E0%A4%B9%E0%A4%BE%E0%A4%B8.pdf",
     "source_type": "state_published_family_history_using_family_archive",
     "supports": "Distinguishes Kapshi and Mudhol Ghorpade houses; identifies the Daphles as Jath deshmukhs with a Chavhan/Daphalapur origin tradition and Bijapur command; describes Shahaji's later 1637 Bijapur service and grant.",
-    "caveat": "A family history using a family archive. The text itself distinguishes family legend from documented grants; its origin tale that Ghorpades descended from Bhonsles is not treated here as proven kinship."
+    "caveat": "A family history using a family archive. The text itself distinguishes family legend from documented grants; its origin tale that Ghorpades descended from Bhonsles is not treated here as proven kinship.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_goi_incredible_india_lohagad_bor_ghat",
@@ -118,7 +160,11 @@
     "url": "https://www.prod.incredibleindia.gov.in/content/incredible-india-v2/en/destinations/pune/lohagad-and-visapur.html",
     "source_type": "government_tourism_webpage",
     "supports": "States Lohagad and Visapur guarded the Bor Ghat trade route; dates Visapur construction to 1713–1720.",
-    "caveat": "Do not backdate Visapur to 1622; general tourism account does not specify the precise 1622 commanding arrangement."
+    "caveat": "Do not backdate Visapur to 1622; general tourism account does not specify the precise 1622 commanding arrangement.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_hcu_daulatabad_2025",
@@ -128,7 +174,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_house_of_shivaji",
@@ -138,7 +187,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_hpip_korlai_village",
@@ -148,7 +200,11 @@
     "year": null,
     "url": "https://hpip.org/en/heritage/details/931",
     "source_type": "heritage_reference",
-    "claim_scope": "Notes the older designation Korlai/Kôrlê and its rural character beside Chaul; used for spelling and settlement context, not as a precise 1622 date."
+    "claim_scope": "Notes the older designation Korlai/Kôrlê and its rural character beside Chaul; used for spelling and settlement context, not as a precise 1622 date.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_imperial_gazetteer_bhor_ghat",
@@ -158,7 +214,11 @@
     "url": "https://en.wikisource.org/wiki/Page%3AThe_Imperial_Gazetteer_of_India_-_Volume_2_%282nd_edition%29.pdf/417",
     "source_type": "historical_gazetteer",
     "supports": "Bhor Ghat as a strategic Deccan gateway; pack-bullock traffic before road construction; artillery access improved in 1804; carriage road completed in 1830.",
-    "caveat": "Retrospective nineteenth-century account; no direct 1622 road specification."
+    "caveat": "Retrospective nineteenth-century account; no direct 1622 road specification.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_imperial_gazetteer_udgir_1908",
@@ -168,7 +228,11 @@
     "year": 1908,
     "url": "https://library.bjp.org/jspui/bitstream/123456789/1911/1/The%20Imperial%20Gazetteer%20of%20India%20Vol-24%20%28Travankore%20to%20Zira%29.pdf",
     "source_type": "gazetteer_reference",
-    "claim_scope": "Describes Udgir Fort as belonging to the Bijapur kings and records its surrender to Shah Jahan's general in 1635. This conflicts with other regional historical narratives and is retained as a counter-claim rather than accepted as decisive for 1622."
+    "claim_scope": "Describes Udgir Fort as belonging to the Bijapur kings and records its surrender to Shah Jahan's general in 1635. This conflicts with other regional historical narratives and is retained as a counter-claim rather than accepted as decisive for 1622.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_incredible_india_panhala",
@@ -178,7 +242,11 @@
     "year": null,
     "url": "https://www.incredibleindia.gov.in/en/maharashtra/kolhapur/panhala-fort",
     "source_type": "government_heritage_summary",
-    "claim_scope": "States that the fort dates to the Shilahara period under Bhoja II and that copper plates evidence Panhala under his rule; does not independently attest a distinct market settlement."
+    "claim_scope": "States that the fort dates to the Shilahara period under Bhoja II and that copper plates evidence Panhala under his rule; does not independently attest a distinct market settlement.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_indian_antiquary_nizam_history_1921",
@@ -188,7 +256,11 @@
     "year": 1921,
     "url": "https://jainqq.org/booktext/Indian_Antiquary_Vol_50/032542",
     "source_type": "historical_study_primary_chronicle_excerpt",
-    "claim_scope": "Its account of Udgir describes a Barid Shahi phase followed by its acquisition by the Nizam Shahi dynasty under Murtaza I. It contributes to the conflicting Udgir chronology; it does not resolve the exact 1622 split between sovereign title and practical command."
+    "claim_scope": "Its account of Udgir describes a Barid Shahi phase followed by its acquisition by the Nizam Shahi dynasty under Murtaza I. It contributes to the conflicting Udgir chronology; it does not resolve the exact 1622 split between sovereign title and practical command.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_indian_antiquary_shirke_khelna_1453",
@@ -199,7 +271,11 @@
     "url": "https://www.wisdomlib.org/history/book/indian-antiquary-journal/d/doc1897842.html",
     "source_type": "historical_journal_article_using_earlier_chronicle",
     "supports": "Describes a Shirke chief in the 1453 Bahmani expedition toward Khelna/Vishalgad and the chief's role in guiding the army through the region.",
-    "caveat": "This is evidence for a fifteenth-century Shirke chief, not proof of the identity, holdings or patronage of a continuous Shirke branch in 1622."
+    "caveat": "This is evidence for a fifteenth-century Shirke chief, not proof of the identity, holdings or patronage of a continuous Shirke branch in 1622.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_jedhe_shakavali_kari_1618_1697",
@@ -210,7 +286,11 @@
     "url": "https://books.google.com/books/about/Jedhe_%C5%9Bak%C4%81val%C4%AB_kar%C4%ABnā.html?id=lhpuAAAAMAAJ",
     "source_type": "published_family_chronicle_and_catalogue_record",
     "supports": "Identifies the chronicle as preserved by the Jedhes, Deshmukhs of Kari near Bhor, and describes its 1618-1697 coverage. It supports the existence of a Kari Jedhe documentary/household tradition in the relevant period.",
-    "caveat": "The accessible bibliographic record establishes provenance and coverage, not every individual entry. It does not establish a precise 1622 patron or permit unsupported branch genealogies."
+    "caveat": "The accessible bibliographic record establishes provenance and coverage, not every individual entry. It does not establish a precise 1622 patron or permit unsupported branch genealogies.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_junnar_forest_chavand",
@@ -220,7 +300,11 @@
     "year": null,
     "url": "https://junnarforest.in/%E0%A4%9A%E0%A4%BE%E0%A4%B5%E0%A4%82%E0%A4%A1/",
     "source_type": "government_heritage_history",
-    "claim_scope": "States that Nizam Ahmad took Chavand after the Bahmani breakup, that Bahadur Shah was confined there in 1594, and that the fort passed to the Mughals in the 1636 Nizam Shahi settlement. Supports a medium-confidence bracket for Nizam Shahi title/control in 1622."
+    "claim_scope": "States that Nizam Ahmad took Chavand after the Bahmani breakup, that Bahadur Shah was confined there in 1594, and that the fort passed to the Mughals in the 1636 Nizam Shahi settlement. Supports a medium-confidence bracket for Nizam Shahi title/control in 1622.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_junnar_forest_forts",
@@ -230,7 +314,11 @@
     "year": null,
     "url": "https://junnarforest.in/forts/",
     "source_type": "government_heritage_reference",
-    "claim_scope": "Identifies Jivdhan, Hadsar and associated Junnar/Nane Ghat forts; says Hadsar was included in Shahaji's 1637 treaty with the Mughals. This later fact is not backdated to 1622."
+    "claim_scope": "Identifies Jivdhan, Hadsar and associated Junnar/Nane Ghat forts; says Hadsar was included in Shahaji's 1637 treaty with the Mughals. This later fact is not backdated to 1622.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_kadiri_inscriptions_siddi_chiefs_1967",
@@ -240,7 +328,11 @@
     "year": 1967,
     "url": "https://ignca.gov.in/Asi_data/75179.pdf",
     "source_type": "epigraphic_study",
-    "claim_scope": "Provides inscriptional and local-record chronology for Janjira command, including Siddi Ambar Sanak's succession in 1621; also discusses the earlier Nizam Shahi/Mughal relationship."
+    "claim_scope": "Provides inscriptional and local-record chronology for Janjira command, including Siddi Ambar Sanak's succession in 1621; also discusses the earlier Nizam Shahi/Mughal relationship.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_konkan_division_tamhini_modern",
@@ -250,7 +342,11 @@
     "url": "https://divcomkonkan.gov.in/en/places-centres/tamhini-ghat/",
     "source_type": "government_location_page",
     "supports": "Modern location reference for Tamhini Ghat near Mulshi and Mangaon.",
-    "caveat": "Does not attest a premodern path or 1622 use."
+    "caveat": "Does not attest a premodern path or 1622 use.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_maharashtra_ahead_junnar_forts",
@@ -260,7 +356,11 @@
     "url": "https://dgipr.maharashtra.gov.in/sites/default/files/2020-07/MAhead-Jan2020.pdf",
     "source_type": "government_magazine_pdf",
     "supports": "Modern description of Shivneri/Junnar and its surrounding route setting.",
-    "caveat": "Tourism-oriented government magazine; not a direct 1622 route source."
+    "caveat": "Tourism-oriented government magazine; not a direct 1622 route source.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_maharashtra_city_renames_2023_2025",
@@ -270,7 +370,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_maharashtra_in_maps",
@@ -280,7 +383,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_maharashtra_in_maps_1986",
@@ -291,7 +397,11 @@
     "url": "https://sahitya.marathi.gov.in/ebooks/MAHARASHTRA%20IN%20MAPS.pdf",
     "source_type": "government_published_historical_geography_synthesis",
     "supports": "Chapter XIII identifies the North-to-Deccan approach via the Burhanpur gap and Tapi crossing, with Dhule–Malegaon or Jalgaon–Aurangabad routes; it identifies Aurangabad–Solapur–Bijapur, Aurangabad–Ahmadnagar–Pune, and Bijapur–Karad–Chiplun–Guhagar as strategically important traditional routes. It states that these routes assumed added importance in the late seventeenth and eighteenth centuries.",
-    "caveat": "Retrospective regional synthesis, not a 1622 itinerary or surveyed historical road map. Its use of 'Aurangabad' is later than the scenario's Khirki-era naming. The statement about routes gaining importance cautions against assuming identical traffic or maintenance in 1622."
+    "caveat": "Retrospective regional synthesis, not a 1622 itinerary or surveyed historical road map. Its use of 'Aurangabad' is later than the scenario's Khirki-era naming. The statement about routes gaining importance cautions against assuming identical traffic or maintenance in 1622.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_maharashtra_state_gazetteer_mughal_history_ch9",
@@ -301,7 +411,11 @@
     "year": null,
     "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/History%20Part/History_II/chapter_9.pdf",
     "source_type": "government_gazetteer_history",
-    "claim_scope": "Its 1636 narrative calls Udgir and Ausa forts of the former Ahmadnagar kingdom, but records Bijapur noble reinforcements being sent to their commanders. Used to expose, not erase, the uncertainty in Udgir's 1622 sovereign/controller status."
+    "claim_scope": "Its 1636 narrative calls Udgir and Ausa forts of the former Ahmadnagar kingdom, but records Bijapur noble reinforcements being sent to their commanders. Used to expose, not erase, the uncertainty in Udgir's 1622 sovereign/controller status.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_maharashtra_state_gazetteer_torna_1646",
@@ -311,7 +425,11 @@
     "year": null,
     "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/History%20Part/History_III/chapter_1.pdf",
     "source_type": "government_gazetteer_history",
-    "claim_scope": "Says that around 1646 Shivaji gained Torna by tricking its Adil Shahi commandant. Used only to establish the later 1646 commandant, not as proof of 1622 ownership."
+    "claim_scope": "Says that around 1646 Shivaji gained Torna by tricking its Adil Shahi commandant. Used only to establish the later 1646 commandant, not as proof of 1622 ownership.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_maharashtra_tourism_malshej",
@@ -321,7 +439,11 @@
     "url": "https://maharashtratourism.gov.in/nature/malshej-ghat/",
     "source_type": "government_tourism_webpage",
     "supports": "Official tourism overview describes Malshej as a mountain pass, references historic strategic movements and old trade routes, and identifies Harishchandragad nearby.",
-    "caveat": "General historical statement; no 1622 route date or operational details."
+    "caveat": "General historical statement; no 1622 route date or operational details.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_maharashtra_tourism_murud_janjira",
@@ -331,7 +453,11 @@
     "year": null,
     "url": "https://maharashtratourism.gov.in/fort/murud-janjira/",
     "source_type": "government_tourism_reference",
-    "claim_scope": "Locates Janjira Fort on an offshore rock near Murud and summarizes its fort history; does not establish when the mainland town of Murud arose."
+    "claim_scope": "Locates Janjira Fort on an offshore rock near Murud and summarizes its fort history; does not establish when the mainland town of Murud arose.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_maharashtra_tourism_naldurg",
@@ -341,7 +467,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_marathi_vishwakosh_naneghat",
@@ -351,7 +480,11 @@
     "url": "https://vishwakosh.marathi.gov.in/19524/",
     "source_type": "reference_encyclopedia",
     "supports": "Satavahana-period formation, Nane Ghat's ancient Desh–Konkan trade role, route between Junnar and Murbad, its position at Jivdhan, and Jivdhan's ability to control the pass.",
-    "caveat": "Modern reference article, not a 1622 itinerary."
+    "caveat": "Modern reference article, not a 1622 itinerary.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_naldurg_morelle_2022",
@@ -361,7 +494,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_osm_locator",
@@ -371,7 +507,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_paranda_dharashiv_gov",
@@ -381,7 +520,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_phaltan_state_report_1945",
@@ -392,7 +534,11 @@
     "url": "https://dspace.gipe.ac.in/xmlui/bitstream/handle/10973/38142/GIPE-070882.pdf?isAllowed=y&sequence=3",
     "source_type": "former_princely_state_official_report_and_dynastic_list",
     "supports": "Records the Naik-Nimbalkar house as the ruling house of Phaltan and lists Vangoji II alias Jagpalrao as ruler from 1570 to 1630, placing him in office in 1622.",
-    "caveat": "A twentieth-century official retrospective chronology; use the named tenure as a dated house chronology, not as proof of every alleged earlier ancestor or exact annual political status."
+    "caveat": "A twentieth-century official retrospective chronology; use the named tenure as a dated house chronology, not as proof of every alleged earlier ancestor or exact annual political status.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_project_input_batch02a",
@@ -402,7 +548,11 @@
     "year": 2026,
     "url": null,
     "source_type": "project_input",
-    "claim_scope": "Supplied site IDs, proposed names, proposed site types, approximate coordinates, and intended nearby-fort relationships only. Not an independent historical source."
+    "claim_scope": "Supplied site IDs, proposed names, proposed site types, approximate coordinates, and intended nearby-fort relationships only. Not an independent historical source.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_pune_district_sinhagad",
@@ -412,7 +562,11 @@
     "year": null,
     "url": "https://pune.gov.in/en/tourist-place/sinhagad/",
     "source_type": "government_place_reference",
-    "claim_scope": "Identifies Kondhana as the earlier name of Sinhagad Fort and locates it at present-day village Donaje; not evidence that Donaje was the 1622 village name."
+    "claim_scope": "Identifies Kondhana as the earlier name of Sinhagad Fort and locates it at present-day village Donaje; not evidence that Donaje was the 1622 village name.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_pune_gazetteer_1885_trade_communications",
@@ -422,7 +576,11 @@
     "url": "https://ocrdigitalfile.nvli.in/snarepository/other/Watermarked-Poona-District-Part-III-ocr.pdf",
     "source_type": "historical_district_gazetteer",
     "supports": "Pages 109–110 describe the Poona–Nasik road, branches to Junnar, the Malsej route via Belha/Ale/Otur/Madh, Junnar–Ghatghar–Nana pass, and pack-animal trade with the Konkan.",
-    "caveat": "Nineteenth-century description. It establishes later route use and names, not continuous operation, exact alignments or facilities in 1622."
+    "caveat": "Nineteenth-century description. It establishes later route use and names, not continuous operation, exact alignments or facilities in 1622.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_pune_gazetteer_1984",
@@ -432,7 +590,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_pune_gazetteer_jivdhan",
@@ -442,7 +603,11 @@
     "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Poona/PART%20VI/Chap%20%2820%29/Places%20Of%20Interest.htm",
     "source_type": "district_gazetteer",
     "supports": "Jivdhan described as commanding Nane Ghat; recorded as a Nizam Shahi fort until the dynasty's extinction and included in a Mughal transfer in 1637.",
-    "caveat": "Does not establish exact 1622 killedar or the pass's daily traffic."
+    "caveat": "Does not establish exact 1622 killedar or the pass's daily traffic.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_pune_gazetteer_trade_communications",
@@ -452,7 +617,11 @@
     "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Poona%20District/Poona-II/trade_communication.html",
     "source_type": "historical_gazetteer",
     "supports": "Poona district historic roads and passes; Bor pass; Malsej-Ana pass road; Tamni/Sathpayri pedestrian footpath; the named ferry locations, routes, nineteenth-century service classes, seasons and establishment dates.",
-    "caveat": "The described ferries are 19th-century services. 'Established before 1875' does not mean established by 1622; Tamni/Sathpayri is not conclusively equated with modern Tamhini."
+    "caveat": "The described ferries are 19th-century services. 'Established before 1875' does not mean established by 1622; Tamni/Sathpayri is not conclusively equated with modern Tamhini.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_radhey_shyam_1968",
@@ -462,7 +631,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_ratnagiri_gazetteer_dabhol",
@@ -472,7 +644,11 @@
     "year": null,
     "url": null,
     "source_type": "gazetteer_reference",
-    "claim_scope": "Source identifier already present in the supplied fort record. The supplied record summarizes references to the 1626 old castle and 1639 ruined fortifications. These do not resolve the controller in 1622."
+    "claim_scope": "Source identifier already present in the supplied fort record. The supplied record summarizes references to the 1626 old castle and 1639 ruined fortifications. These do not resolve the controller in 1622.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_rawlinson_1915_shivaji_maratha",
@@ -483,7 +659,11 @@
     "url": "https://ignca.gov.in/Asi_data/14085.pdf",
     "source_type": "secondary_historical_monograph",
     "supports": "Discusses the Bhosle family's early documented status, Lukaji Jadhav Rao of Sindkhed as a Nizam Shahi feudatory, Maloji Bhosle's subordinate service, the 1604 marriage and grant of Poona/Supe jagirs and Chakan/Shivneri forts, Maloji's death in 1619, and Shahaji's return to Ahmadnagar service.",
-    "caveat": "Early twentieth-century synthesis drawing in part on Bhosle family chronicles; it explicitly treats claimed Chitor descent as an unverified family origin story. Do not turn its anecdotal marriage narrative into a precise genealogical fact beyond what is stated."
+    "caveat": "Early twentieth-century synthesis drawing in part on Bhosle family chronicles; it explicitly treats claimed Chitor descent as an unverified family origin story. Do not turn its anecdotal marriage narrative into a precise genealogical fact beyond what is stated.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_satara_gazetteer_1885_history",
@@ -494,7 +674,11 @@
     "url": "https://gazetteers.maharashtra.gov.in/Satara/english/BombayPresidancy/7%20History.pdf",
     "source_type": "government_published_historical_gazetteer",
     "supports": "Identifies the leading Satara-region chiefs under Bijapur: More of Javli, Naik Nimbalkar of Phaltan, Ghatge of Malavdi, Daphle of Jath, Mane of Mhasvad and Ghorpade of Kapshi. Describes the More appointment under Yusuf Adil Shah, Nimbalkar and Bhosle marriage connections, Ghatge deshmukhi and Nagoji's 1626 title, Mane's Mhasvad deshmukhi and Bijapur service, the two Ghorpade lines, Daphle origins/command, and early references to Mohite and Mahadik.",
-    "caveat": "Retrospective gazetteer, not a contemporary 1622 roster. It mixes early-sixteenth-century narrative with seventeenth-century facts; dates and scope are restricted to what it explicitly states."
+    "caveat": "Retrospective gazetteer, not a contemporary 1622 roster. It mixes early-sixteenth-century narrative with seventeenth-century facts; dates and scope are restricted to what it explicitly states.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_satara_gazetteer_1963",
@@ -504,7 +688,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_sohoni_siddi_janjira_2019",
@@ -514,7 +701,11 @@
     "year": 2019,
     "url": "https://www.persee.fr/doc/arasi_0004-3958_2019_num_74_1_2051?pageId=T21_151",
     "source_type": "scholarly_article",
-    "claim_scope": "States that Janjira's Siddi commanders were appointed by Malik Ambar; names Surur (1618), Yaqut (1620), and Ambar Sanak (1621); and says Siddi officials declared autonomy after the Nizam Shahi kingdom ended in 1636. Strong support for Nizam Shahi sovereign/controller status in 1622, with commander identity kept separate."
+    "claim_scope": "States that Janjira's Siddi commanders were appointed by Malik Ambar; names Surur (1618), Yaqut (1620), and Ambar Sanak (1621); and says Siddi officials declared autonomy after the Nizam Shahi kingdom ended in 1636. Strong support for Nizam Shahi sovereign/controller status in 1622, with commander identity kept separate.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_solapur_gazetteer_1884",
@@ -524,7 +715,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified."
+    "notes": "Referenced by Batch 1; bibliographic details not yet supplied by ChatGPT and must be filled and verified.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_thane_district_malshej",
@@ -534,7 +728,11 @@
     "url": "https://thane.nic.in/en/tourist-place/malshej-ghat/",
     "source_type": "government_district_webpage",
     "supports": "Present Malshej location on the Kalyan–Nagar road and current route from Junnar via Narayangaon.",
-    "caveat": "Present road alignment; not proof of a 1622 route."
+    "caveat": "Present road alignment; not proof of a 1622 route.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_tikona_peth_trawell",
@@ -544,7 +742,11 @@
     "year": null,
     "url": "https://www.trawell.in/maharashtra/lonavala/tikona-fort",
     "source_type": "modern_place_reference",
-    "claim_scope": "Identifies Tikona Peth as the nearest present-day village to Tikona Fort; not evidence of a 1622 settlement."
+    "claim_scope": "Identifies Tikona Peth as the nearest present-day village to Tikona Fort; not evidence of a 1622 settlement.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_user_forts_batch_02a",
@@ -554,7 +756,11 @@
     "url": null,
     "source_type": "project_input",
     "supports": "Exact fort IDs, site IDs visible in fort references, regional IDs and supplied site additions.",
-    "caveat": "The separate 57-site v2 file was not present in the conversation attachments available for this batch."
+    "caveat": "The separate 57-site v2 file was not present in the conversation attachments available for this batch.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_user_item1_new_sites",
@@ -564,7 +770,11 @@
     "url": null,
     "source_type": "project_dataset",
     "supports": "Exact ID site_malavli and its association with fort_lohagad.",
-    "caveat": "Site addition is a map anchor only; it does not prove the exact road centreline or a seventeenth-century settlement classification."
+    "caveat": "Site addition is a map anchor only; it does not prove the exact road centreline or a seventeenth-century settlement classification.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_vaidya_1931_founder_swaraj",
@@ -575,7 +785,11 @@
     "url": "https://library.bjp.org/jspui/handle/123456789/827",
     "source_type": "secondary_historical_monograph",
     "supports": "Provides a dated outline of Shahaji's service: Adil Shahi service from about October 1625 to about the end of 1627, with a document dated 10 January 1626 mentioning a desagata and fort rights granted to Sambhaji and Dharoji Mohite; it then describes Shahaji's return to Nizam Shahi service.",
-    "caveat": "Retrospective monograph. The Mohite connection in this passage is described as probable kinship, not proven parentage; the 1625-1627 service dates are after the 1622 start date."
+    "caveat": "Retrospective monograph. The Mohite connection in this passage is described as probable kinship, not proven parentage; the 1625-1627 service dates are after the 1622 start date.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred",
+    "status": "draft"
   },
   {
     "id": "source_ahmadnagar_fort_asi",
@@ -585,7 +799,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_ahmadnagar: Founded/built by Ahmad Nizam Shah around 1490. The Mughals captured the fort in 1600; Malik Ambar recovered it in 1610 according to the Eaton account summarized by Indian Express, so Nizam Shahi control is plausible for 1622. Confirm the exact control transition and 1622 killedar. The fort's 1490 construction date is repeated in government-linked references. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_ahmadnagar: Founded/built by Ahmad Nizam Shah around 1490. The Mughals captured the fort in 1600; Malik Ambar recovered it in 1610 according to the Eaton account summarized by Indian Express, so Nizam Shahi control is plausible for 1622. Confirm the exact control transition and 1622 killedar. The fort's 1490 construction date is repeated in government-linked references. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_ahmadnagar_mughal_recovery_eaton",
@@ -595,7 +812,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_ahmadnagar: Founded/built by Ahmad Nizam Shah around 1490. The Mughals captured the fort in 1600; Malik Ambar recovered it in 1610 according to the Eaton account summarized by Indian Express, so Nizam Shahi control is plausible for 1622. Confirm the exact control transition and 1622 killedar. The fort's 1490 construction date is repeated in government-linked references. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_ahmadnagar: Founded/built by Ahmad Nizam Shah around 1490. The Mughals captured the fort in 1600; Malik Ambar recovered it in 1610 according to the Eaton account summarized by Indian Express, so Nizam Shahi control is plausible for 1622. Confirm the exact control transition and 1622 killedar. The fort's 1490 construction date is repeated in government-linked references. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_apics_korlai_sociohistory",
@@ -605,7 +825,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_chaul: HPIP states that the Portuguese obtained permission from the Nizam Shahi ruler to build a factory in 1516, received permission for a fort five years later, and had the fort ready in 1524. This supports Portuguese military control while retaining a separate Nizam Shahi hinterland/suzerainty relationship in the ownership model; the precise legal boundary of the enclave needs cartographic verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_chaul: HPIP states that the Portuguese obtained permission from the Nizam Shahi ruler to build a factory in 1516, received permission for a fort five years later, and had the fort ready in 1524. This supports Portuguese military control while retaining a separate Nizam Shahi hinterland/suzerainty relationship in the ownership model; the precise legal boundary of the enclave needs cartographic verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_asi_daulatabad_ncf",
@@ -615,7 +838,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_daulatabad: The fort long predates 1622 and was the Yadava capital before later Sultanate control. It passed to the Nizam Shahis in the sixteenth century and remained with Malik Ambar's Nizam Shahi regime until the Mughal capture in 1633. Exact original construction date is not established here. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_daulatabad: The fort long predates 1622 and was the Yadava capital before later Sultanate control. It passed to the Nizam Shahis in the sixteenth century and remained with Malik Ambar's Nizam Shahi regime until the Mughal capture in 1633. Exact original construction date is not established here. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_asi_panhala_inscription_review",
@@ -625,7 +851,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_panhala: Panhala is a twelfth-century fort, later held and expanded by the Adil Shahis. ASI's 1963–64 archaeology review cites Adil Shahi inscriptions recording a bastion and reservoir in 1539–40 and repairs/new construction in 1547–48. Included as the southern edge of this pack; a site_panhala settlement record is needed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_panhala: Panhala is a twelfth-century fort, later held and expanded by the Adil Shahis. ASI's 1963–64 archaeology review cites Adil Shahi inscriptions recording a bastion and reservoir in 1539–40 and repairs/new construction in 1547–48. Included as the southern edge of this pack; a site_panhala settlement record is needed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_census_aurangabad_daulatabad",
@@ -635,7 +864,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_daulatabad: The fort long predates 1622 and was the Yadava capital before later Sultanate control. It passed to the Nizam Shahis in the sixteenth century and remained with Malik Ambar's Nizam Shahi regime until the Mughal capture in 1633. Exact original construction date is not established here. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_daulatabad: The fort long predates 1622 and was the Yadava capital before later Sultanate control. It passed to the Nizam Shahis in the sixteenth century and remained with Malik Ambar's Nizam Shahi regime until the Mughal capture in 1633. Exact original construction date is not established here. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_dgll_korlai_lighthouse",
@@ -645,7 +877,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_korlai: UNESCO's 2024 tentative-list description says Burhan Nizamshah built the fort opposite the Portuguese Revdanda fort, but also states that Korlai and Revdanda were both in Portuguese control. The construction authority and later controller are distinct; exact date and 1622 legal sovereignty/control sequence need verification. A large rainwater cistern is documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_korlai: UNESCO's 2024 tentative-list description says Burhan Nizamshah built the fort opposite the Portuguese Revdanda fort, but also states that Korlai and Revdanda were both in Portuguese control. The construction authority and later controller are distinct; exact date and 1622 legal sovereignty/control sequence need verification. A large rainwater cistern is documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_dharashiv_gov_paranda",
@@ -655,7 +890,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_paranda: The Maharashtra State Gazetteer identifies Parenda as the capital of the surviving Ahmadnagar territory after 1600. A district tourism account says it was captured by the Adil Shah in 1630; another Gazetteer narrative describes further changes during the 1630s. Nizam Shahi control in 1622 is strongly indicated, but the exact transfer sequence and the first construction date need checking. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_paranda: The Maharashtra State Gazetteer identifies Parenda as the capital of the surviving Ahmadnagar territory after 1600. A district tourism account says it was captured by the Adil Shah in 1630; another Gazetteer narrative describes further changes during the 1630s. Nizam Shahi control in 1622 is strongly indicated, but the exact transfer sequence and the first construction date need checking. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_fortsmaharashtra_tikona",
@@ -665,7 +903,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_tikona: A secondary fort history dates Malik Ahmad Nizam Shah's capture of Tikona to about 1585, supporting pre-1622 Nizam Shahi possession. The exact date and named 1622 commander are not independently corroborated here. Later Maratha/Mughal control events must not be projected backward. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_tikona: A secondary fort history dates Malik Ahmad Nizam Shah's capture of Tikona to about 1585, supporting pre-1622 Nizam Shahi possession. The exact date and named 1622 commander are not independently corroborated here. Later Maratha/Mughal control events must not be projected backward. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_history_udgir_barid_shahi",
@@ -675,7 +916,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_udgir: The fort predates the Bahmanis; a modern district tourism page gives a twelfth-century date, while a local history summary places its construction around 1493 and says it was held by Qasim Barid. The 1635–36 sources report a contested handover and remaining Nizam Shahi officers, with Adil Shahi claims. No reliable date-specific source found here settles the sovereign/controller in 1622; leave both null pending verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_udgir: The fort predates the Bahmanis; a modern district tourism page gives a twelfth-century date, while a local history summary places its construction around 1493 and says it was held by Qasim Barid. The 1635–36 sources report a contested handover and remaining Nizam Shahi officers, with Adil Shahi claims. No reliable date-specific source found here settles the sovereign/controller in 1622; leave both null pending verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_hpip_chaul_revdanda",
@@ -685,7 +929,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_chaul: HPIP states that the Portuguese obtained permission from the Nizam Shahi ruler to build a factory in 1516, received permission for a fort five years later, and had the fort ready in 1524. This supports Portuguese military control while retaining a separate Nizam Shahi hinterland/suzerainty relationship in the ownership model; the precise legal boundary of the enclave needs cartographic verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_chaul: HPIP states that the Portuguese obtained permission from the Nizam Shahi ruler to build a factory in 1516, received permission for a fort five years later, and had the fort ready in 1524. This supports Portuguese military control while retaining a separate Nizam Shahi hinterland/suzerainty relationship in the ownership model; the precise legal boundary of the enclave needs cartographic verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_imperial_gazetteer_daulatabad",
@@ -695,7 +942,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_daulatabad: The fort long predates 1622 and was the Yadava capital before later Sultanate control. It passed to the Nizam Shahis in the sixteenth century and remained with Malik Ambar's Nizam Shahi regime until the Mughal capture in 1633. Exact original construction date is not established here. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_daulatabad: The fort long predates 1622 and was the Yadava capital before later Sultanate control. It passed to the Nizam Shahis in the sixteenth century and remained with Malik Ambar's Nizam Shahi regime until the Mughal capture in 1633. Exact original construction date is not established here. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_imperial_gazetteer_mughals_deccan",
@@ -705,7 +955,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_ausa: The Latur District government page says Malik Ambar captured the fort in 1014 AH and renamed it Ambarapur; conversion of the Hijri year and the exact capture episode should be checked. The moat is about 120 feet wide, but a moat is not proof of potable water security. Nizam Shahi control in 1622 is plausible; the later 1636 transfer situation is complex. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_ausa: The Latur District government page says Malik Ambar captured the fort in 1014 AH and renamed it Ambarapur; conversion of the Hijri year and the exact capture episode should be checked. The moat is about 120 feet wide, but a moat is not proof of potable water security. Nizam Shahi control in 1622 is plausible; the later 1636 transfer situation is complex. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_imperial_gazetteer_purandar",
@@ -715,7 +968,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_purandar: The Imperial Gazetteer traces an early fortification to the first Bahmani reign (about 1350) and says that under early Ahmadnagar rule Purandar was among forts reserved to the government, not assigned to jagirdars. A conflicting older account associates it with Maloji Bhosale's Pune/Supe grant. For 1622, state control is the safer working assignment; no individual commander is identified. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_purandar: The Imperial Gazetteer traces an early fortification to the first Bahmani reign (about 1350) and says that under early Ahmadnagar rule Purandar was among forts reserved to the government, not assigned to jagirdars. A conflicting older account associates it with Maloji Bhosale's Pune/Supe grant. For 1622, state control is the safer working assignment; no individual commander is identified. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_imperial_gazetteer_udgir",
@@ -725,7 +981,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_udgir: The fort predates the Bahmanis; a modern district tourism page gives a twelfth-century date, while a local history summary places its construction around 1493 and says it was held by Qasim Barid. The 1635–36 sources report a contested handover and remaining Nizam Shahi officers, with Adil Shahi claims. No reliable date-specific source found here settles the sovereign/controller in 1622; leave both null pending verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_udgir: The fort predates the Bahmanis; a modern district tourism page gives a twelfth-century date, while a local history summary places its construction around 1493 and says it was held by Qasim Barid. The 1635–36 sources report a contested handover and remaining Nizam Shahi officers, with Adil Shahi claims. No reliable date-specific source found here settles the sovereign/controller in 1622; leave both null pending verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_india_cine_hub_panhala",
@@ -735,7 +994,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_panhala: Panhala is a twelfth-century fort, later held and expanded by the Adil Shahis. ASI's 1963–64 archaeology review cites Adil Shahi inscriptions recording a bastion and reservoir in 1539–40 and repairs/new construction in 1547–48. Included as the southern edge of this pack; a site_panhala settlement record is needed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_panhala: Panhala is a twelfth-century fort, later held and expanded by the Adil Shahis. ASI's 1963–64 archaeology review cites Adil Shahi inscriptions recording a bastion and reservoir in 1539–40 and repairs/new construction in 1547–48. Included as the southern edge of this pack; a site_panhala settlement record is needed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_kolaba_gazetteer_janjira",
@@ -745,7 +1007,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_janjira: An inscription published by A.A. Kadiri dates an earlier fort-wall/bastion construction to AH 984 (1576–77) under Murtada I and Fahim Khan. Local records list Siddi Ambar Sanak as the Janjira commander from 1621. A later UNESCO summary describes Adil Shahi control until the fort passed to the Siddis during Ibrahim II's reign; sovereignty in 1622 is therefore left null rather than guessed. Two freshwater tanks are recorded. Confirm the exact spelling/name of the 1621 commander before Batch 5. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_janjira: An inscription published by A.A. Kadiri dates an earlier fort-wall/bastion construction to AH 984 (1576–77) under Murtada I and Fahim Khan. Local records list Siddi Ambar Sanak as the Janjira commander from 1621. A later UNESCO summary describes Adil Shahi control until the fort passed to the Siddis during Ibrahim II's reign; sovereignty in 1622 is therefore left null rather than guessed. Two freshwater tanks are recorded. Confirm the exact spelling/name of the 1621 commander before Batch 5. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_latur_district_ausa",
@@ -755,7 +1020,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_ausa: The Latur District government page says Malik Ambar captured the fort in 1014 AH and renamed it Ambarapur; conversion of the Hijri year and the exact capture episode should be checked. The moat is about 120 feet wide, but a moat is not proof of potable water security. Nizam Shahi control in 1622 is plausible; the later 1636 transfer situation is complex. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_ausa: The Latur District government page says Malik Ambar captured the fort in 1014 AH and renamed it Ambarapur; conversion of the Hijri year and the exact capture episode should be checked. The moat is about 120 feet wide, but a moat is not proof of potable water security. Nizam Shahi control in 1622 is plausible; the later 1636 transfer situation is complex. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_latur_district_udgir",
@@ -765,7 +1033,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_udgir: The fort predates the Bahmanis; a modern district tourism page gives a twelfth-century date, while a local history summary places its construction around 1493 and says it was held by Qasim Barid. The 1635–36 sources report a contested handover and remaining Nizam Shahi officers, with Adil Shahi claims. No reliable date-specific source found here settles the sovereign/controller in 1622; leave both null pending verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_udgir: The fort predates the Bahmanis; a modern district tourism page gives a twelfth-century date, while a local history summary places its construction around 1493 and says it was held by Qasim Barid. The 1635–36 sources report a contested handover and remaining Nizam Shahi officers, with Adil Shahi claims. No reliable date-specific source found here settles the sovereign/controller in 1622; leave both null pending verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_maharashtra_ahead_lohagad_2015",
@@ -775,7 +1046,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_lohagad: Maharashtra government material reports that Lohagad was under the Nizam Shahis in the early fifteenth century and was captured by Shivaji only in 1657–58. The fort existed in 1622, but the exact killedar and local controller are unknown. A central water tank is visible today; its 1622 capacity is not measured. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_lohagad: Maharashtra government material reports that Lohagad was under the Nizam Shahis in the early fifteenth century and was captured by Shivaji only in 1657–58. The fort existed in 1622, but the exact killedar and local controller are unknown. A central water tank is visible today; its 1622 capacity is not measured. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_maharashtra_ahead_rajgad_2015",
@@ -785,7 +1059,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_rajgad: Maharashtra government material reports that Nizam Shahi forces captured the fort before 1490 and that Haibatrao, an Adil Shahi chief, captured it from Nizam Shahi in 1625. Thus Nizam Shahi control in 1622 is supported. The large machis, citadel works and Rajgad identity relate to Shivaji's later development; do not backdate those improvements to 1622. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_rajgad: Maharashtra government material reports that Nizam Shahi forces captured the fort before 1490 and that Haibatrao, an Adil Shahi chief, captured it from Nizam Shahi in 1625. Thus Nizam Shahi control in 1622 is supported. The large machis, citadel works and Rajgad identity relate to Shivaji's later development; do not backdate those improvements to 1622. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_maharashtra_gazetteer_mughals_deccan",
@@ -795,7 +1072,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_ahmadnagar: Founded/built by Ahmad Nizam Shah around 1490. The Mughals captured the fort in 1600; Malik Ambar recovered it in 1610 according to the Eaton account summarized by Indian Express, so Nizam Shahi control is plausible for 1622. Confirm the exact control transition and 1622 killedar. The fort's 1490 construction date is repeated in government-linked references. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_paranda: The Maharashtra State Gazetteer identifies Parenda as the capital of the surviving Ahmadnagar territory after 1600. A district tourism account says it was captured by the Adil Shah in 1630; another Gazetteer narrative describes further changes during the 1630s. Nizam Shahi control in 1622 is strongly indicated, but the exact transfer sequence and the first construction date need checking. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_ahmadnagar: Founded/built by Ahmad Nizam Shah around 1490. The Mughals captured the fort in 1600; Malik Ambar recovered it in 1610 according to the Eaton account summarized by Indian Express, so Nizam Shahi control is plausible for 1622. Confirm the exact control transition and 1622 killedar. The fort's 1490 construction date is repeated in government-linked references. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_paranda: The Maharashtra State Gazetteer identifies Parenda as the capital of the surviving Ahmadnagar territory after 1600. A district tourism account says it was captured by the Adil Shah in 1630; another Gazetteer narrative describes further changes during the 1630s. Nizam Shahi control in 1622 is strongly indicated, but the exact transfer sequence and the first construction date need checking. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_maharashtra_tourism_panhala",
@@ -805,7 +1085,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_panhala: Panhala is a twelfth-century fort, later held and expanded by the Adil Shahis. ASI's 1963–64 archaeology review cites Adil Shahi inscriptions recording a bastion and reservoir in 1539–40 and repairs/new construction in 1547–48. Included as the southern edge of this pack; a site_panhala settlement record is needed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_panhala: Panhala is a twelfth-century fort, later held and expanded by the Adil Shahis. ASI's 1963–64 archaeology review cites Adil Shahi inscriptions recording a bastion and reservoir in 1539–40 and repairs/new construction in 1547–48. Included as the southern edge of this pack; a site_panhala settlement record is needed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_maharashtra_tourism_purandar",
@@ -815,7 +1098,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_purandar: The Imperial Gazetteer traces an early fortification to the first Bahmani reign (about 1350) and says that under early Ahmadnagar rule Purandar was among forts reserved to the government, not assigned to jagirdars. A conflicting older account associates it with Maloji Bhosale's Pune/Supe grant. For 1622, state control is the safer working assignment; no individual commander is identified. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_purandar: The Imperial Gazetteer traces an early fortification to the first Bahmani reign (about 1350) and says that under early Ahmadnagar rule Purandar was among forts reserved to the government, not assigned to jagirdars. A conflicting older account associates it with Maloji Bhosale's Pune/Supe grant. For 1622, state control is the safer working assignment; no individual commander is identified. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_maharashtra_tourism_rajgad",
@@ -825,7 +1111,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_rajgad: Maharashtra government material reports that Nizam Shahi forces captured the fort before 1490 and that Haibatrao, an Adil Shahi chief, captured it from Nizam Shahi in 1625. Thus Nizam Shahi control in 1622 is supported. The large machis, citadel works and Rajgad identity relate to Shivaji's later development; do not backdate those improvements to 1622. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_rajgad: Maharashtra government material reports that Nizam Shahi forces captured the fort before 1490 and that Haibatrao, an Adil Shahi chief, captured it from Nizam Shahi in 1625. Thus Nizam Shahi control in 1622 is supported. The large machis, citadel works and Rajgad identity relate to Shivaji's later development; do not backdate those improvements to 1622. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_maharashtra_tourism_torna",
@@ -835,7 +1124,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_torna: The fort existed before 1622; Maharashtra Tourism traces origins to the thirteenth century and says it later became an Adil Shahi stronghold before Shivaji captured it in 1646. The 1622 sovereign/controller is not established precisely by the consulted sources, so ownership is left null. Do not apply the 1646 or later works to the 1622 structure without evidence. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_torna: The fort existed before 1622; Maharashtra Tourism traces origins to the thirteenth century and says it later became an Adil Shahi stronghold before Shivaji captured it in 1646. The 1622 sovereign/controller is not established precisely by the consulted sources, so ownership is left null. Do not apply the 1646 or later works to the 1622 structure without evidence. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_marathi_vishwakosh_shivneri",
@@ -845,7 +1137,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_shivneri: The Marathi Vishwakosh suggests very early origins, reports rebuilding by Malik-ul-Tujar in 1445, and Nizam Shahi control from about 1490. The Pune Gazetteer records Malik Ahmad's capture in 1486. Springs and the Badami tank are visible/recorded today, but their exact 1622 condition is not separately documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_jivdhan: The Marathi Vishwakosh groups Jivdhan with Shivneri, Hadsar and Chavand as old forts guarding the Nane Ghat and Malshej Ghat routes. Its exact 1622 sovereign, controller, earliest date and garrison are not established in the consulted source; ownership remains null. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_hadsar: Included because the Marathi Vishwakosh identifies Hadsar among the old forts in the Junnar/Nane Ghat–Malshej corridor. The source does not establish its exact 1622 command, garrison, or fortification state. Confirm it was an operational fort in 1622 before enabling it as a full garrison node. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_chavand: Included as an old Junnar-area fort associated by the Marathi Vishwakosh with the Nane Ghat/Malshej defensive cluster. Exact date, 1622 controller and garrison condition are unverified; keep the record inactive until confirmed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_shivneri: The Marathi Vishwakosh suggests very early origins, reports rebuilding by Malik-ul-Tujar in 1445, and Nizam Shahi control from about 1490. The Pune Gazetteer records Malik Ahmad's capture in 1486. Springs and the Badami tank are visible/recorded today, but their exact 1622 condition is not separately documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_jivdhan: The Marathi Vishwakosh groups Jivdhan with Shivneri, Hadsar and Chavand as old forts guarding the Nane Ghat and Malshej Ghat routes. Its exact 1622 sovereign, controller, earliest date and garrison are not established in the consulted source; ownership remains null. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_hadsar: Included because the Marathi Vishwakosh identifies Hadsar among the old forts in the Junnar/Nane Ghat–Malshej corridor. The source does not establish its exact 1622 command, garrison, or fortification state. Confirm it was an operational fort in 1622 before enabling it as a full garrison node. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_chavand: Included as an old Junnar-area fort associated by the Marathi Vishwakosh with the Nane Ghat/Malshej defensive cluster. Exact date, 1622 controller and garrison condition are unverified; keep the record inactive until confirmed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_morrelle_naldurg_2022",
@@ -855,7 +1150,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_naldurg: The fort has earlier medieval/Bahmani origins. The Adil Shahis took control and specifically strengthened it in 1558; an Ahmadnagar siege in 1580 failed. The Bori dam and Pani Mahal were developed across the sixteenth and early seventeenth centuries; their exact operational status in 1622 should be confirmed from the architectural study. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_naldurg: The fort has earlier medieval/Bahmani origins. The Adil Shahis took control and specifically strengthened it in 1558; an Ahmadnagar siege in 1580 failed. The Bori dam and Pani Mahal were developed across the sixteenth and early seventeenth centuries; their exact operational status in 1622 should be confirmed from the architectural study. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_osmanabad_gazetteer_history",
@@ -865,7 +1163,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_paranda: The Maharashtra State Gazetteer identifies Parenda as the capital of the surviving Ahmadnagar territory after 1600. A district tourism account says it was captured by the Adil Shah in 1630; another Gazetteer narrative describes further changes during the 1630s. Nizam Shahi control in 1622 is strongly indicated, but the exact transfer sequence and the first construction date need checking. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_paranda: The Maharashtra State Gazetteer identifies Parenda as the capital of the surviving Ahmadnagar territory after 1600. A district tourism account says it was captured by the Adil Shah in 1630; another Gazetteer narrative describes further changes during the 1630s. Nizam Shahi control in 1622 is strongly indicated, but the exact transfer sequence and the first construction date need checking. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_osmanabad_gazetteer_naldurg",
@@ -875,7 +1176,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_naldurg: The fort has earlier medieval/Bahmani origins. The Adil Shahis took control and specifically strengthened it in 1558; an Ahmadnagar siege in 1580 failed. The Bori dam and Pani Mahal were developed across the sixteenth and early seventeenth centuries; their exact operational status in 1622 should be confirmed from the architectural study. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_naldurg: The fort has earlier medieval/Bahmani origins. The Adil Shahis took control and specifically strengthened it in 1558; an Ahmadnagar siege in 1580 failed. The Bori dam and Pani Mahal were developed across the sixteenth and early seventeenth centuries; their exact operational status in 1622 should be confirmed from the architectural study. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_poona_gazetteer_chakan",
@@ -885,7 +1189,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_chakan: The Poona Gazetteer records Chakan as Malik-ul-Tujar's headquarters in 1443 and describes a substantial fort, with a tradition of an earlier mud fort. The 1622 sovereign assignment to the Nizam Shahi polity is a regional inference; no 1622 fort commandant or clan owner is identified. The well-known 1662 siege is later and must not shape the 1622 garrison value. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_chakan: The Poona Gazetteer records Chakan as Malik-ul-Tujar's headquarters in 1443 and describes a substantial fort, with a tradition of an earlier mud fort. The 1622 sovereign assignment to the Nizam Shahi polity is a regional inference; no 1622 fort commandant or clan owner is identified. The well-known 1662 siege is later and must not shape the 1622 garrison value. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_poona_gazetteer_places",
@@ -895,7 +1202,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_kondhana: The Pune Gazetteer records a siege in 1340 and says Kondhana fell to Malik Ahmad in the 1480s; it remained associated with the Nizam Shahi sphere. The name Sinhagad was adopted only after Shivaji's capture in 1647, so use Kondhana for the 1622 scenario. A Gazetteer describes ample water, but exact 1622 garrison and commandant remain unknown. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_kondhana: The Pune Gazetteer records a siege in 1340 and says Kondhana fell to Malik Ahmad in the 1480s; it remained associated with the Nizam Shahi sphere. The name Sinhagad was adopted only after Shivaji's capture in 1647, so use Kondhana for the 1622 scenario. A Gazetteer describes ample water, but exact 1622 garrison and commandant remain unknown. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_poona_gazetteer_saswad",
@@ -905,7 +1215,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_kondhana: The Pune Gazetteer records a siege in 1340 and says Kondhana fell to Malik Ahmad in the 1480s; it remained associated with the Nizam Shahi sphere. The name Sinhagad was adopted only after Shivaji's capture in 1647, so use Kondhana for the 1622 scenario. A Gazetteer describes ample water, but exact 1622 garrison and commandant remain unknown. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_kondhana: The Pune Gazetteer records a siege in 1340 and says Kondhana fell to Malik Ahmad in the 1480s; it remained associated with the Nizam Shahi sphere. The name Sinhagad was adopted only after Shivaji's capture in 1647, so use Kondhana for the 1622 scenario. A Gazetteer describes ample water, but exact 1622 garrison and commandant remain unknown. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_pune_district_shivneri_tourism",
@@ -915,7 +1228,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_shivneri: The Marathi Vishwakosh suggests very early origins, reports rebuilding by Malik-ul-Tujar in 1445, and Nizam Shahi control from about 1490. The Pune Gazetteer records Malik Ahmad's capture in 1486. Springs and the Badami tank are visible/recorded today, but their exact 1622 condition is not separately documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_shivneri: The Marathi Vishwakosh suggests very early origins, reports rebuilding by Malik-ul-Tujar in 1445, and Nizam Shahi control from about 1490. The Pune Gazetteer records Malik Ahmad's capture in 1486. Springs and the Badami tank are visible/recorded today, but their exact 1622 condition is not separately documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_solapur_gazetteer_places",
@@ -925,7 +1241,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_solapur: The fort is documented by the late fourteenth century. Solapur was assigned to Bijapur in 1562; the Maharashtra Gazetteer dates Malik Ambar's storming of the fort to 1623, so Adil Shahi control is the best-supported position for the 1622 snapshot. Do not move it to Nizam Shahi on the basis of the 1623 event. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_solapur: The fort is documented by the late fourteenth century. Solapur was assigned to Bijapur in 1562; the Maharashtra Gazetteer dates Malik Ambar's storming of the fort to 1623, so Adil Shahi control is the best-supported position for the 1622 snapshot. Do not move it to Nizam Shahi on the basis of the 1623 event. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_solapur_tourism_bhuikot",
@@ -935,7 +1254,10 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_solapur: The fort is documented by the late fourteenth century. Solapur was assigned to Bijapur in 1562; the Maharashtra Gazetteer dates Malik Ambar's storming of the fort to 1623, so Adil Shahi control is the best-supported position for the 1622 snapshot. Do not move it to Nizam Shahi on the basis of the 1623 event. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_solapur: The fort is documented by the late fourteenth century. Solapur was assigned to Bijapur in 1562; the Maharashtra Gazetteer dates Malik Ambar's storming of the fort to 1623, so Adil Shahi control is the best-supported position for the 1622 snapshot. Do not move it to Nizam Shahi on the basis of the 1623 event. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   },
   {
     "id": "source_unesco_konkan_2024",
@@ -945,6 +1267,9 @@
     "url": null,
     "licence": null,
     "status": "stub",
-    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_chaul: HPIP states that the Portuguese obtained permission from the Nizam Shahi ruler to build a factory in 1516, received permission for a fort five years later, and had the fort ready in 1524. This supports Portuguese military control while retaining a separate Nizam Shahi hinterland/suzerainty relationship in the ownership model; the precise legal boundary of the enclave needs cartographic verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_korlai: UNESCO's 2024 tentative-list description says Burhan Nizamshah built the fort opposite the Portuguese Revdanda fort, but also states that Korlai and Revdanda were both in Portuguese control. The construction authority and later controller are distinct; exact date and 1622 legal sovereignty/control sequence need verification. A large rainwater cistern is documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_janjira: An inscription published by A.A. Kadiri dates an earlier fort-wall/bastion construction to AH 984 (1576–77) under Murtada I and Fahim Khan. Local records list Siddi Ambar Sanak as the Janjira commander from 1621. A later UNESCO summary describes Adil Shahi control until the fort passed to the Siddis during Ibrahim II's reign; sovereignty in 1622 is therefore left null rather than guessed. Two freshwater tanks are recorded. Confirm the exact spelling/name of the 1621 commander before Batch 5. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Missing registry entry preserved from supplied fort citations. Bibliographic identification unverified; no title, author, year or URL is unambiguously linked to this exact ID in the supplied notes. Full supplied context: fort_chaul: HPIP states that the Portuguese obtained permission from the Nizam Shahi ruler to build a factory in 1516, received permission for a fort five years later, and had the fort ready in 1524. This supports Portuguese military control while retaining a separate Nizam Shahi hinterland/suzerainty relationship in the ownership model; the precise legal boundary of the enclave needs cartographic verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_korlai: UNESCO's 2024 tentative-list description says Burhan Nizamshah built the fort opposite the Portuguese Revdanda fort, but also states that Korlai and Revdanda were both in Portuguese control. The construction authority and later controller are distinct; exact date and 1622 legal sovereignty/control sequence need verification. A large rainwater cistern is documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.\n\nfort_janjira: An inscription published by A.A. Kadiri dates an earlier fort-wall/bastion construction to AH 984 (1576–77) under Murtada I and Fahim Khan. Local records list Siddi Ambar Sanak as the Janjira commander from 1621. A later UNESCO summary describes Adil Shahi control until the fort passed to the Siddis during Ibrahim II's reign; sovereignty in 1622 is therefore left null rather than guessed. Two freshwater tanks are recorded. Confirm the exact spelling/name of the 1621 commander before Batch 5. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "record_version": 1,
+    "source_ids": [],
+    "confidence": "inferred"
   }
 ]

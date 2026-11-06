@@ -1,17 +1,13 @@
 [
   {
     "id": "fort_ahmadnagar",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Ahmadnagar Fort",
     "name_variants": [
       "Ahmednagar Fort",
       "Kot Bagh Nizam"
     ],
     "fort_type": "citadel",
-    "coordinates": {
-      "latitude": 19.0947,
-      "longitude": 74.7484
-    },
     "elevation_m": null,
     "region_id": "region_ahmadnagar_core",
     "protects_site_ids": [
@@ -44,11 +40,15 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "Founded/built by Ahmad Nizam Shah around 1490. The Mughals captured the fort in 1600; Malik Ambar recovered it in 1610 according to the Eaton account summarized by Indian Express, so Nizam Shahi control is plausible for 1622. Confirm the exact control transition and 1622 killedar. The fort's 1490 construction date is repeated in government-linked references. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Founded/built by Ahmad Nizam Shah around 1490. The Mughals captured the fort in 1600; Malik Ambar recovered it in 1610 according to the Eaton account summarized by Indian Express, so Nizam Shahi control is plausible for 1622. Confirm the exact control transition and 1622 killedar. The fort's 1490 construction date is repeated in government-linked references. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 19.0947,
+      "longitude": 74.7484
+    }
   },
   {
     "id": "fort_daulatabad",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Daulatabad Fort",
     "name_variants": [
       "Devagiri Fort",
@@ -56,10 +56,6 @@
       "Deogad"
     ],
     "fort_type": "citadel",
-    "coordinates": {
-      "latitude": 19.9436,
-      "longitude": 75.221
-    },
     "elevation_m": null,
     "region_id": "region_khirki_daulatabad",
     "protects_site_ids": [
@@ -93,11 +89,15 @@
     ],
     "confidence": "high",
     "status": "draft",
-    "notes": "The fort long predates 1622 and was the Yadava capital before later Sultanate control. It passed to the Nizam Shahis in the sixteenth century and remained with Malik Ambar's Nizam Shahi regime until the Mughal capture in 1633. Exact original construction date is not established here. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The fort long predates 1622 and was the Yadava capital before later Sultanate control. It passed to the Nizam Shahis in the sixteenth century and remained with Malik Ambar's Nizam Shahi regime until the Mughal capture in 1633. Exact original construction date is not established here. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 19.9436,
+      "longitude": 75.221
+    }
   },
   {
     "id": "fort_solapur",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Sonalpur Fort",
     "name_variants": [
       "Solapur Bhuikot Fort",
@@ -105,10 +105,6 @@
       "Sandalpur Fort"
     ],
     "fort_type": "citadel",
-    "coordinates": {
-      "latitude": 17.674,
-      "longitude": 75.9062
-    },
     "elevation_m": null,
     "region_id": "region_solapur_frontier",
     "protects_site_ids": [
@@ -140,21 +136,21 @@
     ],
     "confidence": "high",
     "status": "draft",
-    "notes": "The fort is documented by the late fourteenth century. Solapur was assigned to Bijapur in 1562; the Maharashtra Gazetteer dates Malik Ambar's storming of the fort to 1623, so Adil Shahi control is the best-supported position for the 1622 snapshot. Do not move it to Nizam Shahi on the basis of the 1623 event. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The fort is documented by the late fourteenth century. Solapur was assigned to Bijapur in 1562; the Maharashtra Gazetteer dates Malik Ambar's storming of the fort to 1623, so Adil Shahi control is the best-supported position for the 1622 snapshot. Do not move it to Nizam Shahi on the basis of the 1623 event. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 17.674,
+      "longitude": 75.9062
+    }
   },
   {
     "id": "fort_paranda",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Parenda Fort",
     "name_variants": [
       "Paranda Fort",
       "Parinda Fort"
     ],
     "fort_type": "citadel",
-    "coordinates": {
-      "latitude": 18.2705,
-      "longitude": 75.4552
-    },
     "elevation_m": null,
     "region_id": "region_marathwada_southwest",
     "protects_site_ids": [
@@ -187,21 +183,21 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "The Maharashtra State Gazetteer identifies Parenda as the capital of the surviving Ahmadnagar territory after 1600. A district tourism account says it was captured by the Adil Shah in 1630; another Gazetteer narrative describes further changes during the 1630s. Nizam Shahi control in 1622 is strongly indicated, but the exact transfer sequence and the first construction date need checking. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The Maharashtra State Gazetteer identifies Parenda as the capital of the surviving Ahmadnagar territory after 1600. A district tourism account says it was captured by the Adil Shah in 1630; another Gazetteer narrative describes further changes during the 1630s. Nizam Shahi control in 1622 is strongly indicated, but the exact transfer sequence and the first construction date need checking. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.2705,
+      "longitude": 75.4552
+    }
   },
   {
     "id": "fort_naldurg",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Naldurg Fort",
     "name_variants": [
       "Naldrug",
       "Naldurg Land Fort"
     ],
     "fort_type": "citadel",
-    "coordinates": {
-      "latitude": 17.816,
-      "longitude": 76.282
-    },
     "elevation_m": null,
     "region_id": "region_solapur_frontier",
     "protects_site_ids": [
@@ -234,11 +230,15 @@
     ],
     "confidence": "high",
     "status": "draft",
-    "notes": "The fort has earlier medieval/Bahmani origins. The Adil Shahis took control and specifically strengthened it in 1558; an Ahmadnagar siege in 1580 failed. The Bori dam and Pani Mahal were developed across the sixteenth and early seventeenth centuries; their exact operational status in 1622 should be confirmed from the architectural study. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The fort has earlier medieval/Bahmani origins. The Adil Shahis took control and specifically strengthened it in 1558; an Ahmadnagar siege in 1580 failed. The Bori dam and Pani Mahal were developed across the sixteenth and early seventeenth centuries; their exact operational status in 1622 should be confirmed from the architectural study. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 17.816,
+      "longitude": 76.282
+    }
   },
   {
     "id": "fort_ausa",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Ausa (Ambarapur) Fort",
     "name_variants": [
       "Ausa Fort",
@@ -246,10 +246,6 @@
       "Amrapur"
     ],
     "fort_type": "citadel",
-    "coordinates": {
-      "latitude": 18.2468,
-      "longitude": 76.5
-    },
     "elevation_m": null,
     "region_id": "region_marathwada_south",
     "protects_site_ids": [
@@ -281,20 +277,20 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "The Latur District government page says Malik Ambar captured the fort in 1014 AH and renamed it Ambarapur; conversion of the Hijri year and the exact capture episode should be checked. The moat is about 120 feet wide, but a moat is not proof of potable water security. Nizam Shahi control in 1622 is plausible; the later 1636 transfer situation is complex. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The Latur District government page says Malik Ambar captured the fort in 1014 AH and renamed it Ambarapur; conversion of the Hijri year and the exact capture episode should be checked. The moat is about 120 feet wide, but a moat is not proof of potable water security. Nizam Shahi control in 1622 is plausible; the later 1636 transfer situation is complex. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.2468,
+      "longitude": 76.5
+    }
   },
   {
     "id": "fort_udgir",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Udgir Fort",
     "name_variants": [
       "Udgiri Fort"
     ],
     "fort_type": "citadel",
-    "coordinates": {
-      "latitude": 18.3935,
-      "longitude": 77.1128
-    },
     "elevation_m": null,
     "region_id": "region_marathwada_south",
     "protects_site_ids": [
@@ -327,21 +323,21 @@
     ],
     "confidence": "contested",
     "status": "draft",
-    "notes": "The fort predates the Bahmanis; a modern district tourism page gives a twelfth-century date, while a local history summary places its construction around 1493 and says it was held by Qasim Barid. The 1635–36 sources report a contested handover and remaining Nizam Shahi officers, with Adil Shahi claims. No reliable date-specific source found here settles the sovereign/controller in 1622; leave both null pending verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The fort predates the Bahmanis; a modern district tourism page gives a twelfth-century date, while a local history summary places its construction around 1493 and says it was held by Qasim Barid. The 1635–36 sources report a contested handover and remaining Nizam Shahi officers, with Adil Shahi claims. No reliable date-specific source found here settles the sovereign/controller in 1622; leave both null pending verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.3935,
+      "longitude": 77.1128
+    }
   },
   {
     "id": "fort_shivneri",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Shivneri Fort",
     "name_variants": [
       "Sivneri",
       "Shivner"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 19.199,
-      "longitude": 73.8568
-    },
     "elevation_m": null,
     "region_id": "region_junnar_sahyadri",
     "protects_site_ids": [
@@ -375,21 +371,21 @@
     ],
     "confidence": "high",
     "status": "draft",
-    "notes": "The Marathi Vishwakosh suggests very early origins, reports rebuilding by Malik-ul-Tujar in 1445, and Nizam Shahi control from about 1490. The Pune Gazetteer records Malik Ahmad's capture in 1486. Springs and the Badami tank are visible/recorded today, but their exact 1622 condition is not separately documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The Marathi Vishwakosh suggests very early origins, reports rebuilding by Malik-ul-Tujar in 1445, and Nizam Shahi control from about 1490. The Pune Gazetteer records Malik Ahmad's capture in 1486. Springs and the Badami tank are visible/recorded today, but their exact 1622 condition is not separately documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 19.199,
+      "longitude": 73.8568
+    }
   },
   {
     "id": "fort_purandar",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Purandar Fort",
     "name_variants": [
       "Purandhar",
       "Purandara"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 18.2788,
-      "longitude": 73.9752
-    },
     "elevation_m": 1374,
     "region_id": "region_purandar_nira_basin",
     "protects_site_ids": [
@@ -422,11 +418,15 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "The Imperial Gazetteer traces an early fortification to the first Bahmani reign (about 1350) and says that under early Ahmadnagar rule Purandar was among forts reserved to the government, not assigned to jagirdars. A conflicting older account associates it with Maloji Bhosale's Pune/Supe grant. For 1622, state control is the safer working assignment; no individual commander is identified. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The Imperial Gazetteer traces an early fortification to the first Bahmani reign (about 1350) and says that under early Ahmadnagar rule Purandar was among forts reserved to the government, not assigned to jagirdars. A conflicting older account associates it with Maloji Bhosale's Pune/Supe grant. For 1622, state control is the safer working assignment; no individual commander is identified. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.2788,
+      "longitude": 73.9752
+    }
   },
   {
     "id": "fort_kondhana",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Kondhana Fort",
     "name_variants": [
       "Kondhana",
@@ -434,10 +434,6 @@
       "Sinhagad (name adopted after 1647)"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 18.3664,
-      "longitude": 73.755
-    },
     "elevation_m": null,
     "region_id": "region_pune_plateau",
     "protects_site_ids": [
@@ -470,21 +466,21 @@
     ],
     "confidence": "high",
     "status": "draft",
-    "notes": "The Pune Gazetteer records a siege in 1340 and says Kondhana fell to Malik Ahmad in the 1480s; it remained associated with the Nizam Shahi sphere. The name Sinhagad was adopted only after Shivaji's capture in 1647, so use Kondhana for the 1622 scenario. A Gazetteer describes ample water, but exact 1622 garrison and commandant remain unknown. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The Pune Gazetteer records a siege in 1340 and says Kondhana fell to Malik Ahmad in the 1480s; it remained associated with the Nizam Shahi sphere. The name Sinhagad was adopted only after Shivaji's capture in 1647, so use Kondhana for the 1622 scenario. A Gazetteer describes ample water, but exact 1622 garrison and commandant remain unknown. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.3664,
+      "longitude": 73.755
+    }
   },
   {
     "id": "fort_rajgad",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Murumbdev Fort",
     "name_variants": [
       "Murumbdev",
       "Rajgad (later name, associated with Shivaji's capture/refortification from 1647)"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 18.2458,
-      "longitude": 73.6818
-    },
     "elevation_m": 1323,
     "region_id": "region_sahyadri_east",
     "protects_site_ids": [
@@ -516,21 +512,21 @@
     ],
     "confidence": "high",
     "status": "draft",
-    "notes": "Maharashtra government material reports that Nizam Shahi forces captured the fort before 1490 and that Haibatrao, an Adil Shahi chief, captured it from Nizam Shahi in 1625. Thus Nizam Shahi control in 1622 is supported. The large machis, citadel works and Rajgad identity relate to Shivaji's later development; do not backdate those improvements to 1622. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Maharashtra government material reports that Nizam Shahi forces captured the fort before 1490 and that Haibatrao, an Adil Shahi chief, captured it from Nizam Shahi in 1625. Thus Nizam Shahi control in 1622 is supported. The large machis, citadel works and Rajgad identity relate to Shivaji's later development; do not backdate those improvements to 1622. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.2458,
+      "longitude": 73.6818
+    }
   },
   {
     "id": "fort_torna",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Torna Fort",
     "name_variants": [
       "Prachandagad",
       "Tornagad"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 18.2757,
-      "longitude": 73.622
-    },
     "elevation_m": 1403,
     "region_id": "region_sahyadri_east",
     "protects_site_ids": [
@@ -562,21 +558,21 @@
     ],
     "confidence": "contested",
     "status": "draft",
-    "notes": "The fort existed before 1622; Maharashtra Tourism traces origins to the thirteenth century and says it later became an Adil Shahi stronghold before Shivaji captured it in 1646. The 1622 sovereign/controller is not established precisely by the consulted sources, so ownership is left null. Do not apply the 1646 or later works to the 1622 structure without evidence. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The fort existed before 1622; Maharashtra Tourism traces origins to the thirteenth century and says it later became an Adil Shahi stronghold before Shivaji captured it in 1646. The 1622 sovereign/controller is not established precisely by the consulted sources, so ownership is left null. Do not apply the 1646 or later works to the 1622 structure without evidence. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.2757,
+      "longitude": 73.622
+    }
   },
   {
     "id": "fort_lohagad",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Lohagad Fort",
     "name_variants": [
       "Lohgad",
       "Lohgarh"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 18.7102,
-      "longitude": 73.4813
-    },
     "elevation_m": 1033,
     "region_id": "region_sahyadri_east",
     "protects_site_ids": [
@@ -608,21 +604,21 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "Maharashtra government material reports that Lohagad was under the Nizam Shahis in the early fifteenth century and was captured by Shivaji only in 1657–58. The fort existed in 1622, but the exact killedar and local controller are unknown. A central water tank is visible today; its 1622 capacity is not measured. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Maharashtra government material reports that Lohagad was under the Nizam Shahis in the early fifteenth century and was captured by Shivaji only in 1657–58. The fort existed in 1622, but the exact killedar and local controller are unknown. A central water tank is visible today; its 1622 capacity is not measured. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.7102,
+      "longitude": 73.4813
+    }
   },
   {
     "id": "fort_tikona",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Tikona Fort",
     "name_variants": [
       "Vitandgad",
       "Tikona Gad"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 18.6285,
-      "longitude": 73.5125
-    },
     "elevation_m": 1060,
     "region_id": "region_sahyadri_east",
     "protects_site_ids": [
@@ -654,21 +650,21 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "A secondary fort history dates Malik Ahmad Nizam Shah's capture of Tikona to about 1585, supporting pre-1622 Nizam Shahi possession. The exact date and named 1622 commander are not independently corroborated here. Later Maratha/Mughal control events must not be projected backward. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "A secondary fort history dates Malik Ahmad Nizam Shah's capture of Tikona to about 1585, supporting pre-1622 Nizam Shahi possession. The exact date and named 1622 commander are not independently corroborated here. Later Maratha/Mughal control events must not be projected backward. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.6285,
+      "longitude": 73.5125
+    }
   },
   {
     "id": "fort_chakan",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Chakan Fort",
     "name_variants": [
       "Chakan Bhuikot",
       "Sangram Durg (later/local designation; verify period use)"
     ],
     "fort_type": "fortified_town",
-    "coordinates": {
-      "latitude": 18.7602,
-      "longitude": 73.864
-    },
     "elevation_m": null,
     "region_id": "region_pune_plateau",
     "protects_site_ids": [
@@ -701,21 +697,21 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "The Poona Gazetteer records Chakan as Malik-ul-Tujar's headquarters in 1443 and describes a substantial fort, with a tradition of an earlier mud fort. The 1622 sovereign assignment to the Nizam Shahi polity is a regional inference; no 1622 fort commandant or clan owner is identified. The well-known 1662 siege is later and must not shape the 1622 garrison value. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The Poona Gazetteer records Chakan as Malik-ul-Tujar's headquarters in 1443 and describes a substantial fort, with a tradition of an earlier mud fort. The 1622 sovereign assignment to the Nizam Shahi polity is a regional inference; no 1622 fort commandant or clan owner is identified. The well-known 1662 siege is later and must not shape the 1622 garrison value. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.7602,
+      "longitude": 73.864
+    }
   },
   {
     "id": "fort_jivdhan",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Jivdhan Fort",
     "name_variants": [
       "Jivdhan Gad",
       "Jeevdhan"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 19.266,
-      "longitude": 73.74
-    },
     "elevation_m": 1145,
     "region_id": "region_junnar_sahyadri",
     "protects_site_ids": [
@@ -746,21 +742,21 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "The Marathi Vishwakosh groups Jivdhan with Shivneri, Hadsar and Chavand as old forts guarding the Nane Ghat and Malshej Ghat routes. Its exact 1622 sovereign, controller, earliest date and garrison are not established in the consulted source; ownership remains null. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The Marathi Vishwakosh groups Jivdhan with Shivneri, Hadsar and Chavand as old forts guarding the Nane Ghat and Malshej Ghat routes. Its exact 1622 sovereign, controller, earliest date and garrison are not established in the consulted source; ownership remains null. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 19.266,
+      "longitude": 73.74
+    }
   },
   {
     "id": "fort_hadsar",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Hadsar Fort",
     "name_variants": [
       "Hadsar Gad",
       "Harishchandragad region Hadsar"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 19.276,
-      "longitude": 73.72
-    },
     "elevation_m": null,
     "region_id": "region_junnar_sahyadri",
     "protects_site_ids": [
@@ -791,21 +787,21 @@
     ],
     "confidence": "low",
     "status": "draft",
-    "notes": "Included because the Marathi Vishwakosh identifies Hadsar among the old forts in the Junnar/Nane Ghat–Malshej corridor. The source does not establish its exact 1622 command, garrison, or fortification state. Confirm it was an operational fort in 1622 before enabling it as a full garrison node. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Included because the Marathi Vishwakosh identifies Hadsar among the old forts in the Junnar/Nane Ghat–Malshej corridor. The source does not establish its exact 1622 command, garrison, or fortification state. Confirm it was an operational fort in 1622 before enabling it as a full garrison node. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 19.276,
+      "longitude": 73.72
+    }
   },
   {
     "id": "fort_chavand",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Chavand Fort",
     "name_variants": [
       "Chavandgad",
       "Prasannagad (later/local name; verify period use)"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 19.205,
-      "longitude": 73.735
-    },
     "elevation_m": null,
     "region_id": "region_junnar_sahyadri",
     "protects_site_ids": [
@@ -836,21 +832,21 @@
     ],
     "confidence": "low",
     "status": "draft",
-    "notes": "Included as an old Junnar-area fort associated by the Marathi Vishwakosh with the Nane Ghat/Malshej defensive cluster. Exact date, 1622 controller and garrison condition are unverified; keep the record inactive until confirmed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Included as an old Junnar-area fort associated by the Marathi Vishwakosh with the Nane Ghat/Malshej defensive cluster. Exact date, 1622 controller and garrison condition are unverified; keep the record inactive until confirmed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 19.205,
+      "longitude": 73.735
+    }
   },
   {
     "id": "fort_panhala",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Panhala Fort",
     "name_variants": [
       "Panhalgad",
       "Panhalla"
     ],
     "fort_type": "hill_fort",
-    "coordinates": {
-      "latitude": 16.8123,
-      "longitude": 74.1105
-    },
     "elevation_m": null,
     "region_id": null,
     "protects_site_ids": [],
@@ -881,11 +877,15 @@
     ],
     "confidence": "medium",
     "status": "draft",
-    "notes": "Panhala is a twelfth-century fort, later held and expanded by the Adil Shahis. ASI's 1963–64 archaeology review cites Adil Shahi inscriptions recording a bastion and reservoir in 1539–40 and repairs/new construction in 1547–48. Included as the southern edge of this pack; a site_panhala settlement record is needed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "Panhala is a twelfth-century fort, later held and expanded by the Adil Shahis. ASI's 1963–64 archaeology review cites Adil Shahi inscriptions recording a bastion and reservoir in 1539–40 and repairs/new construction in 1547–48. Included as the southern edge of this pack; a site_panhala settlement record is needed. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 16.8123,
+      "longitude": 74.1105
+    }
   },
   {
     "id": "fort_chaul",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Fortaleza de Chaul",
     "name_variants": [
       "Chaul Fort",
@@ -893,10 +893,6 @@
       "Fort of Chaul de Baixo"
     ],
     "fort_type": "fortified_town",
-    "coordinates": {
-      "latitude": 18.5472,
-      "longitude": 72.9277
-    },
     "elevation_m": null,
     "region_id": "region_konkan_north",
     "protects_site_ids": [
@@ -929,21 +925,21 @@
     ],
     "confidence": "high",
     "status": "draft",
-    "notes": "HPIP states that the Portuguese obtained permission from the Nizam Shahi ruler to build a factory in 1516, received permission for a fort five years later, and had the fort ready in 1524. This supports Portuguese military control while retaining a separate Nizam Shahi hinterland/suzerainty relationship in the ownership model; the precise legal boundary of the enclave needs cartographic verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "HPIP states that the Portuguese obtained permission from the Nizam Shahi ruler to build a factory in 1516, received permission for a fort five years later, and had the fort ready in 1524. This supports Portuguese military control while retaining a separate Nizam Shahi hinterland/suzerainty relationship in the ownership model; the precise legal boundary of the enclave needs cartographic verification. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.5472,
+      "longitude": 72.9277
+    }
   },
   {
     "id": "fort_korlai",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Korlai Fort",
     "name_variants": [
       "Morro de Chaul",
       "Korlai Sea Fort"
     ],
     "fort_type": "sea_fort",
-    "coordinates": {
-      "latitude": 18.5364,
-      "longitude": 72.9081
-    },
     "elevation_m": null,
     "region_id": "region_konkan_north",
     "protects_site_ids": [
@@ -975,11 +971,15 @@
     ],
     "confidence": "contested",
     "status": "draft",
-    "notes": "UNESCO's 2024 tentative-list description says Burhan Nizamshah built the fort opposite the Portuguese Revdanda fort, but also states that Korlai and Revdanda were both in Portuguese control. The construction authority and later controller are distinct; exact date and 1622 legal sovereignty/control sequence need verification. A large rainwater cistern is documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "UNESCO's 2024 tentative-list description says Burhan Nizamshah built the fort opposite the Portuguese Revdanda fort, but also states that Korlai and Revdanda were both in Portuguese control. The construction authority and later controller are distinct; exact date and 1622 legal sovereignty/control sequence need verification. A large rainwater cistern is documented. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.5364,
+      "longitude": 72.9081
+    }
   },
   {
     "id": "fort_janjira",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Jazirah Fort",
     "name_variants": [
       "Janjira Fort",
@@ -987,10 +987,6 @@
       "Jazira"
     ],
     "fort_type": "sea_fort",
-    "coordinates": {
-      "latitude": 18.2999,
-      "longitude": 72.9644
-    },
     "elevation_m": null,
     "region_id": "region_konkan_south",
     "protects_site_ids": [
@@ -1024,11 +1020,15 @@
     ],
     "confidence": "contested",
     "status": "draft",
-    "notes": "An inscription published by A.A. Kadiri dates an earlier fort-wall/bastion construction to AH 984 (1576–77) under Murtada I and Fahim Khan. Local records list Siddi Ambar Sanak as the Janjira commander from 1621. A later UNESCO summary describes Adil Shahi control until the fort passed to the Siddis during Ibrahim II's reign; sovereignty in 1622 is therefore left null rather than guessed. Two freshwater tanks are recorded. Confirm the exact spelling/name of the 1621 commander before Batch 5. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "An inscription published by A.A. Kadiri dates an earlier fort-wall/bastion construction to AH 984 (1576–77) under Murtada I and Fahim Khan. Local records list Siddi Ambar Sanak as the Janjira commander from 1621. A later UNESCO summary describes Adil Shahi control until the fort passed to the Siddis during Ibrahim II's reign; sovereignty in 1622 is therefore left null rather than guessed. Two freshwater tanks are recorded. Confirm the exact spelling/name of the 1621 commander before Batch 5. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 18.2999,
+      "longitude": 72.9644
+    }
   },
   {
     "id": "fort_dabhol",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Dabhol Old Castle and Harbour Batteries",
     "name_variants": [
       "Dabul Fortifications",
@@ -1036,10 +1036,6 @@
       "Dabhol Port Defences"
     ],
     "fort_type": "fortified_town",
-    "coordinates": {
-      "latitude": 17.5894,
-      "longitude": 73.1803
-    },
     "elevation_m": null,
     "region_id": "region_konkan_south",
     "protects_site_ids": [
@@ -1071,6 +1067,10 @@
     ],
     "confidence": "low",
     "status": "draft",
-    "notes": "The Konkan Gazetteer describes Dabhol as walled and protected by a castle in the early sixteenth century, reports two forts/redoubts in 1547, and records a 1615 account saying the Portuguese had a factory but no fort. A 1626 account mentions an old castle; 1639 reports ruined fortifications and two river-side batteries. Existence and operability of a distinct fort in 1622 are unproven; keep this record disabled/provisional until verified. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints."
+    "notes": "The Konkan Gazetteer describes Dabhol as walled and protected by a castle in the early sixteenth century, reports two forts/redoubts in 1547, and records a 1615 account saying the Portuguese had a factory but no fort. A 1626 account mentions an old castle; 1639 reports ruined fortifications and two river-side batteries. Existence and operability of a distinct fort in 1622 are unproven; keep this record disabled/provisional until verified. Coordinates are approximate modern fort-centre locators, not surveyed seventeenth-century footprints.",
+    "coordinate": {
+      "latitude": 17.5894,
+      "longitude": 73.1803
+    }
   }
 ]
