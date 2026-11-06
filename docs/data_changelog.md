@@ -37,3 +37,7 @@ Merged 80 input doubt entries (76 supplied plus 4 cleanup entries) into 42 uniqu
 ## Clear second mistyped Chaul beneficiary
 
 The validator found the same polity_portuguese beneficiary error on fort_chaul, beyond the named site defect. Set that field to null, incremented record_version, preserved the original value in doubt_cleanup_chaul_fort_revenue_type, and kept all sovereignty/controller values unchanged.
+
+## Retain supplied source labels
+
+Copied nine source labels already visible verbatim in the fort notes into stub title fields (e.g. Marathi Vishwakosh, Poona Gazetteer, and ASI's 1963–64 archaeology review). These labels are explicitly not verified full bibliographic titles. The other 28 new stub titles remain null; every new author, year and URL remains null. No source research or identifier expansion was used.
