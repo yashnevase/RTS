@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "contested",
+        "fictional",
+        "inferred"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^polity_[a-z0-9_]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "polity_type": {
+      "type": "string"
+    },
+    "record_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "researched",
+        "reviewed",
+        "approved",
+        "fictional",
+        "deprecated",
+        "stub"
+      ]
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^source_"
+      }
+    }
+  },
+  "required": [
+    "confidence",
+    "id",
+    "name",
+    "notes",
+    "polity_type",
+    "record_version",
+    "source_ids",
+    "status"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,141 @@
+{
+  "type": "object",
+  "properties": {
+    "ancestral_seat_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "branch_ids": {
+      "type": "array",
+      "items": {}
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "contested",
+        "fictional",
+        "inferred"
+      ]
+    },
+    "founder_character_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "founding_year": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "head_character_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^family_[a-z0-9_]+$"
+    },
+    "inheritance_profile_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "member_character_ids": {
+      "type": "array",
+      "items": {}
+    },
+    "name": {
+      "type": "string"
+    },
+    "name_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "record_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^source_"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "researched",
+        "reviewed",
+        "approved",
+        "fictional",
+        "deprecated",
+        "stub"
+      ]
+    },
+    "succession_profile_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "ancestral_seat_id",
+    "branch_ids",
+    "confidence",
+    "founder_character_id",
+    "founding_year",
+    "head_character_id",
+    "id",
+    "inheritance_profile_id",
+    "member_character_ids",
+    "name",
+    "name_variants",
+    "notes",
+    "record_version",
+    "source_ids",
+    "status",
+    "succession_profile_id"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

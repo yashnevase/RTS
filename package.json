@@ -1,0 +1,9 @@
+{
+  "name": "deccan-warlords-data",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "validate-data": ".venv/bin/python tools/validate_data/validate.py",
+    "test": ".venv/bin/python -m unittest discover -s tools/validate_data -p 'test_*.py' -v"
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "type": "object",
+  "properties": {
+    "approach_difficulty": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "contested",
+        "fictional",
+        "inferred"
+      ]
+    },
+    "elevation_m": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "fort_type": {
+      "type": "string"
+    },
+    "garrison_size_range": {
+      "type": "object",
+      "properties": {
+        "basis": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "basis",
+        "confidence",
+        "max",
+        "min"
+      ],
+      "additionalProperties": false
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^fort_[a-z0-9_]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "name_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "ownership": {
+      "type": "object",
+      "required": [
+        "sovereign_polity_id",
+        "controller_polity_id",
+        "owner_clan_id",
+        "governor_character_id",
+        "revenue_beneficiary_id",
+        "garrison_commander_id",
+        "overlord_polity_id"
+      ],
+      "properties": {
+        "sovereign_polity_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^polity_"
+        },
+        "controller_polity_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^polity_"
+        },
+        "owner_clan_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^clan_"
+        },
+        "governor_character_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^character_"
+        },
+        "revenue_beneficiary_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(family_|clan_)"
+        },
+        "garrison_commander_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^character_"
+        },
+        "overlord_polity_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^polity_"
+        }
+      },
+      "additionalProperties": false
+    },
+    "protects_site_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "region_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^source_"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "researched",
+        "reviewed",
+        "approved",
+        "fictional",
+        "deprecated",
+        "stub"
+      ]
+    },
+    "strategic_role": {
+      "type": "string"
+    },
+    "valid_from": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "valid_to": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "water_security": {
+      "type": "string"
+    },
+    "coordinate": {
+      "type": "object",
+      "required": [
+        "latitude",
+        "longitude"
+      ],
+      "properties": {
+        "latitude": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "longitude": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "game_x": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "game_y": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "approach_difficulty",
+    "confidence",
+    "elevation_m",
+    "fort_type",
+    "garrison_size_range",
+    "id",
+    "name",
+    "name_variants",
+    "notes",
+    "ownership",
+    "protects_site_ids",
+    "record_version",
+    "region_id",
+    "source_ids",
+    "status",
+    "strategic_role",
+    "valid_from",
+    "valid_to",
+    "water_security",
+    "coordinate"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

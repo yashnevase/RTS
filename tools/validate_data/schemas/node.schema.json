@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^node_[a-z0-9_]+$"
+    },
+    "record_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^source_"
+      }
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "contested",
+        "fictional",
+        "inferred"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "researched",
+        "reviewed",
+        "approved",
+        "fictional",
+        "deprecated",
+        "stub"
+      ]
+    },
+    "site_id": {
+      "type": "string",
+      "pattern": "^site_"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "confidence",
+    "id",
+    "record_version",
+    "site_id",
+    "source_ids",
+    "status"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

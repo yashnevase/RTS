@@ -1,0 +1,104 @@
+{
+  "type": "object",
+  "properties": {
+    "alignment_caveat": {
+      "type": "string"
+    },
+    "associated_fort_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "contested",
+        "fictional",
+        "inferred"
+      ]
+    },
+    "corridor_type": {
+      "type": "string"
+    },
+    "historical_basis": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^route_[a-z0-9_]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "name_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "post_1622_cautions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "record_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^source_"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "researched",
+        "reviewed",
+        "approved",
+        "fictional",
+        "deprecated",
+        "stub"
+      ]
+    },
+    "waypoint_order": {
+      "type": "string"
+    },
+    "waypoint_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "active_in_1622": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "alignment_caveat",
+    "confidence",
+    "corridor_type",
+    "historical_basis",
+    "id",
+    "name",
+    "name_variants",
+    "notes",
+    "record_version",
+    "source_ids",
+    "status",
+    "waypoint_order",
+    "waypoint_ids",
+    "active_in_1622"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

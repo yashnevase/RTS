@@ -1,0 +1,205 @@
+{
+  "type": "object",
+  "properties": {
+    "active_in_1622": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "contested",
+        "fictional",
+        "inferred"
+      ]
+    },
+    "connections": {
+      "type": "object",
+      "properties": {
+        "external_endpoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fort_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "site_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "external_endpoints",
+        "fort_ids",
+        "site_ids"
+      ],
+      "additionalProperties": false
+    },
+    "controlling_fort_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "coordinate": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "longitude": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude"
+      ],
+      "additionalProperties": false
+    },
+    "feature_type": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^pass_[a-z0-9_]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "name_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "practical_army_class": {
+      "type": "object",
+      "properties": {
+        "basis": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "basis",
+        "class",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "record_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "region_id": {
+      "type": "string"
+    },
+    "season_availability": {
+      "type": "object",
+      "properties": {
+        "1622_status": {
+          "type": "string"
+        },
+        "basis": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "fair_season": {
+          "type": "string"
+        },
+        "gazetteer_footpath_pattern": {
+          "type": "string"
+        },
+        "southwest_monsoon": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "1622_status",
+        "basis",
+        "confidence",
+        "southwest_monsoon"
+      ],
+      "additionalProperties": false
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^source_"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "researched",
+        "reviewed",
+        "approved",
+        "fictional",
+        "deprecated",
+        "stub"
+      ]
+    },
+    "terrain_description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "active_in_1622",
+    "confidence",
+    "connections",
+    "controlling_fort_id",
+    "coordinate",
+    "feature_type",
+    "id",
+    "name",
+    "name_variants",
+    "notes",
+    "practical_army_class",
+    "record_version",
+    "region_id",
+    "season_availability",
+    "source_ids",
+    "status",
+    "terrain_description"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
