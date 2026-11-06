@@ -624,7 +624,7 @@
   },
   {
     "id": "site_chaul",
-    "record_version": 1,
+    "record_version": 2,
     "name": "Chaul",
     "name_variants": [
       "Revdanda (Portuguese Chaul fort area)"
@@ -644,7 +644,7 @@
       "controller_polity_id": "polity_nizam_shahi",
       "owner_clan_id": null,
       "governor_character_id": null,
-      "revenue_beneficiary_id": "polity_portuguese",
+      "revenue_beneficiary_id": null,
       "garrison_commander_id": null,
       "overlord_polity_id": null
     },

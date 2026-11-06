@@ -567,5 +567,17 @@
     "issue": "No fort template in starter pack",
     "verify": "The starter ZIP contains no fort.example.json. The records therefore use the settlement template's coordinate/ownership conventions and the field names explicitly requested in your prompt. Add a formal fort schema to the starter pack before code validation.",
     "from": "batch2a"
+  },
+  {
+    "id": "doubt_cleanup_chaul_revenue_type",
+    "severity": "high",
+    "entity_ids": [
+      "site_chaul",
+      "polity_portuguese"
+    ],
+    "question": "Should revenue_beneficiary_id support a tagged union including polities, or should Portuguese shared revenue be represented by a separate revenue-right record? The original value was polity_portuguese.",
+    "resolution": "The invalid family/clan field is null. The original value and notes are preserved; sovereignty/controller are unchanged. Schema choice requires user review.",
+    "status": "open",
+    "from": "cleanup"
   }
 ]
