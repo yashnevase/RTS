@@ -29,3 +29,7 @@ Assigned Tier B to the two market_town and six village records under §1.4 stand
 ## normalize metadata and resolve structural references
 
 Every active entity now has id, record_version, source_ids, confidence and status; stub remains an explicit permitted workflow status alongside §16.2 statuses. Fort coordinates → coordinate; corridor waypoints → waypoint_ids and 1622_status → active_in_1622; missing associated_fort_ids → []. All values are preserved, and nested season evidence retains its distinct source wording. Added 65 structural node stubs using existing IDs and one minimal Janjira commander stub using the existing referenced ID and supplied name. Added linked doubts. No Item 04 proposal applied.
+
+## Consolidate doubts without changing legacy IDs
+
+Merged 80 input doubt entries (76 supplied plus 5 cleanup entries) into 42 unique-ID review records. Reused D1–D13 IDs are grouped by unchanged ID, with origin-labelled questions and complete verbatim originals in legacy_entries. All archived loose doubts were checked for exact preservation. No issue was dropped. Resolved only S1 and doubt_item4_missing_sites_v2 because the actual v2 and master files are now present; historical uncertainty remains open. A collision aggregate may close only when every constituent issue is resolved. The old all_doubts.json is replaced by doubts.json; baseline preserves its original bytes.
