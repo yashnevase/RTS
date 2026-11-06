@@ -6,6 +6,7 @@ Status: NOT LOCKED. User authorized Phase A with “proceed”; implementation r
 |---|---|
 | Personal project | Explicit user decision; still track asset permissions. |
 | Deccan-first historical sandbox | Explicit user direction; history establishes starting conditions, outcomes emerge. |
+| Polished Region Pack 01 campaign first | User decision, 2026-11-07: finish a small campaign before geographic expansion. Scope is smaller; quality and complete career loops remain the goal. |
 | Maratha nobles, houses and identities, no scripted empire | Explicit user direction; political allegiance remains separate. |
 | Individual motives and event memories | Explicit user direction; culture/religion can influence individuals without determining morality. |
 | TypeScript strict, PixiJS, React, Vite workspaces | Engineer selection delegated by user; fits campaign canvas, menus and headless simulation. Dependencies still need approval when added. |
@@ -16,7 +17,7 @@ Status: NOT LOCKED. User authorized Phase A with “proceed”; implementation r
 
 ## OPEN — do not implement assumptions
 
-1. Exact v1 geography: Region Pack 01 first, or whole Deccan with sparse coverage? Recommendation: Pack 01 first, broader actors represented through dated external interactions.
+1. RESOLVED 2026-11-07: Region Pack 01 first. Exact playable boundary and activation list still require geographic/historical review; membership in the input pack does not establish scenario readiness.
 2. First playable horizon: 50 years or 200–300? Recommendation: validate 50 first while preserving extensible chronology.
 3. Exact 1622 actor roster and playable versus external status, especially English Company and Portuguese establishments. Requested coverage includes Mughal, Mysore, Adil Shahi, Nizam Shahi, Qutb Shahi and distinct local/tribal actors; these are research targets, not new verified records. Avoid importing later colonial arrangements into 1622.
 4. Naval travel scope; naval combat stays later.

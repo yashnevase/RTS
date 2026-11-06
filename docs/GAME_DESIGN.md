@@ -6,6 +6,8 @@ Authority: DECISIONS.md; unresolved choices remain OPEN. No game code until DESI
 
 A desktop-browser, single-player, pausable real-time Deccan campaign sandbox beginning from a researched 1622 snapshot. The player earns a livelihood, establishes relationships and builds power through trade, service, military action and family politics. The world continues independently.
 
+First deliverable: a complete, polished Region Pack 01 campaign, approved by the user on 2026-11-07. Prove the full campaign experience at small geographic scale before adding regions. Historical actors outside the playable area require dated external-interaction content; do not move their capitals or holdings into this pack merely to include them.
+
 Pillars: reproducible living world; people and obligations drive politics; terrain and supply shape conflict; honest provenance; readable decisions with visible consequences.
 
 ## Core loop
@@ -26,6 +28,6 @@ Identity influences personal priorities only through authored, inspectable facto
 
 ## Scope
 
-V1 targets campaign travel, markets, caravans, recruitment, auto-battles, menu sieges, households, diplomacy, succession, companions, generated issues and kingdom creation. These arrive milestone by milestone. Separate RTS battles come later. Skip 3D roaming, first-person combat, smithing, arenas and multiplayer. Audio deferred. Exact launch geography, duration and maritime travel await decisions.
+V1 targets campaign travel, markets, caravans, recruitment, auto-battles, menu sieges, households, diplomacy, succession, companions, generated issues and kingdom creation. These arrive milestone by milestone within Region Pack 01. Separate RTS battles come later. Skip 3D roaming, first-person combat, smithing, arenas and multiplayer. Audio deferred. Exact boundary/activation list, duration and maritime travel await decisions.
 
 Polish means clear readable screens, consistent art, stable frame pacing, reliable saves, explainable AI and satisfying feedback. It is not guaranteed by replacing markers with PNGs; art consistency, readability at zoom and simulation balance require inspection and playtesting.
