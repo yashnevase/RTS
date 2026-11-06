@@ -45,3 +45,7 @@ Copied nine source labels already visible verbatim in the fort notes into stub t
 ## Verification and CI
 
 Added 16 behavior tests and a push/PR workflow that runs npm test and npm run validate-data. Proposal assessment strings are validated as assessments rather than mistaken for entity IDs. Pinned the approved jsonschema dependency to available version 4.25.1 and froze its transitive dependencies for reproducible setup. Documented schema provenance, explicit stub status, null semantics, collision handling and the frozen-proposal exception. Local checks pass; hosted CI has not been run.
+
+## Cleanup handoff
+
+Added the final cleanup report, exact before/after counts, machine-readable validator result, archive index, remaining historical gaps and numbered decisions. Migration QA verified untouched archive bytes, preserved master IDs and unchanged sovereign/controller fields; the frozen patch SHA-256 is recorded in the report. This task stops at Prompt 1. No design lock or game implementation is authorized by these tooling changes.
