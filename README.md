@@ -1,6 +1,6 @@
 # Deccan Warlords — historical data
 
-Current stage: Phase A design draft ready for review. Game implementation awaits DESIGN LOCKED.
+Current stage: design approved; M0 foundation implemented for review. See docs/progress/M0_report.md. Map rendering begins only after M0 approval.
 
 - [Design decisions and open questions](docs/DECISIONS.md)
 - [Game design](docs/GAME_DESIGN.md)
