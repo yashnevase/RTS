@@ -1,6 +1,6 @@
 # Standing engineering rules
 
-- Read DECISIONS.md and the applicable specs before work. This design is a REVIEW DRAFT until the user replies exactly DESIGN LOCKED. No game implementation before that gate.
+- Read DECISIONS.md and applicable specs before work. User explicitly approved the design with “lock the dwsign agreed proceed” on 2026-11-07; this satisfies the design gate. M0 is authorized; later milestones require inspection and approval.
 - Work one approved milestone at a time; report and stop for inspection. New scope goes to backlog.md.
 - Never invent historical facts. Unknown stays null with a doubt. Separate fictional/gameplay assumptions from sourced history. Preserve conflicting evidence.
 - Never change stable IDs; deprecate instead. Never apply frozen review patches without explicit authorization.

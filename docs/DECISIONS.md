@@ -1,6 +1,8 @@
 # Design decisions — review draft, 2026-11-06
 
-Status: NOT LOCKED. User authorized Phase A with “proceed”; implementation requires DESIGN LOCKED after review.
+Status: DESIGN LOCKED for the agreed scope, 2026-11-07. User approval: “lock the dwsign agreed proceed”. M0 authorized; subsequent milestones require review. OPEN historical and feature decisions below remain unresolved and cannot be silently implemented.
+
+Latest agreement: initial playable horizon is 50 years, with explicitly fictional supporting NPCs permitted under separate provenance. These accept the recommendations in the immediately preceding exchange. Region Pack 01 is the first polished campaign. No historical characters or facts may be overwritten by fictional generation.
 
 | Decision | Basis and reason |
 |---|---|
@@ -18,11 +20,11 @@ Status: NOT LOCKED. User authorized Phase A with “proceed”; implementation r
 ## OPEN — do not implement assumptions
 
 1. RESOLVED 2026-11-07: Region Pack 01 first. Exact playable boundary and activation list still require geographic/historical review; membership in the input pack does not establish scenario readiness.
-2. First playable horizon: 50 years or 200–300? Recommendation: validate 50 first while preserving extensible chronology.
+2. RESOLVED: 50-year initial playable horizon; long soak tests remain technical validation, not a promised launch duration.
 3. Exact 1622 actor roster and playable versus external status, especially English Company and Portuguese establishments. Requested coverage includes Mughal, Mysore, Adil Shahi, Nizam Shahi, Qutb Shahi and distinct local/tribal actors; these are research targets, not new verified records. Avoid importing later colonial arrangements into 1622.
 4. Naval travel scope; naval combat stays later.
 5. Final culture/community/tag taxonomy and caste/social hierarchy depth.
-6. Generated fictional NPC permission and population rules. Previous assistant suggested approval, but user has not explicitly resolved it. Recommendation: allow clearly fictional supporting people without overwriting known historical figures.
+6. RESOLVED permission: clearly fictional supporting NPCs allowed. Exact generation/population rules still require design before M4.
 7. Player lineage, death, adoption, marriage eligibility and succession rules. Adult-only marriages recommended; historical claims require evidence.
 8. Chaul revenue-right schema; Panhala region; all ownership-patch decisions in cleanup report. Keep unknowns null and patch unapplied.
 9. Art sample selection, portrait identity consistency and historical costume review.
