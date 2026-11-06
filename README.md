@@ -1,6 +1,10 @@
 # Deccan Warlords — historical data
 
-Current stage: data cleanup complete, awaiting review. Design and game implementation are not locked or started.
+Current stage: Phase A design draft ready for review. Game implementation awaits DESIGN LOCKED.
+
+- [Design decisions and open questions](docs/DECISIONS.md)
+- [Game design](docs/GAME_DESIGN.md)
+- [Roadmap and acceptance tests](docs/ROADMAP.md)
 
 - [Cleanup report and decisions](docs/data_cleanup_report.md)
 - [Original input inventory and hashes](docs/data_audit.md)
