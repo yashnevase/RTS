@@ -10,7 +10,8 @@ jobs:
           python-version: '3.11'
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
+      - run: npm ci
       - run: python -m venv .venv
       - run: .venv/bin/python -m pip install -r tools/validate_data/requirements.lock
       - run: npm test

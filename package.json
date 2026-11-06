@@ -2,8 +2,21 @@
   "name": "deccan-warlords-data",
   "private": true,
   "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
+    "inspect-data": "npm run validate-data && node tools/inspect-data.ts",
     "validate-data": ".venv/bin/python tools/validate_data/validate.py",
-    "test": ".venv/bin/python -m unittest discover -s tools/validate_data -p 'test_*.py' -v"
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && node --test tests/*.test.ts && .venv/bin/python -m unittest discover -s tools/validate_data -p 'test_*.py' -v"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
   }
 }
