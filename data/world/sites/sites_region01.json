@@ -3562,10 +3562,10 @@
     "notes": "Modern locator in the upper Krishna corridor; do not infer the later Wai taluka or state boundaries for 1622. Coordinates are approximate modern locator centres, not surveyed historic footprints."
   },
   {
-    "record_version": 1,
+    "record_version": 2,
     "name_variants": [],
     "route_node_id": "node_panhala",
-    "development_tier": null,
+    "development_tier": "B",
     "ownership": {
       "sovereign_polity_id": null,
       "controller_polity_id": null,
@@ -3620,15 +3620,18 @@
       "source_incredible_india_panhala",
       "source_project_input_batch02a"
     ],
-    "confidence": "low",
+    "confidence": "inferred",
     "valid_from": 1191,
-    "notes": "Panhala is attested as a named Shilahara seat/place by the 1191–1192 Bhoja II copper-plate tradition, and the hill stronghold is dated to the Shilahara period. This supports the historical place-name, not a separately bounded market-town settlement. The supplied market_town classification is provisional and must not be read as evidence of a 1622 bazaar, population, or urban footprint. Coordinate is the supplied approximate modern locator. region_id is null because fort_panhala has no region_id in the supplied forts file; do not silently assign it to an adjacent region."
+    "notes": "Panhala is attested as a named Shilahara seat/place by the 1191–1192 Bhoja II copper-plate tradition, and the hill stronghold is dated to the Shilahara period. This supports the historical place-name, not a separately bounded market-town settlement. The supplied market_town classification is provisional and must not be read as evidence of a 1622 bazaar, population, or urban footprint. Coordinate is the supplied approximate modern locator. region_id is null because fort_panhala has no region_id in the supplied forts file; do not silently assign it to an adjacent region. Cleanup: development_tier B is an inferred simulation classification from the supplied market_town type under design §1.4, not evidence of 1622 existence or size. Pre-cleanup record confidence was low.",
+    "field_confidence": {
+      "development_tier": "inferred"
+    }
   },
   {
-    "record_version": 1,
+    "record_version": 2,
     "name_variants": [],
     "route_node_id": "node_velhe",
-    "development_tier": null,
+    "development_tier": "B",
     "ownership": {
       "sovereign_polity_id": null,
       "controller_polity_id": null,
@@ -3681,15 +3684,18 @@
     "source_ids": [
       "source_project_input_batch02a"
     ],
-    "confidence": "low",
+    "confidence": "inferred",
     "valid_from": null,
-    "notes": "Provisional modern map anchor supplied as the nearest local settlement/base for Torna Fort. No dated evidence has been established here for a settlement called Velhe in or before 1622; the present-day administrative name Velhe also appears as a sub-district label. Do not assign a 1622 population, status, or ownership from the modern locator. Coordinate is copied from the supplied new_sites_needed file."
+    "notes": "Provisional modern map anchor supplied as the nearest local settlement/base for Torna Fort. No dated evidence has been established here for a settlement called Velhe in or before 1622; the present-day administrative name Velhe also appears as a sub-district label. Do not assign a 1622 population, status, or ownership from the modern locator. Coordinate is copied from the supplied new_sites_needed file. Cleanup: development_tier B is an inferred simulation classification from the supplied village type under design §1.4, not evidence of 1622 existence or size. Pre-cleanup record confidence was low.",
+    "field_confidence": {
+      "development_tier": "inferred"
+    }
   },
   {
-    "record_version": 1,
+    "record_version": 2,
     "name_variants": [],
     "route_node_id": "node_malavli",
-    "development_tier": null,
+    "development_tier": "B",
     "ownership": {
       "sovereign_polity_id": null,
       "controller_polity_id": null,
@@ -3742,15 +3748,18 @@
     "source_ids": [
       "source_project_input_batch02a"
     ],
-    "confidence": "low",
+    "confidence": "inferred",
     "valid_from": null,
-    "notes": "Provisional modern map anchor supplied for the Lohagad base. The exact period form and pre-1622 existence of this specific Malavli settlement are unverified. Census records also contain a similarly spelled Malavali under Velhe sub-district, which should not be conflated with the supplied Lohagad-side coordinates without a coordinate-level match. Coordinate is copied from the supplied new_sites_needed file."
+    "notes": "Provisional modern map anchor supplied for the Lohagad base. The exact period form and pre-1622 existence of this specific Malavli settlement are unverified. Census records also contain a similarly spelled Malavali under Velhe sub-district, which should not be conflated with the supplied Lohagad-side coordinates without a coordinate-level match. Coordinate is copied from the supplied new_sites_needed file. Cleanup: development_tier B is an inferred simulation classification from the supplied village type under design §1.4, not evidence of 1622 existence or size. Pre-cleanup record confidence was low.",
+    "field_confidence": {
+      "development_tier": "inferred"
+    }
   },
   {
-    "record_version": 1,
+    "record_version": 2,
     "name_variants": [],
     "route_node_id": "node_tikona_peth",
-    "development_tier": null,
+    "development_tier": "B",
     "ownership": {
       "sovereign_polity_id": null,
       "controller_polity_id": null,
@@ -3804,15 +3813,18 @@
       "source_tikona_peth_trawell",
       "source_project_input_batch02a"
     ],
-    "confidence": "low",
+    "confidence": "inferred",
     "valid_from": null,
-    "notes": "Modern travel reference identifies Tikona Peth as the nearest village to Tikona Fort. No independent dated evidence has been established for this settlement name or its existence in 1622. Retain as a provisional map anchor only; do not backdate the modern fort-access relationship. Coordinate is copied from the supplied new_sites_needed file."
+    "notes": "Modern travel reference identifies Tikona Peth as the nearest village to Tikona Fort. No independent dated evidence has been established for this settlement name or its existence in 1622. Retain as a provisional map anchor only; do not backdate the modern fort-access relationship. Coordinate is copied from the supplied new_sites_needed file. Cleanup: development_tier B is an inferred simulation classification from the supplied village type under design §1.4, not evidence of 1622 existence or size. Pre-cleanup record confidence was low.",
+    "field_confidence": {
+      "development_tier": "inferred"
+    }
   },
   {
-    "record_version": 1,
+    "record_version": 2,
     "name_variants": [],
     "route_node_id": "node_gunjavane",
-    "development_tier": null,
+    "development_tier": "B",
     "ownership": {
       "sovereign_polity_id": null,
       "controller_polity_id": null,
@@ -3866,15 +3878,18 @@
       "source_census_2011_pune",
       "source_project_input_batch02a"
     ],
-    "confidence": "low",
+    "confidence": "inferred",
     "valid_from": null,
-    "notes": "The 2011 Census identifies Gunjavane as a village in Pune district; this confirms a modern village identity only, not a 1622 attestation. The supplied record uses it as a local map anchor for Murumbdev Fort. The fort name remains Murumbdev for the 1622 scenario; do not substitute the later Rajgad name for the fort itself. Coordinate is copied from the supplied new_sites_needed file."
+    "notes": "The 2011 Census identifies Gunjavane as a village in Pune district; this confirms a modern village identity only, not a 1622 attestation. The supplied record uses it as a local map anchor for Murumbdev Fort. The fort name remains Murumbdev for the 1622 scenario; do not substitute the later Rajgad name for the fort itself. Coordinate is copied from the supplied new_sites_needed file. Cleanup: development_tier B is an inferred simulation classification from the supplied village type under design §1.4, not evidence of 1622 existence or size. Pre-cleanup record confidence was low.",
+    "field_confidence": {
+      "development_tier": "inferred"
+    }
   },
   {
-    "record_version": 1,
+    "record_version": 2,
     "name_variants": [],
     "route_node_id": "node_donaje",
-    "development_tier": null,
+    "development_tier": "B",
     "ownership": {
       "sovereign_polity_id": null,
       "controller_polity_id": null,
@@ -3929,18 +3944,21 @@
       "source_census_2011_pune",
       "source_project_input_batch02a"
     ],
-    "confidence": "low",
+    "confidence": "inferred",
     "valid_from": null,
-    "notes": "The Pune district government identifies Kondhana Fort at the present-day village of Donaje, and the 2011 Census lists Donaje as a village. Neither source establishes the village name or settlement profile in 1622. Keep Kondhana as the fort-era name; Sinhagad is a later name and is not applied to this site record. Geographic fort linkage is not a claim about sovereign control or a dated garrison. Coordinate is copied from the supplied new_sites_needed file."
+    "notes": "The Pune district government identifies Kondhana Fort at the present-day village of Donaje, and the 2011 Census lists Donaje as a village. Neither source establishes the village name or settlement profile in 1622. Keep Kondhana as the fort-era name; Sinhagad is a later name and is not applied to this site record. Geographic fort linkage is not a claim about sovereign control or a dated garrison. Coordinate is copied from the supplied new_sites_needed file. Cleanup: development_tier B is an inferred simulation classification from the supplied village type under design §1.4, not evidence of 1622 existence or size. Pre-cleanup record confidence was low.",
+    "field_confidence": {
+      "development_tier": "inferred"
+    }
   },
   {
-    "record_version": 1,
+    "record_version": 2,
     "name_variants": [
       "Korlai",
       "Kôrlê"
     ],
     "route_node_id": "node_korlai",
-    "development_tier": null,
+    "development_tier": "B",
     "ownership": {
       "sovereign_polity_id": null,
       "controller_polity_id": null,
@@ -3995,15 +4013,18 @@
       "source_hpip_korlai_village",
       "source_project_input_batch02a"
     ],
-    "confidence": "medium",
+    "confidence": "inferred",
     "valid_from": 1595,
-    "notes": "A 1997 scholarly article reports that Korlai village was founded around 1595; this supports village presence before 1622, but the date is approximate and ultimately depends on the historical account summarized by the article. Kôrlê is an older spelling noted by the heritage source; retain Korlai as the modern variant. This is a rural village, not a fortified settlement. Its relationship to Korlai Fort is geographic and does not decide the fort’s 1622 sovereignty/controller. Coordinate is copied from the supplied new_sites_needed file."
+    "notes": "A 1997 scholarly article reports that Korlai village was founded around 1595; this supports village presence before 1622, but the date is approximate and ultimately depends on the historical account summarized by the article. Kôrlê is an older spelling noted by the heritage source; retain Korlai as the modern variant. This is a rural village, not a fortified settlement. Its relationship to Korlai Fort is geographic and does not decide the fort’s 1622 sovereignty/controller. Coordinate is copied from the supplied new_sites_needed file. Cleanup: development_tier B is an inferred simulation classification from the supplied village type under design §1.4, not evidence of 1622 existence or size. Pre-cleanup record confidence was medium.",
+    "field_confidence": {
+      "development_tier": "inferred"
+    }
   },
   {
-    "record_version": 1,
+    "record_version": 2,
     "name_variants": [],
     "route_node_id": "node_murud",
-    "development_tier": null,
+    "development_tier": "B",
     "ownership": {
       "sovereign_polity_id": null,
       "controller_polity_id": null,
@@ -4057,8 +4078,11 @@
       "source_maharashtra_tourism_murud_janjira",
       "source_project_input_batch02a"
     ],
-    "confidence": "low",
+    "confidence": "inferred",
     "valid_from": null,
-    "notes": "The Maharashtra Tourism page locates Janjira Fort off the coast near Murud, supporting the modern geographic anchor. It does not date the mainland settlement of Murud to 1622 or establish its contemporary size/type. Keep separate from the already existing site_rajapuri, which is the immediate shore-side Janjira landing/approach anchor in the supplied fort pack. The fort linkage here is a regional support/map relation, not proof that Janjira directly protected Murud or controlled its revenues. Coordinate is copied from the supplied new_sites_needed file."
+    "notes": "The Maharashtra Tourism page locates Janjira Fort off the coast near Murud, supporting the modern geographic anchor. It does not date the mainland settlement of Murud to 1622 or establish its contemporary size/type. Keep separate from the already existing site_rajapuri, which is the immediate shore-side Janjira landing/approach anchor in the supplied fort pack. The fort linkage here is a regional support/map relation, not proof that Janjira directly protected Murud or controlled its revenues. Coordinate is copied from the supplied new_sites_needed file. Cleanup: development_tier B is an inferred simulation classification from the supplied market_town type under design §1.4, not evidence of 1622 existence or size. Pre-cleanup record confidence was low.",
+    "field_confidence": {
+      "development_tier": "inferred"
+    }
   }
 ]

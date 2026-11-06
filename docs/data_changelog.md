@@ -21,3 +21,7 @@ Set only site_chaul.ownership.revenue_beneficiary_id from polity_portuguese to n
 ## flag unresolved Panhala region membership
 
 Kept both Panhala region_id values null, following the supplied site warning. Added an explicit linked doubt instead of inventing a geographic assignment.
+
+## infer eight missing development tiers
+
+Assigned Tier B to the two market_town and six village records under §1.4 standard town/village simulation. Set confidence=inferred and field_confidence.development_tier=inferred, preserving prior confidence in notes and all historical cautions. This does not approve activation of provisional anchors. IDs: site_panhala, site_velhe, site_malavli, site_tikona_peth, site_gunjavane, site_donaje, site_korlai, site_murud.
