@@ -1,3 +1,4 @@
+import {ClanScreen} from './ClanScreen.jsx';
 import {TradeScreen} from './TradeScreen.jsx';
 import {ItemIcon} from './ItemIcon.jsx';
 import {SettlementServices} from './SettlementServices.jsx';
@@ -8,7 +9,7 @@ import {Encyclopedia} from './Encyclopedia.jsx';
 import {saveCampaign} from './campaign-save.js';
 import {raiderSite, encounterTerrain} from '../../../packages/sim/src/encounter.ts';
 import {byId} from './places.js';
-const navigation = [['Inventory','▤','I'],['Party','⚔','P'],['Character','♙','C'],['Quests','✧','J'],['Encyclopedia','▣','N'],['Settlement','⌂']];
+const navigation = [['Inventory','▤','I'],['Party','⚔','P'],['Character','♙','C'],['Clan','◇','L'],['Quests','✧','J'],['Encyclopedia','▣','N'],['Settlement','⌂']];
 
 function CompanyPortrait({identity,role}) {
   return <section className="equipment">
@@ -43,7 +44,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
     const keys=event=>{
       if(/INPUT|SELECT|TEXTAREA/.test(event.target.tagName))return;
       if(event.key==='Escape')open(null);
-      const name={i:'Inventory',p:'Party',c:'Character',j:'Quests',n:'Encyclopedia'}[event.key.toLowerCase()];
+      const name={i:'Inventory',p:'Party',c:'Character',j:'Quests',n:'Encyclopedia',l:'Clan'}[event.key.toLowerCase()];
       if(name)open(name);
     };
     window.addEventListener('keydown',keys);return()=>window.removeEventListener('keydown',keys);
@@ -67,7 +68,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
           <div className="item-row"><span>⚑</span><b>{world.identity?.name}</b><span>1</span></div>
           {[['foot','Foot guards',guards-mounted],['mounted','Mounted scouts',mounted]].filter(([, ,count])=>count>0).map(([id,name,count])=>
             <details className="trade-entry" key={id}><summary><img className="troop-icon" src={id==='mounted'?'/art/campaign-rider.webp':'/art/foot-guard.webp'} alt=""/><b>{name} · {count-dismiss[id]}</b></summary>
-              <button disabled={count<=dismiss[id]} onClick={()=>setDismiss({...dismiss,[id]:dismiss[id]+1})}>← Queue dismissal</button><button disabled={!dismiss[id]} onClick={()=>setDismiss({...dismiss,[id]:dismiss[id]-1})}>Undo one</button></details>)}
+              <label className="quantity-slider">Release ← <input type="range" min="0" max={count} value={dismiss[id]} onChange={e=>setDismiss({...dismiss,[id]:Number(e.target.value)})}/> <output>{dismiss[id]}</output></label><button disabled={count<=dismiss[id]} onClick={()=>setDismiss({...dismiss,[id]:dismiss[id]+1})}>← Queue dismissal</button><button disabled={!dismiss[id]} onClick={()=>setDismiss({...dismiss,[id]:dismiss[id]-1})}>Undo one</button></details>)}
           {company?.companions.map(id=>{const contact=settlementServices[id]?.meetingHouse;return contact&&<div className="item-row" key={id}><span>◇</span><b>{contact.name}</b><span>{contact.role}</span></div>;})}
           {march&&<p>March · {(march.total/1000).toFixed(2)} km/h before terrain<br/><small>Base {(march.base/1000).toFixed(2)} + mounted {(march.cavalry/1000).toFixed(2)} − cargo {(march.penalty/1000).toFixed(2)} − fatigue {(march.fatigue/1000).toFixed(2)} · Load {march.load}/{march.capacity}</small></p>}
           <p>{p.motion?'On the march':'Camp · '+(byId.get(p.node)?.name??'Open country')}</p>
@@ -76,6 +77,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
       </div>
       <footer className="roster-footer"><button onClick={()=>setPortrait(!portrait)}>{portrait?'Hide portrait':'Show portrait'}</button><button onClick={()=>open(null)}>Cancel</button><button onClick={()=>{if(dismiss.foot||dismiss.mounted)send({type:'confirm-dismiss',counts:dismiss});open(null);}}>Done{dismiss.foot+dismiss.mounted>0?' · Dismiss '+(dismiss.foot+dismiss.mounted):''}</button></footer>
     </>}
+    {page==='Clan'&&<ClanScreen world={world} send={send}/>}
     {page==='Character'&&<><img className="character-art" src="/art/envoy.webp" alt="Fictional player portrait"/><h2>{world.identity?.name} {world.identity?.house}</h2><p>Independent company · Fictional player character</p><p>Saswad supplier relation · {world.relations?.supplier??0}</p><button onClick={()=>open('Encyclopedia')}>Open encyclopedia</button></>}
     {page==='Quests'&&<><h2>Supplies for Saswad</h2><p>{e?.quest?e.quest.status+' · '+Math.max(0,e.quest.due-world.tick)+' hours remaining':'Speak with the local supplier in Saswad.'}</p><p>20 grain · 50 wood · Reward 900 coin</p></>}
     {page==='Settlement'&&<><div className="settlement-heading"><small>{(site?.site_type??site?.fort_type??'Camp').replaceAll('_',' ')}</small><h2>{site?.name??'Open country'}</h2>

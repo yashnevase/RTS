@@ -108,6 +108,21 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       }
       function receive(next) {
         const previous = lastSnapshot;
+        if(next.parties.map(p=>p.id).join()!==previous.parties.map(p=>p.id).join()){
+          playback=new CampaignPlayback(campaignHourMs);
+          positions.length=0;
+          for(const portrait of portraits){app.stage.removeChild(portrait);portrait.destroy();}
+          portraits.length=0;
+          for(const banner of banners){app.stage.removeChild(banner);banner.destroy();}
+          banners.length=0;
+          for(const party of next.parties){
+            const point=project(locationOf(party));
+            positions.push({drawX:point.x,drawY:point.y,facing:1,turn:1,heading:0,phase:0,gait:0});
+            banners.push(createPartyDisplay(party));
+          }
+          lastSnapshot=next;
+          return;
+        }
         lastSnapshot = next;
         const advanced = next.tick > previous.tick;
         const reset = next.started !== previous.started || next.tick < previous.tick ||
@@ -131,7 +146,8 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       app.stage.addChild(cloth);
       const partyColors = {villagers:'#93814f',caravan:'#3f7769',patrol:'#7d5640'};
       snapshots.current.add(receive);
-      const banners = latest.current.world.parties.map(party => {
+      const banners = latest.current.world.parties.map(createPartyDisplay);
+      function createPartyDisplay(party) {
         const label = new Text({text:({caravan:'◆ ',villagers:'✿ ',patrol:'⚔ '}[party.id]??'')+party.name, style:{
           fontFamily:'Georgia',fontWeight:'bold',fontSize:13,fill:'#f8e4b8'}});
         app.stage.addChild(label);
@@ -140,7 +156,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
         portrait.anchor.set(.5,1);
         app.stage.addChild(portrait);portraits.push(portrait);
         return label;
-      });
+      }
       function home() {
         latest.current.onPan();
         camera = homeCamera(element.clientWidth,element.clientHeight);
@@ -229,7 +245,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
               .fill({color:0xd8b87a,alpha:(1-step)*.32});
           }
           const wave=Math.sin(now/215+i)*2.7,pole=x+size*.23,top=y-size-5+bob;
-          const color=i===0?(world.identity?.color??'#b74338'):partyColors[party.id];
+          const color=i===0||party.id.startsWith('clan:')?(world.identity?.color??'#b74338'):(partyColors[party.id]??'#58765c');
           cloth.moveTo(pole,y-4).lineTo(pole,top).stroke({color:0x3b2918,width:1.5});
           cloth.poly([pole,top,pole+18,top+1+wave,pole+14,top+7+wave,pole+18,top+13+wave,pole,top+12])
             .fill(color).stroke({color:0xe3c582,width:1});
