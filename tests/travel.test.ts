@@ -12,7 +12,7 @@ test('travel edges use real catalog IDs and the Pune trip matches its quoted ETA
     command(state,{type:'travel',to:'site_ahmadnagar'});
     command(state,{type:'speed',value:speed});
     for(let n=0;n<quote.hours;n++) advance(state);
-    assert.equal(player.node,'site_ahmadnagar');assert.equal(state.speed,0);
+    assert.equal(player.node,'site_ahmadnagar');assert.equal(state.speed,speed);
     assert.equal(state.tick,quote.hours);
     assert.ok(quote.hours>=48 && quote.hours<=96);
   }
@@ -24,8 +24,8 @@ test('pause freezes the world and a finite wait advances NPCs while holding play
   advance(state);assert.equal(JSON.stringify(state),snapshot);
   command(state,{type:'wait',hours:6});
   const before=JSON.stringify(player), traffic=JSON.stringify(state.parties.slice(1));
-  for(let i=0;i<9;i++)advance(state);
-  assert.equal(state.tick,7);assert.equal(state.speed,0);assert.equal(JSON.stringify(player),before);
+  for(let i=0;i<6;i++)advance(state);
+  assert.equal(state.tick,7);assert.equal(state.speed,1);assert.equal(JSON.stringify(player),before);
   assert.notEqual(JSON.stringify(state.parties.slice(1)),traffic);
 });
 test('rerouting preserves current edge progress; unreachable targets never teleport the party',()=>{

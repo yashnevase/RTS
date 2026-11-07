@@ -116,9 +116,9 @@ export function advance(state:TravelState) {
     party.metres+=speed(edge,party.pace,state.tick);
     if(party.metres>=edge.metres) {
       party.node=party.path.shift()!; party.metres=0;
-      if(party.id==='player' && !party.path.length) { state.speed=0; state.notice='Destination reached.'; }
+      if(party.id==='player' && !party.path.length) { state.notice='Destination reached.'; }
     }
   }
   state.tick++;
-  if(state.tick===state.waitUntil) { state.waitUntil=null; state.speed=0; state.notice='Wait complete.'; }
+  if(state.tick===state.waitUntil) { state.waitUntil=null; state.notice='Wait complete.'; }
 }

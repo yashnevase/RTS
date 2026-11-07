@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Application, Sprite, Assets, Graphics, Text } from 'pixi.js';
 import { byId, records, hubs, districts, districtOf, visibleIds } from './places.js';
-import { project, mapSize } from '../../../packages/map/src/index.ts';
+import { project, unproject, mapSize } from '../../../packages/map/src/index.ts';
 import { homeCamera, zoomAt, reserveLabel } from '../../../packages/map/src/camera.ts';
 import { CampaignPanel, locationOf, useCampaign } from './Campaign.jsx';
 import { edges } from '../../../packages/sim/src/travel.ts';
 import { Screens } from './Screens.jsx';
+import {terrain as navigationTerrain} from '../../../packages/sim/src/navigation.ts';
+import { Creation, Clock } from './Hud.jsx';
 import './style.css';
 
 function MapView({ selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, follow }) {
@@ -56,13 +58,18 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
         const {x,y}=project(locationOf(party));
         return {x,y,drawX:x,drawY:y,tick:0,start:0};
       });
+      const portraits = [];
+      const cloth = new Graphics();
+      app.stage.addChild(cloth);
+      const portraitTexture=await Assets.load('/art/envoy.webp');
       const banners = latest.current.world.parties.map(party => {
-        const label = new Text({text:party.id==='player'?'⚑ Your company':'♟ '+party.name, style:{
+        const label = new Text({text:party.id==='player'?'⚑ '+latest.current.world.identity?.name:'♟ '+party.name, style:{
           fontFamily:'Georgia',fontWeight:'bold',fontSize:14,fill:party.id==='player'?'#fff1ba':'#e7e3cf',
           stroke:{color:'#352a1a',width:4}}});
         label.eventMode='static';label.cursor='pointer';
         label.on('pointertap',()=>latest.current.onInspect(party.id));
         app.stage.addChild(label);
+        const portrait=new Sprite(portraitTexture);portrait.width=24;portrait.height=28;portrait.anchor.set(.5,1);app.stage.addChild(portrait);portraits.push(portrait);
         return label;
       });
       function home() { camera = homeCamera(element.clientWidth,element.clientHeight); }
@@ -89,9 +96,22 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           camera.y=element.clientHeight/2-point.y*camera.zoom;
         }
         const partyBoxes=[];
+        cloth.clear();
         for (const [i,party] of world.parties.entries()) {
           const flag=banners[i];
           flag.visible=!all;
+          if(portraits[i]){portraits[i].visible=!all;portraits[i].position.set(camera.x+positions[i].drawX*camera.zoom,camera.y+positions[i].drawY*camera.zoom);}
+          const px=camera.x+positions[i].drawX*camera.zoom,py=camera.y+positions[i].drawY*camera.zoom;
+          const wave=Math.sin(performance.now()/230+i)*3;
+          const color=party.id==='player'?(world.identity?.color??'#b74338'):'#58765c';
+          cloth.moveTo(px+14,py).lineTo(px+14,py-47).stroke({color:0x3b2918,width:2});
+          cloth.poly([px+14,py-47,px+36,py-44+wave,px+32,py-27+wave,px+14,py-30]).fill(color).stroke({color:0xe3c582,width:1});
+          flag.rotation=Math.sin(performance.now()/450+i)*.014;
+          if(party.id==='player'){
+            const identity=world.identity;
+            flag.text=(identity?.symbol==='Crescent'?'☾':identity?.symbol==='Diamond'?'◆':'☀')+' '+(identity?.name??'Your company');
+            flag.style.fill=identity?.color??'#ffdc8c';
+          }
           const target=project(locationOf(party));
           const display=positions[i];
           if(display.tick!==world.tick) {
@@ -111,7 +131,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           camera.x=element.clientWidth/2-player.drawX*camera.zoom;
           camera.y=element.clientHeight/2-player.drawY*camera.zoom;
         }
-        const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,world.tick,world.parties[0].path.join(),inspect,district,all,shown.size,[...shown][0]].join('|');
+        const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,world.tick,world.parties[0].path.join(),world.parties[0].motion?.points.length,inspect,district,all,shown.size,[...shown][0]].join('|');
         if (signature === previousFrame) return;
         previousFrame = signature;
         terrain.position.set(camera.x,camera.y);
@@ -127,23 +147,17 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           const p=project(record.coordinate);
           return [camera.x+p.x*camera.zoom,camera.y+p.y*camera.zoom];
         };
-        if(!all) {
-          const path=world.parties[0].path;
-          const route=new Set(path.map((id,i)=>[i?path[i-1]:world.parties[0].node,id].sort().join('/')));
-          for(const edge of edges) {
-            const active=route.has([edge.a,edge.b].sort().join('/'));
-            marks.moveTo(...screenPoint(byId.get(edge.a))).lineTo(...screenPoint(byId.get(edge.b)))
-              .stroke({color:active?0xf9db7f:0x684d25,width:active?3:1,alpha:active ? .95 : .45});
-          }
+        for(const river of navigationTerrain.rivers) {
+          if(river.length<2)continue;
+          const points=river.map(([longitude,latitude])=>screenPoint({coordinate:{longitude,latitude}}));
+          marks.moveTo(...points[0]);
+          for(const point of points.slice(1))marks.lineTo(...point);
+          marks.stroke({color:0x477b8c,width:1.5,alpha:.8});
         }
-        if (!all) {
-          for (const [fort, satellites] of Object.entries(districts[district] ?? {})) {
-            for (const [start,end] of [[district,fort], ...satellites.map(id => [fort,id])]) {
-              const a = project(byId.get(start).coordinate), b = project(byId.get(end).coordinate);
-              marks.moveTo(camera.x+a.x*camera.zoom,camera.y+a.y*camera.zoom)
-                .lineTo(camera.x+b.x*camera.zoom,camera.y+b.y*camera.zoom).stroke({color:0x735129,alpha:.7,width:1.5});
-            }
-          }
+        const motion=world.parties[0].motion;
+        if(motion){
+          const points=motion.points.slice(motion.index).map(coordinate=>screenPoint({coordinate}));
+          if(points.length){marks.moveTo(...points[0]);for(const point of points.slice(1))marks.lineTo(...point);marks.stroke({color:0xffe5a0,width:2.5});}
         }
         const priority = record => record.id === active?.id ? 3 : hubs.includes(record.id) ? 2 : record.kind === 'fort' ? 1 : 0;
         const order = records.map((record,i)=>({record,i})).sort((a,b)=>priority(b.record)-priority(a.record));
@@ -199,6 +213,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           if(order) latest.current.onOrder(nearby[0].record);
           else latest.current.onSelect(nearby[0].record);
         }
+        else latest.current.onOrder({coordinate:unproject((x-camera.x)/camera.zoom,(y-camera.y)/camera.zoom)});
       }
       function up(event) {
         if(!drag) return;
@@ -249,6 +264,7 @@ function Atlas() {
   const [follow,setFollow]=useState(false);
   const [inspect,setInspect]=useState('player');
   const [locate,setLocate]=useState(null);
+  const [openPlace,setOpenPlace]=useState(null);
   const [selected,setSelected]=useState(byId.get('site_pune'));
   const [hub,setHub]=useState('site_pune');
   const [register,setRegister]=useState(false);
@@ -269,27 +285,17 @@ function Atlas() {
   }
   const results=records.filter(r => visible.has(r.id) && (register || hubs.includes(r.id)) &&
     (r.name+' '+r.id).toLowerCase().includes(query.trim().toLowerCase()));
-  return <main><header><div className="brand"><h1>Deccan Warlords</h1></div><div className="edition">Campaign atlas<span>Maharashtra &amp; Goa · 1622</span></div></header>
-    <div className="layout"><MapView selected={selected} onSelect={select} visible={visible} hub={hub} register={register} world={world} inspect={inspect} onInspect={id=>{setInspect(id);document.querySelector('.march')?.scrollIntoView({block:'nearest'});}} locate={locate} follow={follow} onOrder={record=>{select(record);send({type:"travel",to:record.id});}}/>
-    <aside><div className="chapter"><div className="eyebrow">Western Deccan</div><h2>{register?'Historical register':'Settlement districts'}</h2></div>
-    <nav><button aria-pressed={!register} onClick={()=>changeMode(false)}>Campaign</button><button aria-pressed={register} onClick={()=>changeMode(true)}>Register</button></nav>
-    {!register && <CampaignPanel world={world} send={send} selected={selected} inspect={inspect} setInspect={setInspect} follow={follow} setFollow={setFollow} onLocate={id=>{setFollow(false);setLocate({id});}}/>}
-    {register?<><input aria-label="Find a place" placeholder="Find a name or ID…" value={query} onChange={e=>setQuery(e.target.value)}/>
-      <div className="filters">{['all','site','fort'].map(k=><button key={k} aria-pressed={kind===k} onClick={()=>setKind(k)}>{k==='all'?'All':k==='site'?'Settlements':'Forts'}</button>)}</div>
-      <ul>{results.map(r=><li key={r.id}><button onClick={()=>select(r)}>{r.name}</button></li>)}</ul></>:
-      <><label className="selectLabel">Market or coastal seat<select value={hub} onChange={e=>select(byId.get(e.target.value))}>{hubs.map(id=><option value={id} key={id}>{byId.get(id).name}</option>)}</select></label>
-      <div className="district"><button className="seat" onClick={()=>select(byId.get(hub))}>{byId.get(hub).name}</button>
-      {Object.entries(districts[hub]).map(([fort,places])=><div className="branch" key={fort}><button onClick={()=>select(byId.get(fort))}>⚑ {byId.get(fort).name}</button>
-      {places.map(id=><button className="satellite" key={id} onClick={()=>select(byId.get(id))}>↳ {byId.get(id).name}</button>)}</div>)}</div></>}
-    <article aria-live="polite"><div className="portrait"><img src="/art/envoy.webp" alt="Illustrated fictional campaign envoy"/><div><small>Field journal</small><h2>{selected.name}</h2></div></div>
-    <div className="entry"><div className="eyebrow">{(selected.site_type||selected.fort_type).replaceAll('_',' ')}</div><Authority record={selected}/>
-    <details key={selected.id}><summary>Historical notes</summary><p>{selected.notes}</p><small>{selected.confidence || 'Reference'} · {selected.status} · {selected.coordinate.latitude.toFixed(3)}° N, {selected.coordinate.longitude.toFixed(3)}° E</small>{selected.source&&<a href={selected.source}> UNESCO record</a>}</details></div></article>
-    <details className="court"><summary>Courts &amp; coastal powers</summary><div className="powerList">{[
-      ['Nizam Shahi','site_pune','#81562a'],['Bijapur','site_solapur','#375849'],
-      ['Mughal frontier','landmark_burhanpur','#454d72'],['Portuguese Goa','landmark_old_goa','#824852'],
-      ['Siddi command · Janjira','fort_janjira','#777063']
-    ].map(([label,id,color])=><button key={id} onClick={()=>{setRegister(false);select(byId.get(id));}}><i style={{backgroundColor:color}}/>{label}</button>)}</div>
-    <p>Standards indicate recorded sovereign claims. Janjira’s suzerainty is disputed.</p></details>
-    </aside></div><Screens world={world} send={send}/></main>;
+  return <main className="campaign-shell"><MapView selected={selected} onSelect={record=>{select(record);setOpenPlace(record);}} visible={visible} hub={hub} register={register} world={world} inspect={inspect} onInspect={setInspect} locate={locate} follow={follow} onOrder={record=>{
+    setOpenPlace(null);
+    send(record.id?{type:'travel',to:record.id}:{type:'move',point:record.coordinate});
+  }}/>
+  <div className="map-title"><span>DECCAN WARLORDS</span><small>Maharashtra &amp; Goa · 1622</small></div>
+  <Clock world={world} send={send} follow={follow} setFollow={setFollow} onLocate={()=>setLocate({id:'player'})}/>
+  <button className="places-toggle" onClick={()=>setRegister(!register)}>{register?'Close places':'Places'}</button>
+  {register&&<div className="places-drawer"><input aria-label="Find a place" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Find a place…"/><ul>{results.map(r=><li key={r.id}><button onClick={()=>{select(r);setOpenPlace(r);setRegister(false);}}>{r.name}</button></li>)}</ul></div>}
+  {openPlace&&<div className="place-card"><button className="close" onClick={()=>setOpenPlace(null)}>×</button><p className="eyebrow">{openPlace.site_type||openPlace.fort_type}</p><h2>{openPlace.name}</h2><Authority record={openPlace}/><button onClick={()=>{send({type:'travel',to:openPlace.id});setOpenPlace(null);}}>Travel here</button><details><summary>Journal</summary><p>{openPlace.notes}</p></details></div>}
+  <Screens world={world} send={send}/>
+  {world.started===false&&<Creation send={send}/>}
+  </main>;
 }
 createRoot(document.getElementById('root')).render(<Atlas/>);

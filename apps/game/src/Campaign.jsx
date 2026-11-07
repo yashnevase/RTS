@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { clockHour, createCampaign, fraction, monsoon, plan } from '../../../packages/sim/src/travel.ts';
+import {position} from '../../../packages/sim/src/movement.ts';
 import { byId } from './places.js';
 
 export function useCampaign() {
@@ -14,6 +15,8 @@ export function useCampaign() {
   return {world, send:cmd=>worker.current?.postMessage(cmd)};
 }
 export function locationOf(party) {
+  if(party.motion)return position(party.motion);
+  if(party.point)return party.point;
   const a=byId.get(party.node).coordinate;
   if (!party.path.length) return a;
   const b=byId.get(party.path[0]).coordinate, t=fraction(party);
