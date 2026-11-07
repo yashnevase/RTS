@@ -57,3 +57,16 @@ aside{background:linear-gradient(120deg,#f7e6c3da,#d7bb85de),url('/art/paper.web
 .roster-screen .equipment>p{margin:8px 0}.roster-footer{text-align:center}.roster-footer button{min-width:135px;background:#526043;color:#faebcb}
 @media(max-width:1390px){.time-hud{bottom:62px}.campaign-status{bottom:106px}}
 @media(max-width:720px){.campaign-nav{max-width:60vw}.campaign-nav button{font-size:0}.campaign-nav button:last-of-type,.campaign-nav button span{font-size:12px}.company-hud span:nth-child(n+3){display:none}.campaign-shell .legend{display:none}.world-events{bottom:148px}}
+.item-emblem{width:38px;height:38px;display:inline-block;vertical-align:middle;filter:drop-shadow(0 1px 1px #25170c80)}
+.campaign-nav .item-emblem{width:20px;height:20px;margin-top:-3px;margin-bottom:-2px}
+.roster-screen .portrait-hidden{grid-template-columns:1fr 1fr}
+.roster-screen .troop-row{grid-template-columns:48px minmax(0,1fr) auto}
+.troop-row img{width:48px;height:40px;object-fit:contain}
+.troop-row button{padding:4px 6px;font-size:12px;margin:0}
+.settlement-shade{width:min(400px,calc(100vw - 40px))}
+.settlement-illustration{height:190px;object-fit:cover}
+.settlement-allegiance{font-size:13px;line-height:1.5;margin:8px 0 0;color:#59401f}
+.recruit-offers{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}
+.recruit-offers button{display:grid;justify-items:center;min-width:155px;gap:4px}
+.recruit-offers img{width:100px;height:90px;object-fit:contain}
+.service-content select{padding:5px 10px;margin-left:6px}
