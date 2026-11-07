@@ -41,9 +41,9 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       });
       if (disposed) { app.destroy(true); return; }
       element.appendChild(app.canvas);
-      const [texture, fortArt, townArt, portraitTexture, caravanArt, villageArt] = await Promise.all([
+      const [texture, fortArt, townArt, portraitTexture, caravanArt, villageArt, faceTexture] = await Promise.all([
         '/terrain/maharashtra-goa.webp','/art/fort-token.webp','/art/village-token.webp',
-        '/art/campaign-rider.webp','/art/campaign-caravan.webp','/art/campaign-villagers.webp'
+        '/art/campaign-rider.webp','/art/campaign-caravan.webp','/art/campaign-villagers.webp','/art/envoy.webp'
       ].map(path => Assets.load(path)));
       if (disposed) return;
       const terrain = new Sprite(texture);
@@ -220,13 +220,15 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           const label=banners[i], rider=portraits[i], display=positions[i];
           const moving=playback.hour?.trails[i].length>1;
           const x=camera.x+display.drawX*camera.zoom,y=camera.y+display.drawY*camera.zoom;
-          label.visible=rider.visible=!all&&x>-65&&y>-65&&x<element.clientWidth+65&&y<element.clientHeight+65;
+          const distant=Math.hypot(display.drawX-positions[0].drawX,display.drawY-positions[0].drawY);
+          label.visible=rider.visible=!all&&(i===0||camera.zoom>1.3&&distant<180)&&x>-65&&y>-65&&x<element.clientWidth+65&&y<element.clientHeight+65;
           if(!rider.visible) continue;
           if (speed) {
             display.gait += ((moving?1:0)-display.gait)*Math.min(1,ticker.deltaMS/100);
             display.turn += (display.facing-display.turn)*Math.min(1,ticker.deltaMS/52);
             if (moving) display.phase += ticker.deltaMS*(speed>1?.021:.014);
           }
+          if(i===0)rider.texture=camera.zoom<1.4?faceTexture:portraitTexture;
           const bob=-Math.abs(Math.sin(display.phase))*2.6*display.gait;
           const size=Math.max(24,Math.min(53,23+camera.zoom*5.5))*(party.id==='caravan'?.68:party.id==='villagers'?.79:1);
           rider.height=size;
@@ -383,10 +385,19 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       }
       function hover(event){
         if(drag)return;
-        const {record,party}=targetAt(...pointerPosition(event));
+        const [mx,my]=pointerPosition(event);
+        const target=targetAt(mx,my);
+        const playerSprite=portraits[0];
+        const party=Math.abs(mx-playerSprite.x)<30&&Math.abs(my-playerSprite.y)<45?'player':target.party;
+        const record=target.record;
         hovered=record?.id??null;
         element.style.cursor=record||party?'pointer':'crosshair';
-        element.title=record?.name??(party?latest.current.world.parties.find(p=>p.id===party)?.name:'');
+        const observed=party&&latest.current.world.parties.find(p=>p.id===party);
+        const own=latest.current.world;
+        const company=party==='player'?own.company:null;
+        element.title=record?.name??(observed?observed.name+'\n'+(observed.motion?'Travelling':'Camped')+
+          '\nTroops '+(party==='player'?own.encounter?.guards+1:own.clan?.detachments.find(d=>d.id===party)?(own.clan.detachments.find(d=>d.id===party).foot+own.clan.detachments.find(d=>d.id===party).mounted+1):'Unknown')+
+          '\nFood '+(company?own.economy.inventory.grain:'Unknown')+' · Morale '+(party==='player'?own.character?.morale:'Unknown'):'');
       }
       function hit(event) {
         const [x,y]=pointerPosition(event);
@@ -454,7 +465,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
     return ()=>{disposed=true;cleanup();controls.current=null;if(app.renderer)app.destroy(true);};
   },[]);
   const weather=campaignWeather(world.tick,world.parties[0].point?.longitude??74);
-  return <section className="map"><div className="viewport" ref={host}/><div className={'map-weather'+(weather.night?' night':'')+(weather.rain?' rain':'')+(weather.fog?' fog':'')} aria-hidden="true"/><div className="weather-label">{weather.label} · Travel {weather.movementPercent}%</div><div className="tools">
+  return <section className="map"><div className="viewport" ref={host}/><div className={'map-weather'+(weather.night?' night':'')+(weather.rain?' rain':'')+(weather.fog?' fog':'')} style={{backgroundColor:weather.night?'rgba(16,32,68,.34)':((world.tick+6)%24<8||(world.tick+6)%24>17)?'rgba(183,104,43,.16)':'rgba(16,32,68,0)'}} aria-hidden="true"/><div className="weather-label">{weather.label} · Travel {weather.movementPercent}%</div><div className="tools">
     <button onClick={()=>controls.current?.zoom(1.4)} aria-label="Zoom in">+</button>
     <button onClick={()=>controls.current?.zoom(1/1.4)} aria-label="Zoom out">−</button>
     <button onClick={()=>controls.current?.home()}>Fit region</button>

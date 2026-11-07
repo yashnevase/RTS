@@ -160,3 +160,12 @@ button.entity-link{display:inline;padding:0;margin:0;border:0;background:none;co
 .skill-row small{grid-column:1/-1;color:#725332}
 .skill-row progress{width:100%;accent-color:#715535}
 @media(prefers-reduced-motion:reduce){.map-weather.rain{animation:none}}
+.map-weather{transition:background-color 1.6s ease,opacity 1.6s ease}
+.map-weather.night{opacity:1;background-image:none}
+.workshop-layout{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.workshop-layout>section{padding:18px;border:1px solid #b4986a}
+.workshop-layout img{max-width:220px;height:140px;object-fit:contain;display:block}
+.workshop-layout label{display:block;margin:10px 0}
+.workshop-layout input[type=checkbox]{width:auto;margin-right:10px}
+.workshop-layout input[type=number]{width:80px;margin:0 0 0 10px;padding:5px}
+.workshop-layout progress{display:block;width:100%;margin:15px 0}

@@ -10,5 +10,5 @@ const designs = {
 };
 
 export function ItemIcon({kind}) {
-  return <svg className="item-emblem" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="#493120" strokeWidth="1.6" strokeLinejoin="round">{designs[kind]}</svg>;
+  return <svg className="item-emblem" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="#493120" strokeWidth="1.6" strokeLinejoin="round">{designs[kind==='flour'?'grain':kind]}</svg>;
 }

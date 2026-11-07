@@ -1,3 +1,4 @@
+import {createWorkshop,workshopHour} from '../../../packages/sim/src/workshop.ts';
 import {campaignWeather} from '../../../packages/sim/src/weather.ts';
 import {createCharacter} from '../../../packages/sim/src/character.ts';
 import {choosePartyDestination} from '../../../packages/sim/src/party-planner.ts';
@@ -19,6 +20,7 @@ world.encounter={guards:3,seed:1622,resolved:false,result:null};
 world.events=[];
 world.company=createCompany();
 world.character=createCharacter();
+world.workshop=createWorkshop();
 world.clan=createClan();
 world.ledger=[];
 let eventId=0;
@@ -130,6 +132,7 @@ function hourly(){
  advance(world);
  const previous=world.economy.quest?.status;
  economyHour(world.economy,world.tick);
+ workshopHour(world.workshop,world.economy,world.tick);
  if(world.tick%720===0&&world.tick>world.clan.lastPayTick){
    const detached=0;
    const owed=monthlyWages(world.encounter.guards-world.company.mounted,world.company.mounted,world.company.companions.length)+detached+world.clan.arrears;
@@ -205,6 +208,7 @@ self.onmessage = ({data}) => {
     world.company??=createCompany();
     world.clan??=createClan();
     world.character??=createCharacter();
+    world.workshop??=createWorkshop();
     world.ledger??=[];
     world.company.health??=100;
     world.company.rationProgress??=0;
@@ -247,6 +251,25 @@ self.onmessage = ({data}) => {
     const to=data.type==='travel'?anchor(data.to):data.point;
     if(to&&order(player,to,data.type==='travel'?data.to:null)){
       world.waitUntil=null;world.notice='Travelling.';world.speed=world.speed||1;
+    }
+  } else if(data.type==='workshop'&&world.started){
+    const w=world.workshop;
+    if(data.action==='buy'&&!w.owned&&!player.motion&&player.node==='site_pune'&&world.economy.gold>=300){world.economy.gold-=300;w.owned=true;w.status='Waiting for working capital';event('Grain mill purchased.');}
+    if(w.owned){
+      if(data.action==='capital'&&Number.isSafeInteger(data.amount)){
+        const amount=data.amount;
+        if(amount>0&&world.economy.gold>=amount){world.economy.gold-=amount;w.cash+=amount;}
+        if(amount<0&&w.cash>=-amount){world.economy.gold-=amount;w.cash+=amount;}
+      }
+      if(data.action==='settings'){
+        if(typeof data.paused==='boolean')w.paused=data.paused;
+        if(typeof data.autoBuy==='boolean')w.autoBuy=data.autoBuy;
+        if(typeof data.autoSell==='boolean')w.autoSell=data.autoSell;
+        if(Number.isSafeInteger(data.maxInput)&&data.maxInput>=1&&data.maxInput<=50)w.maxInput=data.maxInput;
+        if(Number.isSafeInteger(data.minOutput)&&data.minOutput>=1&&data.minOutput<=50)w.minOutput=data.minOutput;
+      }
+      if(data.action==='deposit'&&!player.motion&&player.node==='site_pune'&&world.economy.inventory.grain>=2&&w.grain<=38){world.economy.inventory.grain-=2;w.grain+=2;}
+      if(data.action==='withdraw'&&!player.motion&&player.node==='site_pune'&&w.flour>0){world.economy.inventory.flour=(world.economy.inventory.flour??0)+w.flour;w.flour=0;}
     }
   } else if(data.type==='return-troops'&&world.started&&!player.motion&&settlementServices[player.node]?.meetingHouse){
     if(returnTroops(world.economy,world.encounter,world.company,data.foot,data.mounted))event('Returned hired troops · enlistment fees refunded.');
