@@ -1,6 +1,6 @@
 # Deccan Warlords — historical data
 
-Current stage: design approved; M0 foundation implemented for review. See docs/progress/M0_report.md. Map rendering begins only after M0 approval.
+Current stage: M1 campaign atlas preview. Run `npm run dev` and open the local URL. Select a district to inspect its seat, nearby forts and support places. **Register** opens the full catalog. See [the M1 report](docs/progress/M1_report.md) for limitations and the verified browser view.
 
 - [Design decisions and open questions](docs/DECISIONS.md)
 - [Game design](docs/GAME_DESIGN.md)

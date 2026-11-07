@@ -38,3 +38,9 @@ Latest agreement: initial playable horizon is 50 years, with explicitly fictiona
 - Requested historical realism does not justify inventing unrecorded personalities. Historical character traits need provenance or an explicit gameplay-assumption layer.
 - Audio is deferred despite the original M7 audio proposal.
 - Art is generatable; finished atlases, animation and consistent expressions still require review and integration.
+
+## M1 visual scope revision — 2026-11-07
+
+The user selected the supplied painted art study as the visual reference and expanded the first campaign's geographic frame to Maharashtra and Goa. The default view shows selected market seats and the inspected seat's nearby strongholds and support places. Keep every canonical ID accessible in the register. Use one or two forts per seat and one or two satellites per fort where the pack supports them. Contemporary geographic bounds and a presentation group do not establish period jurisdiction. Keep Janjira's 1622 suzerainty disputed.
+
+M3 should connect approved production/market profiles through supply contracts and moving villagers/caravans. M5 handles interception, raids and protection. Use the same party, ownership and trade systems when adding another district. No simulation rights or navigable routes follow automatically from an atlas line.
