@@ -1,3 +1,4 @@
+import {EntityText} from './EntityText.jsx';
 import {ClanScreen} from './ClanScreen.jsx';
 import {TradeScreen} from './TradeScreen.jsx';
 import {ItemIcon} from './ItemIcon.jsx';
@@ -21,6 +22,8 @@ function CompanyPortrait({identity,role}) {
 
 export function Screens({world,send,onLocate,arrival,dismissal}) {
   const [page,setPage]=useState(null);
+  const [entry,setEntry]=useState('site_pune');
+  function openEntry(id){setEntry(id);setPage('Encyclopedia');}
   const [portrait,setPortrait]=useState(true);
   const [dismiss,setDismiss]=useState({foot:0,mounted:0});
   const [saveStatus,setSaveStatus]=useState('');
@@ -51,7 +54,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
   },[]);
   return <><nav className="campaign-nav" aria-label="Campaign screens">{navigation.map(([name,symbol,key])=><button key={name} aria-label={name} aria-pressed={page===name} title={key?name+' · '+key:name} onClick={()=>open(name)}><span aria-hidden="true">{['Party','Inventory'].includes(name)?<ItemIcon kind={name}/>:symbol}</span>{name}</button>)}<button disabled={!world.started} onClick={()=>setSaveStatus(saveCampaign(world)?'Campaign saved':'Save unavailable')}>Save</button>{saveStatus&&<output>{saveStatus}</output>}</nav>
   {page&&<div className={'screen-shade'+(page==='Settlement'?' settlement-shade':'')}><section className={'game-screen'+(['Inventory','Party'].includes(page)?' roster-screen':'')} role="dialog" aria-modal={page!=='Settlement'} aria-label={page}><button className="close" onClick={()=>open(null)}>Close · Esc</button>{page!=='Settlement'&&<h1>{page}</h1>}
-    {page==='Encyclopedia'&&<Encyclopedia world={world} onLocate={record=>{setPage(null);onLocate(record);}}/>}
+    {page==='Encyclopedia'&&<Encyclopedia initialId={entry} key={entry} world={world} onLocate={record=>{setPage(null);onLocate(record);}}/>}
     {page==='Inventory'&&e&&<>
       <div className={'inventory-layout'+(portrait?'':' portrait-hidden')}>
         <section><h2>Equipment</h2><div className="item-row"><span>♙</span><b>Personal clothing</b></div><div className="item-row"><span>▣</span><b>Travel pack</b></div></section>
@@ -78,9 +81,9 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
       <footer className="roster-footer"><button onClick={()=>setPortrait(!portrait)}>{portrait?'Hide portrait':'Show portrait'}</button><button onClick={()=>open(null)}>Cancel</button><button onClick={()=>{if(dismiss.foot||dismiss.mounted)send({type:'confirm-dismiss',counts:dismiss});open(null);}}>Done{dismiss.foot+dismiss.mounted>0?' · Dismiss '+(dismiss.foot+dismiss.mounted):''}</button></footer>
     </>}
     {page==='Clan'&&<ClanScreen world={world} send={send}/>}
-    {page==='Character'&&<><img className="character-art" src="/art/envoy.webp" alt="Fictional player portrait"/><h2>{world.identity?.name} {world.identity?.house}</h2><p>Independent company · Fictional player character</p><p>Saswad supplier relation · {world.relations?.supplier??0}</p><button onClick={()=>open('Encyclopedia')}>Open encyclopedia</button></>}
-    {page==='Quests'&&<><h2>Supplies for Saswad</h2><p>{e?.quest?e.quest.status+' · '+Math.max(0,e.quest.due-world.tick)+' hours remaining':'Speak with the local supplier in Saswad.'}</p><p>20 grain · 50 wood · Reward 900 coin</p></>}
-    {page==='Settlement'&&<><div className="settlement-heading"><small>{(site?.site_type??site?.fort_type??'Camp').replaceAll('_',' ')}</small><h2>{site?.name??'Open country'}</h2>
+    {page==='Character'&&<><img className="character-art" src="/art/envoy.webp" alt="Fictional player portrait"/><h2>{world.identity?.name} {world.identity?.house}</h2><p>Independent company · Fictional player character</p><p><button className="entity-link" onClick={()=>openEntry('supplier')}>Saswad supplier</button> relation · {world.relations?.supplier??0}</p><button onClick={()=>open('Encyclopedia')}>Open encyclopedia</button></>}
+    {page==='Quests'&&<><h2>Supplies for <button className="entity-link" onClick={()=>openEntry('site_saswad')}>Saswad</button></h2><p>{e?.quest?e.quest.status+' · '+Math.max(0,e.quest.due-world.tick)+' hours remaining':'Speak with the local supplier in Saswad.'}</p><p><ItemIcon kind="grain"/>20 grain · <ItemIcon kind="wood"/>50 wood · Reward 900 coin</p></>}
+    {page==='Settlement'&&<><div className="settlement-heading"><small>{(site?.site_type??site?.fort_type??'Camp').replaceAll('_',' ')}</small><h2>{site?<button className="entity-link" onClick={()=>openEntry(site.id)}>{site.name}</button>:'Open country'}</h2>
       {site&&<p className="settlement-allegiance">Sovereignty · {power(site.ownership?.sovereign_polity_id)}<br/>Local control · {power(site.ownership?.controller_polity_id)}{site.confidence&&<><br/>Record confidence · {site.confidence}</>}</p>}</div>{!local?<p>Arrive before entering the settlement.</p>:<>
       <div className="settlement-actions">
         {service&&<button onClick={()=>open('Recruitment')}>Recruit troops</button>}
@@ -92,7 +95,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
         <button onClick={()=>setPage(null)}>Leave</button>
       </div>{byId.has(p.node)&&<img className="settlement-illustration" src={byId.get(p.node).kind==='fort'?'/art/fort-token.webp':'/art/village-token.webp'} alt="Illustration of the settlement type"/>}</>}</>}
     {['Recruitment','Sarai'].includes(page)&&<SettlementServices key={page+':'+p.node} page={page} site={p.node} world={world} local={local} send={send} onBack={()=>open('Settlement')}/>}
-    {page==='Talk'&&<div className="conversation"><div><img src="/art/saswad-supplier.webp" alt="Fictional local supplier"/><h2>Local supplier</h2><small>Saswad · Relation {world.relations?.supplier??0}</small></div><section><p className="eyebrow">A conversation in Saswad</p><blockquote>{e?.quest?.status==='completed'?'Your supplies have arrived. Here is your payment. You have our thanks.':e?.quest?.status==='failed'?'The deadline has passed. We had to seek help elsewhere.':topic==='greeting'?'Welcome, traveller. The settlement needs supplies. Can your company help?':'Bring twenty grain and fifty wood within four days. I can offer nine hundred coin when you deliver.'}</blockquote>
+    {page==='Talk'&&<div className="conversation"><div><img src="/art/saswad-supplier.webp" alt="Fictional local supplier"/><h2>Local supplier</h2><small>Saswad · Relation {world.relations?.supplier??0}</small></div><section><p className="eyebrow">A conversation in Saswad</p><blockquote>{e?.quest?.status==='completed'?'Your supplies have arrived. Here is your payment. You have our thanks.':e?.quest?.status==='failed'?'The deadline has passed. We had to seek help elsewhere.':topic==='greeting'?'Welcome, traveller. The settlement needs supplies. Can your company help?':'Bring 20 grain and 50 wood within 4 days. I can offer 900 coin when you deliver.'}</blockquote>
     <div className="dialogue-options"><button onClick={()=>setTopic('request')}>What supplies do you need?</button><button disabled={!local||p.node!=='site_saswad'||['completed','failed'].includes(e?.quest?.status)} onClick={()=>{send({type:'quest'});setTopic('request');}}>{e?.quest?'I brought the supplies.':'I will bring them.'}</button><button onClick={()=>open('Trade')}>Let me see your market.</button><button onClick={()=>open('Settlement')}>We will speak another time.</button></div><p role="status">{e?.notice}</p></section></div>}
     {page==='Encounter'&&world.encounter&&<div className="conversation encounter"><div><img src="/art/campaign-rider.webp" alt="Illustrated company rider"/><h2>Kondhana approaches</h2></div><section><p className="eyebrow">Fictional encounter</p>
       {world.encounter.result?<><h2>{world.encounter.result.outcome}</h2><p>{world.encounter.result.terrain} · {world.encounter.result.guardsLost} {world.encounter.result.guardsLost===1?'guard':'guards'} lost · {world.encounter.result.coin} coin recovered</p>

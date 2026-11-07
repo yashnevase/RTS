@@ -113,3 +113,8 @@ aside{background:linear-gradient(120deg,#f7e6c3da,#d7bb85de),url('/art/paper.web
 .clan-role{display:flex;justify-content:space-between;gap:12px;margin:12px 0}
 .clan-layout select{padding:5px}.clan-layout article{padding:10px;margin:8px 0}
 .troop-return{clear:both;border-top:1px solid #b39766;margin-top:16px;padding-top:10px}
+.hud-inspect{position:relative;padding:0 6px;cursor:help}
+.hud-tooltip{display:none;position:absolute;bottom:100%;right:0;width:310px;padding:13px;background:#f1dfba;color:#3f2d19;border:2px solid #997747;box-shadow:0 4px 18px #0008;line-height:1.5;font:13px system-ui}
+.hud-inspect:hover .hud-tooltip,.hud-inspect:focus .hud-tooltip{display:block}
+.hud-tooltip p{margin:7px 0}.hud-tooltip .item-emblem{width:26px;height:26px}
+button.entity-link{display:inline;padding:0;margin:0;border:0;background:none;color:#315d82;text-decoration:underline;font:inherit;cursor:pointer}

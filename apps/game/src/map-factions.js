@@ -1,7 +1,7 @@
 import {Sprite,Texture} from 'pixi.js';
 import {project,unproject,mapSize} from '../../../packages/map/src/index.ts';
 import {cell,terrain} from '../../../packages/sim/src/navigation.ts';
-import {records} from './places.js';
+import {records,hubs} from './places.js';
 
 export const factions={
   polity_adil_shahi:{name:'Adil Shahi',color:'#198566',mark:'◇'},
@@ -18,7 +18,7 @@ export function createFactionOverlay(){
   const ctx=canvas.getContext('2d');
   const step=5;
   const cols=Math.ceil(canvas.width/step),rows=Math.ceil(canvas.height/step);
-  const centres=records.map(record=>({...project(record.coordinate),faction:affiliation(record)}));
+  const centres=records.filter(record=>hubs.includes(record.id)||record.kind==='fort').map(record=>({...project(record.coordinate),faction:affiliation(record)}));
   const tiles=Array.from({length:rows},()=>Array(cols).fill(null));
   for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){
     const mx=(x+.5)*step,my=(y+.5)*step;

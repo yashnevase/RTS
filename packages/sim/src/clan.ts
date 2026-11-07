@@ -2,7 +2,7 @@ import {troops} from './company.ts';
 export const clanRoles=['Scout','Quartermaster','Surgeon'] as const;
 export function createClan(){
  return {roles:{} as Record<string,string>,detachments:[] as {
-   id:string;leader:string;foot:number;mounted:number;task:'patrol'|'return';home:string
+   id:string;leader:string;foot:number;mounted:number;task:'patrol'|'return';home:string;gold?:number;food?:number;allowance?:number;ambition?:number;generosity?:number;aggression?:number;relations?:Record<string,number>
  }[],arrears:0,lastPayTick:0};
 }
 export function monthlyWages(foot:number,mounted:number,companions:number){
