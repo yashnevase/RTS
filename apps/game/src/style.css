@@ -70,3 +70,12 @@ aside{background:linear-gradient(120deg,#f7e6c3da,#d7bb85de),url('/art/paper.web
 .recruit-offers button{display:grid;justify-items:center;min-width:155px;gap:4px}
 .recruit-offers img{width:100px;height:90px;object-fit:contain}
 .service-content select{padding:5px 10px;margin-left:6px}
+.trade-entry{padding:5px 8px;border-bottom:1px solid #9b7953}
+.trade-entry>summary{display:flex;align-items:center;gap:8px;min-height:44px;text-transform:capitalize}
+.trade-entry>summary::before{content:'▸';color:#aa854f}.trade-entry[open]>summary::before{content:'▾'}
+.trade-entry>summary span:last-child{margin-left:auto;white-space:nowrap}
+.troop-icon{width:40px;height:42px;object-fit:contain}
+.price-intel{position:relative;padding:4px 0 9px;font-size:12px}
+.price-ranks{display:none;grid-template-columns:1fr 1fr;gap:12px;background:#eddbb3;padding:8px;line-height:1.6}
+.price-intel .price-ranks.is-expanded,.price-intel:hover .price-ranks{display:grid}
+.trade-review{border-top:1px solid #a28552;margin-top:16px}

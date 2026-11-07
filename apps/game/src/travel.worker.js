@@ -1,7 +1,8 @@
+import { metres } from '../../../packages/sim/src/navigation.ts';
 import { createCompany, marchBudget, recruit, settlementServices, troops } from '../../../packages/sim/src/company.ts';
 import { createCampaign, advance, command } from '../../../packages/sim/src/travel.ts';
 
-import { createEconomy, trade, questAction, economyHour, merchantVisit } from '../../../packages/sim/src/economy.ts';
+import { createEconomy, trade, previewTrade, caravanEconomy, caravanMarketId, questAction, economyHour, merchantVisit } from '../../../packages/sim/src/economy.ts';
 import { startMotion, position, advanceMotion, anchor } from '../../../packages/sim/src/movement.ts';
 import {changeRelation, raiderSite, resolveEncounter} from '../../../packages/sim/src/encounter.ts';
 import { campaignHourMs } from './campaign-clock.js';
@@ -125,6 +126,33 @@ self.onmessage = ({data}) => {
       world.company.prisoners--;
       world.economy.gold+=40;
       event('Released a prisoner for 40 coin.');
+    }
+  } else if(data.type==='confirm-trade' && world.started) {
+    if(world.tradeReply?.id===data.id){postMessage(world);return;}
+    const caravan=world.parties.find(p=>p.id===caravanMarketId);
+    const roadside=data.site===caravanMarketId;
+    const permitted=roadside?metres(player.point,caravan.point)<=4000:!player.motion && player.node===data.site;
+    const basis=roadside?caravanEconomy(world.economy,world.merchant):world.economy;
+    const draft=permitted && Array.isArray(data.lines) && data.lines.length>0 && data.lines.length<=2 &&
+      previewTrade(basis,data.site,data.lines,world.relations.supplier);
+    const accepted=!!draft && draft.gold-world.economy.gold===data.change;
+    if(accepted){
+      if(roadside){
+        const market=draft.markets[caravanMarketId];
+        world.merchant.gold=market.money;
+        world.merchant.cargo=market.stock;
+        world.economy.gold=draft.gold;
+        world.economy.inventory=draft.inventory;
+      } else Object.assign(world.economy,draft);
+      world.economy.notice='Trade completed.';
+    } else world.economy.notice='Market conditions or position changed. Review the quote and try again.';
+    world.tradeReply={id:data.id,accepted};
+  } else if(data.type==='confirm-dismiss' && world.started) {
+    const {foot,mounted}=data.counts;
+    if(Number.isSafeInteger(foot) && Number.isSafeInteger(mounted) && foot>=0 && mounted>=0 &&
+       mounted<=world.company.mounted && foot<=world.encounter.guards-world.company.mounted){
+      world.company.mounted-=mounted;
+      world.encounter.guards-=foot+mounted;
     }
   } else if(data.type==='trade') {
     if(!player.motion) {trade(world.economy,player.node,data.good,data.buy,data.quantity??1,world.relations.supplier);event(world.economy.notice);}

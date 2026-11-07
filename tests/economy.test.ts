@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createEconomy,trade,questAction,economyHour,merchantVisit,price} from '../packages/sim/src/economy.ts';
+import {createEconomy,trade,questAction,economyHour,merchantVisit,price,previewTrade,caravanEconomy} from '../packages/sim/src/economy.ts';
 test('trade transfers stock and money atomically and rejects unaffordable purchases',()=>{
  const e=createEconomy(),m=e.markets.site_pune,total=e.gold+m.money;
  trade(e,'site_pune','grain',true);
@@ -38,4 +38,25 @@ test('batch prices reflect each unit and an unaffordable batch commits nothing',
  assert.equal(e.inventory.wood,0);
  assert.equal(m.stock.wood,30);
  assert.equal(e.gold+m.money,20600);
+});
+
+test('trade preview leaves the original market untouched and rejects a partially affordable basket',()=>{
+ const economy=createEconomy();
+ const original=structuredClone(economy);
+ const grain={good:'grain',buy:true,quantity:2} as const;
+ const draft=previewTrade(economy,'site_pune',[grain],0);
+ assert.equal(draft?.inventory.grain,2);
+ assert.deepEqual(economy,original);
+ assert.equal(previewTrade(economy,'site_pune',[grain,{good:'wood',buy:true,quantity:100}],0),null);
+ assert.deepEqual(economy,original);
+});
+
+test('caravan quotes use carried cargo and preserve combined money',()=>{
+ const economy=createEconomy();
+ const merchant={gold:50,cargo:{wood:3,grain:0},destination:null,trades:0};
+ const draft=previewTrade(caravanEconomy(economy,merchant),'caravan',[{good:'wood',buy:true,quantity:1}],0);
+ assert.ok(draft);
+ assert.equal(draft.markets.caravan.stock.wood,2);
+ assert.equal(draft.markets.caravan.money+draft.gold,650);
+ assert.equal(merchant.cargo.wood,3);
 });

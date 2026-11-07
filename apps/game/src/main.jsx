@@ -1,3 +1,5 @@
+import { TradeScreen } from './TradeScreen.jsx';
+import { coordinate, metres, terrain as navigationTerrain } from '../../../packages/sim/src/navigation.ts';
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Application, Sprite, Assets, Graphics, Text } from 'pixi.js';
@@ -18,6 +20,9 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
   const latest = useRef(null);
   latest.current = {selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, onDeselect, follow, onPan, onArrival};
   const [error, setError] = useState('');
+  const [showCrossings,setShowCrossings]=useState(false);
+  const crossingMode=useRef(false);
+  crossingMode.current=showCrossings;
   useEffect(() => {
     let disposed = false;
     const app = new Application();
@@ -40,6 +45,8 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       const geography = createMapGeography();
       const detailNW=project({longitude:73.35,latitude:19.35});
       const detailSE=project({longitude:75,latitude:18});
+      const crossingMarks = new Graphics();
+      const crossingPoints=navigationTerrain.crossings.map(id=>project(coordinate(id)));
       const marks = new Graphics();
       const plaques = new Graphics();
       const tokens = records.map(record => {
@@ -58,7 +65,8 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       app.stage.addChildAt(detail,1);
       app.stage.addChildAt(geography,2);
       app.stage.addChildAt(marks,3);
-      app.stage.addChildAt(plaques,4+tokens.length);
+      app.stage.addChildAt(crossingMarks,4);
+      app.stage.addChildAt(plaques,5+tokens.length);
       let camera = homeCamera(element.clientWidth, element.clientHeight);
       let drag = null;
       let moved = false;
@@ -216,7 +224,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           cloth.roundRect(label.x-5,label.y-2,label.width+10,label.height+4,3)
             .fill({color:0x292316,alpha:.9}).stroke({color,width:1.2});
         }
-        const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,district,all,[...shown].join()].join('|');
+        const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,district,all,crossingMode.current,[...shown].join()].join('|');
         if (signature === previousFrame) return;
         previousFrame = signature;
         terrain.position.set(camera.x,camera.y);
@@ -231,6 +239,12 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
         detail.alpha=Math.min(1,Math.max(0,camera.zoom-1));
         marks.clear();
         plaques.clear();
+        crossingMarks.clear();
+        if(crossingMode.current)for(const point of crossingPoints){
+          const x=camera.x+point.x*camera.zoom,y=camera.y+point.y*camera.zoom;
+          if(x<0||x>element.clientWidth||y<0||y>element.clientHeight)continue;
+          crossingMarks.circle(x,y,2.7).fill('#e4ce9f').stroke({color:'#254d58',width:1.4});
+        }
         const placed = [];
         const priority = record => record.id === active?.id ? 3 : hubs.includes(record.id) ? 2 : record.kind === 'fort' ? 1 : 0;
         const order = records.map((record,i)=>({record,i})).sort((a,b)=>priority(b.record)-priority(a.record));
@@ -242,16 +256,17 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           labels[i].visible=false;
           if (!visible) continue;
           const icon = tokens[i];
-          const width = all ? 16 : hubs.includes(record.id) ? 62 : record.kind === 'fort' ? 44 : 28;
+          const width = all ? 16 : hubs.includes(record.id) ? 80 : record.kind === 'fort' ? 58 : 34;
           icon.position.set(x,y); icon.width=width; icon.height=width*icon.texture.height/icon.texture.width;
           const heraldry = {polity_adil_shahi:0x375849, polity_nizam_shahi:0x81562a, polity_portuguese:0x824852, polity_mughal:0x454d72};
-          const sovereign = record.ownership?.sovereign_polity_id;
-          if (hubs.includes(record.id) && heraldry[sovereign]) {
-            marks.ellipse(x,y+2,width*.56,9).fill({color:heraldry[sovereign],alpha:.55})
-              .stroke({color:heraldry[sovereign],width:2});
+          const sovereign = record.ownership?.controller_polity_id??record.ownership?.sovereign_polity_id;
+          if (hubs.includes(record.id) || record.kind === 'fort') {
+            const flag=heraldry[sovereign]??0x777067;
+            marks.ellipse(x,y+2,width*.56,9).fill({color:flag,alpha:.55})
+              .stroke({color:flag,width:2});
             const pole = x + width * .29, top = y - icon.height - 10;
             marks.moveTo(pole,y-3).lineTo(pole,top).stroke({color:0x4d391d,width:1});
-            marks.poly([pole,top,pole+12,top+1,pole+8,top+4,pole+12,top+7,pole,top+7]).fill(heraldry[sovereign]).stroke({color:0xe5cea0,width:.8});
+            marks.poly([pole,top,pole+12,top+1,pole+8,top+4,pole+12,top+7,pole,top+7]).fill(flag).stroke({color:0xe5cea0,width:.8});
           }
           if(record.id===active?.id) marks.ellipse(x,y+1,width*.5,5).stroke({color:0xffe29b,width:2});
           const label=labels[i];
@@ -353,9 +368,10 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
     <button onClick={()=>controls.current?.zoom(1.4)} aria-label="Zoom in">+</button>
     <button onClick={()=>controls.current?.zoom(1/1.4)} aria-label="Zoom out">−</button>
     <button onClick={()=>controls.current?.home()}>Fit region</button>
+    <button aria-pressed={showCrossings} title="Show provisional river crossing points" onClick={()=>setShowCrossings(!showCrossings)}>Crossings</button>
     <button onClick={()=>{if(document.fullscreenElement) document.exitFullscreen(); else document.querySelector('main')?.requestFullscreen?.();}}>Full screen</button>
   </div><div className="compass" aria-hidden="true">N<br/>✥</div>
-  <div className="legend">{register?'Historical register':'Campaign districts'} <small>Drag to pan · Scroll to zoom · Left-click to travel · Right-click to deselect</small></div>
+  <div className="legend">{register?'Historical register':'Campaign districts'} <small>Drag to pan · Scroll to zoom · Left-click to travel · Right-click to deselect</small>{showCrossings&&<small>Dots mark provisional game crossings. Grey flags indicate unknown affiliation.</small>}</div>
   <a className="credit" href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noreferrer">Terrain · Mapzen / USGS / NOAA</a>
   {error&&<p className="error">Map could not load. {error}</p>}</section>;
 }
@@ -376,6 +392,7 @@ function Atlas() {
   const [arrival,setArrival]=useState(null);
   const [dismissal,setDismissal]=useState(0);
   const [inspect,setInspect]=useState('player');
+  const [meeting,setMeeting]=useState(null);
   const [locate,setLocate]=useState(null);
   const [openPlace,setOpenPlace]=useState(null);
   const [selected,setSelected]=useState(byId.get('site_pune'));
@@ -384,6 +401,8 @@ function Atlas() {
   const [query,setQuery]=useState('');
   const [kind,setKind]=useState('all');
   const inspectedParty=world.parties.find(party=>party.id===inspect&&party.id!=='player');
+  const inReach=inspectedParty&&metres(locationOf(world.parties[0]),locationOf(inspectedParty))<=4000;
+  function inspectParty(id){setMeeting(null);setInspect(id);}
   const visible = visibleIds(hub,register);
   if (!register) visible.add('site_khirki');
   if (register && kind!=='all') for (const id of visible) if(byId.get(id).kind!==kind) visible.delete(id);
@@ -399,15 +418,21 @@ function Atlas() {
   }
   const results=records.filter(r => visible.has(r.id) && (register || hubs.includes(r.id)) &&
     (r.name+' '+r.id).toLowerCase().includes(query.trim().toLowerCase()));
-  return <main className="campaign-shell"><MapView selected={selected} onSelect={record=>{select(record);setOpenPlace(record);}} visible={visible} hub={hub} register={register} world={world} snapshots={snapshots} inspect={inspect} onInspect={setInspect} locate={locate} follow={follow} onPan={()=>setFollow(false)} onArrival={id=>setArrival({id})} onDeselect={()=>{setOpenPlace(null);setInspect(null);setSelected(null);setDismissal(value=>value+1);}} onOrder={record=>{
+  return <main className="campaign-shell"><MapView selected={selected} onSelect={record=>{select(record);setOpenPlace(record);}} visible={visible} hub={hub} register={register} world={world} snapshots={snapshots} inspect={inspect} onInspect={inspectParty} locate={locate} follow={follow} onPan={()=>setFollow(false)} onArrival={id=>setArrival({id})} onDeselect={()=>{setOpenPlace(null);inspectParty(null);setSelected(null);setDismissal(value=>value+1);}} onOrder={record=>{
     setOpenPlace(null);
     setSelected(null);
     send(record.id?{type:'travel',to:record.id}:{type:'move',point:record.coordinate});
   }}/>
   <div className="map-title"><span>DECCAN WARLORDS</span><small>Maharashtra &amp; Goa · 1622</small></div>
-  {inspectedParty&&<div className="party-card"><button className="close" aria-label="Deselect party" onClick={()=>setInspect(null)}>×</button><strong>{inspectedParty.name}</strong>
+  {inspectedParty&&<div className="party-card"><button className="close" aria-label="Deselect party" onClick={()=>inspectParty(null)}>×</button><strong>{inspectedParty.name}</strong>
     <small>{inspectedParty.motion?.destination?'Travelling to '+(byId.get(inspectedParty.motion.destination)?.name??'open country'):'At '+(byId.get(inspectedParty.node)?.name??'open country')}</small>
-    <button onClick={()=>{setFollow(false);setLocate({id:inspectedParty.id});}}>Center</button></div>}
+    <button onClick={()=>{setFollow(false);setLocate({id:inspectedParty.id});}}>Center</button>
+    <button disabled={!inReach} onClick={()=>{send({type:'speed',value:0});setMeeting('talk');}}>Talk</button>
+    {inspectedParty.id==='caravan'&&<button disabled={!inReach} onClick={()=>{send({type:'speed',value:0});setMeeting('trade');}}>Trade</button>}
+    {!inReach&&<small>Approach within 4 km to speak.</small>}
+    {meeting==='talk'&&<p>{inspectedParty.id==='caravan'?'We carry grain and wood when the markets have stock.':inspectedParty.id==='villagers'?'We are travelling between villages and markets.':'We patrol the hill approaches.'}</p>}
+    {meeting&&<button onClick={()=>inspectParty(null)}>Leave</button>}</div>}
+  {meeting==='trade'&&inspectedParty?.id==='caravan'&&<div className="screen-shade"><section className="game-screen" role="dialog" aria-label="Caravan trade"><TradeScreen world={world} site="caravan" local={inReach} send={send} onClose={()=>setMeeting(null)}/></section></div>}
   <Clock world={world} send={send} follow={follow} setFollow={setFollow} onLocate={()=>setLocate({id:'player'})}/>
   <button className="places-toggle" onClick={()=>setRegister(!register)}>{register?'Close places':'Places'}</button>
   {register&&<div className="places-drawer"><input aria-label="Find a place" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Find a place…"/><ul>{results.map(r=><li key={r.id}><button onClick={()=>{select(r);setOpenPlace(r);setRegister(false);}}>{r.name}</button></li>)}</ul></div>}

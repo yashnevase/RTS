@@ -25,7 +25,7 @@ export function SettlementServices({page,site,world,local,send,onBack}) {
     <p className="eyebrow">Local recruitment · Gameplay roster</p>
     <div className="recruit-offers">{Object.keys(service.recruits).map(troop=>
       <button key={troop} aria-pressed={selected===troop} onClick={()=>{setSelected(troop);setCount(1);}}>
-        <img src={troop==='mounted'?'/art/campaign-rider.webp':'/art/campaign-villagers.webp'} alt=""/>
+        <img src={troop==='mounted'?'/art/campaign-rider.webp':'/art/foot-guard.webp'} alt=""/>
         <strong>{troops[troop].name}</strong>
         <small>{recruitsAvailable(company,site,troop)} available · {troops[troop].cost} coin each</small>
       </button>)}</div>
