@@ -5,7 +5,7 @@ import { byId } from './places.js';
 
 export function useCampaign() {
   const worker = useRef(null);
-  const [world,setWorld] = useState(createCampaign);
+  const [world,setWorld] = useState(() => ({ ...createCampaign(), started: false }));
   useEffect(() => {
     worker.current = new Worker(new URL('./travel.worker.js',import.meta.url),{type:'module'});
     worker.current.onmessage = event => setWorld(event.data);
