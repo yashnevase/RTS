@@ -41,7 +41,7 @@ export function Encyclopedia({world,onLocate,initialId}) {
         <div><p className="eyebrow">{record.kind==='person'?'Person':record.fort_type??record.site_type}</p><h2>{record.name}</h2><p>{record.status}</p>
         {(record.coordinate||location)&&<button onClick={()=>onLocate(record.coordinate?record:{...record,id:party?.id??'player',partyId:party?.id??'player',coordinate:location})}>Locate on map</button>}</div></header>
       <div className="ency-body"><p><EntityText text={record.notes} onOpen={setSelected}/></p>
-        {record.coordinate&&<dl><dt>Coordinates</dt><dd>{record.coordinate.latitude.toFixed(3)}° N, {record.coordinate.longitude.toFixed(3)}° E</dd>
+        {record.coordinate&&<dl>
           <dt>Region</dt><dd>{title(record.region_id)}</dd><dt>Sovereignty</dt><dd>{title(owner?.sovereign_polity_id)}</dd><dt>Control</dt><dd>{title(owner?.controller_polity_id)}</dd></dl>}
         {record.id==='supplier'&&<><h3>Campaign</h3><p>Relation with you <strong>{world.relations?.supplier??0}</strong></p><p>Supply contract · {world.economy?.quest?.status??'available'}</p>
           {world.relations?.supplier>=15&&<p>Supplier favor reduces your purchase prices at Saswad.</p>}

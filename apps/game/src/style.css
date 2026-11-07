@@ -145,3 +145,18 @@ button.entity-link{display:inline;padding:0;margin:0;border:0;background:none;co
 .companion-party-card input[type=number]{max-width:130px;padding:7px;margin:6px}
 .clan-layout{font-size:14px}.clan-layout p{line-height:1.55}
 @media(max-width:800px){.sarai-layout,.clan-layout{grid-template-columns:1fr}.sarai-contact .companion-portrait{height:170px}}
+.map-weather{position:absolute;inset:0;pointer-events:none}
+.map-weather.night{background:#102044;opacity:.33}
+.map-weather.rain{background:repeating-linear-gradient(110deg,transparent 0 37px,#b8cfde35 38px 39px,transparent 40px 75px);animation:map-rain 1s linear infinite;opacity:.5}
+.map-weather.fog{background:linear-gradient(110deg,#bfc9bc66,transparent,#c5cbbb77);opacity:.6}
+.weather-label{position:absolute;right:18px;top:65px;padding:5px 9px;background:#302719e6;color:#f0dfba;pointer-events:none;font:12px system-ui}
+@keyframes map-rain{to{background-position:-75px 120px}}
+.portrait-picker{position:relative;min-width:160px;font:14px system-ui}
+.portrait-picker summary{display:flex;align-items:center;gap:10px;padding:5px 9px;border:1px solid #a88b5b;background:#e7d1a6;cursor:pointer}
+.portrait-picker img{width:38px;height:38px;object-fit:cover;object-position:50% 15%;border-radius:50%;border:1px solid #9f7c46}
+.portrait-picker>div{position:absolute;top:100%;left:0;right:0;z-index:3;max-height:240px;overflow:auto;background:#f0ddb5;border:1px solid #a88b5b}
+.portrait-picker button{display:flex;align-items:center;gap:10px;width:100%;margin:0!important;border:0;border-radius:0;text-align:left}
+.skill-row{display:grid;grid-template-columns:100px 1fr 35px;gap:10px;padding:10px;background:#f1ddb6;border-bottom:1px solid #b69b70;font:14px system-ui}
+.skill-row small{grid-column:1/-1;color:#725332}
+.skill-row progress{width:100%;accent-color:#715535}
+@media(prefers-reduced-motion:reduce){.map-weather.rain{animation:none}}
