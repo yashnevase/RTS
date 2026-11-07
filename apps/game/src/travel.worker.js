@@ -1,3 +1,4 @@
+import {clanRoles,createClan,monthlyWages,returnTroops} from '../../../packages/sim/src/clan.ts';
 import { clearSegment, metres, route, travelEffort } from '../../../packages/sim/src/navigation.ts';
 import { createCompany, feedCompany, marchBudget, recruit, settlementServices, troops } from '../../../packages/sim/src/company.ts';
 import { createCampaign, advance, command } from '../../../packages/sim/src/travel.ts';
@@ -13,6 +14,7 @@ world.relations={supplier:0};
 world.encounter={guards:3,seed:1622,resolved:false,result:null};
 world.events=[];
 world.company=createCompany();
+world.clan=createClan();
 let eventId=0;
 let approach=null;
 const merchantHours=new Map();
@@ -48,6 +50,14 @@ function commerce(caravan) {
 function traffic() {
  for(const p of world.parties.slice(1)){
    if(p.id==='caravan'){commerce(p);continue;}
+   const detachment=world.clan.detachments.find(d=>d.id===p.id);
+   if(detachment){
+     if(!p.motion){
+       const goal=detachment.task==='return'?world.parties[0].point:anchor(p.node===detachment.home?'site_saswad':detachment.home);
+       if(metres(p.point,goal)>500)order(p,goal,detachment.task==='patrol'?(p.node===detachment.home?'site_saswad':detachment.home):null);
+     }
+     continue;
+   }
    if(!p.motion){
      p.stream=(Math.imul(1664525,p.stream)+1013904223)>>>0;
      const choices=p.id==='patrol'?['site_pune','fort_kondhana','site_donaje']:['site_pune','site_saswad','fort_purandar'];
@@ -89,6 +99,16 @@ function hourly(){
  advance(world);
  const previous=world.economy.quest?.status;
  economyHour(world.economy,world.tick);
+ if(world.tick%720===0&&world.tick>world.clan.lastPayTick){
+   const detached=world.clan.detachments.reduce((sum,d)=>sum+monthlyWages(d.foot,d.mounted,0),0);
+   const owed=monthlyWages(world.encounter.guards-world.company.mounted,world.company.mounted,world.company.companions.length)+detached+world.clan.arrears;
+   const paid=Math.min(world.economy.gold,owed);
+   world.economy.gold-=paid;world.clan.arrears=owed-paid;world.clan.lastPayTick=world.tick;
+   event('Monthly wages · '+paid+' coin paid'+(world.clan.arrears?' · '+world.clan.arrears+' owed':''));
+ }
+ for(const d of world.clan.detachments){
+   if(world.tick%24===0&&world.economy.inventory.grain>0)world.economy.inventory.grain--;
+ }
  if(world.tick%24===0){
    if(!feedCompany(world.company,world.encounter.guards,world.economy.inventory))
      event('Rations ran short · Company health '+world.company.health+'%.');
@@ -141,6 +161,7 @@ self.onmessage = ({data}) => {
   if(data.type==='restore'&&!world.started) {
     Object.assign(world,data.world,{speed:0,notice:'Campaign restored. Press Play to continue.'});
     world.company??=createCompany();
+    world.clan??=createClan();
     world.company.health??=100;
     world.company.rationProgress??=0;
     world.company.starvingDays??=0;
@@ -178,6 +199,38 @@ self.onmessage = ({data}) => {
     const to=data.type==='travel'?anchor(data.to):data.point;
     if(to&&order(player,to,data.type==='travel'?data.to:null)){
       world.waitUntil=null;world.notice='Travelling.';world.speed=world.speed||1;
+    }
+  } else if(data.type==='return-troops'&&world.started&&!player.motion&&settlementServices[player.node]?.meetingHouse){
+    if(returnTroops(world.economy,world.encounter,world.company,data.foot,data.mounted))event('Returned hired troops · enlistment fees refunded.');
+  } else if(data.type==='clan-role'&&world.started&&clanRoles.includes(data.role)){
+    if(data.member==='player'||world.company.companions.includes(data.member)){
+      if(!world.clan.detachments.some(d=>d.leader===data.member)){
+        for(const role of clanRoles)if(world.clan.roles[role]===data.member)delete world.clan.roles[role];
+        world.clan.roles[data.role]=data.member;
+      }
+    }else if(data.member==='')delete world.clan.roles[data.role];
+  } else if(data.type==='create-party'&&world.started&&!player.motion&&anchor(player.node)){
+    const {leader,foot,mounted}=data;
+    if(world.company.companions.includes(leader)&&!world.clan.detachments.some(d=>d.leader===leader)&&
+       Number.isSafeInteger(foot)&&Number.isSafeInteger(mounted)&&foot>=0&&mounted>=0&&foot+mounted>0&&
+       foot<=world.encounter.guards-world.company.mounted&&mounted<=world.company.mounted){
+      const id='clan:'+leader;
+      world.encounter.guards-=foot+mounted;world.company.mounted-=mounted;
+      for(const role of clanRoles)if(world.clan.roles[role]===leader)delete world.clan.roles[role];
+      world.clan.detachments.push({id,leader,foot,mounted,task:'patrol',home:player.node});
+      world.parties.push({...player,id,name:settlementServices[leader].meetingHouse.name+' company',point:{...player.point},motion:null,trail:null,path:[],stops:[]});
+      traffic();event('A companion party departed on patrol.');
+    }
+  } else if(data.type==='recall-party'&&world.started){
+    const d=world.clan.detachments.find(d=>d.id===data.id);
+    if(d)d.task='return';
+  } else if(data.type==='merge-party'&&world.started){
+    const d=world.clan.detachments.find(d=>d.id===data.id),party=world.parties.find(p=>p.id===data.id);
+    if(d&&party&&metres(party.point,player.point)<=4000){
+      world.encounter.guards+=d.foot+d.mounted;world.company.mounted+=d.mounted;
+      world.clan.detachments=world.clan.detachments.filter(x=>x.id!==d.id);
+      world.parties=world.parties.filter(p=>p.id!==d.id);
+      event('Companion party rejoined your company.');
     }
   } else if(data.type==='recruit' && world.started && !player.motion) {
     if(recruit(world.company,world.economy,player.node,data.troop,data.count)){
@@ -231,6 +284,7 @@ self.onmessage = ({data}) => {
        mounted<=world.company.mounted && foot<=world.encounter.guards-world.company.mounted){
       world.company.mounted-=mounted;
       world.encounter.guards-=foot+mounted;
+      event('Released '+(foot+mounted)+' troops.');
     }
   } else if(data.type==='trade') {
     if(!player.motion) {trade(world.economy,player.node,data.good,data.buy,data.quantity??1,world.relations.supplier);event(world.economy.notice);}
