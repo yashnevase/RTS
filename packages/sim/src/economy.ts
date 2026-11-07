@@ -14,14 +14,15 @@ export function createEconomy():Economy {
     }};
 }
 export function price(market:Market,good:Good) {
-  return Math.max(2,Math.min(30,Math.round((good==='grain'?6:8)*(market.target[good]+1)/(market.stock[good]+1))));
+  const base=good==='grain'?6:8;
+  return Math.max(Math.ceil(base/2),Math.min(base*2,Math.round(base*2*market.target[good]/(market.target[good]+Math.max(0,market.stock[good])))));
 }
 export function purchasePrice(market:Market,good:Good,node:string,supplierRelation:number) {
   const base=price(market,good);
   return node==='site_saswad'&&supplierRelation>=15 ? Math.max(1,Math.floor(base*.9)) : base;
 }
-export function salePrice(market:Market,good:Good) {
- return Math.max(1,Math.floor(price({...market,stock:{...market.stock,[good]:market.stock[good]+1}},good)*.75));
+export function salePrice(market:Market,good:Good,node='',relation=0) {
+ return purchasePrice({...market,stock:{...market.stock,[good]:market.stock[good]+1}},good,node,relation);
 }
 
 export interface TradeLine { good: Good; buy: boolean; quantity: number }
@@ -43,9 +44,9 @@ export function trade(e:Economy,node:string,good:Good,buy:boolean,quantity=1,sup
  let gold=e.gold,total=0;
  for(let i=0;i<quantity;i++){
    const cost=buy ? purchasePrice(m,good,node,supplierRelation) :
-     salePrice(m,good);
+     salePrice(m,good,node,supplierRelation);
    if(buy && m.stock[good]>0 && gold>=cost){m.stock[good]--;inventory[good]++;gold-=cost;m.money+=cost;}
-   else if(!buy && inventory[good]>0 && m.money>=cost){m.stock[good]++;inventory[good]--;gold+=cost;m.money-=cost;}
+   else if(!buy && inventory[good]>0 && m.money>=cost && m.stock[good]<m.target[good]*3){m.stock[good]++;inventory[good]--;gold+=cost;m.money-=cost;}
    else {e.notice='Insufficient stock or funds for this quantity.';return;}
    total+=cost;
  }
@@ -59,7 +60,18 @@ export function questAction(e:Economy,tick:number) {
     e.inventory.grain-=20;e.inventory.wood-=50;e.gold+=900;e.quest.status='completed';e.notice='Supplies delivered. You earned 900.';
   } else e.notice='The requested supplies are not ready.';
 }
+export function deliverGrain(e:Economy,node:string,amount:number) {
+ const market=e.markets[node];
+ if(!market)return 0;
+ const delivered=Math.min(amount,Math.max(0,market.target.grain-market.stock.grain));
+ market.stock.grain+=delivered;
+ return delivered;
+}
+
 export function economyHour(e:Economy,tick:number) {
+  if(tick>0&&tick%24===0)for(const market of Object.values(e.markets)){
+    market.stock.grain=Math.max(0,market.stock.grain-Math.ceil(market.target.grain/20));
+  }
   if(e.quest?.status==='active' && tick>e.quest.due) e.quest.status='failed';
 }
 
@@ -67,8 +79,8 @@ export interface Merchant {gold:number; cargo:Record<Good,number>; destination:s
 export function merchantVisit(e:Economy,merchant:Merchant,node:string) {
   const market=e.markets[node];if(!market)return;
   for(const good of goods) {
-    while(merchant.cargo[good]>0 && market.money>=price(market,good)) {
-      const cost=price(market,good);market.money-=cost;merchant.gold+=cost;
+    while(merchant.cargo[good]>0 && market.stock[good]<market.target[good]*3 && market.money>=salePrice(market,good)) {
+      const cost=salePrice(market,good);market.money-=cost;merchant.gold+=cost;
       merchant.cargo[good]--;market.stock[good]++;merchant.trades++;
     }
   }
@@ -76,7 +88,7 @@ export function merchantVisit(e:Economy,merchant:Merchant,node:string) {
   for(const [destination,other] of Object.entries(e.markets)) {
     if(destination===node)continue;
     for(const good of goods) {
-      const profit=price(other,good)-price(market,good);
+      const profit=salePrice(other,good)-price(market,good);
       if(profit>1 && (!best||profit>best.profit))best={good,destination,profit};
     }
   }
@@ -84,7 +96,7 @@ export function merchantVisit(e:Economy,merchant:Merchant,node:string) {
   const other=e.markets[best.destination];
   let count=0;
   while(count<20 && market.stock[best.good]>0 && merchant.gold>=price(market,best.good) &&
-    price(other,best.good)>price(market,best.good)+1) {
+    salePrice(other,best.good)>price(market,best.good)+1) {
     const cost=price(market,best.good);market.stock[best.good]--;market.money+=cost;
     merchant.gold-=cost;merchant.cargo[best.good]++;merchant.trades++;count++;
   }

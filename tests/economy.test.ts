@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createEconomy,trade,questAction,economyHour,merchantVisit,price,previewTrade,caravanEconomy} from '../packages/sim/src/economy.ts';
+import {createEconomy,trade,questAction,economyHour,merchantVisit,price,previewTrade,caravanEconomy,deliverGrain} from '../packages/sim/src/economy.ts';
 test('trade transfers stock and money atomically and rejects unaffordable purchases',()=>{
  const e=createEconomy(),m=e.markets.site_pune,total=e.gold+m.money;
  trade(e,'site_pune','grain',true);
@@ -59,4 +59,30 @@ test('caravan quotes use carried cargo and preserve combined money',()=>{
  assert.equal(draft.markets.caravan.stock.wood,2);
  assert.equal(draft.markets.caravan.money+draft.gold,650);
  assert.equal(merchant.cargo.wood,3);
+});
+
+test('buying and immediately returning the same batch restores purse and stock',()=>{
+ for(const relation of [0,15]){
+   const economy=createEconomy();
+   const node='site_saswad', before=structuredClone(economy);
+   assert.ok(trade(economy,node,'grain',true,10,relation));
+   assert.ok(trade(economy,node,'grain',false,10,relation));
+   assert.equal(economy.gold,before.gold);
+   assert.deepEqual(economy.markets,before.markets);
+ }
+});
+
+test('scarcity raises quotes, deliveries ease them and market storage is capped',()=>{
+ const economy=createEconomy();
+ const node='site_pune', market=economy.markets[node];
+ const starting=price(market,'grain');
+ assert.ok(trade(economy,node,'grain',true,60));
+ assert.ok(price(market,'grain')>starting);
+ const depleted=price(market,'grain');
+ assert.equal(deliverGrain(economy,node,12),10);
+ assert.ok(price(market,'grain')<=depleted);
+ assert.equal(deliverGrain(economy,node,12),0);
+ market.stock.grain=market.target.grain*3;
+ assert.equal(trade(economy,node,'grain',false,1),undefined);
+ assert.equal(price(market,'grain'),3);
 });

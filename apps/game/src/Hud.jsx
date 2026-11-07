@@ -3,7 +3,7 @@ import {readCampaign} from './campaign-save.js';
 import {clockHour} from '../../../packages/sim/src/travel.ts';
 export function Creation({send}){
  const [saved]=useState(readCampaign);
- const [name,setName]=useState('Shivraj'),[house,setHouse]=useState('Deshmukh'),[color,setColor]=useState('#b74338'),[symbol,setSymbol]=useState('Sun');
+ const [name,setName]=useState('Gautam'),[house,setHouse]=useState('Deshmukh'),[color,setColor]=useState('#b74338'),[symbol,setSymbol]=useState('Sun');
  return <div className="creation"><div className="creation-panel"><p className="eyebrow">DECCAN WARLORDS · 1622</p><h1>Begin your story</h1><p>Choose your name and the banner your company carries.</p><form onSubmit={e=>{e.preventDefault();send({type:'start',identity:{name:name.trim(),house:house.trim(),color,symbol}});}}>
  <label>Your name<input required maxLength={32} value={name} onChange={e=>setName(e.target.value)}/></label>
  <label>House name<input required maxLength={32} value={house} onChange={e=>setHouse(e.target.value)}/></label>

@@ -308,7 +308,13 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
         const bounds=element.getBoundingClientRect();
         const x=event.clientX-bounds.left,y=event.clientY-bounds.top;
         if (!latest.current.register) {
-          const i=banners.findIndex(flag=>flag.visible && x>=flag.x && x<=flag.x+flag.width && y>=flag.y && y<=flag.y+flag.height);
+          const i=banners.findIndex((flag,index)=>{
+            if(!flag.visible)return false;
+            const rider=portraits[index];
+            const inLabel=x>=flag.x-7&&x<=flag.x+flag.width+7&&y>=flag.y-6&&y<=flag.y+flag.height+6;
+            const inSprite=Math.abs(x-rider.x)<=rider.width/2+10&&y>=rider.y-rider.height-10&&y<=rider.y+8;
+            return inLabel||inSprite;
+          });
           if(i>=0) { latest.current.onInspect(latest.current.world.parties[i].id); return; }
         }
         const nearby=records.flatMap((record,i)=>{
@@ -402,7 +408,20 @@ function Atlas() {
   const [kind,setKind]=useState('all');
   const inspectedParty=world.parties.find(party=>party.id===inspect&&party.id!=='player');
   const inReach=inspectedParty&&metres(locationOf(world.parties[0]),locationOf(inspectedParty))<=4000;
-  function inspectParty(id){setMeeting(null);setInspect(id);}
+  function inspectParty(id){
+    setMeeting(null);setInspect(id);
+    const party=world.parties.find(p=>p.id===id&&id!=='player');
+    if(party&&metres(locationOf(world.parties[0]),locationOf(party))<=4000){
+      send({type:'speed',value:0});
+      setMeeting('talk');
+    }
+  }
+  useEffect(()=>{
+    if(!meeting)return;
+    const close=event=>{if(event.key==='Escape'){setMeeting(null);setInspect(null);}};
+    window.addEventListener('keydown',close);
+    return ()=>window.removeEventListener('keydown',close);
+  },[meeting]);
   const visible = visibleIds(hub,register);
   if (!register) visible.add('site_khirki');
   if (register && kind!=='all') for (const id of visible) if(byId.get(id).kind!==kind) visible.delete(id);
@@ -430,8 +449,18 @@ function Atlas() {
     <button disabled={!inReach} onClick={()=>{send({type:'speed',value:0});setMeeting('talk');}}>Talk</button>
     {inspectedParty.id==='caravan'&&<button disabled={!inReach} onClick={()=>{send({type:'speed',value:0});setMeeting('trade');}}>Trade</button>}
     {!inReach&&<small>Approach within 4 km to speak.</small>}
-    {meeting==='talk'&&<p>{inspectedParty.id==='caravan'?'We carry grain and wood when the markets have stock.':inspectedParty.id==='villagers'?'We are travelling between villages and markets.':'We patrol the hill approaches.'}</p>}
-    {meeting&&<button onClick={()=>inspectParty(null)}>Leave</button>}</div>}
+    </div>}
+  {meeting==='talk'&&inspectedParty&&<div className="screen-shade">
+    <section className="roadside-scene" role="dialog" aria-label={'Talk to '+inspectedParty.name}>
+      <img className="roadside-character" src={inspectedParty.id==='villagers'?'/art/saswad-supplier.webp':inspectedParty.id==='patrol'?'/art/foot-guard.webp':'/art/campaign-caravan.webp'} alt=""/>
+      <div className="roadside-dialogue">
+        <h2>{inspectedParty.name}</h2>
+        <p>{inspectedParty.id==='caravan'?'We carry grain and wood when the markets have stock.':inspectedParty.id==='villagers'?'We are travelling between villages and markets.':'We patrol the hill approaches. Keep to the clear ground.'}</p>
+        {inspectedParty.id==='caravan'&&<button disabled={!inReach} onClick={()=>setMeeting('trade')}>Show me your goods</button>}
+        <button onClick={()=>inspectParty(null)}>Leave</button>
+      </div>
+    </section>
+  </div>}
   {meeting==='trade'&&inspectedParty?.id==='caravan'&&<div className="screen-shade"><section className="game-screen" role="dialog" aria-label="Caravan trade"><TradeScreen world={world} site="caravan" local={inReach} send={send} onClose={()=>setMeeting(null)}/></section></div>}
   <Clock world={world} send={send} follow={follow} setFollow={setFollow} onLocate={()=>setLocate({id:'player'})}/>
   <button className="places-toggle" onClick={()=>setRegister(!register)}>{register?'Close places':'Places'}</button>

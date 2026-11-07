@@ -2,7 +2,7 @@ import { metres } from '../../../packages/sim/src/navigation.ts';
 import { createCompany, marchBudget, recruit, settlementServices, troops } from '../../../packages/sim/src/company.ts';
 import { createCampaign, advance, command } from '../../../packages/sim/src/travel.ts';
 
-import { createEconomy, trade, previewTrade, caravanEconomy, caravanMarketId, questAction, economyHour, merchantVisit } from '../../../packages/sim/src/economy.ts';
+import { createEconomy, trade, previewTrade, caravanEconomy, caravanMarketId, questAction, deliverGrain, economyHour, merchantVisit } from '../../../packages/sim/src/economy.ts';
 import { startMotion, position, advanceMotion, anchor } from '../../../packages/sim/src/movement.ts';
 import {changeRelation, raiderSite, resolveEncounter} from '../../../packages/sim/src/encounter.ts';
 import { campaignHourMs } from './campaign-clock.js';
@@ -54,7 +54,16 @@ function hourly(){
    const {arrived,trace}=advanceMotion(p.motion,budget);
    p.trail=trace;
    p.point=position(p.motion);
-   if(arrived){event(p.name+' arrived.');p.node=p.motion.destination??'field';p.motion=null;if(p.id==='player')world.notice='Destination reached.';}
+   if(arrived){
+     const from=p.node;
+     p.node=p.motion.destination??'field';p.motion=null;
+     if(p.id==='villagers'&&from==='site_saswad'&&p.node==='site_pune'){
+       const delivered=deliverGrain(world.economy,p.node,12);
+       if(delivered)event('The village train delivered '+delivered+' grain to Pune.');
+     }
+     event(p.name+' arrived.');
+     if(p.id==='player')world.notice='Destination reached.';
+   }
  }
  advance(world);
  const previous=world.economy.quest?.status;

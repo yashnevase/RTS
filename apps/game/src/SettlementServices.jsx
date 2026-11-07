@@ -12,7 +12,7 @@ export function SettlementServices({page,site,world,local,send,onBack}) {
     const hired=company.companions.includes(site);
     return <div className="service-content">
       <p className="eyebrow">Fictional campaign contact</p>
-      <h2>{contact.name}</h2><p>{contact.role}</p>
+      <img className="companion-portrait" src={site==='site_pune'?'/art/foot-guard.webp':'/art/campaign-rider.webp'} alt="Illustration of the companion role"/><h2>{contact.name}</h2><p>{contact.role}</p>
       <button disabled={hired || world.economy.gold<contact.fee} onClick={()=>send({type:'hire-companion'})}>{hired?'In your company':'Hire companion · '+contact.fee+' coin'}</button>
       <p>Prisoners held · {company.prisoners}</p>
       <button disabled={!company.prisoners} onClick={()=>send({type:'ransom'})}>Ransom one prisoner · +40 coin</button>
@@ -29,9 +29,9 @@ export function SettlementServices({page,site,world,local,send,onBack}) {
         <strong>{troops[troop].name}</strong>
         <small>{recruitsAvailable(company,site,troop)} available · {troops[troop].cost} coin each</small>
       </button>)}</div>
-    <label>Quantity <select value={count} onChange={e=>setCount(Number(e.target.value))}>{Array.from({length:Math.max(count,available)},(_,i)=><option key={i}>{i+1}</option>)}</select></label>
+    <label className="quantity-slider">Recruits <input type="range" min={0} max={Math.max(0,available)} value={Math.min(count,Math.max(0,available))} onChange={e=>setCount(Number(e.target.value))}/> <output>{Math.min(count,Math.max(0,available))}</output></label>
     <p>{world.economy.gold} coin in your purse · {world.encounter.guards+1} in your company</p>
-    <button disabled={count>available || price>world.economy.gold} onClick={()=>send({type:'recruit',troop:selected,count})}>Recruit {count} · {price} coin</button>
+    <button disabled={!count || count>available || price>world.economy.gold} onClick={()=>send({type:'recruit',troop:selected,count})}>Recruit {count} · {price} coin</button>
     <button onClick={onBack}>Return to settlement</button>
   </div>;
 }
