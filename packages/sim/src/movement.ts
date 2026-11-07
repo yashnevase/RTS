@@ -27,4 +27,11 @@ export function move(m:Motion,budget:number) {
  m.progress-=length;m.index++;
  }return true;
 }
+// Preserve intermediate turns when a single simulation tick crosses waypoints.
+export function advanceMotion(m:Motion,budget:number) {
+ const startIndex=m.index;
+ const start=position(m);
+ const arrived=move(m,budget);
+ return {arrived,trace:[start,...m.points.slice(startIndex+1,m.index+1),position(m)]};
+}
 export {anchor};

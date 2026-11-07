@@ -1,13 +1,15 @@
 import React,{useState,useEffect} from 'react';
+import {readCampaign} from './campaign-save.js';
 import {clockHour} from '../../../packages/sim/src/travel.ts';
 export function Creation({send}){
+ const [saved]=useState(readCampaign);
  const [name,setName]=useState('Shivraj'),[house,setHouse]=useState('Deshmukh'),[color,setColor]=useState('#b74338'),[symbol,setSymbol]=useState('Sun');
  return <div className="creation"><div className="creation-panel"><p className="eyebrow">DECCAN WARLORDS · 1622</p><h1>Begin your story</h1><p>Choose your name and the banner your company carries.</p><form onSubmit={e=>{e.preventDefault();send({type:'start',identity:{name:name.trim(),house:house.trim(),color,symbol}});}}>
  <label>Your name<input required maxLength={32} value={name} onChange={e=>setName(e.target.value)}/></label>
  <label>House name<input required maxLength={32} value={house} onChange={e=>setHouse(e.target.value)}/></label>
  <label>Banner colour<input type="color" value={color} onChange={e=>setColor(e.target.value)}/></label>
  <label>Emblem<select value={symbol} onChange={e=>setSymbol(e.target.value)}>{['Sun','Crescent','Diamond'].map(s=><option key={s}>{s}</option>)}</select></label>
- <button className="begin">Enter the Deccan</button></form></div><div className="creation-portrait"><img src="/art/envoy.webp" alt="Your fictional traveller"/><div className="personal-banner" style={{background:color}}>{symbol==='Sun'?'☀':symbol==='Crescent'?'☾':'◆'}</div><h2>{name} {house}</h2></div></div>;
+ <button className="begin">Enter the Deccan</button></form>{saved&&<button className="continue" onClick={()=>send({type:'restore',world:saved})}>Continue {saved.identity.name} of {saved.identity.house}</button>}</div><div className="creation-portrait"><img src="/art/envoy.webp" alt="Your fictional traveller"/><div className="personal-banner" style={{background:color}}>{symbol==='Sun'?'☀':symbol==='Crescent'?'☾':'◆'}</div><h2>{name} {house}</h2></div></div>;
 }
 export function Clock({world,send,follow,setFollow,onLocate}){
  useEffect(()=>{

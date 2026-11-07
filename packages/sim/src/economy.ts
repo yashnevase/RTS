@@ -16,13 +16,18 @@ export function createEconomy():Economy {
 export function price(market:Market,good:Good) {
   return Math.max(2,Math.min(30,Math.round((good==='grain'?6:8)*(market.target[good]+1)/(market.stock[good]+1))));
 }
-export function trade(e:Economy,node:string,good:Good,buy:boolean,quantity=1) {
+export function purchasePrice(market:Market,good:Good,node:string,supplierRelation:number) {
+  const base=price(market,good);
+  return node==='site_saswad'&&supplierRelation>=15 ? Math.max(1,Math.floor(base*.9)) : base;
+}
+export function trade(e:Economy,node:string,good:Good,buy:boolean,quantity=1,supplierRelation=0) {
  if(!goods.includes(good)||!Number.isSafeInteger(quantity)||quantity<1||quantity>100){e.notice='Choose a quantity between 1 and 100.';return;}
  const market=e.markets[node];if(!market){e.notice='No market is available here.';return;}
  const m={...market,stock:{...market.stock}},inventory={...e.inventory};
  let gold=e.gold,total=0;
  for(let i=0;i<quantity;i++){
-   const cost=price(m,good);
+   const cost=buy ? purchasePrice(m,good,node,supplierRelation) :
+     Math.max(1,Math.floor(price({...m,stock:{...m.stock,[good]:m.stock[good]+1}},good)*.75));
    if(buy && m.stock[good]>0 && gold>=cost){m.stock[good]--;inventory[good]++;gold-=cost;m.money+=cost;}
    else if(!buy && inventory[good]>0 && m.money>=cost){m.stock[good]++;inventory[good]--;gold+=cost;m.money-=cost;}
    else {e.notice='Insufficient stock or funds for this quantity.';return;}

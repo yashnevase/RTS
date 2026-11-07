@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Application, Sprite, Assets, Graphics, Text } from 'pixi.js';
 import { byId, records, hubs, districts, districtOf, visibleIds } from './places.js';
+import { sampleTrail } from '../../../packages/map/src/party-animation.ts';
 import { project, unproject, mapSize } from '../../../packages/map/src/index.ts';
 import { homeCamera, zoomAt, reserveLabel } from '../../../packages/map/src/camera.ts';
 import { CampaignPanel, locationOf, useCampaign } from './Campaign.jsx';
@@ -56,12 +57,12 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       let lastLocate = null;
       const positions=latest.current.world.parties.map(party=>{
         const {x,y}=project(locationOf(party));
-        return {x,y,drawX:x,drawY:y,tick:0,start:0};
+        return {drawX:x,drawY:y,tick:-1,start:0,trail:[{x,y}],facing:1};
       });
       const portraits = [];
       const cloth = new Graphics();
       app.stage.addChild(cloth);
-      const portraitTexture=await Assets.load('/art/envoy.webp');
+      const portraitTexture=await Assets.load('/art/campaign-rider.webp');
       const banners = latest.current.world.parties.map(party => {
         const label = new Text({text:party.id==='player'?'⚑ '+latest.current.world.identity?.name:'♟ '+party.name, style:{
           fontFamily:'Georgia',fontWeight:'bold',fontSize:14,fill:party.id==='player'?'#fff1ba':'#e7e3cf',
@@ -69,7 +70,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
         label.eventMode='static';label.cursor='pointer';
         label.on('pointertap',()=>latest.current.onInspect(party.id));
         app.stage.addChild(label);
-        const portrait=new Sprite(portraitTexture);portrait.width=24;portrait.height=28;portrait.anchor.set(.5,1);app.stage.addChild(portrait);portraits.push(portrait);
+        const portrait=new Sprite(portraitTexture);portrait.width=34;portrait.height=34;portrait.anchor.set(.5,1);app.stage.addChild(portrait);portraits.push(portrait);
         return label;
       });
       function home() { camera = homeCamera(element.clientWidth,element.clientHeight); }
@@ -95,41 +96,51 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           camera.x=element.clientWidth/2-point.x*camera.zoom;
           camera.y=element.clientHeight/2-point.y*camera.zoom;
         }
-        const partyBoxes=[];
-        cloth.clear();
-        for (const [i,party] of world.parties.entries()) {
-          const flag=banners[i];
-          flag.visible=!all;
-          if(portraits[i]){portraits[i].visible=!all;portraits[i].position.set(camera.x+positions[i].drawX*camera.zoom,camera.y+positions[i].drawY*camera.zoom);}
-          const px=camera.x+positions[i].drawX*camera.zoom,py=camera.y+positions[i].drawY*camera.zoom;
-          const wave=Math.sin(performance.now()/230+i)*3;
-          const color=party.id==='player'?(world.identity?.color??'#b74338'):'#58765c';
-          cloth.moveTo(px+14,py).lineTo(px+14,py-47).stroke({color:0x3b2918,width:2});
-          cloth.poly([px+14,py-47,px+36,py-44+wave,px+32,py-27+wave,px+14,py-30]).fill(color).stroke({color:0xe3c582,width:1});
-          flag.rotation=Math.sin(performance.now()/450+i)*.014;
-          if(party.id==='player'){
-            const identity=world.identity;
-            flag.text=(identity?.symbol==='Crescent'?'☾':identity?.symbol==='Diamond'?'◆':'☀')+' '+(identity?.name??'Your company');
-            flag.style.fill=identity?.color??'#ffdc8c';
-          }
-          const target=project(locationOf(party));
+        const now=performance.now();
+        for(const [i,party] of world.parties.entries()){
           const display=positions[i];
-          if(display.tick!==world.tick) {
-            display.x=display.drawX; display.y=display.drawY;
-            display.tick=world.tick;display.start=performance.now();
+          if(display.tick!==world.tick){
+            display.tick=world.tick;
+            display.start=now;
+            display.trail=party.trail?.length ? party.trail.map(project) : [project(locationOf(party))];
           }
-          const progress=world.speed ? Math.min(1,(performance.now()-display.start)/(900/world.speed)) : 1;
-          display.drawX=display.x+(target.x-display.x)*progress;
-          display.drawY=display.y+(target.y-display.y)*progress;
-          flag.position.set(camera.x+display.drawX*camera.zoom+4,camera.y+display.drawY*camera.zoom-35-(i===0?8:0));
-          while (partyBoxes.some(box=>Math.abs(flag.x-box.x)<Math.max(box.width,flag.width) && Math.abs(flag.y-box.y)<20)) flag.y-=21;
-          partyBoxes.push({x:flag.x,y:flag.y,width:flag.width});
-          flag.alpha=party.id===inspect||party.id==='player'?1:.85;
+          const progress=world.speed ? Math.min(1,(now-display.start)/(900/world.speed)) : 1;
+          const pose=sampleTrail(display.trail,progress);
+          display.drawX=pose.x;
+          display.drawY=pose.y;
+          if(display.trail.length>1&&Math.abs(Math.cos(pose.heading))>.2)display.facing=Math.cos(pose.heading)<0?-1:1;
         }
         if (latest.current.follow) {
           const player=positions[0];
           camera.x=element.clientWidth/2-player.drawX*camera.zoom;
           camera.y=element.clientHeight/2-player.drawY*camera.zoom;
+        }
+        const partyBoxes=[];
+        cloth.clear();
+        for(const [i,party] of world.parties.entries()){
+          const label=banners[i], rider=portraits[i], display=positions[i];
+          const moving=world.speed&&display.trail.length>1&&(now-display.start)<900/world.speed;
+          const x=camera.x+display.drawX*camera.zoom,y=camera.y+display.drawY*camera.zoom;
+          label.visible=rider.visible=!all;
+          if(all) continue;
+          const bob=moving?Math.sin(now/85+i)*1.7:0;
+          rider.position.set(x,y+bob);
+          rider.scale.x=Math.abs(rider.scale.x)*display.facing;
+          rider.rotation=moving?Math.sin(now/170+i)*.045:0;
+          cloth.ellipse(x,y,13,4).fill({color:0x342718,alpha:.32});
+          const wave=Math.sin(now/230+i)*3;
+          const color=i===0?(world.identity?.color??'#b74338'):'#58765c';
+          cloth.moveTo(x+14,y).lineTo(x+14,y-47).stroke({color:0x3b2918,width:2});
+          cloth.poly([x+14,y-47,x+36,y-44+wave,x+32,y-27+wave,x+14,y-30]).fill(color).stroke({color:0xe3c582,width:1});
+          if(i===0){
+            const identity=world.identity;
+            label.text=(identity?.symbol==='Crescent'?'☾':identity?.symbol==='Diamond'?'◆':'☀')+' '+(identity?.name??'Your company');
+            label.style.fill=identity?.color??'#ffdc8c';
+          }
+          label.position.set(x+4,y-52);
+          while(partyBoxes.some(box=>Math.abs(label.x-box.x)<Math.max(box.width,label.width)&&Math.abs(label.y-box.y)<20))label.y-=21;
+          partyBoxes.push({x:label.x,y:label.y,width:label.width});
+          label.alpha=party.id===inspect||i===0?1:.85;
         }
         const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,world.tick,world.parties[0].path.join(),world.parties[0].motion?.points.length,inspect,district,all,shown.size,[...shown][0]].join('|');
         if (signature === previousFrame) return;
@@ -162,11 +173,6 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           marks.moveTo(...points[0]);
           for(const point of points.slice(1))marks.lineTo(...point);
           marks.stroke({color:0x477b8c,width:1.5,alpha:.8});
-        }
-        const motion=world.parties[0].motion;
-        if(motion){
-          const points=motion.points.slice(motion.index).map(coordinate=>screenPoint({coordinate}));
-          if(points.length){marks.moveTo(...points[0]);for(const point of points.slice(1))marks.lineTo(...point);marks.stroke({color:0xffe5a0,width:2.5});}
         }
         const priority = record => record.id === active?.id ? 3 : hubs.includes(record.id) ? 2 : record.kind === 'fort' ? 1 : 0;
         const order = records.map((record,i)=>({record,i})).sort((a,b)=>priority(b.record)-priority(a.record));
@@ -305,7 +311,7 @@ function Atlas() {
   {register&&<div className="places-drawer"><input aria-label="Find a place" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Find a place…"/><ul>{results.map(r=><li key={r.id}><button onClick={()=>{select(r);setOpenPlace(r);setRegister(false);}}>{r.name}</button></li>)}</ul></div>}
   {openPlace&&<div className="place-card"><button className="close" onClick={()=>setOpenPlace(null)}>×</button><p className="eyebrow">{openPlace.site_type||openPlace.fort_type}</p><h2>{openPlace.name}</h2><Authority record={openPlace}/><button onClick={()=>{send({type:'travel',to:openPlace.id});setOpenPlace(null);}}>Travel here</button><details><summary>Journal</summary><p>{openPlace.notes}</p></details></div>}
   <details className="world-events"><summary>World events{world.events?.length?' · '+world.events.length:''}</summary><ol>{world.events?.map(event=><li key={event.id}><time>Day {1+Math.floor((event.tick+6)/24)}</time> {event.text}</li>)}</ol></details>
-  <Screens world={world} send={send}/>
+  <Screens world={world} send={send} onLocate={record=>{setRegister(false);select(record);setOpenPlace(record);}}/>
   {world.started===false&&<Creation send={send}/>}
   </main>;
 }
