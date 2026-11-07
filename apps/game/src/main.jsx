@@ -7,15 +7,15 @@ import { homeCamera, zoomAt, reserveLabel } from '../../../packages/map/src/came
 import { CampaignPanel, locationOf, useCampaign } from './Campaign.jsx';
 import { edges } from '../../../packages/sim/src/travel.ts';
 import { Screens } from './Screens.jsx';
-import {terrain as navigationTerrain} from '../../../packages/sim/src/navigation.ts';
+import {terrain as navigationTerrain,coordinate as cellCoordinate} from '../../../packages/sim/src/navigation.ts';
 import { Creation, Clock } from './Hud.jsx';
 import './style.css';
 
-function MapView({ selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, follow }) {
+function MapView({ selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, onDeselect, follow }) {
   const host = useRef(null);
   const controls = useRef(null);
-  const latest = useRef({selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, follow});
-  latest.current = {selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, follow};
+  const latest = useRef({selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, onDeselect, follow});
+  latest.current = {selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, onDeselect, follow};
   const [error, setError] = useState('');
   useEffect(() => {
     let disposed = false;
@@ -147,6 +147,15 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           const p=project(record.coordinate);
           return [camera.x+p.x*camera.zoom,camera.y+p.y*camera.zoom];
         };
+        for(const id of navigationTerrain.woodland??[]) {
+          const [x,y]=screenPoint({coordinate:cellCoordinate(id)});
+          if(x<0||y<0||x>element.clientWidth||y>element.clientHeight)continue;
+          const size=Math.max(2,Math.min(7,camera.zoom*2));
+          marks.ellipse(x,y,size*2,size).fill({color:0x456a3c,alpha:.22});
+          if(camera.zoom>1.2 && id%3===0){
+            marks.poly([x,y-size*2,x-size,y,x+size,y]).fill({color:0x3d5d32,alpha:.65});
+          }
+        }
         for(const river of navigationTerrain.rivers) {
           if(river.length<2)continue;
           const points=river.map(([longitude,latitude])=>screenPoint({coordinate:{longitude,latitude}}));
@@ -196,10 +205,10 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
         if(Math.abs(dx)+Math.abs(dy)>2) moved=true;
         camera.x+=dx; camera.y+=dy; drag={x:event.clientX,y:event.clientY};
       }
-      function hit(event, order=false) {
+      function hit(event) {
         const bounds=element.getBoundingClientRect();
         const x=event.clientX-bounds.left,y=event.clientY-bounds.top;
-        if (!order && !latest.current.register) {
+        if (!latest.current.register) {
           const i=banners.findIndex(flag=>flag.visible && x>=flag.x && x<=flag.x+flag.width && y>=flag.y && y<=flag.y+flag.height);
           if(i>=0) { latest.current.onInspect(latest.current.world.parties[i].id); return; }
         }
@@ -210,17 +219,17 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           return {record,distance:Math.hypot(dx,dy)};
         }).filter(r=>r.distance<16).sort((a,b)=>a.distance-b.distance);
         if(nearby.length) {
-          if(order) latest.current.onOrder(nearby[0].record);
-          else latest.current.onSelect(nearby[0].record);
+          if(latest.current.register) latest.current.onSelect(nearby[0].record);
+          else latest.current.onOrder(nearby[0].record);
         }
-        else latest.current.onOrder({coordinate:unproject((x-camera.x)/camera.zoom,(y-camera.y)/camera.zoom)});
+        else if(!latest.current.register) latest.current.onOrder({coordinate:unproject((x-camera.x)/camera.zoom,(y-camera.y)/camera.zoom)});
       }
       function up(event) {
         if(!drag) return;
         drag=null;
         if(!moved) hit(event);
       }
-      function right(event) { event.preventDefault(); if(!latest.current.register) hit(event,true); }
+      function right(event) { event.preventDefault();latest.current.onDeselect(); }
       function cancel() { drag=null; }
       element.addEventListener('contextmenu',right);
       element.addEventListener('pointercancel',cancel);
@@ -244,7 +253,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
     <button onClick={()=>controls.current?.home()}>Fit region</button>
     <button onClick={()=>{if(document.fullscreenElement) document.exitFullscreen(); else document.querySelector('main')?.requestFullscreen?.();}}>Full screen</button>
   </div><div className="compass" aria-hidden="true">N<br/>✥</div>
-  <div className="legend">{register?'Historical register':'Campaign districts'} <small>Drag to pan · Scroll to zoom · Right-click a place to travel</small></div>
+  <div className="legend">{register?'Historical register':'Campaign districts'} <small>Drag to pan · Scroll to zoom · Left-click to travel · Right-click to deselect</small></div>
   <a className="credit" href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noreferrer">Terrain · Mapzen / USGS / NOAA</a>
   {error&&<p className="error">Map could not load. {error}</p>}</section>;
 }
@@ -285,8 +294,9 @@ function Atlas() {
   }
   const results=records.filter(r => visible.has(r.id) && (register || hubs.includes(r.id)) &&
     (r.name+' '+r.id).toLowerCase().includes(query.trim().toLowerCase()));
-  return <main className="campaign-shell"><MapView selected={selected} onSelect={record=>{select(record);setOpenPlace(record);}} visible={visible} hub={hub} register={register} world={world} inspect={inspect} onInspect={setInspect} locate={locate} follow={follow} onOrder={record=>{
+  return <main className="campaign-shell"><MapView selected={selected} onSelect={record=>{select(record);setOpenPlace(record);}} visible={visible} hub={hub} register={register} world={world} inspect={inspect} onInspect={setInspect} locate={locate} follow={follow} onDeselect={()=>{setOpenPlace(null);setInspect(null);setSelected(null);}} onOrder={record=>{
     setOpenPlace(null);
+    setSelected(null);
     send(record.id?{type:'travel',to:record.id}:{type:'move',point:record.coordinate});
   }}/>
   <div className="map-title"><span>DECCAN WARLORDS</span><small>Maharashtra &amp; Goa · 1622</small></div>
@@ -294,6 +304,7 @@ function Atlas() {
   <button className="places-toggle" onClick={()=>setRegister(!register)}>{register?'Close places':'Places'}</button>
   {register&&<div className="places-drawer"><input aria-label="Find a place" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Find a place…"/><ul>{results.map(r=><li key={r.id}><button onClick={()=>{select(r);setOpenPlace(r);setRegister(false);}}>{r.name}</button></li>)}</ul></div>}
   {openPlace&&<div className="place-card"><button className="close" onClick={()=>setOpenPlace(null)}>×</button><p className="eyebrow">{openPlace.site_type||openPlace.fort_type}</p><h2>{openPlace.name}</h2><Authority record={openPlace}/><button onClick={()=>{send({type:'travel',to:openPlace.id});setOpenPlace(null);}}>Travel here</button><details><summary>Journal</summary><p>{openPlace.notes}</p></details></div>}
+  <details className="world-events"><summary>World events{world.events?.length?' · '+world.events.length:''}</summary><ol>{world.events?.map(event=><li key={event.id}><time>Day {1+Math.floor((event.tick+6)/24)}</time> {event.text}</li>)}</ol></details>
   <Screens world={world} send={send}/>
   {world.started===false&&<Creation send={send}/>}
   </main>;

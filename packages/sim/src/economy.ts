@@ -16,14 +16,20 @@ export function createEconomy():Economy {
 export function price(market:Market,good:Good) {
   return Math.max(2,Math.min(30,Math.round((good==='grain'?6:8)*(market.target[good]+1)/(market.stock[good]+1))));
 }
-export function trade(e:Economy,node:string,good:Good,buy:boolean) {
-  const m=e.markets[node];if(!m)return;
-  const cost=price(m,good);
-  if(buy && m.stock[good]>0 && e.gold>=cost) {
-    m.stock[good]--;e.inventory[good]++;e.gold-=cost;m.money+=cost;
-  } else if(!buy && e.inventory[good]>0 && m.money>=cost) {
-    m.stock[good]++;e.inventory[good]--;e.gold+=cost;m.money-=cost;
-  } else e.notice='Insufficient stock or funds.';
+export function trade(e:Economy,node:string,good:Good,buy:boolean,quantity=1) {
+ if(!goods.includes(good)||!Number.isSafeInteger(quantity)||quantity<1||quantity>100){e.notice='Choose a quantity between 1 and 100.';return;}
+ const market=e.markets[node];if(!market){e.notice='No market is available here.';return;}
+ const m={...market,stock:{...market.stock}},inventory={...e.inventory};
+ let gold=e.gold,total=0;
+ for(let i=0;i<quantity;i++){
+   const cost=price(m,good);
+   if(buy && m.stock[good]>0 && gold>=cost){m.stock[good]--;inventory[good]++;gold-=cost;m.money+=cost;}
+   else if(!buy && inventory[good]>0 && m.money>=cost){m.stock[good]++;inventory[good]--;gold+=cost;m.money-=cost;}
+   else {e.notice='Insufficient stock or funds for this quantity.';return;}
+   total+=cost;
+ }
+ Object.assign(market,m);e.inventory=inventory;e.gold=gold;
+ e.notice=(buy?'Bought ':'Sold ')+quantity+' '+good+' for '+total+' coin.';
 }
 export function questAction(e:Economy,tick:number) {
   if(!e.quest) { e.quest={due:tick+96,status:'active'};e.notice='Bring 20 grain and 50 wood here within four days. Reward 900.'; }

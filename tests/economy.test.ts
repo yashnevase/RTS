@@ -24,3 +24,18 @@ test('merchant carries purchased cargo, conserves money and keeps stocks bounded
  }
  assert.equal(funds(),initial);assert.ok(m.trades>0);
 });
+
+test('batch prices reflect each unit and an unaffordable batch commits nothing',()=>{
+ const e=createEconomy(),m=e.markets.site_pune;
+ trade(e,'site_pune','wood',true,5);
+ assert.equal(e.inventory.wood,5);
+ assert.equal(m.stock.wood,25);
+ assert.equal(e.gold+m.money,20600);
+ const before=JSON.stringify([e.gold,e.inventory,m]);
+ trade(e,'site_pune','wood',true,50);
+ assert.equal(JSON.stringify([e.gold,e.inventory,m]),before);
+ trade(e,'site_pune','wood',false,5);
+ assert.equal(e.inventory.wood,0);
+ assert.equal(m.stock.wood,30);
+ assert.equal(e.gold+m.money,20600);
+});

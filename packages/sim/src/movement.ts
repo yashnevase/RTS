@@ -5,8 +5,13 @@ export function startMotion(from:Point,to:Point,destination:string|null):Motion|
  return points?{points,index:0,progress:0,destination}:null;
 }
 function effort(a:Point,b:Point) {
- const cost=terrain.cost[cell(b)]||10;
- return Math.round(metres(a,b)*cost/10);
+ const length=metres(a,b),steps=Math.max(1,Math.ceil(length/1000));
+ let total=0;
+ for(let i=0;i<steps;i++){
+   const t=(i+.5)/steps,id=cell({longitude:a.longitude+(b.longitude-a.longitude)*t,latitude:a.latitude+(b.latitude-a.latitude)*t});
+   total+=terrain.cost[id]||10;
+ }
+ return Math.round(length*total/steps/10);
 }
 export function position(m:Motion):Point {
  const a=m.points[m.index],b=m.points[m.index+1];

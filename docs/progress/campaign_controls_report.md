@@ -13,3 +13,9 @@ Arrival and waiting completion leave the world clock running. Manual pause is av
 ## Verification
 
 Build, typecheck and unit/data tests pass. Navigation tests check coast rejection, reachable terrain and continuous arrival. Chrome verification exercises character creation, screen opening, a purchase-page layout and an empty-ground movement order. The clock advanced from 07:00 to 09:00 with Inventory open. Screenshots are in screenshots/campaign-hud.png and screenshots/party-layout.png. Automated browser rendering caught and corrected a terrain-import name collision during this revision. Full target-hardware frame profiling remains pending.
+
+## Movement and interaction refinement
+
+Left-click orders movement on the campaign map. Party markers remain inspectable and the Places register opens historical records. Right-click clears selection and keeps the active route. The eight-direction planner checks adjacent cells before crossing corners and smooths segments only where the terrain grid permits. Movement costs sample the resulting segments. Vegetation shading and slower woodland movement use a modern Natural Earth land-cover color proxy. Forest extent and crossing points remain provisional. TaleWorlds describes terrain-dependent travel and a separate navigation mesh in its [campaign map development blog](https://www.taleworlds.com/en/Games/Bannerlord/Blog/65).
+
+Markets offer batch purchases and sales with per-unit price changes. A failed batch leaves stock and funds intact. Saswad dialogue shows the supplier's request, choices and delivery status. The map journal shows arrivals, trades and quest events from the simulation. Build and 33 tests pass. Historical data validation reports zero errors and the two existing Panhala warnings.
