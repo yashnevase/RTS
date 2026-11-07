@@ -1,5 +1,5 @@
 import { TradeScreen } from './TradeScreen.jsx';
-import { coordinate, metres, terrain as navigationTerrain } from '../../../packages/sim/src/navigation.ts';
+import { anchor, coordinate, metres, route, terrain as navigationTerrain } from '../../../packages/sim/src/navigation.ts';
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Application, Sprite, Assets, Graphics, Text } from 'pixi.js';
@@ -46,6 +46,9 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       const detailNW=project({longitude:73.35,latitude:19.35});
       const detailSE=project({longitude:75,latitude:18});
       const crossingMarks = new Graphics();
+      const crossingCells=new Set(navigationTerrain.crossings);
+      const corridors=[['site_chaul','site_pune'],['site_pune','site_ahmadnagar'],['site_pune','site_saswad'],['site_saswad','fort_purandar'],['site_pune','fort_kondhana']]
+        .map(([from,to])=>route(anchor(from),anchor(to))??[]);
       const crossingPoints=navigationTerrain.crossings.map(id=>project(coordinate(id)));
       const marks = new Graphics();
       const plaques = new Graphics();
@@ -70,6 +73,8 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       let camera = homeCamera(element.clientWidth, element.clientHeight);
       let drag = null;
       let moved = false;
+      let hovered=null;
+      const cameraKeys=new Set();
       let previousSelection = null;
       let previousFrame = null;
       let lastLocate = null;
@@ -164,7 +169,12 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
             if(Math.abs(horizontal)>.22) display.facing=horizontal<0?-1:1;
           }
         });
-        if (latest.current.follow && !(drag&&moved)) {
+        if(cameraKeys.size){
+          const dt=ticker.deltaMS*.52;
+          camera.x+=dt*(Number(cameraKeys.has('a'))-Number(cameraKeys.has('d')));
+          camera.y+=dt*(Number(cameraKeys.has('w'))-Number(cameraKeys.has('s')));
+        }
+        if (latest.current.follow && !(drag&&moved) && !cameraKeys.size) {
           const player=positions[0];
           camera.x=element.clientWidth/2-player.drawX*camera.zoom;
           camera.y=element.clientHeight/2-player.drawY*camera.zoom;
@@ -224,7 +234,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           cloth.roundRect(label.x-5,label.y-2,label.width+10,label.height+4,3)
             .fill({color:0x292316,alpha:.9}).stroke({color,width:1.2});
         }
-        const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,district,all,crossingMode.current,[...shown].join()].join('|');
+        const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,hovered,district,all,crossingMode.current,[...shown].join()].join('|');
         if (signature === previousFrame) return;
         previousFrame = signature;
         terrain.position.set(camera.x,camera.y);
@@ -240,10 +250,17 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
         marks.clear();
         plaques.clear();
         crossingMarks.clear();
+        if(crossingMode.current)for(const corridor of corridors){
+          if(corridor.length<2)continue;
+          const points=corridor.map(project);
+          crossingMarks.moveTo(camera.x+points[0].x*camera.zoom,camera.y+points[0].y*camera.zoom);
+          for(const point of points.slice(1))crossingMarks.lineTo(camera.x+point.x*camera.zoom,camera.y+point.y*camera.zoom);
+          crossingMarks.stroke({color:0xffd495,width:3,alpha:.9});
+        }
         if(crossingMode.current)for(const point of crossingPoints){
           const x=camera.x+point.x*camera.zoom,y=camera.y+point.y*camera.zoom;
           if(x<0||x>element.clientWidth||y<0||y>element.clientHeight)continue;
-          crossingMarks.circle(x,y,2.7).fill('#e4ce9f').stroke({color:'#254d58',width:1.4});
+          crossingMarks.roundRect(x-4,y-2.5,8,5,1).fill('#e4ce9f').stroke({color:'#254d58',width:1.4});
         }
         const placed = [];
         const priority = record => record.id === active?.id ? 3 : hubs.includes(record.id) ? 2 : record.kind === 'fort' ? 1 : 0;
@@ -256,7 +273,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           labels[i].visible=false;
           if (!visible) continue;
           const icon = tokens[i];
-          const width = all ? 16 : hubs.includes(record.id) ? 80 : record.kind === 'fort' ? 58 : 34;
+          const width = all ? 24 : hubs.includes(record.id) ? 104 : record.kind === 'fort' ? 76 : 52;
           icon.position.set(x,y); icon.width=width; icon.height=width*icon.texture.height/icon.texture.width;
           const heraldry = {polity_adil_shahi:0x375849, polity_nizam_shahi:0x81562a, polity_portuguese:0x824852, polity_mughal:0x454d72};
           const sovereign = record.ownership?.controller_polity_id??record.ownership?.sovereign_polity_id;
@@ -268,7 +285,8 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
             marks.moveTo(pole,y-3).lineTo(pole,top).stroke({color:0x4d391d,width:1});
             marks.poly([pole,top,pole+12,top+1,pole+8,top+4,pole+12,top+7,pole,top+7]).fill(flag).stroke({color:0xe5cea0,width:.8});
           }
-          if(record.id===active?.id) marks.ellipse(x,y+1,width*.5,5).stroke({color:0xffe29b,width:2});
+          const highlighted=record.id===active?.id||record.id===hovered;
+          marks.ellipse(x,y+1,width*.57,Math.max(7,width*.13)).stroke({color:highlighted?0xffe29b:0x67462b,width:highlighted?3:1.5,alpha:highlighted?1:.85});
           const label=labels[i];
           const hasPlaque=!all&&hubs.includes(record.id);
           if(hasPlaque!==labelPlaques.has(i)){
@@ -304,32 +322,46 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
         }
         camera.x+=dx; camera.y+=dy; drag={x:event.clientX,y:event.clientY};
       }
-      function hit(event) {
-        const bounds=element.getBoundingClientRect();
-        const x=event.clientX-bounds.left,y=event.clientY-bounds.top;
-        if (!latest.current.register) {
-          const i=banners.findIndex((flag,index)=>{
-            if(!flag.visible)return false;
-            const rider=portraits[index];
-            const inLabel=x>=flag.x-7&&x<=flag.x+flag.width+7&&y>=flag.y-6&&y<=flag.y+flag.height+6;
-            const inSprite=Math.abs(x-rider.x)<=rider.width/2+10&&y>=rider.y-rider.height-10&&y<=rider.y+8;
-            return inLabel||inSprite;
-          });
-          if(i>=0) { latest.current.onInspect(latest.current.world.parties[i].id); return; }
-        }
-        const nearby=records.flatMap((record,i)=>{
+      function targetAt(x,y){
+        const places=records.flatMap((record,i)=>{
           const token=tokens[i],label=labels[i];
           if(!token.visible)return [];
-          if(label.visible&&x>=label.x&&x<=label.x+label.width&&y>=label.y&&y<=label.y+label.height)
+          if(label.visible&&x>=label.x-5&&x<=label.x+label.width+5&&y>=label.y-2&&y<=label.y+label.height+3)
             return [{record,distance:0}];
-          const dx=Math.max(0,Math.abs(x-token.x)-token.width/2);
-          const dy=Math.max(0,token.y-token.height-y,y-token.y);
+          const dx=Math.max(0,Math.abs(x-token.x)-token.width*.52);
+          const dy=Math.max(0,token.y-token.height-y,y-token.y-9);
           return [{record,distance:Math.hypot(dx,dy)}];
-        }).filter(r=>r.distance<16).sort((a,b)=>a.distance-b.distance);
-        if(nearby.length) {
-          if(latest.current.register) latest.current.onSelect(nearby[0].record);
+        }).filter(r=>r.distance<22).sort((a,b)=>a.distance-b.distance);
+        if(!latest.current.register&&!places.some(place=>place.distance===0)){
+          const party=banners.findIndex((flag,index)=>{
+            if(index===0||!flag.visible)return false;
+            const rider=portraits[index];
+            const inLabel=x>=flag.x-8&&x<=flag.x+flag.width+8&&y>=flag.y-8&&y<=flag.y+flag.height+8;
+            const inSprite=Math.abs(x-rider.x)<=rider.width/2+15&&y>=rider.y-rider.height-12&&y<=rider.y+13;
+            return inLabel||inSprite;
+          });
+          if(party>=0)return {party:latest.current.world.parties[party].id};
+        }
+        return places[0]??{};
+      }
+      function pointerPosition(event){
+        const bounds=element.getBoundingClientRect();
+        return [event.clientX-bounds.left,event.clientY-bounds.top];
+      }
+      function hover(event){
+        if(drag)return;
+        const {record,party}=targetAt(...pointerPosition(event));
+        hovered=record?.id??null;
+        element.style.cursor=record||party?'pointer':'crosshair';
+        element.title=record?.name??(party?latest.current.world.parties.find(p=>p.id===party)?.name:'');
+      }
+      function hit(event) {
+        const [x,y]=pointerPosition(event);
+        const {record,party}=targetAt(x,y);
+        if(party){latest.current.onInspect(party);return;}
+        if(record) {
+          if(latest.current.register) latest.current.onSelect(record);
           else {
-            const record=nearby[0].record;
             const player=lastSnapshot.parties[0];
             const point=project(locationOf(player));
             const atRest=Math.hypot(positions[0].drawX-point.x,positions[0].drawY-point.y)<.01;
@@ -353,6 +385,20 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       }
       function right(event) { event.preventDefault();latest.current.onDeselect(); }
       function cancel() { drag=null; }
+      function keyDown(event){
+        const key=event.key.toLowerCase();
+        if(!'wasd'.includes(key)||key.length!==1||!latest.current.world.started||event.altKey||event.ctrlKey||event.metaKey||
+           event.target.closest('input,select,textarea,[role=dialog]')||document.querySelector('[aria-modal=true]'))return;
+        event.preventDefault();
+        if(!cameraKeys.size)latest.current.onPan();
+        cameraKeys.add(key);
+      }
+      function keyUp(event){cameraKeys.delete(event.key.toLowerCase());}
+      function clearKeys(){cameraKeys.clear();}
+      window.addEventListener('keydown',keyDown);
+      window.addEventListener('keyup',keyUp);
+      window.addEventListener('blur',clearKeys);
+      element.addEventListener('pointermove',hover);
       element.addEventListener('contextmenu',right);
       element.addEventListener('pointercancel',cancel);
       function wheel(event) {
@@ -363,6 +409,10 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       element.addEventListener('pointerup',up); element.addEventListener('wheel',wheel,{passive:false});
       cleanup=()=>{
         snapshots.current.delete(receive);
+        window.removeEventListener('keydown',keyDown);
+        window.removeEventListener('keyup',keyUp);
+        window.removeEventListener('blur',clearKeys);
+        element.removeEventListener('pointermove',hover);
         element.removeEventListener('contextmenu',right);element.removeEventListener('pointercancel',cancel);
         element.removeEventListener('pointerdown',down);element.removeEventListener('pointermove',move);
         element.removeEventListener('pointerup',up);element.removeEventListener('wheel',wheel);
@@ -377,7 +427,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
     <button aria-pressed={showCrossings} title="Show provisional river crossing points" onClick={()=>setShowCrossings(!showCrossings)}>Crossings</button>
     <button onClick={()=>{if(document.fullscreenElement) document.exitFullscreen(); else document.querySelector('main')?.requestFullscreen?.();}}>Full screen</button>
   </div><div className="compass" aria-hidden="true">N<br/>✥</div>
-  <div className="legend">{register?'Historical register':'Campaign districts'} <small>Drag to pan · Scroll to zoom · Left-click to travel · Right-click to deselect</small>{showCrossings&&<small>Dots mark provisional game crossings. Grey flags indicate unknown affiliation.</small>}</div>
+  <div className="legend">{register?'Historical register':'Campaign districts'} <small>Drag to pan · WASD pans · Scroll zooms · Left-click to travel · Right-click to deselect</small>{showCrossings&&<small>Gold tracks and bridge symbols show provisional gameplay routes and crossings.</small>}</div>
   <a className="credit" href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noreferrer">Terrain · Mapzen / USGS / NOAA</a>
   {error&&<p className="error">Map could not load. {error}</p>}</section>;
 }
@@ -410,12 +460,12 @@ function Atlas() {
   const inReach=inspectedParty&&metres(locationOf(world.parties[0]),locationOf(inspectedParty))<=4000;
   function inspectParty(id){
     setMeeting(null);setInspect(id);
-    const party=world.parties.find(p=>p.id===id&&id!=='player');
-    if(party&&metres(locationOf(world.parties[0]),locationOf(party))<=4000){
-      send({type:'speed',value:0});
-      setMeeting('talk');
-    }
+    if(id&&id!=='player')send({type:'approach-party',party:id});
   }
+  useEffect(()=>{
+    if(!world.partyMeeting)return;
+    setInspect(world.partyMeeting.party);setMeeting('talk');
+  },[world.partyMeeting?.party,world.partyMeeting?.tick]);
   useEffect(()=>{
     if(!meeting)return;
     const close=event=>{if(event.key==='Escape'){setMeeting(null);setInspect(null);}};

@@ -1,7 +1,7 @@
 import {TradeScreen} from './TradeScreen.jsx';
 import {ItemIcon} from './ItemIcon.jsx';
 import {SettlementServices} from './SettlementServices.jsx';
-import {marchBudget,settlementServices} from '../../../packages/sim/src/company.ts';
+import {foodPerDay,marchBudget,settlementServices} from '../../../packages/sim/src/company.ts';
 import React, {useState,useEffect} from 'react';
 import {goods} from '../../../packages/sim/src/economy.ts';
 import {Encyclopedia} from './Encyclopedia.jsx';
@@ -27,7 +27,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
   const e=world.economy,p=world.parties[0],local=!p.path.length&&!p.motion;
   const site=byId.get(p.node), service=settlementServices[p.node];
   const company=world.company, mounted=company?.mounted??0, guards=world.encounter?.guards??3;
-  const march=e&&marchBudget(p.pace,guards,mounted,e.inventory);
+  const march=e&&marchBudget('steady',guards,mounted,e.inventory,company?.health??100);
   const power=id=>({polity_nizam_shahi:'Nizam Shahi',polity_adil_shahi:'Adil Shahi',polity_mughal:'Mughal',polity_portuguese:'Portuguese'}[id]??(id?id.replace(/^polity_/,'').replaceAll('_',' '):'Unknown'));
   useEffect(()=>{
     if(arrival && byId.has(arrival.id)) setPage(current=>current??'Settlement');
@@ -55,7 +55,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
       <div className={'inventory-layout'+(portrait?'':' portrait-hidden')}>
         <section><h2>Equipment</h2><div className="item-row"><span>♙</span><b>Personal clothing</b></div><div className="item-row"><span>▣</span><b>Travel pack</b></div></section>
         {portrait&&<CompanyPortrait identity={world.identity}/>}
-        <section><h2>Your stores</h2>{goods.map(g=><details className="trade-entry" key={g}><summary><ItemIcon kind={g}/><b>{g}</b><span>{e.inventory[g]}</span></summary><p>{g==='wood'?'Two load units each':'One load unit each'}</p></details>)}<p>Coin · {e.gold}</p></section>
+        <section><h2>Your stores</h2>{goods.map(g=><details className="trade-entry" key={g}><summary><ItemIcon kind={g}/><b>{g}</b><span>{e.inventory[g]??0}</span></summary><p>{g==='wood'?'Two load units each':'One load unit each'}</p></details>)}<p>Coin · {e.gold}</p></section>
       </div>
       <footer className="roster-footer"><button onClick={()=>setPortrait(!portrait)}>{portrait?'Hide portrait':'Show portrait'}</button><button onClick={()=>setPage(null)}>Done</button></footer>
     </>}
@@ -65,13 +65,13 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
         {portrait&&<CompanyPortrait identity={world.identity} role="Company leader"/>}
         <section><h2>Your company · {1+(world.encounter?.guards??3)}</h2>
           <div className="item-row"><span>⚑</span><b>{world.identity?.name}</b><span>1</span></div>
-          {[['foot','Foot guards',guards-mounted],['mounted','Mounted scouts',mounted]].map(([id,name,count])=>
+          {[['foot','Foot guards',guards-mounted],['mounted','Mounted scouts',mounted]].filter(([, ,count])=>count>0).map(([id,name,count])=>
             <details className="trade-entry" key={id}><summary><img className="troop-icon" src={id==='mounted'?'/art/campaign-rider.webp':'/art/foot-guard.webp'} alt=""/><b>{name} · {count-dismiss[id]}</b></summary>
               <button disabled={count<=dismiss[id]} onClick={()=>setDismiss({...dismiss,[id]:dismiss[id]+1})}>← Queue dismissal</button><button disabled={!dismiss[id]} onClick={()=>setDismiss({...dismiss,[id]:dismiss[id]-1})}>Undo one</button></details>)}
           {company?.companions.map(id=>{const contact=settlementServices[id]?.meetingHouse;return contact&&<div className="item-row" key={id}><span>◇</span><b>{contact.name}</b><span>{contact.role}</span></div>;})}
-          {march&&<p>March · {(march.total/1000).toFixed(2)} km/h before terrain<br/><small>Base {(march.base/1000).toFixed(2)} + mounted {(march.cavalry/1000).toFixed(2)} − cargo {(march.penalty/1000).toFixed(2)} · Load {march.load}/{march.capacity}</small></p>}
+          {march&&<p>March · {(march.total/1000).toFixed(2)} km/h before terrain<br/><small>Base {(march.base/1000).toFixed(2)} + mounted {(march.cavalry/1000).toFixed(2)} − cargo {(march.penalty/1000).toFixed(2)} − fatigue {(march.fatigue/1000).toFixed(2)} · Load {march.load}/{march.capacity}</small></p>}
           <p>{p.motion?'On the march':'Camp · '+(byId.get(p.node)?.name??'Open country')}</p>
-          <label>March pace <select value={p.pace} onChange={e=>send({type:'pace',value:e.target.value})}><option value="steady">Steady</option><option value="swift">Swift</option></select></label>
+          <p>Food use · {foodPerDay(guards,company?.companions.length??0)} per day · Health {company?.health??100}%</p>
         </section>
       </div>
       <footer className="roster-footer"><button onClick={()=>setPortrait(!portrait)}>{portrait?'Hide portrait':'Show portrait'}</button><button onClick={()=>open(null)}>Cancel</button><button onClick={()=>{if(dismiss.foot||dismiss.mounted)send({type:'confirm-dismiss',counts:dismiss});open(null);}}>Done{dismiss.foot+dismiss.mounted>0?' · Dismiss '+(dismiss.foot+dismiss.mounted):''}</button></footer>
@@ -82,14 +82,14 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
       {site&&<p className="settlement-allegiance">Sovereignty · {power(site.ownership?.sovereign_polity_id)}<br/>Local control · {power(site.ownership?.controller_polity_id)}{site.confidence&&<><br/>Record confidence · {site.confidence}</>}</p>}</div>{!local?<p>Arrive before entering the settlement.</p>:<>
       <div className="settlement-actions">
         {service&&<button onClick={()=>open('Recruitment')}>Recruit troops</button>}
-        {service?.meetingHouse&&<button onClick={()=>open('Meeting house')}>Visit the meeting house</button>}
+        {service?.meetingHouse&&<button onClick={()=>open('Sarai')}>Visit the sarai</button>}
         {e?.markets[p.node]&&<button onClick={()=>open('Trade')}>Visit the market</button>}
         {p.node==='site_saswad'&&<button onClick={()=>open('Talk')}>Talk to the local supplier</button>}
         {p.node===raiderSite&&<button onClick={()=>open('Encounter')}>{world.encounter?.resolved?'Read the encounter report':'Investigate the raiders'}</button>}
         <button onClick={()=>{send({type:'wait',hours:6});setPage(null);}}>Wait here · 6 hours</button>
         <button onClick={()=>setPage(null)}>Leave</button>
       </div>{byId.has(p.node)&&<img className="settlement-illustration" src={byId.get(p.node).kind==='fort'?'/art/fort-token.webp':'/art/village-token.webp'} alt="Illustration of the settlement type"/>}</>}</>}
-    {['Recruitment','Meeting house'].includes(page)&&<SettlementServices key={page+':'+p.node} page={page} site={p.node} world={world} local={local} send={send} onBack={()=>open('Settlement')}/>}
+    {['Recruitment','Sarai'].includes(page)&&<SettlementServices key={page+':'+p.node} page={page} site={p.node} world={world} local={local} send={send} onBack={()=>open('Settlement')}/>}
     {page==='Talk'&&<div className="conversation"><div><img src="/art/saswad-supplier.webp" alt="Fictional local supplier"/><h2>Local supplier</h2><small>Saswad · Relation {world.relations?.supplier??0}</small></div><section><p className="eyebrow">A conversation in Saswad</p><blockquote>{e?.quest?.status==='completed'?'Your supplies have arrived. Here is your payment. You have our thanks.':e?.quest?.status==='failed'?'The deadline has passed. We had to seek help elsewhere.':topic==='greeting'?'Welcome, traveller. The settlement needs supplies. Can your company help?':'Bring twenty grain and fifty wood within four days. I can offer nine hundred coin when you deliver.'}</blockquote>
     <div className="dialogue-options"><button onClick={()=>setTopic('request')}>What supplies do you need?</button><button disabled={!local||p.node!=='site_saswad'||['completed','failed'].includes(e?.quest?.status)} onClick={()=>{send({type:'quest'});setTopic('request');}}>{e?.quest?'I brought the supplies.':'I will bring them.'}</button><button onClick={()=>open('Trade')}>Let me see your market.</button><button onClick={()=>open('Settlement')}>We will speak another time.</button></div><p role="status">{e?.notice}</p></section></div>}
     {page==='Encounter'&&world.encounter&&<div className="conversation encounter"><div><img src="/art/campaign-rider.webp" alt="Illustrated company rider"/><h2>Kondhana approaches</h2></div><section><p className="eyebrow">Fictional encounter</p>

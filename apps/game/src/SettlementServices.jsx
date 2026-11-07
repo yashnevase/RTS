@@ -8,7 +8,7 @@ export function SettlementServices({page,site,world,local,send,onBack}) {
   const company=world.company;
   if(!local || !service || !company)return <p>Return to the settlement to use its services.</p>;
   const contact=service.meetingHouse;
-  if(page==='Meeting house' && contact){
+  if(page==='Sarai' && contact){
     const hired=company.companions.includes(site);
     return <div className="service-content">
       <p className="eyebrow">Fictional campaign contact</p>
