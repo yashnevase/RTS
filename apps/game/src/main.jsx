@@ -1,3 +1,5 @@
+import {campaignWeather} from '../../../packages/sim/src/weather.ts';
+import {separateMarker} from '../../../packages/map/src/marker-layout.ts';
 import { affiliation, createFactionOverlay, factions } from './map-factions.js';
 import { TradeScreen } from './TradeScreen.jsx';
 import { anchor, coordinate, metres, route, terrain as navigationTerrain } from '../../../packages/sim/src/navigation.ts';
@@ -287,11 +289,12 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           crossingMarks.roundRect(x-4,y-2.5,8,5,1).fill('#e4ce9f').stroke({color:'#254d58',width:1.4});
         }
         const placed = [];
+        const markerBoxes=[];
         const priority = record => record.id === active?.id ? 3 : hubs.includes(record.id) ? 2 : record.kind === 'fort' ? 1 : 0;
         const order = records.map((record,i)=>({record,i})).sort((a,b)=>priority(b.record)-priority(a.record));
         for (const {record,i} of order) {
           const point = project(record.coordinate);
-          const x=camera.x+point.x*camera.zoom, y=camera.y+point.y*camera.zoom;
+          let x=camera.x+point.x*camera.zoom, y=camera.y+point.y*camera.zoom;
           const visible = shown.has(record.id)&&x>-90&&x<element.clientWidth+90&&y>-50&&y<element.clientHeight+90;
           tokens[i].visible = visible;
           labels[i].visible=false;
@@ -299,7 +302,11 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           if (!visible) continue;
           const icon = tokens[i];
           const width = all ? 24 : (hubs.includes(record.id) ? 104 : record.kind === 'fort' ? 76 : 52)*Math.min(1,.4+camera.zoom*.2);
-          icon.position.set(x,y); icon.width=width; icon.height=width*icon.texture.height/icon.texture.width;
+          const desired={x,y,width,height:width*icon.texture.height/icon.texture.width};
+          const separated=separateMarker(desired,markerBoxes);markerBoxes.push(separated);
+          if(separated.x!==x||separated.y!==y)marks.moveTo(x,y).lineTo(separated.x,separated.y).stroke({color:0x80623d,width:1,alpha:.6});
+          x=separated.x;y=separated.y;
+          icon.position.set(x,y); icon.width=width; icon.height=desired.height;
           const faction=factions[affiliation(record)];
           if (hubs.includes(record.id) || record.kind === 'fort') {
             const flag=faction?.color??0x777067;
@@ -446,7 +453,8 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
     })().catch(e=>{if(!disposed)setError(e.message);});
     return ()=>{disposed=true;cleanup();controls.current=null;if(app.renderer)app.destroy(true);};
   },[]);
-  return <section className="map"><div className="viewport" ref={host}/><div className="tools">
+  const weather=campaignWeather(world.tick,world.parties[0].point?.longitude??74);
+  return <section className="map"><div className="viewport" ref={host}/><div className={'map-weather'+(weather.night?' night':'')+(weather.rain?' rain':'')+(weather.fog?' fog':'')} aria-hidden="true"/><div className="weather-label">{weather.label} · Travel {weather.movementPercent}%</div><div className="tools">
     <button onClick={()=>controls.current?.zoom(1.4)} aria-label="Zoom in">+</button>
     <button onClick={()=>controls.current?.zoom(1/1.4)} aria-label="Zoom out">−</button>
     <button onClick={()=>controls.current?.home()}>Fit region</button>

@@ -1,3 +1,4 @@
+import {campaignWeather} from '../../../packages/sim/src/weather.ts';
 import {marchBudget,settlementServices} from '../../../packages/sim/src/company.ts';
 import {cell,terrain} from '../../../packages/sim/src/navigation.ts';
 import {monthlyWages} from '../../../packages/sim/src/clan.ts';
@@ -41,7 +42,7 @@ export function Clock({world,send,follow,setFollow,onLocate}){
  const payroll=monthlyWages((world.encounter?.guards??3)-(world.company?.mounted??0),world.company?.mounted??0,world.company?.companions.length??0)+detached;
  const budget=inventory?marchBudget('steady',world.encounter?.guards??3,world.company?.mounted??0,inventory,world.company?.health??100):null;
  const terrainCost=terrain.cost[cell(world.parties[0].point??{latitude:18.52,longitude:73.857})]??10;
- const speed=budget?(budget.total/1000/(Math.max(10,terrainCost)/10)).toFixed(2):'—';
+ const speed=budget?(budget.total/1000/(Math.max(10,terrainCost)/10)*campaignWeather(world.tick,world.parties[0].point?.longitude??74).movementPercent/100).toFixed(2):'—';
  const status=world.waitUntil!==null?'Waiting · '+(world.waitUntil-world.tick)+'h left':world.notice;
  return <>
   <div className="campaign-status">{status}</div>

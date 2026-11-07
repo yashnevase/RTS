@@ -1,3 +1,4 @@
+import {campaignWeather} from '../../../packages/sim/src/weather.ts';
 import {createCharacter} from '../../../packages/sim/src/character.ts';
 import {choosePartyDestination} from '../../../packages/sim/src/party-planner.ts';
 import {recordBalance} from '../../../packages/sim/src/ledger.ts';
@@ -105,7 +106,7 @@ function hourly(){
    p.trail=null;
    if(!p.motion || p.id==='player'&&world.waitUntil!==null)continue;
    const budget=p.id==='player'?marchBudget('steady',world.encounter.guards,world.company.mounted,world.economy.inventory,world.company.health).total:4000;
-   const {arrived,trace}=advanceMotion(p.motion,budget);
+   const {arrived,trace}=advanceMotion(p.motion,Math.floor(budget*campaignWeather(world.tick,p.point.longitude).movementPercent/100));
    p.trail=trace;
    p.point=position(p.motion);
    if(arrived){
