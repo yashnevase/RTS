@@ -1,6 +1,6 @@
 # Deccan Warlords — historical data
 
-Current stage: M1 campaign atlas preview. Run `npm run dev` and open the local URL. Select a district to inspect its seat, nearby forts and support places. **Register** opens the full catalog. See [the M1 report](docs/progress/M1_report.md) for limitations and the verified browser view.
+Current stage: M2 campaign movement preview. Run `npm run dev` and open the local URL. Select a district to inspect its seat, nearby forts and support places. **Register** opens the full catalog. Select a reachable place and choose **Travel here**. The clock supports pause, 1×, 2× and 4×. See [the M2 report](docs/progress/M2_report.md) for travel controls, route assumptions and browser evidence.
 
 - [Design decisions and open questions](docs/DECISIONS.md)
 - [Game design](docs/GAME_DESIGN.md)

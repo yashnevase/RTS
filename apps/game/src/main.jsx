@@ -4,13 +4,15 @@ import { Application, Sprite, Assets, Graphics, Text } from 'pixi.js';
 import { byId, records, hubs, districts, districtOf, visibleIds } from './places.js';
 import { project, mapSize } from '../../../packages/map/src/index.ts';
 import { homeCamera, zoomAt, reserveLabel } from '../../../packages/map/src/camera.ts';
+import { CampaignPanel, locationOf, useCampaign } from './Campaign.jsx';
+import { edges } from '../../../packages/sim/src/travel.ts';
 import './style.css';
 
-function MapView({ selected, onSelect, visible, hub, register }) {
+function MapView({ selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, follow }) {
   const host = useRef(null);
   const controls = useRef(null);
-  const latest = useRef({selected, onSelect, visible, hub, register});
-  latest.current = {selected, onSelect, visible, hub, register};
+  const latest = useRef({selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, follow});
+  latest.current = {selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, follow};
   const [error, setError] = useState('');
   useEffect(() => {
     let disposed = false;
@@ -24,6 +26,10 @@ function MapView({ selected, onSelect, visible, hub, register }) {
       const [texture, fortArt, townArt] = await Promise.all(['/terrain/maharashtra-goa.webp','/art/fort-token.webp','/art/village-token.webp'].map(path => Assets.load(path)));
       if (disposed) return;
       const terrain = new Sprite(texture);
+      const detail = new Sprite(await Assets.load('/terrain/pune-marches.webp'));
+      if (disposed) return;
+      const detailNW=project({longitude:73.35,latitude:19.35});
+      const detailSE=project({longitude:75,latitude:18});
       const marks = new Graphics();
       const tokens = records.map(record => {
         const token = new Sprite(record.kind === 'fort' ? fortArt : townArt);
@@ -37,12 +43,27 @@ function MapView({ selected, onSelect, visible, hub, register }) {
         return label;
       });
       app.stage.addChildAt(terrain,0);
-      app.stage.addChildAt(marks,1);
+      app.stage.addChildAt(detail,1);
+      app.stage.addChildAt(marks,2);
       let camera = homeCamera(element.clientWidth, element.clientHeight);
       let drag = null;
       let moved = false;
       let previousSelection = null;
       let previousFrame = null;
+      let lastLocate = null;
+      const positions=latest.current.world.parties.map(party=>{
+        const {x,y}=project(locationOf(party));
+        return {x,y,drawX:x,drawY:y,tick:0,start:0};
+      });
+      const banners = latest.current.world.parties.map(party => {
+        const label = new Text({text:party.id==='player'?'⚑ Your company':'♟ '+party.name, style:{
+          fontFamily:'Georgia',fontWeight:'bold',fontSize:14,fill:party.id==='player'?'#fff1ba':'#e7e3cf',
+          stroke:{color:'#352a1a',width:4}}});
+        label.eventMode='static';label.cursor='pointer';
+        label.on('pointertap',()=>latest.current.onInspect(party.id));
+        app.stage.addChild(label);
+        return label;
+      });
       function home() { camera = homeCamera(element.clientWidth,element.clientHeight); }
       function zoom(factor, x=element.clientWidth/2, y=element.clientHeight/2) {
         camera = zoomAt(camera,x,y,factor,homeCamera(element.clientWidth,element.clientHeight).zoom);
@@ -59,14 +80,61 @@ function MapView({ selected, onSelect, visible, hub, register }) {
             camera.y = element.clientHeight/2-point.y*camera.zoom;
           }
         }
-        const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,district,all,shown.size,[...shown][0]].join('|');
+        const {world, locate, inspect} = latest.current;
+        if (locate && locate !== lastLocate) {
+          lastLocate = locate;
+          const point = project(locationOf(world.parties.find(p=>p.id===locate.id)));
+          camera.x=element.clientWidth/2-point.x*camera.zoom;
+          camera.y=element.clientHeight/2-point.y*camera.zoom;
+        }
+        const partyBoxes=[];
+        for (const [i,party] of world.parties.entries()) {
+          const flag=banners[i];
+          flag.visible=!all;
+          const target=project(locationOf(party));
+          const display=positions[i];
+          if(display.tick!==world.tick) {
+            display.x=display.drawX; display.y=display.drawY;
+            display.tick=world.tick;display.start=performance.now();
+          }
+          const progress=world.speed ? Math.min(1,(performance.now()-display.start)/(900/world.speed)) : 1;
+          display.drawX=display.x+(target.x-display.x)*progress;
+          display.drawY=display.y+(target.y-display.y)*progress;
+          flag.position.set(camera.x+display.drawX*camera.zoom+4,camera.y+display.drawY*camera.zoom-35-(i===0?8:0));
+          while (partyBoxes.some(box=>Math.abs(flag.x-box.x)<Math.max(box.width,flag.width) && Math.abs(flag.y-box.y)<20)) flag.y-=21;
+          partyBoxes.push({x:flag.x,y:flag.y,width:flag.width});
+          flag.alpha=party.id===inspect||party.id==='player'?1:.85;
+        }
+        if (latest.current.follow) {
+          const player=positions[0];
+          camera.x=element.clientWidth/2-player.drawX*camera.zoom;
+          camera.y=element.clientHeight/2-player.drawY*camera.zoom;
+        }
+        const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,world.tick,world.parties[0].path.join(),inspect,district,all,shown.size,[...shown][0]].join('|');
         if (signature === previousFrame) return;
         previousFrame = signature;
         terrain.position.set(camera.x,camera.y);
         terrain.width = mapSize.width*camera.zoom;
         terrain.height = mapSize.height*camera.zoom;
+        detail.position.set(camera.x+detailNW.x*camera.zoom,camera.y+detailNW.y*camera.zoom);
+        detail.width=(detailSE.x-detailNW.x)*camera.zoom;
+        detail.height=(detailSE.y-detailNW.y)*camera.zoom;
+        detail.alpha=Math.min(1,Math.max(0,camera.zoom-1));
         marks.clear();
         const placed = [];
+        const screenPoint = record => {
+          const p=project(record.coordinate);
+          return [camera.x+p.x*camera.zoom,camera.y+p.y*camera.zoom];
+        };
+        if(!all) {
+          const path=world.parties[0].path;
+          const route=new Set(path.map((id,i)=>[i?path[i-1]:world.parties[0].node,id].sort().join('/')));
+          for(const edge of edges) {
+            const active=route.has([edge.a,edge.b].sort().join('/'));
+            marks.moveTo(...screenPoint(byId.get(edge.a))).lineTo(...screenPoint(byId.get(edge.b)))
+              .stroke({color:active?0xf9db7f:0x684d25,width:active?3:1,alpha:active ? .95 : .45});
+          }
+        }
         if (!all) {
           for (const [fort, satellites] of Object.entries(districts[district] ?? {})) {
             for (const [start,end] of [[district,fort], ...satellites.map(id => [fort,id])]) {
@@ -104,27 +172,40 @@ function MapView({ selected, onSelect, visible, hub, register }) {
         }
       }
       app.ticker.add(draw);
-      function down(event) { element.setPointerCapture(event.pointerId); drag={x:event.clientX,y:event.clientY}; moved=false; }
+      function down(event) { if(event.button!==0) return; element.setPointerCapture(event.pointerId); drag={x:event.clientX,y:event.clientY}; moved=false; }
       function move(event) {
         if(!drag) return;
         const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
         if(Math.abs(dx)+Math.abs(dy)>2) moved=true;
         camera.x+=dx; camera.y+=dy; drag={x:event.clientX,y:event.clientY};
       }
-      function up(event) {
-        if(!drag) return;
-        drag=null;
-        if(moved) return;
+      function hit(event, order=false) {
         const bounds=element.getBoundingClientRect();
         const x=event.clientX-bounds.left,y=event.clientY-bounds.top;
+        if (!order && !latest.current.register) {
+          const i=banners.findIndex(flag=>flag.visible && x>=flag.x && x<=flag.x+flag.width && y>=flag.y && y<=flag.y+flag.height);
+          if(i>=0) { latest.current.onInspect(latest.current.world.parties[i].id); return; }
+        }
         const nearby=records.filter(r=>latest.current.visible.has(r.id)).map(record=>{
           const token=tokens[records.indexOf(record)];
           const dx=Math.max(0,Math.abs(x-token.x)-token.width/2);
           const dy=Math.max(0,token.y-token.height-y,y-token.y);
           return {record,distance:Math.hypot(dx,dy)};
         }).filter(r=>r.distance<16).sort((a,b)=>a.distance-b.distance);
-        if(nearby.length) latest.current.onSelect(nearby[0].record);
+        if(nearby.length) {
+          if(order) latest.current.onOrder(nearby[0].record);
+          else latest.current.onSelect(nearby[0].record);
+        }
       }
+      function up(event) {
+        if(!drag) return;
+        drag=null;
+        if(!moved) hit(event);
+      }
+      function right(event) { event.preventDefault(); if(!latest.current.register) hit(event,true); }
+      function cancel() { drag=null; }
+      element.addEventListener('contextmenu',right);
+      element.addEventListener('pointercancel',cancel);
       function wheel(event) {
         event.preventDefault(); const bounds=element.getBoundingClientRect();
         zoom(Math.exp(-event.deltaY*.001),event.clientX-bounds.left,event.clientY-bounds.top);
@@ -132,6 +213,7 @@ function MapView({ selected, onSelect, visible, hub, register }) {
       element.addEventListener('pointerdown',down); element.addEventListener('pointermove',move);
       element.addEventListener('pointerup',up); element.addEventListener('wheel',wheel,{passive:false});
       cleanup=()=>{
+        element.removeEventListener('contextmenu',right);element.removeEventListener('pointercancel',cancel);
         element.removeEventListener('pointerdown',down);element.removeEventListener('pointermove',move);
         element.removeEventListener('pointerup',up);element.removeEventListener('wheel',wheel);
       };
@@ -142,8 +224,9 @@ function MapView({ selected, onSelect, visible, hub, register }) {
     <button onClick={()=>controls.current?.zoom(1.4)} aria-label="Zoom in">+</button>
     <button onClick={()=>controls.current?.zoom(1/1.4)} aria-label="Zoom out">−</button>
     <button onClick={()=>controls.current?.home()}>Fit region</button>
+    <button onClick={()=>{if(document.fullscreenElement) document.exitFullscreen(); else document.querySelector('main')?.requestFullscreen?.();}}>Full screen</button>
   </div><div className="compass" aria-hidden="true">N<br/>✥</div>
-  <div className="legend">{register?'Historical register':'Campaign districts'} <small>Drag to pan · Scroll to zoom</small></div>
+  <div className="legend">{register?'Historical register':'Campaign districts'} <small>Drag to pan · Scroll to zoom · Right-click a place to travel</small></div>
   <a className="credit" href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noreferrer">Terrain · Mapzen / USGS / NOAA</a>
   {error&&<p className="error">Map could not load. {error}</p>}</section>;
 }
@@ -159,27 +242,35 @@ function Authority({record}) {
 }
 
 function Atlas() {
+  const {world,send}=useCampaign();
+  const [follow,setFollow]=useState(false);
+  const [inspect,setInspect]=useState('player');
+  const [locate,setLocate]=useState(null);
   const [selected,setSelected]=useState(byId.get('site_pune'));
   const [hub,setHub]=useState('site_pune');
   const [register,setRegister]=useState(false);
   const [query,setQuery]=useState('');
   const [kind,setKind]=useState('all');
   const visible = visibleIds(hub,register);
+  if (!register) visible.add('site_khirki');
   if (register && kind!=='all') for (const id of visible) if(byId.get(id).kind!==kind) visible.delete(id);
   function select(record) {
+    setFollow(false);
     setSelected({...record});
     setHub(districtOf(record.id) ?? hub);
   }
   function changeMode(value) {
+    setFollow(false);
     setRegister(value);setKind('all');setQuery('');
     if(!value) select(byId.get(hub));
   }
   const results=records.filter(r => visible.has(r.id) && (register || hubs.includes(r.id)) &&
     (r.name+' '+r.id).toLowerCase().includes(query.trim().toLowerCase()));
   return <main><header><div className="brand"><h1>Deccan Warlords</h1></div><div className="edition">Campaign atlas<span>Maharashtra &amp; Goa · 1622</span></div></header>
-    <div className="layout"><MapView selected={selected} onSelect={select} visible={visible} hub={hub} register={register}/>
+    <div className="layout"><MapView selected={selected} onSelect={select} visible={visible} hub={hub} register={register} world={world} inspect={inspect} onInspect={id=>{setInspect(id);document.querySelector('.march')?.scrollIntoView({block:'nearest'});}} locate={locate} follow={follow} onOrder={record=>{select(record);send({type:"travel",to:record.id});}}/>
     <aside><div className="chapter"><div className="eyebrow">Western Deccan</div><h2>{register?'Historical register':'Settlement districts'}</h2></div>
     <nav><button aria-pressed={!register} onClick={()=>changeMode(false)}>Campaign</button><button aria-pressed={register} onClick={()=>changeMode(true)}>Register</button></nav>
+    {!register && <CampaignPanel world={world} send={send} selected={selected} inspect={inspect} setInspect={setInspect} follow={follow} setFollow={setFollow} onLocate={id=>{setFollow(false);setLocate({id});}}/>}
     {register?<><input aria-label="Find a place" placeholder="Find a name or ID…" value={query} onChange={e=>setQuery(e.target.value)}/>
       <div className="filters">{['all','site','fort'].map(k=><button key={k} aria-pressed={kind===k} onClick={()=>setKind(k)}>{k==='all'?'All':k==='site'?'Settlements':'Forts'}</button>)}</div>
       <ul>{results.map(r=><li key={r.id}><button onClick={()=>select(r)}>{r.name}</button></li>)}</ul></>:
