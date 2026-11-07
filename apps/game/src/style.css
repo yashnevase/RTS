@@ -121,3 +121,27 @@ button.entity-link{display:inline;padding:0;margin:0;border:0;background:none;co
 .save-manager>section{display:flex;gap:9px;align-items:center;flex-wrap:wrap;padding:9px;border-bottom:1px solid #bfa170}
 .save-manager>section span{flex:1}.save-manager input[type=file]{display:block}
 .character-stats{text-transform:capitalize}
+:root{--money-debit:#951e17;--money-credit:#205e2b}
+.quote-debit,.company-hud .hud-tooltip .quote-debit{color:var(--money-debit);font-weight:700}
+.company-hud>.quote-debit{color:#ff694f}
+.quote-credit{color:var(--money-credit);font-weight:700}
+.sarai-layout{display:grid;grid-template-columns:minmax(230px,.8fr) minmax(380px,1.7fr);gap:25px}
+.sarai-contact{padding:20px;text-align:center;border:1px solid #b59460;background:linear-gradient(#ecd7ae,#d5b783)}
+.sarai-contact .companion-portrait{float:none;display:block;max-width:100%;width:100%;height:260px;margin:0 auto 14px;object-fit:contain}
+.sarai-contact h2{font-size:29px}.sarai-contact .eyebrow{font-size:10px}
+.sarai-management .troop-return{margin:0;padding:0;border:0}
+.troop-transfer-card{display:grid;grid-template-columns:64px minmax(0,1fr);align-items:center;gap:14px;padding:10px 12px;margin:9px 0;background:#f3e1bc;border:1px solid #b4986a;border-left:3px solid #927045;font:14px system-ui}
+.troop-transfer-card>img{width:64px;height:84px;object-fit:contain}
+.troop-transfer-card strong{font-size:16px}.troop-transfer-card small{display:block;margin:5px 0;color:#705638;font-size:12px}
+.troop-transfer-control{display:flex;align-items:center;gap:8px}
+.troop-transfer-control input{flex:1;min-width:45px;padding:0;margin:0;accent-color:#865b2c}
+.troop-transfer-control button{padding:4px 9px;margin:0;min-width:30px}
+.troop-transfer-control output{min-width:55px;text-align:right;font-variant-numeric:tabular-nums;color:#315875}
+.refund-total{display:flex;justify-content:space-between;padding:12px;background:#e0e4bd;border:1px solid #a6a06e}
+.clan-leader{display:flex;gap:15px;align-items:center;margin-bottom:18px}
+.clan-leader img{width:85px;height:100px;object-fit:cover;border:3px double #9b7946}
+.companion-party-card{background:#f1ddb5;padding:16px!important;overflow:auto}
+.party-leader-art{float:left;width:68px;height:94px;object-fit:contain;margin:0 12px 8px 0}
+.companion-party-card input[type=number]{max-width:130px;padding:7px;margin:6px}
+.clan-layout{font-size:14px}.clan-layout p{line-height:1.55}
+@media(max-width:800px){.sarai-layout,.clan-layout{grid-template-columns:1fr}.sarai-contact .companion-portrait{height:170px}}

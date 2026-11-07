@@ -1,3 +1,4 @@
+import {TroopTransfer} from './TroopTransfer.jsx';
 import {anchor} from '../../../packages/sim/src/navigation.ts';
 import React,{useState} from 'react';
 import {clanRoles,monthlyWages} from '../../../packages/sim/src/clan.ts';
@@ -11,18 +12,18 @@ export function ClanScreen({world,send}){
  const detached=clan.detachments.reduce((sum,d)=>sum+(d.allowance??10),0);
  const bill=monthlyWages(world.encounter.guards-company.mounted,company.mounted,company.companions.length)+detached;
  return <div className="clan-layout">
-  <section><h2>House {world.identity.house}</h2><p>Leader · {world.identity.name}</p>
+  <section><div className="clan-leader"><img src="/art/envoy.webp" alt="Clan leader"/><div><p className="eyebrow">Your clan</p><h2>House {world.identity.house}</h2><p>Leader · {world.identity.name}</p></div></div>
    <p>Monthly payroll · {bill} coin<br/>Next payment in {Math.ceil((720-world.tick%720)/24)} days<br/>Unpaid wages · {clan.arrears}</p>
    <p>Foot guard 1 · Mounted scout 2 · Companion 5 coin per month</p>
    {clanRoles.map(role=><label className="clan-role" key={role}>{role}<select value={clan.roles[role]??''} onChange={e=>send({type:'clan-role',role,member:e.target.value})}><option value="">Unassigned</option>{['player',...free].map(id=><option key={id} value={id}>{name(id)}</option>)}</select></label>)}
    <small>Appointments are saved. Role skill bonuses are still under development.</small>
   </section>
   <section><h2>Companion parties</h2>
-   {clan.detachments.map(d=><article key={d.id}><h3>{name(d.leader)} company</h3><p>{d.foot} foot · {d.mounted} mounted · {d.task}<br/>Purse {d.gold??0} · Food {d.food??0}</p><label>Monthly allowance <input type="number" min="5" max="100" value={d.allowance??10} onChange={e=>send({type:'party-budget',id:d.id,amount:Number(e.target.value)})}/></label><p>{d.decision??'Preparing patrol'}<br/>Party wage debt {d.wageDebt??0}</p><p>Ambition {d.ambition??50} · Generosity {d.generosity??50} · Aggression {d.aggression??35}</p><button onClick={()=>send({type:'recall-party',id:d.id})}>Recall</button><button onClick={()=>send({type:'merge-party',id:d.id})}>Rejoin when nearby</button></article>)}
+   {clan.detachments.map(d=><article className="companion-party-card" key={d.id}><img className="party-leader-art" src={d.leader==='site_pune'?'/art/foot-guard.webp':'/art/campaign-rider.webp'} alt="Companion role illustration"/><h3>{name(d.leader)} company</h3><p>{d.foot} foot · {d.mounted} mounted · {d.task}<br/>Purse {d.gold??0} · Food {d.food??0}</p><label>Monthly allowance <input type="number" min="5" max="100" value={d.allowance??10} onChange={e=>send({type:'party-budget',id:d.id,amount:Number(e.target.value)})}/></label><p>{d.decision??'Preparing patrol'}<br/>Party wage debt {d.wageDebt??0}</p><p>Ambition {d.ambition??50} · Generosity {d.generosity??50} · Aggression {d.aggression??35}</p><button onClick={()=>send({type:'recall-party',id:d.id})}>Recall</button><button onClick={()=>send({type:'merge-party',id:d.id})}>Rejoin when nearby</button></article>)}
    <label>Party leader <select value={leader} onChange={e=>setLeader(e.target.value)}><option value="">Choose a companion</option>{free.map(id=><option key={id} value={id}>{name(id)}</option>)}</select></label>
-   <label className="quantity-slider">Foot guards<input type="range" min="0" max={world.encounter.guards-company.mounted} value={foot} onChange={e=>setFoot(Number(e.target.value))}/><output>{foot}</output></label>
-   <label className="quantity-slider">Mounted scouts<input type="range" min="0" max={company.mounted} value={mounted} onChange={e=>setMounted(Number(e.target.value))}/><output>{mounted}</output></label>
-   <button disabled={!leader||!foot&&!mounted||!!world.parties[0].motion||!anchor(world.parties[0].node)} onClick={()=>{send({type:'create-party',leader,foot,mounted});setLeader('');setFoot(0);setMounted(0);}}>Create patrol party</button>
+   <TroopTransfer type="foot" count={foot} max={world.encounter.guards-company.mounted} onChange={setFoot}/>
+   <TroopTransfer type="mounted" count={mounted} max={company.mounted} onChange={setMounted}/>
+   <button disabled={!leader||!foot&&!mounted||!!world.parties[0].motion||!anchor(world.parties[0].node)} onClick={()=>{send({type:'create-party',leader,foot:Math.min(foot,world.encounter.guards-company.mounted),mounted:Math.min(mounted,company.mounted)});setLeader('');setFoot(0);setMounted(0);}}>Create patrol party</button>
    <p>Parties choose markets for resupply or patrol according to food, funds, relations and distance. Recall orders them back toward you. Each receives a starting purse and food, buys provisions locally, and receives a monthly allowance.</p>
   </section>
  </div>;
