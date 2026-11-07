@@ -35,7 +35,7 @@ export function Clock({world,send,follow,setFollow,onLocate}){
  const entries=world.ledger??[];
  const recent=entries.filter(entry=>entry.tick>world.tick-168);
  const incoming=recent.reduce((sum,e)=>sum+Math.max(0,e.change),0),outgoing=recent.reduce((sum,e)=>sum+Math.max(0,-e.change),0);
- const detached=(world.clan?.detachments??[]).reduce((sum,d)=>sum+monthlyWages(d.foot,d.mounted,0),0);
+ const detached=(world.clan?.detachments??[]).reduce((sum,d)=>sum+(d.allowance??10),0);
  const payroll=monthlyWages((world.encounter?.guards??3)-(world.company?.mounted??0),world.company?.mounted??0,world.company?.companions.length??0)+detached;
  const status=world.waitUntil!==null?'Waiting · '+(world.waitUntil-world.tick)+'h left':world.notice;
  return <>
