@@ -18,15 +18,15 @@ export function Clock({world,send,follow,setFollow,onLocate}){
    if(['1','2','3'].includes(e.key))send({type:'speed',value:{1:1,2:2,3:4}[e.key]});
   };window.addEventListener('keydown',handler);return()=>window.removeEventListener('keydown',handler);
  },[world.speed,world.started,send]);
- const player=world.parties[0];
+ const inventory=world.economy?.inventory;
  const status=world.waitUntil!==null?'Waiting · '+(world.waitUntil-world.tick)+'h left':world.notice;
  return <>
   <div className="campaign-status" role="status">{status}</div>
   <div className="company-hud" aria-label="Company status">
    <span title="Coin"><i aria-hidden="true">◉</i> {world.economy?.gold??600}</span>
    <span title="Company strength"><i aria-hidden="true">⚔</i> {1+(world.encounter?.guards??3)}</span>
-   <span title="Grain in stores"><i aria-hidden="true">♧</i> {world.economy?.inventory.grain??0}</span>
-   <span title="March pace"><i aria-hidden="true">➤</i> {player.pace==='swift'?'Swift':'Steady'}</span>
+   <span title="Food in stores"><i aria-hidden="true">♧</i> {(inventory?.grain??0)+(inventory?.rice??0)+(inventory?.fish??0)}</span>
+   <span title="Company health" className={(world.company?.health??100)<60?'quote-debit':''}>♥ {world.company?.health??100}%</span>
    <button onClick={onLocate} title="Center on your company">Find</button>
    <button aria-pressed={follow} onClick={()=>setFollow(!follow)}>Follow</button>
   </div>

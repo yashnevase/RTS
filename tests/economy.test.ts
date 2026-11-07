@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createEconomy,trade,questAction,economyHour,merchantVisit,price,previewTrade,caravanEconomy,deliverGrain} from '../packages/sim/src/economy.ts';
+import {createEconomy,trade,questAction,economyHour,merchantVisit,price,previewTrade,caravanEconomy,deliverGrain,profitableDestinations} from '../packages/sim/src/economy.ts';
 test('trade transfers stock and money atomically and rejects unaffordable purchases',()=>{
  const e=createEconomy(),m=e.markets.site_pune,total=e.gold+m.money;
  trade(e,'site_pune','grain',true);
@@ -85,4 +85,22 @@ test('scarcity raises quotes, deliveries ease them and market storage is capped'
  market.stock.grain=market.target.grain*3;
  assert.equal(trade(economy,node,'grain',false,1),undefined);
  assert.equal(price(market,'grain'),3);
+});
+
+test('weekly prices ignore small daily movements but react to a large stock shock',()=>{
+ const e=createEconomy(), market=e.markets.site_pune;
+ const initial=price(market,'grain');
+ economyHour(e,24);economyHour(e,48);
+ assert.equal(price(market,'grain'),initial);
+ market.stock.grain=45;
+ assert.ok(price(market,'grain')>initial);
+ economyHour(e,168);
+ assert.equal(market.referenceStock?.grain,market.stock.grain);
+});
+
+test('profitable routes exclude losses and use the full selected quantity',()=>{
+ const e=createEconomy();
+ assert.ok(profitableDestinations(e,'site_chaul','fish',10,0).some(route=>route.id==='site_ahmadnagar'));
+ assert.deepEqual(profitableDestinations(e,'site_ahmadnagar','fish',3,0),[]);
+ assert.ok(profitableDestinations(e,'site_chaul','fish',20,0).every(route=>route.profit>0));
 });

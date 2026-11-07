@@ -90,3 +90,17 @@ aside{background:linear-gradient(120deg,#f7e6c3da,#d7bb85de),url('/art/paper.web
 .roadside-dialogue button{margin:4px 8px 0 0}
 @keyframes roadside-idle{50%{transform:translateY(-4px) rotate(.6deg)}}
 @media(prefers-reduced-motion:reduce){.roadside-character{animation:none}}
+.market-layout{font-family:system-ui,sans-serif;gap:16px}
+.market-layout h2{font-size:17px}
+.trade-entry summary{font-size:15px}
+.trade-entry summary span{color:#245577;font-weight:600}
+.profit-routes{margin:8px 0;padding:8px 10px;background:#deebd8;color:#24552d;border-left:3px solid #608052;font:13px system-ui}
+.profit-routes summary{font-weight:600}.profit-routes strong{color:#1b6434}.profit-routes ul{margin:5px 0}
+.profit-routes li{display:flex;justify-content:space-between}
+.quote-debit{color:#a43729}.company-hud .quote-debit{color:#ffa998}.quote-credit{color:#246237}
+.quote-notice:not(:empty){color:#805013}
+.market-ledger{margin-top:8px;color:#245577;font:14px system-ui}
+.market-ledger table{border-collapse:collapse;width:100%;background:#f0ddb6;color:#392a17;margin:8px 0}
+.market-ledger caption{text-align:left;padding:4px 0;color:#665332}
+.market-ledger th,.market-ledger td{padding:5px 8px;border-bottom:1px solid #bdab89;text-align:left}
+.market-ledger td span:first-child{color:#245577}.market-ledger td span:last-child{color:#805013}

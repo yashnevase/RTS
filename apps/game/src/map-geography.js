@@ -56,7 +56,7 @@ export function createMapGeography() {
     const points=river.map(([longitude,latitude])=>({longitude,latitude}));
     line(points,'#677d4b29',4.9);
     line(points,'#686b4e60',1.45);
-    line(points,'#47787ec2',.79);
+    line(points,'#47787ec2',1.35);
     line(points,'#91b3a851',.31);
   }
   return new Sprite(Texture.from(canvas));

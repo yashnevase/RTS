@@ -16,7 +16,7 @@ export const settlementServices: Partial<Record<string, {
 };
 
 export function createCompany() {
-  return { mounted: 0, prisoners: 0, companions: [] as string[], recruits: {} as Record<string, number> };
+  return { mounted: 0, health:100, prisoners: 0, companions: [] as string[], recruits: {} as Record<string, number> };
 }
 type Company = ReturnType<typeof createCompany>;
 
@@ -34,11 +34,27 @@ export function recruit(company: Company, funds: {gold:number}, site: string, tr
   return true;
 }
 
-export function marchBudget(pace:string, guards:number, mounted:number, inventory:{grain:number;wood:number}) {
+export function marchBudget(pace:string, guards:number, mounted:number, inventory:{grain:number;wood:number;rice?:number;fish?:number},health=100) {
   const base=pace==='swift'?5000:4000;
   const cavalry=Math.floor(900*mounted/Math.max(1,guards+1));
-  const load=inventory.grain+inventory.wood*2;
+  const load=inventory.grain+inventory.wood*2+(inventory.rice??0)+(inventory.fish??0);
   const capacity=30+guards*7+mounted*6;
   const penalty=Math.min(1500,Math.max(0,load-capacity)*20);
-  return {base,cavalry,load,capacity,penalty,total:base+cavalry-penalty};
+  const fatigue=Math.floor((100-health)*15);
+  return {base,cavalry,load,capacity,penalty,fatigue,total:base+cavalry-penalty-fatigue};
+}
+
+export function foodPerDay(guards:number,companions:number) {
+ return Math.max(1,Math.ceil((guards+companions+1)/4));
+}
+
+export function feedCompany(company:Company,guards:number,stock:{grain:number;rice?:number;fish?:number}) {
+ let needed=foodPerDay(guards,company.companions.length);
+ for(const good of ['grain','rice','fish'] as const){
+   const taken=Math.min(stock[good]??0,needed);
+   if(taken)stock[good]=(stock[good]??0)-taken;
+   needed-=taken;
+ }
+ company.health=needed?Math.max(0,company.health-20):Math.min(100,company.health+15);
+ return needed===0;
 }
