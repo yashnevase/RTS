@@ -104,3 +104,7 @@ aside{background:linear-gradient(120deg,#f7e6c3da,#d7bb85de),url('/art/paper.web
 .market-ledger caption{text-align:left;padding:4px 0;color:#665332}
 .market-ledger th,.market-ledger td{padding:5px 8px;border-bottom:1px solid #bdab89;text-align:left}
 .market-ledger td span:first-child{color:#245577}.market-ledger td span:last-child{color:#805013}
+.faction-key{display:flex!important;align-items:center;gap:8px;flex-wrap:wrap}
+.faction-key i{display:inline-grid;width:16px;height:16px;place-items:center;border:1px solid #dac498;color:#fff6da;font-style:normal}
+.action-toast{position:absolute;z-index:24;top:68px;left:50%;transform:translateX(-50%);pointer-events:none;font:600 14px system-ui;text-align:center;color:#fff0d2;background:#261d16ee;border:1px solid #c69754;padding:8px 16px;box-shadow:0 4px 16px #0007;border-radius:4px;max-width:70vw}
+.action-toast:empty{visibility:hidden}

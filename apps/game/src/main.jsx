@@ -1,3 +1,4 @@
+import { affiliation, createFactionOverlay, factions } from './map-factions.js';
 import { TradeScreen } from './TradeScreen.jsx';
 import { anchor, coordinate, metres, route, terrain as navigationTerrain } from '../../../packages/sim/src/navigation.ts';
 import React, { useEffect, useRef, useState } from 'react';
@@ -21,6 +22,9 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
   latest.current = {selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, onDeselect, follow, onPan, onArrival};
   const [error, setError] = useState('');
   const [showCrossings,setShowCrossings]=useState(false);
+  const [showFactions,setShowFactions]=useState(true);
+  const factionMode=useRef(true);
+  factionMode.current=showFactions;
   const crossingMode=useRef(false);
   crossingMode.current=showCrossings;
   useEffect(() => {
@@ -43,10 +47,10 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       const terrain = new Sprite(texture);
       const detail = new Sprite(detailArt);
       const geography = createMapGeography();
+      const influence=createFactionOverlay();
       const detailNW=project({longitude:73.35,latitude:19.35});
       const detailSE=project({longitude:75,latitude:18});
       const crossingMarks = new Graphics();
-      const crossingCells=new Set(navigationTerrain.crossings);
       const corridors=[['site_chaul','site_pune'],['site_pune','site_ahmadnagar'],['site_pune','site_saswad'],['site_saswad','fort_purandar'],['site_pune','fort_kondhana']]
         .map(([from,to])=>route(anchor(from),anchor(to))??[]);
       const crossingPoints=navigationTerrain.crossings.map(id=>project(coordinate(id)));
@@ -70,6 +74,13 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       app.stage.addChildAt(marks,3);
       app.stage.addChildAt(crossingMarks,4);
       app.stage.addChildAt(plaques,5+tokens.length);
+      app.stage.addChildAt(influence,3);
+      const badges=records.map(record=>{
+        const badge=new Text({text:factions[affiliation(record)]?.mark??'·',style:{fontFamily:'Georgia',fontSize:11,fill:'#fff6cf',stroke:{color:'#281e15',width:1}}});
+        badge.anchor.set(.5);
+        app.stage.addChild(badge);
+        return badge;
+      });
       let camera = homeCamera(element.clientWidth, element.clientHeight);
       let drag = null;
       let moved = false;
@@ -121,7 +132,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       const partyColors = {villagers:'#93814f',caravan:'#3f7769',patrol:'#7d5640'};
       snapshots.current.add(receive);
       const banners = latest.current.world.parties.map(party => {
-        const label = new Text({text:party.name, style:{
+        const label = new Text({text:({caravan:'◆ ',villagers:'✿ ',patrol:'⚔ '}[party.id]??'')+party.name, style:{
           fontFamily:'Georgia',fontWeight:'bold',fontSize:13,fill:'#f8e4b8'}});
         app.stage.addChild(label);
         const portrait=new Sprite({caravan:caravanArt,villagers:villageArt}[party.id]??portraitTexture);
@@ -234,7 +245,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           cloth.roundRect(label.x-5,label.y-2,label.width+10,label.height+4,3)
             .fill({color:0x292316,alpha:.9}).stroke({color,width:1.2});
         }
-        const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,hovered,district,all,crossingMode.current,[...shown].join()].join('|');
+        const signature = [camera.x,camera.y,camera.zoom,element.clientWidth,element.clientHeight,active?.id,hovered,district,all,factionMode.current,crossingMode.current,[...shown].join()].join('|');
         if (signature === previousFrame) return;
         previousFrame = signature;
         terrain.position.set(camera.x,camera.y);
@@ -243,6 +254,10 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
         geography.position.copyFrom(terrain.position);
         geography.width=terrain.width;
         geography.height=terrain.height;
+        influence.position.copyFrom(terrain.position);
+        influence.width=terrain.width;influence.height=terrain.height;
+        influence.visible=factionMode.current;
+        influence.alpha=camera.zoom<=2?1:.47;
         detail.position.set(camera.x+detailNW.x*camera.zoom,camera.y+detailNW.y*camera.zoom);
         detail.width=(detailSE.x-detailNW.x)*camera.zoom;
         detail.height=(detailSE.y-detailNW.y)*camera.zoom;
@@ -271,19 +286,21 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           const visible = shown.has(record.id)&&x>-90&&x<element.clientWidth+90&&y>-50&&y<element.clientHeight+90;
           tokens[i].visible = visible;
           labels[i].visible=false;
+          badges[i].visible=false;
           if (!visible) continue;
           const icon = tokens[i];
-          const width = all ? 24 : hubs.includes(record.id) ? 104 : record.kind === 'fort' ? 76 : 52;
+          const width = all ? 24 : (hubs.includes(record.id) ? 104 : record.kind === 'fort' ? 76 : 52)*Math.min(1,.4+camera.zoom*.2);
           icon.position.set(x,y); icon.width=width; icon.height=width*icon.texture.height/icon.texture.width;
-          const heraldry = {polity_adil_shahi:0x375849, polity_nizam_shahi:0x81562a, polity_portuguese:0x824852, polity_mughal:0x454d72};
-          const sovereign = record.ownership?.controller_polity_id??record.ownership?.sovereign_polity_id;
+          const faction=factions[affiliation(record)];
           if (hubs.includes(record.id) || record.kind === 'fort') {
-            const flag=heraldry[sovereign]??0x777067;
+            const flag=faction?.color??0x777067;
             marks.ellipse(x,y+2,width*.56,9).fill({color:flag,alpha:.55})
               .stroke({color:flag,width:2});
             const pole = x + width * .29, top = y - icon.height - 10;
             marks.moveTo(pole,y-3).lineTo(pole,top).stroke({color:0x4d391d,width:1});
-            marks.poly([pole,top,pole+12,top+1,pole+8,top+4,pole+12,top+7,pole,top+7]).fill(flag).stroke({color:0xe5cea0,width:.8});
+            marks.poly([pole,top,pole+22,top+1,pole+18,top+7,pole+22,top+13,pole,top+13]).fill(flag).stroke({color:0xe5cea0,width:.9});
+            badges[i].position.set(pole+9,top+6.5);
+            badges[i].visible=true;
           }
           const highlighted=record.id===active?.id||record.id===hovered;
           marks.ellipse(x,y+1,width*.57,Math.max(7,width*.13)).stroke({color:highlighted?0xffe29b:0x67462b,width:highlighted?3:1.5,alpha:highlighted?1:.85});
@@ -300,7 +317,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
             label.position.set(rect.x,rect.y); label.visible=true;
             if(hasPlaque){
               plaques.roundRect(rect.x-8,rect.y-3,rect.width+11,rect.height+3,3)
-                .fill({color:0x33291b,alpha:.88}).stroke({color:heraldry[sovereign]??0x8b754e,width:1.5});
+                .fill({color:0x33291b,alpha:.88}).stroke({color:faction?.color??0x8b754e,width:1.5});
             }
           }
         }
@@ -424,10 +441,11 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
     <button onClick={()=>controls.current?.zoom(1.4)} aria-label="Zoom in">+</button>
     <button onClick={()=>controls.current?.zoom(1/1.4)} aria-label="Zoom out">−</button>
     <button onClick={()=>controls.current?.home()}>Fit region</button>
+    <button aria-pressed={showFactions} onClick={()=>setShowFactions(!showFactions)}>Factions</button>
     <button aria-pressed={showCrossings} title="Show provisional river crossing points" onClick={()=>setShowCrossings(!showCrossings)}>Crossings</button>
     <button onClick={()=>{if(document.fullscreenElement) document.exitFullscreen(); else document.querySelector('main')?.requestFullscreen?.();}}>Full screen</button>
   </div><div className="compass" aria-hidden="true">N<br/>✥</div>
-  <div className="legend">{register?'Historical register':'Campaign districts'} <small>Drag to pan · WASD pans · Scroll zooms · Left-click to travel · Right-click to deselect</small>{showCrossings&&<small>Gold tracks and bridge symbols show provisional gameplay routes and crossings.</small>}</div>
+  <div className="legend">{register?'Historical register':'Campaign districts'} <small>Drag to pan · WASD pans · Scroll zooms · Left-click to travel · Right-click to deselect</small>{showCrossings&&<small>Gold tracks and bridge symbols show provisional routes. Dark forest cores block travel.</small>}{showFactions&&<small className="faction-key">Approximate influence {Object.values(factions).map(faction=><span key={faction.name}><i style={{background:faction.color}}>{faction.mark}</i> {faction.name}</span>)}</small>}</div>
   <a className="credit" href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noreferrer">Terrain · Mapzen / USGS / NOAA</a>
   {error&&<p className="error">Map could not load. {error}</p>}</section>;
 }

@@ -104,3 +104,16 @@ test('profitable routes exclude losses and use the full selected quantity',()=>{
  assert.deepEqual(profitableDestinations(e,'site_ahmadnagar','fish',3,0),[]);
  assert.ok(profitableDestinations(e,'site_chaul','fish',20,0).every(route=>route.profit>0));
 });
+
+test('markets recover from empty shelves and merchants leave a retail reserve',()=>{
+ const economy=createEconomy();
+ const pune=economy.markets.site_pune;
+ pune.stock.grain=0;
+ economyHour(economy,24);
+ assert.ok(pune.stock.grain>0);
+ pune.stock.grain=40;
+ economy.markets.site_ahmadnagar.stock.grain=0;
+ const merchant={gold:1000,cargo:{wood:0,grain:0},destination:null,trades:0};
+ merchantVisit(economy,merchant,'site_pune');
+ assert.ok(pune.stock.grain>=34);
+});

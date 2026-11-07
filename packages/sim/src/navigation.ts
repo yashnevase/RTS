@@ -10,6 +10,20 @@ export function coordinate(id:number):Point {
  return {longitude:grid.west+(id%grid.width+.5)/grid.width*(grid.east-grid.west),
  latitude:grid.north-(Math.floor(id/grid.width)+.5)/grid.height*(grid.north-grid.south)};
 }
+const woodland=new Set(grid.woodland);
+const crossings=new Set(grid.crossings);
+const settlementCells=new Set(Object.values(grid.anchors).map(cell));
+const w=grid.width;
+
+// Thick forest on the steepest Ghats terrain uses the existing modern proxy.
+export const denseForest=new Set(grid.woodland.filter(id=>{
+ const point=coordinate(id);
+ return point.longitude>=73.25&&point.longitude<=74.15&&point.latitude>=15.6&&point.latitude<=20.05&&
+   grid.cost[id]>=14&&!crossings.has(id)&&!settlementCells.has(id)&&
+   [-w-1,-w,-w+1,-1,1,w-1,w,w+1].every(offset=>woodland.has(id+offset));
+}));
+function passable(id:number){return grid.cost[id]>0&&!denseForest.has(id);}
+
 export function anchor(id:string):Point|undefined {
  const point=(grid.anchors as Partial<Record<string,Point>>)[id];
  if(!point || accessible(point))return point;
@@ -17,23 +31,23 @@ export function anchor(id:string):Point|undefined {
  return entry<0?undefined:coordinate(entry);
 }
 export function accessible(p:Point) {
- const id=cell(p);return id>=0 && grid.cost[id]>0;
+ const id=cell(p);return id>=0 && passable(id);
 }
 function nearest(p:Point) {
  const origin=cell(p);if(origin<0)return -1;
- if(grid.cost[origin])return origin;
+ if(passable(origin))return origin;
  let best=-1,distance=Infinity;
  for(let dy=-4;dy<=4;dy++)for(let dx=-4;dx<=4;dx++){
  const x=origin%grid.width+dx,y=Math.floor(origin/grid.width)+dy;
  const id=y*grid.width+x;
- if(x<0||x>=grid.width||y<0||y>=grid.height||!grid.cost[id])continue;
+ if(x<0||x>=grid.width||y<0||y>=grid.height||!passable(id))continue;
  const gap=metres(p,coordinate(id));
  if(gap<distance){best=id;distance=gap;}
  }return best;
 }
 export function route(start:Point,end:Point,snap=false):Point[]|null {
  const a=nearest(start),b=snap?nearest(end):cell(end);
- if(a<0||b<0||!grid.cost[b])return null;
+ if(a<0||b<0||!passable(b))return null;
  const entry=accessible(start)?start:coordinate(a);
  const exit=accessible(end)?end:coordinate(b);
  if(metres(entry,exit)===0)return [exit];
@@ -50,8 +64,8 @@ export function route(start:Point,end:Point,snap=false):Point[]|null {
  open.delete(current);closed.add(current);
  for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]){
  const x=current%grid.width+dx,y=Math.floor(current/grid.width)+dy,id=y*grid.width+x;
- if(x<0||x>=grid.width||y<0||y>=grid.height||!grid.cost[id]||closed.has(id))continue;
- if(dx&&dy&&(!grid.cost[Math.floor(current/grid.width)*grid.width+x]||!grid.cost[y*grid.width+current%grid.width]))continue;
+ if(x<0||x>=grid.width||y<0||y>=grid.height||!passable(id)||closed.has(id))continue;
+ if(dx&&dy&&(!passable(Math.floor(current/grid.width)*grid.width+x)||!passable(y*grid.width+current%grid.width)))continue;
  const cost=costs.get(current)!+Math.round(grid.cost[id]*(dx&&dy?1.4142:1));
  if(cost<(costs.get(id)??Infinity)){costs.set(id,cost);parents.set(id,current);open.add(id);}
  }
@@ -81,9 +95,9 @@ export function clearSegment(a:Point,b:Point) {
  for(let i=1;i<=steps;i++){
    const point={longitude:a.longitude+(b.longitude-a.longitude)*i/steps,latitude:a.latitude+(b.latitude-a.latitude)*i/steps};
    const next=cell(point);
-   if(next<0||!grid.cost[next])return false;
+   if(next<0||!passable(next))return false;
    const px=previous%grid.width,py=Math.floor(previous/grid.width),nx=next%grid.width,ny=Math.floor(next/grid.width);
-   if(px!==nx&&py!==ny&&(!grid.cost[py*grid.width+nx]||!grid.cost[ny*grid.width+px]))return false;
+   if(px!==nx&&py!==ny&&(!passable(py*grid.width+nx)||!passable(ny*grid.width+px)))return false;
    previous=next;
  }return true;
 }

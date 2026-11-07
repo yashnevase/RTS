@@ -16,7 +16,7 @@ export const settlementServices: Partial<Record<string, {
 };
 
 export function createCompany() {
-  return { mounted: 0, health:100, prisoners: 0, companions: [] as string[], recruits: {} as Record<string, number> };
+  return { mounted: 0, health:100, rationProgress:0, starvingDays:0, prisoners: 0, companions: [] as string[], recruits: {} as Record<string, number> };
 }
 type Company = ReturnType<typeof createCompany>;
 
@@ -44,17 +44,29 @@ export function marchBudget(pace:string, guards:number, mounted:number, inventor
   return {base,cavalry,load,capacity,penalty,fatigue,total:base+cavalry-penalty-fatigue};
 }
 
+const personDaysPerRation=12;
+
 export function foodPerDay(guards:number,companions:number) {
- return Math.max(1,Math.ceil((guards+companions+1)/4));
+ return (guards+companions+1)/personDaysPerRation;
 }
 
 export function feedCompany(company:Company,guards:number,stock:{grain:number;rice?:number;fish?:number}) {
- let needed=foodPerDay(guards,company.companions.length);
- for(const good of ['grain','rice','fish'] as const){
+ const recovery=company.health<100;
+ company.rationProgress=(company.rationProgress??0)+guards+company.companions.length+1;
+ const upkeep=Math.floor(company.rationProgress/personDaysPerRation);
+ company.rationProgress%=personDaysPerRation;
+ let needed=upkeep;
+ const food=['grain','rice','fish'] as const;
+ const available=food.reduce((sum,good)=>sum+(stock[good]??0),0);
+ const recoveryMeal=recovery&&available>upkeep;
+ if(recoveryMeal)needed++;
+ for(const good of food){
    const taken=Math.min(stock[good]??0,needed);
    if(taken)stock[good]=(stock[good]??0)-taken;
    needed-=taken;
  }
- company.health=needed?Math.max(0,company.health-20):Math.min(100,company.health+15);
+ if(needed)company.health=Math.max(0,company.health-8);
+ else if(recoveryMeal)company.health=Math.min(100,company.health+20);
+ company.starvingDays=company.health===0&&available===0?(company.starvingDays??0)+1:0;
  return needed===0;
 }

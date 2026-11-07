@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {anchor,route,accessible,clearSegment,coordinate,travelEffort} from '../packages/sim/src/navigation.ts';
+import {anchor,route,accessible,clearSegment,coordinate,denseForest,travelEffort} from '../packages/sim/src/navigation.ts';
 import {startMotion,move,position} from '../packages/sim/src/movement.ts';
 test('terrain route reaches Saswad, avoids blocked cells and rejects sea',()=>{
  const from=anchor('site_pune'),to=anchor('site_saswad'),points=route(from,to,true);
@@ -40,4 +40,14 @@ test('smoothing keeps a cheaper bend when the direct line crosses slower terrain
  assert.ok(points.length>2);
  const routedEffort=points.slice(1).reduce((total,point,i)=>total+travelEffort(points[i],point),0);
  assert.ok(routedEffort<travelEffort(start,end));
+});
+
+test('dense Ghats forest blocks movement without disconnecting the coastal market',()=>{
+ const forest=coordinate([...denseForest][0]);
+ const pune=anchor('site_pune')!,chaul=anchor('site_chaul')!;
+ assert.equal(accessible(forest),false);
+ assert.equal(route(pune,forest),null);
+ const path=route(chaul,pune)!;
+ assert.ok(path.length>=2);
+ assert.ok(path.slice(1).every((point,i)=>clearSegment(path[i],point)));
 });
