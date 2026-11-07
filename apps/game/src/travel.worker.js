@@ -1,3 +1,4 @@
+import {choosePartyDestination} from '../../../packages/sim/src/party-planner.ts';
 import {recordBalance} from '../../../packages/sim/src/ledger.ts';
 import {clanRoles,createClan,monthlyWages,returnTroops} from '../../../packages/sim/src/clan.ts';
 import { clearSegment, metres, route, travelEffort } from '../../../packages/sim/src/navigation.ts';
@@ -55,8 +56,32 @@ function traffic() {
    const detachment=world.clan.detachments.find(d=>d.id===p.id);
    if(detachment){
      if(!p.motion){
-       const goal=detachment.task==='return'?world.parties[0].point:anchor(p.node===detachment.home?'site_saswad':detachment.home);
-       if(metres(p.point,goal)>500)order(p,goal,detachment.task==='patrol'?(p.node===detachment.home?'site_saswad':detachment.home):null);
+       if(detachment.task==='return'){
+         if(metres(p.point,world.parties[0].point)>500)order(p,world.parties[0].point);
+         continue;
+       }
+       if(world.tick-(detachment.decisionTick??-24)<12)continue;
+       detachment.decisionTick=world.tick;
+       detachment.gold??=0;detachment.food??=0;detachment.relations??={};
+       const market=world.economy.markets[p.node];
+       if(market){
+         const target=Math.max(4,Math.ceil((detachment.foot+detachment.mounted+1)/12)*7);
+         let purchased=0;
+         while(detachment.food<target&&market.stock.grain>0){
+           const cost=purchasePrice(market,'grain',p.node,0);
+           if(detachment.gold<cost)break;
+           detachment.gold-=cost;market.money+=cost;market.stock.grain--;detachment.food++;purchased++;
+         }
+         if(purchased)detachment.relations[p.node]=Math.min(100,(detachment.relations[p.node]??0)+1);
+       }
+       const choices=Object.entries(world.economy.markets).map(([id,market])=>{
+         const end=anchor(id),path=end&&route(p.point,end);
+         return {id,hours:path?path.slice(1).reduce((effort,point,i)=>effort+travelEffort(path[i],point),0)/4000:Infinity,
+           foodPrice:purchasePrice(market,'grain',id,0),stock:market.stock.grain,relation:detachment.relations[id]??0};
+       });
+       const plan=choosePartyDestination({food:detachment.food,gold:detachment.gold,foot:detachment.foot,mounted:detachment.mounted,ambition:detachment.ambition??50,aggression:detachment.aggression??35},p.node,detachment.home,choices);
+       detachment.decision=plan.reason;
+       if(plan.destination!==p.node)order(p,anchor(plan.destination),plan.destination);
      }
      continue;
    }
@@ -103,7 +128,7 @@ function hourly(){
  const previous=world.economy.quest?.status;
  economyHour(world.economy,world.tick);
  if(world.tick%720===0&&world.tick>world.clan.lastPayTick){
-   const detached=world.clan.detachments.reduce((sum,d)=>sum+monthlyWages(d.foot,d.mounted,0),0);
+   const detached=0;
    const owed=monthlyWages(world.encounter.guards-world.company.mounted,world.company.mounted,world.company.companions.length)+detached+world.clan.arrears;
    const paid=Math.min(world.economy.gold,owed);
    world.economy.gold-=paid;world.clan.arrears=owed-paid;world.clan.lastPayTick=world.tick;
@@ -114,7 +139,11 @@ function hourly(){
    event('Monthly wages · '+paid+' coin paid'+(world.clan.arrears?' · '+world.clan.arrears+' owed':''));
  }
  for(const d of world.clan.detachments){
-   if(world.tick%72===0&&d.food>0)d.food--;
+   if(world.tick%72===0&&d.food>0)d.food=Math.max(0,d.food-Math.max(1,Math.ceil((d.foot+d.mounted+1)/4)));
+   if(world.tick%720===0){
+     const due=monthlyWages(d.foot,d.mounted,0)+(d.wageDebt??0),paid=Math.min(d.gold??0,due);
+     d.gold=(d.gold??0)-paid;d.wageDebt=due-paid;
+   }
  }
  if(world.tick%24===0){
    if(!feedCompany(world.company,world.encounter.guards,world.economy.inventory))
