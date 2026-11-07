@@ -5,6 +5,7 @@ export type Good = typeof goods[number];
 type Goods = Partial<Record<Good,number>> & {grain:number;wood:number};
 export interface Market { stock: Goods; target: Goods; money:number; referenceStock?:Goods }
 export const units=(stock:Goods,good:Good)=>stock[good]??0;
+const retailReserve=(market:Market,good:Good)=>Math.ceil(stockTarget(market,good)/3);
 export const stockTarget=(market:Market,good:Good)=>market.target[good]??30;
 const basePrices={grain:6,wood:8,rice:10,fish:12};
 export interface Economy {
@@ -96,7 +97,13 @@ export function deliverGrain(e:Economy,node:string,amount:number) {
 
 export function economyHour(e:Economy,tick:number) {
   if(tick>0&&tick%24===0)for(const market of Object.values(e.markets)){
-    for(const good of ['grain','rice','fish'] as const)market.stock[good]=Math.max(0,units(market.stock,good)-Math.ceil(stockTarget(market,good)/20));
+    for(const good of goods){
+      const target=stockTarget(market,good);
+      const remaining=Math.max(0,units(market.stock,good)-(good==='wood'?0:Math.ceil(target/30)));
+      // Small local sellers supply the retail market even between caravan arrivals.
+      const restock=Math.max(0,Math.min(Math.ceil(target/9),retailReserve(market,good)-remaining));
+      market.stock[good]=remaining+restock;
+    }
     if(tick%168===0)market.referenceStock={...market.stock};
   }
   if(tick>0&&tick%24===0)for(const profile of production){
@@ -123,7 +130,7 @@ export function merchantVisit(e:Economy,merchant:Merchant,node:string,travelHour
     const hours=travelHours(destination);
     if(!Number.isFinite(hours))continue;
     for(const good of goods) {
-      const limit=Math.min(20,units(market.stock,good),stockTarget(other,good)*3-units(other.stock,good));
+      const limit=Math.min(16,units(market.stock,good)-retailReserve(market,good),stockTarget(other,good)*3-units(other.stock,good));
       let cost=0,revenue=0;
       const origin={...market,stock:{...market.stock}};
       const target={...other,stock:{...other.stock}};

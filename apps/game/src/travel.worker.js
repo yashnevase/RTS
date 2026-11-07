@@ -1,4 +1,4 @@
-import { metres, route, travelEffort } from '../../../packages/sim/src/navigation.ts';
+import { clearSegment, metres, route, travelEffort } from '../../../packages/sim/src/navigation.ts';
 import { createCompany, feedCompany, marchBudget, recruit, settlementServices, troops } from '../../../packages/sim/src/company.ts';
 import { createCampaign, advance, command } from '../../../packages/sim/src/travel.ts';
 
@@ -89,12 +89,14 @@ function hourly(){
  advance(world);
  const previous=world.economy.quest?.status;
  economyHour(world.economy,world.tick);
- if(world.tick%24===0&&!feedCompany(world.company,world.encounter.guards,world.economy.inventory)){
-   event('Your company ran short of food. Health fell to '+world.company.health+'%.');
-   if(world.company.health===0&&world.encounter.guards>0){
+ if(world.tick%24===0){
+   if(!feedCompany(world.company,world.encounter.guards,world.economy.inventory))
+     event('Rations ran short · Company health '+world.company.health+'%.');
+   if(world.company.starvingDays>=3&&world.encounter.guards>0){
      world.encounter.guards--;
+     world.company.starvingDays=0;
      world.company.mounted=Math.min(world.company.mounted,world.encounter.guards);
-     event('A guard died from starvation.');
+     event('A guard died after prolonged starvation.');
    }
  }
  updateApproach();
@@ -140,13 +142,25 @@ self.onmessage = ({data}) => {
     Object.assign(world,data.world,{speed:0,notice:'Campaign restored. Press Play to continue.'});
     world.company??=createCompany();
     world.company.health??=100;
+    world.company.rationProgress??=0;
+    world.company.starvingDays??=0;
     restoreMarkets(world.economy);
+    for(const party of world.parties){
+      const motion=party.motion;
+      if(!motion)continue;
+      const remaining=[party.point,...motion.points.slice(motion.index+1)];
+      if(remaining.slice(1).every((point,i)=>clearSegment(remaining[i],point)))continue;
+      party.motion=startMotion(party.point,motion.points.at(-1),motion.destination);
+      if(party.motion)party.point=position(party.motion);
+      else party.node='field';
+    }
     world.partyMeeting=null;
     eventId=world.events[0]?.id??0;
   } else if(data.type==='resolve-encounter' && !player.motion && player.node===raiderSite && !world.encounter.resolved){
     const result=resolveEncounter(world.encounter.guards,player.point,world.encounter.seed);
     world.encounter={guards:world.encounter.guards-result.guardsLost,seed:result.seed,resolved:true,result};
     world.company.mounted=Math.min(world.company.mounted,world.encounter.guards);
+    world.company.health=Math.max(0,world.company.health-(result.outcome==='Victory'?15:30));
     if(result.outcome==='Victory')world.company.prisoners++;
     world.economy.gold+=result.coin;
     event(result.outcome+' near Kondhana. '+result.guardsLost+(result.guardsLost===1?' guard lost.':' guards lost.'));
@@ -206,7 +220,9 @@ self.onmessage = ({data}) => {
         world.economy.gold=draft.gold;
         world.economy.inventory=draft.inventory;
       } else Object.assign(world.economy,draft);
+      const change=data.change;
       world.economy.notice='Trade completed.';
+      event('Trade completed · '+(change>0?'+':'')+change+' coin.');
     } else world.economy.notice='Market conditions or position changed. Review the quote and try again.';
     world.tradeReply={id:data.id,accepted};
   } else if(data.type==='confirm-dismiss' && world.started) {

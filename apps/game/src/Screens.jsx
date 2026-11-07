@@ -71,7 +71,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
           {company?.companions.map(id=>{const contact=settlementServices[id]?.meetingHouse;return contact&&<div className="item-row" key={id}><span>◇</span><b>{contact.name}</b><span>{contact.role}</span></div>;})}
           {march&&<p>March · {(march.total/1000).toFixed(2)} km/h before terrain<br/><small>Base {(march.base/1000).toFixed(2)} + mounted {(march.cavalry/1000).toFixed(2)} − cargo {(march.penalty/1000).toFixed(2)} − fatigue {(march.fatigue/1000).toFixed(2)} · Load {march.load}/{march.capacity}</small></p>}
           <p>{p.motion?'On the march':'Camp · '+(byId.get(p.node)?.name??'Open country')}</p>
-          <p>Food use · {foodPerDay(guards,company?.companions.length??0)} per day · Health {company?.health??100}%</p>
+          <p>Food use · {foodPerDay(guards,company?.companions.length??0).toFixed(2)} rations/day at full health · Health {company?.health??100}%</p>
         </section>
       </div>
       <footer className="roster-footer"><button onClick={()=>setPortrait(!portrait)}>{portrait?'Hide portrait':'Show portrait'}</button><button onClick={()=>open(null)}>Cancel</button><button onClick={()=>{if(dismiss.foot||dismiss.mounted)send({type:'confirm-dismiss',counts:dismiss});open(null);}}>Done{dismiss.foot+dismiss.mounted>0?' · Dismiss '+(dismiss.foot+dismiss.mounted):''}</button></footer>

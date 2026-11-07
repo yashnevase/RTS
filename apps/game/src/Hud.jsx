@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import {readCampaign} from './campaign-save.js';
+import {foodPerDay} from '../../../packages/sim/src/company.ts';
 import {clockHour} from '../../../packages/sim/src/travel.ts';
 export function Creation({send}){
  const [saved]=useState(readCampaign);
@@ -12,6 +13,14 @@ export function Creation({send}){
  <button className="begin">Enter the Deccan</button></form>{saved&&<button className="continue" onClick={()=>send({type:'restore',world:saved})}>Continue {saved.identity.name} of {saved.identity.house}</button>}</div><div className="creation-portrait"><img src="/art/envoy.webp" alt="Your fictional traveller"/><div className="personal-banner" style={{background:color}}>{symbol==='Sun'?'☀':symbol==='Crescent'?'☾':'◆'}</div><h2>{name} {house}</h2></div></div>;
 }
 export function Clock({world,send,follow,setFollow,onLocate}){
+ const [toast,setToast]=useState('');
+ const action=world.events?.find(event=>/^(Trade completed|Recruited|Released|A guard died|Rations ran short|Victory|Retreat)| joined your company|Suppl(?:y|ies)/.test(event.text));
+ useEffect(()=>{
+   if(!action||!world.started)return;
+   setToast(action.text);
+   const timer=setTimeout(()=>setToast(''),3400);
+   return ()=>clearTimeout(timer);
+ },[action?.id,world.started]);
  useEffect(()=>{
   const handler=e=>{if(!world.started||e.repeat||/INPUT|SELECT|TEXTAREA|BUTTON|SUMMARY/.test(e.target.tagName))return;
    if(e.code==='Space'){e.preventDefault();send({type:'speed',value:world.speed?0:1});}
@@ -19,13 +28,16 @@ export function Clock({world,send,follow,setFollow,onLocate}){
   };window.addEventListener('keydown',handler);return()=>window.removeEventListener('keydown',handler);
  },[world.speed,world.started,send]);
  const inventory=world.economy?.inventory;
+ const food=(inventory?.grain??0)+(inventory?.rice??0)+(inventory?.fish??0);
+ const days=Math.floor(food/foodPerDay(world.encounter?.guards??3,world.company?.companions.length??0));
  const status=world.waitUntil!==null?'Waiting · '+(world.waitUntil-world.tick)+'h left':world.notice;
  return <>
-  <div className="campaign-status" role="status">{status}</div>
+  <div className="campaign-status">{status}</div>
+  <div className="action-toast" role="status" aria-live="polite">{toast}</div>
   <div className="company-hud" aria-label="Company status">
    <span title="Coin"><i aria-hidden="true">◉</i> {world.economy?.gold??600}</span>
    <span title="Company strength"><i aria-hidden="true">⚔</i> {1+(world.encounter?.guards??3)}</span>
-   <span title="Food in stores"><i aria-hidden="true">♧</i> {(inventory?.grain??0)+(inventory?.rice??0)+(inventory?.fish??0)}</span>
+   <span title={food+' rations · estimated at full health'}><i aria-hidden="true">♧</i> {days}d</span>
    <span title="Company health" className={(world.company?.health??100)<60?'quote-debit':''}>♥ {world.company?.health??100}%</span>
    <button onClick={onLocate} title="Center on your company">Find</button>
    <button aria-pressed={follow} onClick={()=>setFollow(!follow)}>Follow</button>

@@ -1,6 +1,6 @@
 import { Sprite, Texture } from 'pixi.js';
 import { project, mapSize } from '../../../packages/map/src/index.ts';
-import { coordinate, terrain } from '../../../packages/sim/src/navigation.ts';
+import { coordinate, denseForest, terrain } from '../../../packages/sim/src/navigation.ts';
 
 export function createMapGeography() {
   const resolution = 2.4;
@@ -46,6 +46,21 @@ export function createMapGeography() {
       ctx.beginPath();
       ctx.ellipse(tx-size*.16,ty-size*.33,size*.42,size*.54,0,0,Math.PI*2);
       ctx.fillStyle='#b5af684d';
+      ctx.fill();
+    }
+  }
+
+  for(const id of denseForest){
+    const {x,y}=project(coordinate(id));
+    const canopy=ctx.createRadialGradient(x,y,0,x,y,5.8);
+    canopy.addColorStop(0,'#182d19dc');
+    canopy.addColorStop(1,'#21392300');
+    ctx.fillStyle=canopy;
+    ctx.fillRect(x-6,y-6,12,12);
+    for(let crown=0;crown<5;crown++){
+      ctx.beginPath();
+      ctx.arc(x+((id+crown*7)%11-5)*.58,y+((id+crown*5)%9-4)*.58,.8+(crown%3)*.25,0,Math.PI*2);
+      ctx.fillStyle=crown%2?'#314f2c':'#648250';
       ctx.fill();
     }
   }

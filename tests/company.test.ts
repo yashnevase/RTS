@@ -19,13 +19,18 @@ test('mounted scouts improve pace and overloaded wood slows the company',()=>{
  assert.ok(marchBudget('steady',3,0,{grain:0,wood:70}).total<4000);
 });
 
-test('food is consumed daily and hunger reduces march speed until the company is fed',()=>{
+test('healthy parties stretch rations while recovery uses food faster',()=>{
  const company=createCompany(), stock={grain:0,wood:0,fish:2};
+ for(let day=0;day<2;day++)assert.ok(feedCompany(company,3,stock));
+ assert.equal(stock.fish,2);
  assert.ok(feedCompany(company,3,stock));
  assert.equal(stock.fish,1);
- assert.equal(feedCompany(company,8,stock),false);
- assert.equal(company.health,80);
+ company.health=70;
+ assert.ok(feedCompany(company,3,stock));
+ assert.equal(stock.fish,0);
+ assert.equal(company.health,90);
+ assert.ok(feedCompany(company,3,stock));
+ assert.equal(feedCompany(company,3,stock),false);
+ assert.equal(company.health,82);
  assert.ok(marchBudget('steady',3,0,stock,company.health).total<4000);
- assert.ok(feedCompany(company,3,{grain:1}));
- assert.equal(company.health,95);
 });
