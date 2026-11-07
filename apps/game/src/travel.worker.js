@@ -1,3 +1,4 @@
+import {createCharacter} from '../../../packages/sim/src/character.ts';
 import {choosePartyDestination} from '../../../packages/sim/src/party-planner.ts';
 import {recordBalance} from '../../../packages/sim/src/ledger.ts';
 import {clanRoles,createClan,monthlyWages,returnTroops} from '../../../packages/sim/src/clan.ts';
@@ -16,6 +17,7 @@ world.relations={supplier:0};
 world.encounter={guards:3,seed:1622,resolved:false,result:null};
 world.events=[];
 world.company=createCompany();
+world.character=createCharacter();
 world.clan=createClan();
 world.ledger=[];
 let eventId=0;
@@ -146,6 +148,7 @@ function hourly(){
    }
  }
  if(world.tick%24===0){
+   world.character.morale=Math.max(0,Math.min(100,world.character.morale+(world.economy.inventory.grain>0?1:-2)));
    if(!feedCompany(world.company,world.encounter.guards,world.economy.inventory))
      event('Rations ran short · Company health '+world.company.health+'%.');
    if(world.company.starvingDays>=3&&world.encounter.guards>0){
@@ -196,10 +199,11 @@ self.onmessage = ({data}) => {
   const previousSpeed = world.speed;
   const beforeGold=world.economy.gold;
   const player=world.parties[0];
-  if(data.type==='restore'&&!world.started) {
+  if(data.type==='restore') {
     Object.assign(world,data.world,{speed:0,notice:'Campaign restored. Press Play to continue.'});
     world.company??=createCompany();
     world.clan??=createClan();
+    world.character??=createCharacter();
     world.ledger??=[];
     world.company.health??=100;
     world.company.rationProgress??=0;
@@ -214,10 +218,14 @@ self.onmessage = ({data}) => {
       if(party.motion)party.point=position(party.motion);
       else party.node='field';
     }
+    approach=null;
     world.partyMeeting=null;
     eventId=world.events[0]?.id??0;
   } else if(data.type==='resolve-encounter' && !player.motion && player.node===raiderSite && !world.encounter.resolved){
-    const result=resolveEncounter(world.encounter.guards,player.point,world.encounter.seed);
+    const result=resolveEncounter(world.encounter.guards+Math.floor(world.character.skills.fighting/30),player.point,world.encounter.seed);
+    world.character.skills.fighting=Math.min(100,world.character.skills.fighting+2);
+    if(result.outcome==='Victory'){world.character.renown+=5;world.character.morale=Math.min(100,world.character.morale+8);}else world.character.morale=Math.max(0,world.character.morale-10);
+    result.guardsLost=Math.min(result.guardsLost,world.encounter.guards);
     world.encounter={guards:world.encounter.guards-result.guardsLost,seed:result.seed,resolved:true,result};
     world.company.mounted=Math.min(world.company.mounted,world.encounter.guards);
     world.company.health=Math.max(0,world.company.health-(result.outcome==='Victory'?15:30));
@@ -319,6 +327,7 @@ self.onmessage = ({data}) => {
         world.economy.inventory=draft.inventory;
       } else Object.assign(world.economy,draft);
       const change=data.change;
+      world.character.skills.trading=Math.min(100,world.character.skills.trading+1);
       world.economy.notice='Trade completed.';
       event('Trade completed · '+(change>0?'+':'')+change+' coin.');
     } else world.economy.notice='Market conditions or position changed. Review the quote and try again.';
@@ -339,6 +348,7 @@ self.onmessage = ({data}) => {
       questAction(world.economy,world.tick);
       if(before!=='completed' && world.economy.quest?.status==='completed'){
         world.relations[supplier]=changeRelation(world.relations[supplier],15);
+        world.character.renown+=2;world.character.influence+=1;
         event('The Saswad supplier received your delivery. Supplier relation +15.');
       } else event(world.economy.notice);
     }

@@ -118,3 +118,6 @@ aside{background:linear-gradient(120deg,#f7e6c3da,#d7bb85de),url('/art/paper.web
 .hud-inspect:hover .hud-tooltip,.hud-inspect:focus .hud-tooltip{display:block}
 .hud-tooltip p{margin:7px 0}.hud-tooltip .item-emblem{width:26px;height:26px}
 button.entity-link{display:inline;padding:0;margin:0;border:0;background:none;color:#315d82;text-decoration:underline;font:inherit;cursor:pointer}
+.save-manager>section{display:flex;gap:9px;align-items:center;flex-wrap:wrap;padding:9px;border-bottom:1px solid #bfa170}
+.save-manager>section span{flex:1}.save-manager input[type=file]{display:block}
+.character-stats{text-transform:capitalize}
