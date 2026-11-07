@@ -3,6 +3,7 @@ import { createCampaign, advance, command } from '../../../packages/sim/src/trav
 import { createEconomy, trade, questAction, economyHour, merchantVisit } from '../../../packages/sim/src/economy.ts';
 import { startMotion, position, advanceMotion, anchor } from '../../../packages/sim/src/movement.ts';
 import {changeRelation, raiderSite, resolveEncounter} from '../../../packages/sim/src/encounter.ts';
+import { campaignHourMs } from './campaign-clock.js';
 const world = createCampaign();
 world.identity={name:'Traveller',house:'',color:'#b74338',symbol:'Sun'};
 world.started=false;
@@ -60,16 +61,24 @@ function hourly(){
  }
  traffic();
 }
-let timer;
-function schedule() {
-  clearInterval(timer);
-  if (world.speed) timer = setInterval(() => {
+let timer, startedAt, remaining = campaignHourMs;
+function schedule(previousSpeed) {
+  if (world.speed === previousSpeed) return;
+  clearTimeout(timer);
+  if (previousSpeed) remaining = Math.max(0, remaining - (performance.now() - startedAt) * previousSpeed);
+  if (world.speed) nextHour();
+}
+function nextHour() {
+  startedAt = performance.now();
+  timer = setTimeout(() => {
     hourly();
     postMessage(world);
-    if (!world.speed) clearInterval(timer);
-  }, 900 / world.speed);
+    remaining = campaignHourMs;
+    if (world.speed) nextHour();
+  }, remaining / world.speed);
 }
 self.onmessage = ({data}) => {
+  const previousSpeed = world.speed;
   const player=world.parties[0];
   if(data.type==='restore'&&!world.started) {
     Object.assign(world,data.world,{speed:0,notice:'Campaign restored. Press Play to continue.'});
@@ -109,5 +118,5 @@ self.onmessage = ({data}) => {
   } else if(data.type==='step') {world.speed=1;hourly();world.speed=0;}
   else if (data.type !== 'inspect') command(world, data);
   postMessage(world);
-  schedule();
+  schedule(previousSpeed);
 };

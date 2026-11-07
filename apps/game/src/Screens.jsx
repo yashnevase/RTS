@@ -1,20 +1,34 @@
-import React, {useState,useEffect,useRef} from 'react';
+import React, {useState,useEffect} from 'react';
 import {purchasePrice,goods} from '../../../packages/sim/src/economy.ts';
 import {Encyclopedia} from './Encyclopedia.jsx';
 import {saveCampaign} from './campaign-save.js';
 import {raiderSite, encounterTerrain} from '../../../packages/sim/src/encounter.ts';
 import {byId} from './places.js';
-export function Screens({world,send,onLocate}) {
+const navigation = [['Inventory','▤','I'],['Party','⚔','P'],['Character','♙','C'],['Quests','✧','J'],['Encyclopedia','▣','N'],['Settlement','⌂']];
+
+function CompanyPortrait({identity,role}) {
+  return <section className="equipment">
+    <div className="roster-portrait"><img src="/art/envoy.webp" alt="Your fictional traveller"/></div>
+    <h2>{identity?.name}</h2>
+    <p>{role??identity?.house}</p>
+  </section>;
+}
+
+export function Screens({world,send,onLocate,arrival,dismissal}) {
   const [page,setPage]=useState(null);
   const [quantity,setQuantity]=useState(1);
   const [saveStatus,setSaveStatus]=useState('');
   const [topic,setTopic]=useState('greeting');
   const e=world.economy,p=world.parties[0],local=!p.path.length&&!p.motion;
-  const wasTravelling=useRef(false);
   useEffect(()=>{
-    if(wasTravelling.current&&local&&byId.has(p.node)) setPage(current=>current??'Settlement');
-    wasTravelling.current=!local;
-  },[local,p.node]);
+    if(arrival && byId.has(arrival.id)) setPage(current=>current??'Settlement');
+  },[arrival]);
+  useEffect(()=>{
+    setPage(current=>current==='Settlement'?null:current);
+  },[dismissal]);
+  useEffect(()=>{
+    if(!local) setPage(current=>current==='Settlement'?null:current);
+  },[local]);
   function open(value){setPage(value);}
   useEffect(()=>{
     const keys=event=>{
@@ -25,22 +39,40 @@ export function Screens({world,send,onLocate}) {
     };
     window.addEventListener('keydown',keys);return()=>window.removeEventListener('keydown',keys);
   },[]);
-  return <><nav className="campaign-nav">{['Inventory','Party','Character','Quests','Encyclopedia','Settlement'].map(name=><button key={name} onClick={()=>open(name)}>{name}</button>)}<span>{e?.gold??600} coin</span><button disabled={!world.started} onClick={()=>setSaveStatus(saveCampaign(world)?'Campaign saved':'Save unavailable')}>Save</button>{saveStatus&&<output>{saveStatus}</output>}</nav>
-  {page&&<div className={'screen-shade'+(page==='Settlement'?' settlement-shade':'')}><section className="game-screen" role="dialog" aria-modal={page!=='Settlement'} aria-label={page}><button className="close" onClick={()=>setPage(null)}>Close · Esc</button><h1>{page}</h1>
+  return <><nav className="campaign-nav" aria-label="Campaign screens">{navigation.map(([name,symbol,key])=><button key={name} aria-label={name} aria-pressed={page===name} title={key?name+' · '+key:name} onClick={()=>open(name)}><span aria-hidden="true">{symbol}</span>{name}</button>)}<button disabled={!world.started} onClick={()=>setSaveStatus(saveCampaign(world)?'Campaign saved':'Save unavailable')}>Save</button>{saveStatus&&<output>{saveStatus}</output>}</nav>
+  {page&&<div className={'screen-shade'+(page==='Settlement'?' settlement-shade':'')}><section className={'game-screen'+(['Inventory','Party'].includes(page)?' roster-screen':'')} role="dialog" aria-modal={page!=='Settlement'} aria-label={page}><button className="close" onClick={()=>setPage(null)}>Close · Esc</button>{page!=='Settlement'&&<h1>{page}</h1>}
     {page==='Encyclopedia'&&<Encyclopedia world={world} onLocate={record=>{setPage(null);onLocate(record);}}/>}
-    {page==='Inventory'&&e&&<div className="inventory-layout"><section><h2>Your stores</h2>{goods.map(g=><div className="item-row" key={g}><span className="item-icon">{g==='grain'?'♧':'▥'}</span><b>{g}</b><span>{e.inventory[g]}</span></div>)}</section><section className="equipment"><img src="/art/envoy.webp" alt="Your fictional traveller"/><h2>{world.identity?.name}</h2><p>{world.identity?.house}</p></section><section><h2>Equipment</h2><p>Personal clothing</p><p>Travel pack</p><p>Coin · {e.gold}</p></section></div>}
-    {page==='Party'&&<div className="inventory-layout"><section><h2>Prisoners</h2><p>None</p></section><section className="equipment"><img src="/art/envoy.webp" alt="Company leader"/><h2>{world.identity?.name}</h2><p>Company leader</p></section><section><h2>Your company · {1+(world.encounter?.guards??3)}</h2><div className="item-row"><span>⚑</span><b>{world.identity?.name}</b><span>1</span></div><div className="item-row"><span>⚔</span><b>Company guards</b><span>{world.encounter?.guards??3}</span></div><p>Camp · {byId.get(p.node)?.name??'Open country'}</p><label>March pace <select value={p.pace} onChange={e=>send({type:'pace',value:e.target.value})}><option value="steady">Steady</option><option value="swift">Swift</option></select></label></section></div>}
+    {page==='Inventory'&&e&&<>
+      <div className="inventory-layout">
+        <section><h2>Equipment</h2><div className="item-row"><span>♙</span><b>Personal clothing</b></div><div className="item-row"><span>▣</span><b>Travel pack</b></div></section>
+        <CompanyPortrait identity={world.identity}/>
+        <section><h2>Your stores</h2>{goods.map(g=><div className="item-row" key={g}><span className="item-icon">{g==='grain'?'♧':'▥'}</span><b>{g}</b><span>{e.inventory[g]}</span></div>)}<p>Coin · {e.gold}</p></section>
+      </div>
+      <footer className="roster-footer"><button onClick={()=>setPage(null)}>Done</button></footer>
+    </>}
+    {page==='Party'&&<>
+      <div className="inventory-layout">
+        <section><h2>Prisoners</h2><p>None</p></section>
+        <CompanyPortrait identity={world.identity} role="Company leader"/>
+        <section><h2>Your company · {1+(world.encounter?.guards??3)}</h2>
+          <div className="item-row"><span>⚑</span><b>{world.identity?.name}</b><span>1</span></div>
+          <div className="item-row"><span>⚔</span><b>Company guards</b><span>{world.encounter?.guards??3}</span></div>
+          <p>{p.motion?'On the march':'Camp · '+(byId.get(p.node)?.name??'Open country')}</p>
+          <label>March pace <select value={p.pace} onChange={e=>send({type:'pace',value:e.target.value})}><option value="steady">Steady</option><option value="swift">Swift</option></select></label>
+        </section>
+      </div>
+      <footer className="roster-footer"><button onClick={()=>setPage(null)}>Done</button></footer>
+    </>}
     {page==='Character'&&<><img className="character-art" src="/art/envoy.webp" alt="Fictional player portrait"/><h2>{world.identity?.name} {world.identity?.house}</h2><p>Independent company · Fictional player character</p><p>Saswad supplier relation · {world.relations?.supplier??0}</p><button onClick={()=>open('Encyclopedia')}>Open encyclopedia</button></>}
     {page==='Quests'&&<><h2>Supplies for Saswad</h2><p>{e?.quest?e.quest.status+' · '+Math.max(0,e.quest.due-world.tick)+' hours remaining':'Speak with the local supplier in Saswad.'}</p><p>20 grain · 50 wood · Reward 900 coin</p></>}
-    {page==='Settlement'&&<><h2>{byId.get(p.node)?.name??'Open country'}</h2>{!local?<p>Arrive before entering the settlement.</p>:<>
-      {byId.has(p.node)&&<img className="settlement-illustration" src={byId.get(p.node).kind==='fort'?'/art/fort-token.webp':'/art/village-token.webp'} alt="Illustration of the settlement type"/>}
+    {page==='Settlement'&&<><div className="settlement-heading"><small>Settlement</small><h2>{byId.get(p.node)?.name??'Open country'}</h2></div>{!local?<p>Arrive before entering the settlement.</p>:<>
       <div className="settlement-actions">
         {e?.markets[p.node]&&<button onClick={()=>open('Trade')}>Visit the market</button>}
         {p.node==='site_saswad'&&<button onClick={()=>open('Talk')}>Talk to the local supplier</button>}
         {p.node===raiderSite&&<button onClick={()=>open('Encounter')}>{world.encounter?.resolved?'Read the encounter report':'Investigate the raiders'}</button>}
         <button onClick={()=>{send({type:'wait',hours:6});setPage(null);}}>Wait here · 6 hours</button>
         <button onClick={()=>setPage(null)}>Leave</button>
-      </div></>}</>}
+      </div>{byId.has(p.node)&&<img className="settlement-illustration" src={byId.get(p.node).kind==='fort'?'/art/fort-token.webp':'/art/village-token.webp'} alt="Illustration of the settlement type"/>}</>}</>}
     {page==='Talk'&&<div className="conversation"><div><img src="/art/saswad-supplier.webp" alt="Fictional local supplier"/><h2>Local supplier</h2><small>Saswad · Relation {world.relations?.supplier??0}</small></div><section><p className="eyebrow">A conversation in Saswad</p><blockquote>{e?.quest?.status==='completed'?'Your supplies have arrived. Here is your payment. You have our thanks.':e?.quest?.status==='failed'?'The deadline has passed. We had to seek help elsewhere.':topic==='greeting'?'Welcome, traveller. The settlement needs supplies. Can your company help?':'Bring twenty grain and fifty wood within four days. I can offer nine hundred coin when you deliver.'}</blockquote>
     <div className="dialogue-options"><button onClick={()=>setTopic('request')}>What supplies do you need?</button><button disabled={!local||p.node!=='site_saswad'||['completed','failed'].includes(e?.quest?.status)} onClick={()=>{send({type:'quest'});setTopic('request');}}>{e?.quest?'I brought the supplies.':'I will bring them.'}</button><button onClick={()=>open('Trade')}>Let me see your market.</button><button onClick={()=>open('Settlement')}>We will speak another time.</button></div><p role="status">{e?.notice}</p></section></div>}
     {page==='Encounter'&&world.encounter&&<div className="conversation encounter"><div><img src="/art/campaign-rider.webp" alt="Illustrated company rider"/><h2>Kondhana approaches</h2></div><section><p className="eyebrow">Fictional encounter</p>

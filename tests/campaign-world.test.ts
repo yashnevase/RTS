@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {advanceMotion,type Motion} from '../packages/sim/src/movement.ts';
-import {sampleTrail} from '../packages/map/src/party-animation.ts';
+import {CampaignPlayback,sampleTrail} from '../packages/map/src/party-animation.ts';
 import {anchor,coordinate,terrain} from '../packages/sim/src/navigation.ts';
 import {changeRelation,resolveEncounter} from '../packages/sim/src/encounter.ts';
 import {createEconomy,price,purchasePrice,trade} from '../packages/sim/src/economy.ts';
@@ -16,6 +16,22 @@ test('a travelled bend survives worker snapshots and display interpolation',()=>
   assert.deepEqual(trace[1],motion.points[1]);
   const result=sampleTrail([{x:0,y:0},{x:10,y:0},{x:10,y:10}],.75);
   assert.deepEqual(result,{x:10,y:5,heading:Math.PI/2});
+});
+test('playback preserves progress through pause and speed changes and consumes queued hours in order',()=>{
+  const playback=new CampaignPlayback(900);
+  playback.enqueue(1);
+  playback.enqueue(2);
+  assert.deepEqual(playback.advance(225,1),[]);
+  assert.equal(playback.progress,.25);
+  assert.deepEqual(playback.advance(500,0),[]);
+  assert.equal(playback.progress,.25);
+  assert.deepEqual(playback.advance(225,2),[]);
+  assert.equal(playback.progress,.75);
+  assert.deepEqual(playback.advance(112.5,4),[1]);
+  assert.equal(playback.hour,2);
+  assert.equal(playback.progress,.25);
+  assert.deepEqual(playback.advance(900,1),[2]);
+  assert.equal(playback.progress,0);
 });
 test('same encounter seed repeats and hill terrain improves defender strength',()=>{
   const hill=anchor('fort_kondhana');

@@ -5,14 +5,18 @@ import { byId } from './places.js';
 
 export function useCampaign() {
   const worker = useRef(null);
+  const snapshots = useRef(new Set());
   const [world,setWorld] = useState(() => ({ ...createCampaign(), started: false }));
   useEffect(() => {
     worker.current = new Worker(new URL('./travel.worker.js',import.meta.url),{type:'module'});
-    worker.current.onmessage = event => setWorld(event.data);
+    worker.current.onmessage = event => {
+      for (const listener of snapshots.current) listener(event.data);
+      setWorld(event.data);
+    };
     worker.current.postMessage({type:'inspect'});
     return () => worker.current.terminate();
   },[]);
-  return {world, send:cmd=>worker.current?.postMessage(cmd)};
+  return {world, snapshots, send:cmd=>worker.current?.postMessage(cmd)};
 }
 export function locationOf(party) {
   if(party.motion)return position(party.motion);

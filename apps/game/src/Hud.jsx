@@ -13,12 +13,26 @@ export function Creation({send}){
 }
 export function Clock({world,send,follow,setFollow,onLocate}){
  useEffect(()=>{
-  const handler=e=>{if(/INPUT|SELECT|TEXTAREA|BUTTON/.test(e.target.tagName))return;
+  const handler=e=>{if(!world.started||e.repeat||/INPUT|SELECT|TEXTAREA|BUTTON|SUMMARY/.test(e.target.tagName))return;
    if(e.code==='Space'){e.preventDefault();send({type:'speed',value:world.speed?0:1});}
    if(['1','2','3'].includes(e.key))send({type:'speed',value:{1:1,2:2,3:4}[e.key]});
   };window.addEventListener('keydown',handler);return()=>window.removeEventListener('keydown',handler);
- },[world.speed]);
- return <><div className="campaign-status"><span>{world.identity?.house||'Your company'} · {world.economy?.gold??600} coin</span><span>{world.notice}</span></div>
- <div className="time-hud"><button onClick={onLocate}>Find company</button><button aria-pressed={follow} onClick={()=>setFollow(!follow)}>Follow</button><div><small>1622 · Day {1+Math.floor((world.tick+6)/24)}</small><strong>{String(clockHour(world.tick)).padStart(2,'0')}:00</strong></div>
- {[0,1,2,4].map(n=><button aria-label={n?'Speed '+n:'Pause'} key={n} aria-pressed={world.speed===n} onClick={()=>send({type:'speed',value:n})}>{n===0?'Ⅱ':n===1?'▶':n===2?'▶▶':'▶▶▶'}</button>)}<button onClick={()=>send({type:'wait',hours:6})}>Wait 6h</button></div></>;
+ },[world.speed,world.started,send]);
+ const player=world.parties[0];
+ const status=world.waitUntil!==null?'Waiting · '+(world.waitUntil-world.tick)+'h left':world.notice;
+ return <>
+  <div className="campaign-status" role="status">{status}</div>
+  <div className="company-hud" aria-label="Company status">
+   <span title="Coin"><i aria-hidden="true">◉</i> {world.economy?.gold??600}</span>
+   <span title="Company strength"><i aria-hidden="true">⚔</i> {1+(world.encounter?.guards??3)}</span>
+   <span title="Grain in stores"><i aria-hidden="true">♧</i> {world.economy?.inventory.grain??0}</span>
+   <span title="March pace"><i aria-hidden="true">➤</i> {player.pace==='swift'?'Swift':'Steady'}</span>
+   <button onClick={onLocate} title="Center on your company">Find</button>
+   <button aria-pressed={follow} onClick={()=>setFollow(!follow)}>Follow</button>
+  </div>
+  <div className="time-hud" aria-label="Campaign time"><div><small>1622 · Day {1+Math.floor((world.tick+6)/24)}</small><strong>{String(clockHour(world.tick)).padStart(2,'0')}:00</strong></div>
+   {[0,1,2,4].map(n=><button aria-label={n?'Speed '+n:'Pause'} title={n?n+'× speed':'Pause · Space'} key={n} aria-pressed={world.speed===n} onClick={()=>send({type:'speed',value:n})}>{n===0?'Ⅱ':n===1?'▶':n+'×'}</button>)}
+   <button onClick={()=>send({type:'wait',hours:6})}>Wait 6h</button>
+  </div>
+ </>;
 }

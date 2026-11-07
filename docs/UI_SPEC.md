@@ -4,8 +4,9 @@ Desktop baseline: 1920×1080 (TUNABLE), keyboard scalable text, readable 1280×7
 
 | Screen | Wireframe layout | Data/actions |
 |---|---|---|
-| Map HUD | Top date/resources; left party summary; center map; right selected entity; bottom time/log | Pause/1×/2×/4×, route preview, known risk, movement, notices |
-| Party | Left roster; center unit detail; right supply/pay | Wounded/fit, wages, capacity, recruit/upgrade/disband, consumption forecast |
+| Map HUD | Full map, screens at bottom left, time at bottom center, company stats at bottom right, contextual settlement actions at left | Left-click to travel, right-click to clear selection, drag to pan, scroll to zoom, follow, pause/1×/2×/4× and wait. The click briefly marks the destination. Travel has no drawn line. |
+| Inventory | Equipment at left, company portrait in the center, stores and coin at right | Equipment, goods and quantities |
+| Party | Prisoners at left, company portrait in the center, roster and pace at right | March pace and current roster. Wages, capacity, recruitment, upgrades and consumption belong to the fuller campaign. |
 | Town | Portrait/art header; left actions; center market/issues; right authority | Enter market, recruit, seek work, governor audience; control and revenue shown separately |
 | Village | Settlement header; production/needs center; local contacts right | Buy food, recruit where legal, assist, raid with consequences |
 | Fort | Fort art left; condition/supply center; authority/actions right | Garrison, access, governor, readiness and ownership confidence |

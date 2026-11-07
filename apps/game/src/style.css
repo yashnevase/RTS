@@ -29,3 +29,31 @@ aside{background:linear-gradient(120deg,#f7e6c3da,#d7bb85de),url('/art/paper.web
 .encyclopedia{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:24px;min-height:0}.ency-index{padding:14px;background:#cfb58775;border:1px solid #a78650}.ency-index ul{max-height:44vh;overflow:auto}.ency-index button[aria-current=true]{background:#6b4e2c;color:#fff1ce}.ency-tabs{display:flex;flex-wrap:wrap;gap:3px}.ency-tabs button{margin:0;font-size:12px;padding:6px}.ency-entry{border:1px solid #a78650;background:#f0d9ab40;padding:0}.ency-entry header{height:auto;min-height:130px;background:linear-gradient(105deg,#30281d,#5b492f);color:#f4dfb3;justify-content:flex-start;gap:22px}.ency-entry header h2{font-size:30px}.ency-entry header .eyebrow{color:#e1ba72}.ency-art{width:150px;min-width:100px;display:grid;place-items:center}.ency-art img{width:100%;height:120px;object-fit:contain}.ency-art span{font-size:64px;color:#dcba75}.ency-body{padding:20px;font-size:15px}.ency-body dt{color:#674e2c}.ency-body dl{grid-template-columns:100px 1fr}.ency-body table{border-collapse:collapse;width:100%;text-align:left}.ency-body td,.ency-body th{padding:8px;border-bottom:1px solid #bca16e}.campaign-nav output{color:#efd9b2;align-self:center;margin-left:12px}.continue{width:100%;margin-top:10px}.conversation>div img{background:radial-gradient(ellipse,#d9b780,#54412b);object-fit:contain}.encounter blockquote{font-size:21px}.conversation section [role=status]{min-height:22px}
 @media(max-width:700px){.encyclopedia{grid-template-columns:1fr}.ency-index ul{max-height:160px}.conversation{grid-template-columns:minmax(95px,30%) 1fr;gap:15px}.campaign-nav{flex-wrap:wrap}.campaign-nav output{font-size:11px}.ency-entry header h2{font-size:22px}}
 .settlement-shade{pointer-events:none;background:none;display:block;inset:126px auto 120px 20px;width:min(345px,calc(100vw - 40px));padding:0}.settlement-shade .game-screen{pointer-events:auto;width:100%;height:auto;max-height:100%;padding:17px;background:#e6cea4f5;box-shadow:0 10px 40px #20180b65}.settlement-shade h1{font-size:16px;margin:0 0 8px}.settlement-shade .close{font-size:11px;padding:4px 7px;margin:0}.settlement-illustration{display:block;width:100%;height:135px;object-fit:contain;background:linear-gradient(#c6b58366,#aa89492e);margin:10px 0}.settlement-actions{display:grid;gap:6px}.settlement-actions button{text-align:left;margin:0}
+
+.campaign-nav,.time-hud,.company-hud{position:absolute;bottom:13px;padding:5px;display:flex;align-items:center;gap:3px;border:1px solid #9e7b49;border-radius:6px;background:linear-gradient(#4b4230,#211c15);box-shadow:0 2px 9px #19150999,inset 0 0 0 1px #1b160f;color:#f2dfb7}
+.campaign-nav{left:13px;right:auto;justify-content:flex-start}.company-hud{right:13px;z-index:5;font-size:13px}
+.campaign-nav button,.time-hud button,.company-hud button{background:#30271c;color:#f2dfb7;border-color:#746043;padding:6px 7px;font-size:12px;min-height:31px}
+.campaign-nav button[aria-pressed=true],.time-hud button[aria-pressed=true],.company-hud button[aria-pressed=true]{background:#9b743d;color:#fff5da}
+.campaign-nav button span{color:#e8be78;margin:0 5px 0 0}.company-hud span{padding:0 6px;white-space:nowrap}.company-hud i{font-style:normal;color:#e9b96b}
+.time-hud>div{min-width:86px;padding:0 4px}.time-hud small{font-size:10px}.time-hud strong{font-size:14px}
+.campaign-nav output{position:absolute;left:0;bottom:46px;margin:0;padding:5px 8px;background:#292217;white-space:nowrap}
+.campaign-status{top:auto;bottom:65px;left:50%;transform:translateX(-50%);display:block;text-align:center;padding:4px 10px;border-radius:3px;pointer-events:none}
+.campaign-shell .legend{bottom:62px;padding:7px 10px}.campaign-shell .legend small{margin-top:3px}.campaign-shell .credit{left:auto;right:14px;bottom:64px}
+.world-events{bottom:115px}.places-toggle{right:70px}
+.party-card{position:absolute;top:68px;left:18px;min-width:200px;padding:10px 12px;background:#302719ed;color:#f2dfb7;border:1px solid #9e7b49;box-shadow:0 2px 9px #19150999}.party-card strong,.party-card small{display:block;margin-bottom:5px}.party-card button{padding:3px 8px;font-size:12px}
+.settlement-shade .game-screen{padding:10px;background:linear-gradient(#f3ddb1f5,#d7b57ded);border-color:#917040}
+.settlement-heading{padding:5px 8px 12px;border-bottom:1px solid #ad8a53;margin-bottom:8px}.settlement-heading small{color:#6d4e27;letter-spacing:.12em;text-transform:uppercase;font-size:10px}.settlement-heading h2{margin:4px 0 0}
+.settlement-actions{gap:2px}.settlement-actions button{border:0;border-bottom:1px solid #b39362;background:#f2dcb16b;padding:9px 12px}.settlement-actions button:hover{background:#edcd90}.settlement-illustration{margin:8px 0 0}
+.roster-screen{background:radial-gradient(ellipse at center,#51402a,#1e1a14 80%);color:#efdebb;border-color:#9c7b47;padding:18px 22px}
+.roster-screen h1{text-align:center;margin:0 0 16px;color:#f6deb0}
+.roster-screen .inventory-layout{gap:13px;height:calc(100% - 96px)}
+.roster-screen .inventory-layout>section{padding:0;background:#201a13b5;border-color:#746042}
+.roster-screen .inventory-layout h2{margin:0;padding:10px 12px;text-align:center;background:linear-gradient(#594c36,#342a1d);border-bottom:1px solid #8c7147;color:#f6deb0}
+.roster-screen .inventory-layout section>p,.roster-screen .inventory-layout label{display:block;padding:0 14px;font-size:14px}
+.roster-screen .item-row{display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:8px;border-color:#5f4d36;font-size:14px}
+.roster-screen .item-row span:first-child{color:#e2bc78}.roster-screen .equipment{display:flex;flex-direction:column}
+.roster-portrait{flex:1;min-height:0;padding:12px;background:radial-gradient(#8b6b3f6b,transparent)}
+.roster-portrait img{height:100%;max-width:100%;object-fit:contain;border:0}
+.roster-screen .equipment>p{margin:8px 0}.roster-footer{text-align:center}.roster-footer button{min-width:135px;background:#526043;color:#faebcb}
+@media(max-width:1390px){.time-hud{bottom:62px}.campaign-status{bottom:106px}}
+@media(max-width:720px){.campaign-nav{max-width:60vw}.campaign-nav button{font-size:0}.campaign-nav button:last-of-type,.campaign-nav button span{font-size:12px}.company-hud span:nth-child(n+3){display:none}.campaign-shell .legend{display:none}.world-events{bottom:148px}}
