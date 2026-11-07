@@ -6,6 +6,7 @@ import { project, mapSize } from '../../../packages/map/src/index.ts';
 import { homeCamera, zoomAt, reserveLabel } from '../../../packages/map/src/camera.ts';
 import { CampaignPanel, locationOf, useCampaign } from './Campaign.jsx';
 import { edges } from '../../../packages/sim/src/travel.ts';
+import { Screens } from './Screens.jsx';
 import './style.css';
 
 function MapView({ selected, onSelect, visible, hub, register, world, inspect, onInspect, locate, onOrder, follow }) {
@@ -159,6 +160,8 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
           const heraldry = {polity_adil_shahi:0x375849, polity_nizam_shahi:0x81562a, polity_portuguese:0x824852, polity_mughal:0x454d72};
           const sovereign = record.ownership?.sovereign_polity_id;
           if (hubs.includes(record.id) && heraldry[sovereign]) {
+            marks.ellipse(x,y+2,width*.56,9).fill({color:heraldry[sovereign],alpha:.55})
+              .stroke({color:heraldry[sovereign],width:2});
             const pole = x + width * .29, top = y - icon.height - 10;
             marks.moveTo(pole,y-3).lineTo(pole,top).stroke({color:0x4d391d,width:1});
             marks.poly([pole,top,pole+12,top+1,pole+8,top+4,pole+12,top+7,pole,top+7]).fill(heraldry[sovereign]).stroke({color:0xe5cea0,width:.8});
@@ -287,6 +290,6 @@ function Atlas() {
       ['Siddi command · Janjira','fort_janjira','#777063']
     ].map(([label,id,color])=><button key={id} onClick={()=>{setRegister(false);select(byId.get(id));}}><i style={{backgroundColor:color}}/>{label}</button>)}</div>
     <p>Standards indicate recorded sovereign claims. Janjira’s suzerainty is disputed.</p></details>
-    </aside></div></main>;
+    </aside></div><Screens world={world} send={send}/></main>;
 }
 createRoot(document.getElementById('root')).render(<Atlas/>);
