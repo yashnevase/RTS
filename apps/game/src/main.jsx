@@ -39,17 +39,14 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       });
       if (disposed) { app.destroy(true); return; }
       element.appendChild(app.canvas);
-      const [texture, fortArt, townArt, detailArt, portraitTexture, caravanArt, villageArt] = await Promise.all([
+      const [texture, fortArt, townArt, portraitTexture, caravanArt, villageArt] = await Promise.all([
         '/terrain/maharashtra-goa.webp','/art/fort-token.webp','/art/village-token.webp',
-        '/terrain/pune-marches.webp','/art/campaign-rider.webp','/art/campaign-caravan.webp','/art/campaign-villagers.webp'
+        '/art/campaign-rider.webp','/art/campaign-caravan.webp','/art/campaign-villagers.webp'
       ].map(path => Assets.load(path)));
       if (disposed) return;
       const terrain = new Sprite(texture);
-      const detail = new Sprite(detailArt);
       const geography = createMapGeography();
       const influence=createFactionOverlay();
-      const detailNW=project({longitude:73.35,latitude:19.35});
-      const detailSE=project({longitude:75,latitude:18});
       const crossingMarks = new Graphics();
       const corridors=[['site_chaul','site_pune'],['site_pune','site_ahmadnagar'],['site_pune','site_saswad'],['site_saswad','fort_purandar'],['site_pune','fort_kondhana']]
         .map(([from,to])=>route(anchor(from),anchor(to))??[]);
@@ -69,7 +66,7 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
       });
       const labelPlaques = new Set();
       app.stage.addChildAt(terrain,0);
-      app.stage.addChildAt(detail,1);
+
       app.stage.addChildAt(geography,2);
       app.stage.addChildAt(marks,3);
       app.stage.addChildAt(crossingMarks,4);
@@ -274,10 +271,6 @@ function MapView({ selected, onSelect, visible, hub, register, world, inspect, o
         influence.width=terrain.width;influence.height=terrain.height;
         influence.visible=factionMode.current;
         influence.alpha=camera.zoom<=2?1:.47;
-        detail.position.set(camera.x+detailNW.x*camera.zoom,camera.y+detailNW.y*camera.zoom);
-        detail.width=(detailSE.x-detailNW.x)*camera.zoom;
-        detail.height=(detailSE.y-detailNW.y)*camera.zoom;
-        detail.alpha=Math.min(1,Math.max(0,camera.zoom-1));
         marks.clear();
         plaques.clear();
         crossingMarks.clear();

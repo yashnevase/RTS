@@ -3,7 +3,7 @@ import {monsoon} from './travel.ts';
 export const goods = ['grain','wood','rice','fish'] as const;
 export type Good = typeof goods[number];
 type Goods = Partial<Record<Good,number>> & {grain:number;wood:number};
-export interface Market { stock: Goods; target: Goods; money:number; referenceStock?:Goods }
+export interface Market { stock: Goods; target: Goods; money:number; referenceStock?:Goods; importPercent?:Partial<Record<Good,number>> }
 export const units=(stock:Goods,good:Good)=>stock[good]??0;
 const retailReserve=(market:Market,good:Good)=>Math.ceil(stockTarget(market,good)/3);
 export const stockTarget=(market:Market,good:Good)=>market.target[good]??30;
@@ -20,6 +20,8 @@ export function restoreMarkets(e:Economy) {
    market.stock={...stock,...market.stock};
    market.target={...target,...market.target};
    market.referenceStock??={...market.stock};
+   market.importPercent={rice:id==='site_chaul'?85:id==='site_ahmadnagar'?140:110,
+     fish:id==='site_chaul'?80:id==='site_ahmadnagar'?145:115};
  }
  return e;
 }
@@ -27,7 +29,7 @@ export function createEconomy():Economy {
  return restoreMarkets({gold:600,inventory:{grain:0,wood:0},quest:null,notice:'',markets:{}});
 }
 export function price(market:Market,good:Good) {
- const base=basePrices[good], target=stockTarget(market,good);
+ const base=Math.round(basePrices[good]*(market.importPercent?.[good]??100)/100), target=stockTarget(market,good);
  const live=units(market.stock,good);
  const reference=market.referenceStock?units(market.referenceStock,good):live;
  const tolerance=Math.ceil(target/5);

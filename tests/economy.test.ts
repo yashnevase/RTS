@@ -117,3 +117,10 @@ test('markets recover from empty shelves and merchants leave a retail reserve',(
  merchantVisit(economy,merchant,'site_pune');
  assert.ok(pune.stock.grain>=34);
 });
+
+test('equal stocks retain a coastal to inland import price gradient',()=>{
+ const e=createEconomy();
+ for(const town of Object.values(e.markets)){town.stock.rice=30;town.target.rice=45;town.referenceStock={...town.stock};}
+ assert.ok(price(e.markets.site_chaul,'rice')<price(e.markets.site_pune,'rice'));
+ assert.ok(price(e.markets.site_pune,'rice')<price(e.markets.site_ahmadnagar,'rice'));
+});
