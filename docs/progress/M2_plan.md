@@ -1,0 +1,3 @@
+# M2 campaign movement
+
+Build and test one fixed-hour movement engine, connect it to a worker, then exercise the map controls in a browser. The player can inspect destinations, issue travel orders, inspect moving parties, change march pace, pause, advance at 1×/2×/4× and wait a chosen duration. NPCs use the same travel rules. Only explicit demo edges permit movement. Edge shapes, lengths, terrain classes, speeds, schedule and fictional traffic are gameplay assumptions. Confirm the Pune–Ahmadnagar elapsed hours by replay. Preserve region inspection and stop for playtest before economy or combat.

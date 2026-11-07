@@ -1,0 +1,99 @@
+{
+  "provenance": "Inferred M2 preview corridors. Geodesic distances with a 15% gameplay detour allowance.",
+  "metresPerHour": {
+    "road": 4800,
+    "plain": 4000,
+    "hill": 2500
+  },
+  "monsoonPercent": 75,
+  "pacePercent": {
+    "steady": 100,
+    "swift": 125
+  },
+  "edges": [
+    {
+      "a": "site_pune",
+      "b": "site_ahmadnagar",
+      "terrain": "road",
+      "metres": 130531
+    },
+    {
+      "a": "site_ahmadnagar",
+      "b": "site_khirki",
+      "terrain": "road",
+      "metres": 122958
+    },
+    {
+      "a": "site_khirki",
+      "b": "site_solapur",
+      "terrain": "plain",
+      "metres": 291451
+    },
+    {
+      "a": "site_pune",
+      "b": "fort_kondhana",
+      "terrain": "hill",
+      "metres": 23214
+    },
+    {
+      "a": "fort_kondhana",
+      "b": "site_donaje",
+      "terrain": "hill",
+      "metres": 1336
+    },
+    {
+      "a": "site_pune",
+      "b": "site_saswad",
+      "terrain": "plain",
+      "metres": 30856
+    },
+    {
+      "a": "site_saswad",
+      "b": "fort_purandar",
+      "terrain": "hill",
+      "metres": 10742
+    },
+    {
+      "a": "site_saswad",
+      "b": "site_bhor",
+      "terrain": "hill",
+      "metres": 33904
+    },
+    {
+      "a": "site_bhor",
+      "b": "fort_rajgad",
+      "terrain": "hill",
+      "metres": 23235
+    },
+    {
+      "a": "fort_rajgad",
+      "b": "site_gunjavane",
+      "terrain": "hill",
+      "metres": 317
+    },
+    {
+      "a": "site_bhor",
+      "b": "fort_torna",
+      "terrain": "hill",
+      "metres": 31421
+    },
+    {
+      "a": "fort_torna",
+      "b": "site_velhe",
+      "terrain": "hill",
+      "metres": 815
+    },
+    {
+      "a": "site_pune",
+      "b": "site_junnar",
+      "terrain": "plain",
+      "metres": 88132
+    },
+    {
+      "a": "site_junnar",
+      "b": "fort_shivneri",
+      "terrain": "hill",
+      "metres": 2543
+    }
+  ]
+}
