@@ -1,3 +1,4 @@
+import {WorkshopScreen} from './WorkshopScreen.jsx';
 import {SaveScreen} from './SaveScreen.jsx';
 import {EntityText} from './EntityText.jsx';
 import {ClanScreen} from './ClanScreen.jsx';
@@ -34,6 +35,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
   const company=world.company, mounted=company?.mounted??0, guards=world.encounter?.guards??3;
   const march=e&&marchBudget('steady',guards,mounted,e.inventory,company?.health??100);
   const power=id=>({polity_nizam_shahi:'Nizam Shahi',polity_adil_shahi:'Adil Shahi',polity_mughal:'Mughal',polity_portuguese:'Portuguese'}[id]??(id?id.replace(/^polity_/,'').replaceAll('_',' '):'Unknown'));
+  useEffect(()=>{if(page)send({type:'speed',value:0});},[page]);
   useEffect(()=>{
     if(arrival && byId.has(arrival.id)) setPage(current=>current??'Settlement');
   },[arrival]);
@@ -55,6 +57,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
   },[]);
   return <><nav className="campaign-nav" aria-label="Campaign screens">{navigation.map(([name,symbol,key])=><button key={name} aria-label={name} aria-pressed={page===name} title={key?name+' · '+key:name} onClick={()=>open(name)}><span aria-hidden="true">{['Party','Inventory'].includes(name)?<ItemIcon kind={name}/>:symbol}</span>{name}</button>)}<button disabled={!world.started} onClick={()=>open('Saves')}>Save</button>{saveStatus&&<output>{saveStatus}</output>}</nav>
   {page&&<div className={'screen-shade'+(page==='Settlement'?' settlement-shade':'')}><section className={'game-screen'+(['Inventory','Party'].includes(page)?' roster-screen':'')} role="dialog" aria-modal={page!=='Settlement'} aria-label={page}><button className="close" onClick={()=>open(null)}>Close · Esc</button>{page!=='Settlement'&&<h1>{page}</h1>}
+    {page==='Workshop'&&<WorkshopScreen world={world} send={send}/>}
     {page==='Saves'&&<SaveScreen world={world} send={send} onClose={()=>open(null)}/>}
     {page==='Encyclopedia'&&<Encyclopedia initialId={entry} key={entry} world={world} onLocate={record=>{setPage(null);onLocate(record);}}/>}
     {page==='Inventory'&&e&&<>
@@ -87,7 +90,7 @@ export function Screens({world,send,onLocate,arrival,dismissal}) {
     {page==='Quests'&&<><h2>Supplies for <button className="entity-link" onClick={()=>openEntry('site_saswad')}>Saswad</button></h2><p>{e?.quest?e.quest.status+' · '+Math.max(0,e.quest.due-world.tick)+' hours remaining':'Speak with the local supplier in Saswad.'}</p><p><ItemIcon kind="grain"/>20 grain · <ItemIcon kind="wood"/>50 wood · Reward 900 coin</p></>}
     {page==='Settlement'&&<><div className="settlement-heading"><small>{(site?.site_type??site?.fort_type??'Camp').replaceAll('_',' ')}</small><h2>{site?<button className="entity-link" onClick={()=>openEntry(site.id)}>{site.name}</button>:'Open country'}</h2>
       {site&&<p className="settlement-allegiance">Sovereignty · {power(site.ownership?.sovereign_polity_id)}<br/>Local control · {power(site.ownership?.controller_polity_id)}{site.confidence&&<><br/>Record confidence · {site.confidence}</>}</p>}</div>{!local?<p>Arrive before entering the settlement.</p>:<>
-      <div className="settlement-actions">
+      <div className="settlement-actions">{p.node==='site_pune'&&<button onClick={()=>open('Workshop')}>Grain mill workshop</button>}
         {service&&<button onClick={()=>open('Recruitment')}>Recruit troops</button>}
         {service?.meetingHouse&&<button onClick={()=>open('Sarai')}>Visit the sarai</button>}
         {e?.markets[p.node]&&<button onClick={()=>open('Trade')}>Visit the market</button>}

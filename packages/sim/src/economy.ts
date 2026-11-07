@@ -1,13 +1,13 @@
 import {marketProfiles,production} from './market-profiles.ts';
 import {monsoon} from './travel.ts';
-export const goods = ['grain','wood','rice','fish'] as const;
+export const goods = ['grain','wood','rice','fish','flour'] as const;
 export type Good = typeof goods[number];
 type Goods = Partial<Record<Good,number>> & {grain:number;wood:number};
 export interface Market { stock: Goods; target: Goods; money:number; referenceStock?:Goods; importPercent?:Partial<Record<Good,number>> }
 export const units=(stock:Goods,good:Good)=>stock[good]??0;
 const retailReserve=(market:Market,good:Good)=>Math.ceil(stockTarget(market,good)/3);
 export const stockTarget=(market:Market,good:Good)=>market.target[good]??30;
-const basePrices={grain:6,wood:8,rice:10,fish:12};
+const basePrices={grain:6,wood:8,rice:10,fish:12,flour:12};
 export interface Economy {
   gold:number; inventory:Goods; markets:Record<string,Market>;
   quest: null | {due:number; status:'active'|'completed'|'failed'}; notice:string;
@@ -19,6 +19,7 @@ export function restoreMarkets(e:Economy) {
    const market=e.markets[id]??={stock,target,money:20000};
    market.stock={...stock,...market.stock};
    market.target={...target,...market.target};
+   market.stock.flour??=20;market.target.flour??=50;
    market.referenceStock??={...market.stock};
    market.importPercent={rice:id==='site_chaul'?85:id==='site_ahmadnagar'?140:110,
      fish:id==='site_chaul'?80:id==='site_ahmadnagar'?145:115};
