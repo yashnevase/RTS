@@ -1,0 +1,23 @@
+{
+  "id": "relationship_example_001",
+  "record_version": 1,
+  "from_entity_id": "character_example_sardar_001",
+  "to_entity_id": "character_example_rival_002",
+  "relationship_type": "character_to_character",
+  "directional": true,
+  "dimensions": {
+    "trust": -25,
+    "respect": 20,
+    "affection": 0,
+    "fear": 10,
+    "grievance": 45,
+    "rivalry": 35,
+    "obligation_score": 0
+  },
+  "cause_event_ids": ["event_example_broken_promise"],
+  "last_updated_year": 1620,
+  "source_ids": [],
+  "confidence": "fictional",
+  "status": "fictional_example",
+  "notes": "Formal debts, treaties, promises and marriage links should be separate records with their own terms."
+}

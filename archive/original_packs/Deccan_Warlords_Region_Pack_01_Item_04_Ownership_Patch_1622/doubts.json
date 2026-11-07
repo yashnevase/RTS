@@ -1,0 +1,79 @@
+[
+  {
+    "id": "doubt_item4_missing_sites_v2",
+    "severity": "blocking",
+    "entity_ids": [],
+    "question": "Where is the referenced sites v2 file containing 57 site records? It is not among the accessible uploaded files; the accessible uploads contain the starter pack, the 23-fort batch, and the outputs from Items 1–3 only.",
+    "resolution": "No IDs or records have been invented. This package covers the seven null-bearing fort records and the eight site additions from Item 1 only. A complete site ownership patch for the original 57 sites requires the exact sites v2 JSON file."
+  },
+  {
+    "id": "doubt_item4_udgir_split_authority",
+    "severity": "high",
+    "entity_ids": [
+      "fort_udgir"
+    ],
+    "question": "Was Udgir under Nizam Shahi sovereign title, Adil Shahi sovereign title, or a Nizam Shahi title with an Adil Shahi-backed local command in 1622?",
+    "resolution": "Leave sovereign_polity_id and controller_polity_id null/unknown. The historical accounts disagree and do not date the split precisely to 1622."
+  },
+  {
+    "id": "doubt_item4_torna_pre1646",
+    "severity": "medium",
+    "entity_ids": [
+      "fort_torna"
+    ],
+    "question": "Which polity held sovereign title and practical command at Torna in 1622, before the reported 1646 capture from an Adil Shahi commandant?",
+    "resolution": "Leave both fields null/unknown; the 1646 event must not be backdated."
+  },
+  {
+    "id": "doubt_item4_jivdhan_chronology",
+    "severity": "medium",
+    "entity_ids": [
+      "fort_jivdhan"
+    ],
+    "question": "Can a date-specific source establish Jivdhan's sovereign/controller pair in 1622? A local article has a conflicting 1663 date for the Shahaji-era sequence.",
+    "resolution": "Leave both fields null/unknown until the chronology is independently resolved."
+  },
+  {
+    "id": "doubt_item4_hadsar_pre1637",
+    "severity": "medium",
+    "entity_ids": [
+      "fort_hadsar"
+    ],
+    "question": "Does the reference to Hadsar in Shahaji's 1637 treaty prove who held it in 1622?",
+    "resolution": "No. Leave both fields null/unknown; the 1637 notice is not backdated."
+  },
+  {
+    "id": "doubt_item4_dabhol_controller",
+    "severity": "medium",
+    "entity_ids": [
+      "fort_dabhol"
+    ],
+    "question": "Who controlled the specific Dabhol old-castle/harbour-battery asset in 1622, and was it an operational fort at that date?",
+    "resolution": "Keep controller_polity_id null/unknown and retain the supplied Adil Shahi sovereign value unchanged. Do not infer Portuguese control from the 1615 factory."
+  },
+  {
+    "id": "doubt_item4_site_level_jurisdiction",
+    "severity": "medium",
+    "entity_ids": [
+      "site_panhala",
+      "site_velhe",
+      "site_malavli",
+      "site_tikona_peth",
+      "site_gunjavane",
+      "site_donaje",
+      "site_korlai",
+      "site_murud"
+    ],
+    "question": "Do the nearby fort polities or modern settlement names establish the sovereign/controller pair for each distinct settlement in 1622?",
+    "resolution": "No. Keep all eight site ownership fields unknown until village-level grants, revenue records, boundary descriptions, or dated administrative evidence are located."
+  },
+  {
+    "id": "doubt_item4_janjira_official_vs_commander",
+    "severity": "low",
+    "entity_ids": [
+      "fort_janjira"
+    ],
+    "question": "Does assigning Nizam Shahi as sovereign/controller conflict with Siddi Ambar Sanak's existing governor and garrison commander fields?",
+    "resolution": "No. The academic chronology identifies the Siddi as the fort commander appointed by Malik Ambar; preserve the character fields as separate from sovereign/controller polity fields."
+  }
+]

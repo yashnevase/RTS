@@ -1,0 +1,22 @@
+{
+  "id": "scenario_1622",
+  "record_version": 1,
+  "display_name": "Deccan Campaign — 1622",
+  "start_date": { "year": 1622, "month": 1, "day": 1, "precision": "year_only" },
+  "world_id": "world_deccan_first",
+  "snapshot_refs": {
+    "polities": "snapshots/1622/polities.json",
+    "characters": "snapshots/1622/characters.json",
+    "clans": "snapshots/1622/clans.json",
+    "settlements": "snapshots/1622/settlements.json",
+    "parties": "snapshots/1622/parties.json",
+    "economy": "snapshots/1622/economy.json"
+  },
+  "historical_pressure_ids": [],
+  "optional_event_ids": [],
+  "simulation_seed": 1622,
+  "source_ids": [],
+  "confidence": "draft",
+  "status": "draft",
+  "notes": "The original project brief recommends an approximately 1622 first scenario. All ruler, ownership and force data must be date-checked before approval."
+}

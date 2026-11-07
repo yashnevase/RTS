@@ -1,0 +1,92 @@
+[
+  {
+    "id": "source_project_input_batch02a",
+    "title": "Region Pack 01 Batch 02A — new_sites_needed.json",
+    "author": null,
+    "publisher": "User-supplied project input",
+    "year": 2026,
+    "url": null,
+    "source_type": "project_input",
+    "claim_scope": "Supplied site IDs, proposed names, proposed site types, approximate coordinates, and intended nearby-fort relationships only. Not an independent historical source."
+  },
+  {
+    "id": "source_forts_maharashtra_panhala",
+    "title": "The Fort of Panhala",
+    "author": null,
+    "publisher": "Forts Maharashtra",
+    "year": null,
+    "url": "https://www.fortsmaharashtra.com/panhala-fort/",
+    "source_type": "secondary_historical_summary",
+    "claim_scope": "Reports a 12th-century Panhala stronghold and the 1191–1192 Bhoja II court/copper-plate tradition. Not evidence of a separate market-town footprint."
+  },
+  {
+    "id": "source_incredible_india_panhala",
+    "title": "Panhala Fort",
+    "author": null,
+    "publisher": "Incredible India, Government of India",
+    "year": null,
+    "url": "https://www.incredibleindia.gov.in/en/maharashtra/kolhapur/panhala-fort",
+    "source_type": "government_heritage_summary",
+    "claim_scope": "States that the fort dates to the Shilahara period under Bhoja II and that copper plates evidence Panhala under his rule; does not independently attest a distinct market settlement."
+  },
+  {
+    "id": "source_tikona_peth_trawell",
+    "title": "Tikona Fort, Lonavala — visitor information",
+    "author": null,
+    "publisher": "Trawell.in",
+    "year": null,
+    "url": "https://www.trawell.in/maharashtra/lonavala/tikona-fort",
+    "source_type": "modern_place_reference",
+    "claim_scope": "Identifies Tikona Peth as the nearest present-day village to Tikona Fort; not evidence of a 1622 settlement."
+  },
+  {
+    "id": "source_census_2011_pune",
+    "title": "PCA TV: Primary Census Abstract at town, village and ward level, Maharashtra — District Pune, 2011",
+    "author": "Office of the Registrar General & Census Commissioner, India",
+    "publisher": "Census of India",
+    "year": 2011,
+    "url": "https://censusindia.gov.in/nada/index.php/catalog/6712",
+    "source_type": "official_census",
+    "claim_scope": "Lists Donaje and Gunjavane as present-day Pune district villages. Also lists Malavali under Velhe sub-district; because this may not be the supplied Lohagad-side coordinate, it is used only as a name-collision warning. Not evidence for 1622."
+  },
+  {
+    "id": "source_pune_district_sinhagad",
+    "title": "Sinhagad",
+    "author": "District Administration, Pune",
+    "publisher": "Government of Maharashtra",
+    "year": null,
+    "url": "https://pune.gov.in/en/tourist-place/sinhagad/",
+    "source_type": "government_place_reference",
+    "claim_scope": "Identifies Kondhana as the earlier name of Sinhagad Fort and locates it at present-day village Donaje; not evidence that Donaje was the 1622 village name."
+  },
+  {
+    "id": "source_chaudenson_1997_korlai",
+    "title": "Un parler exogène en situation d’endogénéité : le créole portugais de Korlai",
+    "author": "Robert Chaudenson",
+    "publisher": "Études Créoles, 20(1), pp. 117–129; Persée",
+    "year": 1997,
+    "url": "https://www.persee.fr/doc/ecreo_0708-2398_1997_num_20_1_1582",
+    "source_type": "scholarly_article",
+    "claim_scope": "States that the village of Korlai was founded around 1595. The date is approximate and the article summarizes earlier historical material."
+  },
+  {
+    "id": "source_hpip_korlai_village",
+    "title": "Korlai Village",
+    "author": null,
+    "publisher": "Heritage of Portuguese Influence Portal (HPIP)",
+    "year": null,
+    "url": "https://hpip.org/en/heritage/details/931",
+    "source_type": "heritage_reference",
+    "claim_scope": "Notes the older designation Korlai/Kôrlê and its rural character beside Chaul; used for spelling and settlement context, not as a precise 1622 date."
+  },
+  {
+    "id": "source_maharashtra_tourism_murud_janjira",
+    "title": "Murud-Janjira",
+    "author": null,
+    "publisher": "Department of Tourism, Government of Maharashtra",
+    "year": null,
+    "url": "https://maharashtratourism.gov.in/fort/murud-janjira/",
+    "source_type": "government_tourism_reference",
+    "claim_scope": "Locates Janjira Fort on an offshore rock near Murud and summarizes its fort history; does not establish when the mainland town of Murud arose."
+  }
+]

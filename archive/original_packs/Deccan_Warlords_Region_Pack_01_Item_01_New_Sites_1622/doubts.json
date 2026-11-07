@@ -1,0 +1,67 @@
+[
+  {
+    "id": "S1",
+    "issue": "Sites v2 file not present in the available uploads",
+    "verify": "The accessible uploads contain the starter pack and the forts batch, but not the 57-record sites v2 JSON. These additions therefore follow settlement.example.json from the starter pack. Its coordinate field is singular (coordinate), whereas forts.json and new_sites_needed.json use plural coordinates. Reconcile against the actual sites v2 schema before merging; no existing site IDs were edited."
+  },
+  {
+    "id": "S2",
+    "issue": "Panhala site versus Panhala Fort",
+    "verify": "Panhala is attested as a Shilahara place/seat by the Bhoja II 1191–1192 tradition and the fort is medieval. The evidence found does not establish a separately bounded market town with its own population in 1622. The proposed market_town type is retained from the supplied need-list only as a provisional classification; confirm whether the settlement should instead be represented as a fort-associated locality or whether site_panhala should be omitted as duplicative."
+  },
+  {
+    "id": "S3",
+    "issue": "Velhe historical settlement identity",
+    "verify": "The supplied data gives Velhe as the Torna base, but no dated pre-1622 evidence for a settlement named Velhe was established. The 2011 Census source identifies Velhe as a sub-district, not enough by itself to prove a distinct 1622 village. Confirm exact historic name and village/town classification."
+  },
+  {
+    "id": "S4",
+    "issue": "Malavli name collision and location",
+    "verify": "The supplied coordinates are for the Lohagad-side Malavli anchor, but no period attestation was established. Census material also lists a similarly spelled Malavali under Velhe sub-district, which may be a different place. Confirm exact village/census code or historical spelling before attaching demographic or ownership data."
+  },
+  {
+    "id": "S5",
+    "issue": "Tikona Peth period attestation",
+    "verify": "Modern visitor material calls Tikona Peth the nearest village to Tikona Fort. No pre-1622 attestation of the settlement or the compound name Tikona Peth was established. Keep valid_from null until a dated record is found."
+  },
+  {
+    "id": "S6",
+    "issue": "Gunjavane period attestation",
+    "verify": "The 2011 Census confirms a present-day village named Gunjavane in Pune district, but not its existence or name in 1622. The site is a provisional locality anchor for Murumbdev Fort only."
+  },
+  {
+    "id": "S7",
+    "issue": "Donaje period attestation and naming",
+    "verify": "The Pune District government identifies Kondhana Fort at present-day Donaje, and the 2011 Census lists Donaje. These references do not date Donaje as a settlement in 1622. Keep Kondhana as the period fort name; do not backdate Sinhagad."
+  },
+  {
+    "id": "S8",
+    "issue": "Korlai/Kôrlê spelling and foundation date",
+    "verify": "Chaudenson (1997) states that Korlai village was founded around 1595; it is an approximate date summarized from earlier work, not a dated foundation inscription presented in the article. HPIP records Korlai/Kôrlê as forms. Confirm the exact spelling used locally in 1622."
+  },
+  {
+    "id": "S9",
+    "issue": "Murud 1622 status versus Rajapuri",
+    "verify": "Modern government tourism material locates Janjira Fort near Murud, but no source in this pass dates a separate Murud town to 1622. The existing site_rajapuri remains the immediate shore/landing anchor; site_murud is a secondary mainland support locator only. Verify historical status and whether both sites are needed."
+  },
+  {
+    "id": "S10",
+    "issue": "Approximate coordinate provenance",
+    "verify": "All eight coordinate pairs are copied exactly from the supplied new_sites_needed.json and are treated as modern approximate map locators, not as surveyed historical settlement centroids or proof of seventeenth-century footprints."
+  },
+  {
+    "id": "S11",
+    "issue": "No additional settlements added beyond the eight requested anchors",
+    "verify": "No further missing local settlements were added in this pass because the 57-site base file is not available for a complete coverage check, and no additional candidate met the evidence threshold without guessing."
+  },
+  {
+    "id": "S12",
+    "issue": "Ownership and demographic fields intentionally unresolved",
+    "verify": "All ownership roles, population, language/culture/religion shares, economy and security quantities remain null/empty. These are not inferred from geography or the associated fort and should be resolved only in the relevant later ownership or demographic work."
+  },
+  {
+    "id": "S13",
+    "issue": "Fort links are map relationships, not sovereignty claims",
+    "verify": "protecting_fort_ids identifies the supplied local fort association for navigation/map purposes. It does not assert that the fort legally owned, administered, garrisoned or collected revenue from the site in 1622. Murud–Janjira is especially provisional as a regional support relation."
+  }
+]

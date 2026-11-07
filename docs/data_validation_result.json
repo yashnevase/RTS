@@ -1,0 +1,25 @@
+{
+  "errors": [],
+  "warnings": [
+    "world/forts/forts_region01.json[18]/region_id: unknown region (must remain in review)",
+    "world/sites/sites_region01.json[57]/region_id: unknown region (must remain in review)"
+  ],
+  "record_counts": {
+    "character": 1,
+    "clan": 13,
+    "crossing": 13,
+    "doubt": 43,
+    "family": 13,
+    "fort": 23,
+    "node": 65,
+    "pass": 5,
+    "polity": 3,
+    "region": 19,
+    "route": 5,
+    "site": 65,
+    "source": 94
+  },
+  "total_records": 362,
+  "proposal_count": 15,
+  "stub_records": 120
+}

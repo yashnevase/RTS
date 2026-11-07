@@ -1,0 +1,103 @@
+[
+  {
+    "id": "source_maharashtra_in_maps_1986",
+    "title": "Maharashtra in Maps",
+    "author": "K. R. Dikshit; assisted by Charulata Patil",
+    "publisher": "Maharashtra State Board for Literature and Culture, Bombay",
+    "date": "First edition, June 1986",
+    "url": "https://sahitya.marathi.gov.in/ebooks/MAHARASHTRA%20IN%20MAPS.pdf",
+    "source_type": "government_published_historical_geography_synthesis",
+    "supports": "Chapter XIII identifies the North-to-Deccan approach via the Burhanpur gap and Tapi crossing, with Dhule–Malegaon or Jalgaon–Aurangabad routes; it identifies Aurangabad–Solapur–Bijapur, Aurangabad–Ahmadnagar–Pune, and Bijapur–Karad–Chiplun–Guhagar as strategically important traditional routes. It states that these routes assumed added importance in the late seventeenth and eighteenth centuries.",
+    "caveat": "Retrospective regional synthesis, not a 1622 itinerary or surveyed historical road map. Its use of 'Aurangabad' is later than the scenario's Khirki-era naming. The statement about routes gaining importance cautions against assuming identical traffic or maintenance in 1622."
+  },
+  {
+    "id": "source_pune_gazetteer_1885_trade_communications",
+    "title": "Gazetteer of the Bombay Presidency, Poona District, Volume III, Communications and Traffic",
+    "publisher": "Bombay Presidency; reprint by Maharashtra State Gazetteers",
+    "date": "Original volume 1885; facsimile reprint 1991",
+    "url": "https://ocrdigitalfile.nvli.in/snarepository/other/Watermarked-Poona-District-Part-III-ocr.pdf",
+    "source_type": "historical_district_gazetteer",
+    "supports": "Pages 109–110 describe the Poona–Nasik road, branches to Junnar, the Malsej route via Belha/Ale/Otur/Madh, Junnar–Ghatghar–Nana pass, and pack-animal trade with the Konkan.",
+    "caveat": "Nineteenth-century description. It establishes later route use and names, not continuous operation, exact alignments or facilities in 1622."
+  },
+  {
+    "id": "source_imperial_gazetteer_bhor_ghat",
+    "title": "The Imperial Gazetteer of India, 2nd edition, Volume II, entry 'Bhor Ghat'",
+    "publisher": "Government of India, Imperial Gazetteer",
+    "date": "1908 edition",
+    "url": "https://en.wikisource.org/wiki/Page%3AThe_Imperial_Gazetteer_of_India_-_Volume_2_%282nd_edition%29.pdf/417",
+    "source_type": "historical_gazetteer",
+    "supports": "Describes Bhor Ghat as a key Deccan gateway, pack-bullock traffic before carriage-road construction, artillery access improvements in 1804 and the 1830 carriage-road opening.",
+    "caveat": "Retrospective source; it does not date the old pack track to 1622 or provide its precise seventeenth-century alignment."
+  },
+  {
+    "id": "source_goi_incredible_india_lohagad_bor_ghat",
+    "title": "Lohagad and Visapur",
+    "publisher": "Incredible India, Government of India",
+    "date": "Online destination page, accessed 2026-11-06",
+    "url": "https://www.prod.incredibleindia.gov.in/content/incredible-india-v2/en/destinations/pune/lohagad-and-visapur.html",
+    "source_type": "government_tourism_webpage",
+    "supports": "States that Lohagad and Visapur guarded the trade route through Bor Ghat between the Arabian Sea and the Deccan; dates Visapur's construction to 1713–1720.",
+    "caveat": "General tourism description; does not provide a dated 1622 command record. Visapur is later than the scenario and is not inserted into this corridor."
+  },
+  {
+    "id": "source_marathi_vishwakosh_naneghat",
+    "title": "Nane Ghat (नाणेघाट)",
+    "publisher": "Marathi Vishwakosh / Maharashtra Rajya Marathi Vishwakosh Nirmiti Mandal",
+    "date": "Online entry, accessed 2026-11-06",
+    "url": "https://vishwakosh.marathi.gov.in/19524/",
+    "source_type": "reference_encyclopedia",
+    "supports": "Ancient Nane Ghat's Desh–Konkan trade role, Junnar-side connection and historic pass setting.",
+    "caveat": "Modern reference article, not a 1622 itinerary or daily traffic record."
+  },
+  {
+    "id": "source_pune_gazetteer_jivdhan",
+    "title": "Poona District Gazetteer, Places of Interest: Jivadhan Fort",
+    "publisher": "Maharashtra State Gazetteers",
+    "date": "District gazetteer entry; twentieth-century compilation",
+    "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Poona/PART%20VI/Chap%20%2820%29/Places%20Of%20Interest.htm",
+    "source_type": "district_gazetteer",
+    "supports": "Jivdhan described as commanding Nane Ghat; records Nizam Shahi fort status until the dynasty's extinction and inclusion in a Mughal transfer in 1637.",
+    "caveat": "Does not identify a 1622 killedar, daily traffic or exact seventeenth-century control of the approach."
+  },
+  {
+    "id": "source_thane_district_malshej",
+    "title": "Malshej Ghat",
+    "publisher": "District Administration, Thane, Government of Maharashtra",
+    "date": "Page last updated 2018-05-17",
+    "url": "https://thane.nic.in/en/tourist-place/malshej-ghat/",
+    "source_type": "government_district_webpage",
+    "supports": "Present Malshej location on the Kalyan–Nagar road and current route from Junnar via Narayangaon.",
+    "caveat": "Present road alignment; not proof of a 1622 route or equivalence with every older Malsej spelling/alignment."
+  },
+  {
+    "id": "source_maharashtra_tourism_malshej",
+    "title": "Malshej Ghat",
+    "publisher": "Department of Tourism, Government of Maharashtra",
+    "date": "Online tourism page, accessed 2026-11-06",
+    "url": "https://maharashtratourism.gov.in/nature/malshej-ghat/",
+    "source_type": "government_tourism_webpage",
+    "supports": "Describes Malshej as a mountain pass and references historic strategic movements and old trade routes.",
+    "caveat": "General historical statement; no 1622 route date, exact alignment or operational details."
+  },
+  {
+    "id": "source_user_forts_batch_02a",
+    "title": "Region Pack 01 Batch 02A — forts.json and related files",
+    "publisher": "User-supplied project data",
+    "date": "Supplied 2026-11-06",
+    "url": null,
+    "source_type": "user_supplied_dataset",
+    "supports": "Exact IDs fort_daulatabad, fort_lohagad, fort_jivdhan and referenced site IDs site_khirki, site_ahmadnagar, site_pune, site_solapur, site_junnar.",
+    "caveat": "Project data provides IDs and associations, not independent proof of historical route alignments."
+  },
+  {
+    "id": "source_user_item1_new_sites",
+    "title": "Region Pack 01 Item 01 — new sites additions",
+    "publisher": "User-supplied project data / prior generated pack",
+    "date": "2026-11-06",
+    "url": null,
+    "source_type": "project_dataset",
+    "supports": "Exact ID site_malavli and its association with fort_lohagad.",
+    "caveat": "Site addition is a map anchor only; it does not prove the exact road centreline or a seventeenth-century settlement classification."
+  }
+]

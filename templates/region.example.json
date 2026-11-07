@@ -1,0 +1,26 @@
+{
+  "id": "region_example_western_deccan",
+  "record_version": 1,
+  "name": "Example Western Deccan Region",
+  "name_variants": [],
+  "macro_region_id": "macro_deccan",
+  "parent_region_id": null,
+  "geometry_ref": "geometry/regions/example_western_deccan.geojson",
+  "terrain_profile": {
+    "plain": 0.2,
+    "plateau": 0.35,
+    "hills": 0.3,
+    "forest": 0.15
+  },
+  "elevation_m": { "min": 300, "max": 1100 },
+  "natural_feature_ids": [],
+  "route_node_ids": [],
+  "settlement_ids": [],
+  "climate_profile_id": "climate_deccan_monsoon",
+  "valid_from": null,
+  "valid_to": null,
+  "source_ids": [],
+  "confidence": "inferred",
+  "status": "draft",
+  "notes": "Illustrative data shape only; not a real historical boundary."
+}

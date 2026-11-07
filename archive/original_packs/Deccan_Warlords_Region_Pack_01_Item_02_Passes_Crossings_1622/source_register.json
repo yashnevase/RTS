@@ -1,0 +1,132 @@
+[
+  {
+    "id": "source_marathi_vishwakosh_naneghat",
+    "title": "Nane Ghat (नाणेघाट)",
+    "publisher": "Marathi Vishwakosh / Maharashtra Rajya Marathi Vishwakosh Nirmiti Mandal",
+    "date": "online entry, accessed 2026-11-06",
+    "url": "https://vishwakosh.marathi.gov.in/19524/",
+    "source_type": "reference_encyclopedia",
+    "supports": "Satavahana-period formation, Nane Ghat's ancient Desh–Konkan trade role, route between Junnar and Murbad, its position at Jivdhan, and Jivdhan's ability to control the pass.",
+    "caveat": "Modern reference article, not a 1622 itinerary."
+  },
+  {
+    "id": "source_pune_gazetteer_trade_communications",
+    "title": "Gazetteer of the Bombay Presidency: Poona District, Trade and Communications",
+    "publisher": "Bombay Presidency / Maharashtra State Gazetteers",
+    "date": "late 19th century gazetteer; digitized online",
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Poona%20District/Poona-II/trade_communication.html",
+    "source_type": "historical_gazetteer",
+    "supports": "Poona district historic roads and passes; Bor pass; Malsej-Ana pass road; Tamni/Sathpayri pedestrian footpath; the named ferry locations, routes, nineteenth-century service classes, seasons and establishment dates.",
+    "caveat": "The described ferries are 19th-century services. 'Established before 1875' does not mean established by 1622; Tamni/Sathpayri is not conclusively equated with modern Tamhini."
+  },
+  {
+    "id": "source_pune_gazetteer_jivdhan",
+    "title": "Poona District Gazetteer, Places of Interest: Jivadhan Fort",
+    "publisher": "Maharashtra State Gazetteers",
+    "date": "20th-century district gazetteer based on earlier district records",
+    "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Poona/PART%20VI/Chap%20%2820%29/Places%20Of%20Interest.htm",
+    "source_type": "district_gazetteer",
+    "supports": "Jivdhan described as commanding Nane Ghat; recorded as a Nizam Shahi fort until the dynasty's extinction and included in a Mughal transfer in 1637.",
+    "caveat": "Does not establish exact 1622 killedar or the pass's daily traffic."
+  },
+  {
+    "id": "source_thane_district_malshej",
+    "title": "Malshej Ghat",
+    "publisher": "District Administration, Thane, Government of Maharashtra",
+    "date": "page last updated 2018-05-17",
+    "url": "https://thane.nic.in/en/tourist-place/malshej-ghat/",
+    "source_type": "government_district_webpage",
+    "supports": "Present Malshej location on the Kalyan–Nagar road and current route from Junnar via Narayangaon.",
+    "caveat": "Present road alignment; not proof of a 1622 route."
+  },
+  {
+    "id": "source_maharashtra_tourism_malshej",
+    "title": "Malshej Ghat",
+    "publisher": "Department of Tourism, Government of Maharashtra",
+    "date": "accessed 2026-11-06",
+    "url": "https://maharashtratourism.gov.in/nature/malshej-ghat/",
+    "source_type": "government_tourism_webpage",
+    "supports": "Official tourism overview describes Malshej as a mountain pass, references historic strategic movements and old trade routes, and identifies Harishchandragad nearby.",
+    "caveat": "General historical statement; no 1622 route date or operational details."
+  },
+  {
+    "id": "source_maharashtra_ahead_junnar_forts",
+    "title": "Shivneri and Junnar-area forts, Maharashtra Ahead",
+    "publisher": "Directorate General of Information and Public Relations, Government of Maharashtra",
+    "date": "January 2020",
+    "url": "https://dgipr.maharashtra.gov.in/sites/default/files/2020-07/MAhead-Jan2020.pdf",
+    "source_type": "government_magazine_pdf",
+    "supports": "Modern description of Shivneri/Junnar and its surrounding route setting.",
+    "caveat": "Tourism-oriented government magazine; not a direct 1622 route source."
+  },
+  {
+    "id": "source_imperial_gazetteer_bhor_ghat",
+    "title": "The Imperial Gazetteer of India, Vol. II, entry 'Bhor Ghat'",
+    "publisher": "Government of India, Imperial Gazetteer",
+    "date": "1908 edition",
+    "url": "https://en.wikisource.org/wiki/Page%3AThe_Imperial_Gazetteer_of_India_-_Volume_2_%282nd_edition%29.pdf/417",
+    "source_type": "historical_gazetteer",
+    "supports": "Bhor Ghat as a strategic Deccan gateway; pack-bullock traffic before road construction; artillery access improved in 1804; carriage road completed in 1830.",
+    "caveat": "Retrospective nineteenth-century account; no direct 1622 road specification."
+  },
+  {
+    "id": "source_goi_incredible_india_lohagad_bor_ghat",
+    "title": "Lohagad and Visapur",
+    "publisher": "Incredible India, Government of India",
+    "date": "accessed 2026-11-06",
+    "url": "https://www.prod.incredibleindia.gov.in/content/incredible-india-v2/en/destinations/pune/lohagad-and-visapur.html",
+    "source_type": "government_tourism_webpage",
+    "supports": "States Lohagad and Visapur guarded the Bor Ghat trade route; dates Visapur construction to 1713–1720.",
+    "caveat": "Do not backdate Visapur to 1622; general tourism account does not specify the precise 1622 commanding arrangement."
+  },
+  {
+    "id": "source_bombay_gazetteer_ratnagiri_passes",
+    "title": "Gazetteer of the Bombay Presidency: Ratnagiri and Savantvadi, Trade and Communications",
+    "publisher": "Bombay Presidency / Maharashtra State Gazetteers",
+    "date": "late 19th century gazetteer; includes Captain Clunes' 1826 itinerary",
+    "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Ratnagiri%20and%20Sawantwadi/ratnagiri/trade1_communications.html",
+    "source_type": "historical_gazetteer",
+    "supports": "Kumbharli as the principal northern Ratnagiri pass to Dabhol/Chiplun; Clunes' 1826 description of the old pass as long, winding, rocky and then a major high road after repair.",
+    "caveat": "Nineteenth-century description; no dated evidence for a 1622 pass commander or seasonal status."
+  },
+  {
+    "id": "source_bombay_gazetteer_satara_trade_roads",
+    "title": "Gazetteer of the Bombay Presidency: Satara District, Trade Roads",
+    "publisher": "Bombay Presidency / Maharashtra State Gazetteers",
+    "date": "late 19th century gazetteer",
+    "url": "https://gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Satara%20District/trade_roads.html",
+    "source_type": "historical_gazetteer",
+    "supports": "Early trade routes to Konkan ports by Kumbharli and other passes; pass-network and fort relationships; later cart-road construction.",
+    "caveat": "The source explicitly describes the early route as a retrospective inference; distinguish ancient/pre-modern use from exact 1622 operation."
+  },
+  {
+    "id": "source_bombay_gazetteer_history_konkan",
+    "title": "Gazetteer of the Bombay Presidency: History of the Konkan, Section III",
+    "publisher": "Bombay Presidency / Maharashtra State Gazetteers",
+    "date": "late 19th century gazetteer synthesizing earlier accounts",
+    "url": "https://www.gazetteers.maharashtra.gov.in/cultural.maharashtra.gov.in/english/gazetteer/Gazetteer%20of%20Bombay%20Presidency/history_of_the_konkan/section_3.pdf",
+    "source_type": "historical_gazetteer_pdf",
+    "supports": "A Bijapur–Dabhol route via Kumbharli and Chiplun's traffic; a later 1630s Shahji movement through a pass called Kumbha; early modern Deccan–Konkan trade.",
+    "caveat": "Kumbha is not equated conclusively with Kumbharli; the Shahji episode is later than 1622. Route citation for Kumbharli is sourced through Ogilby and retrospective gazetteer synthesis."
+  },
+  {
+    "id": "source_konkan_division_tamhini_modern",
+    "title": "Tamhini Ghat",
+    "publisher": "Divisional Commissioner, Konkan Division, Government of Maharashtra",
+    "date": "accessed 2026-11-06",
+    "url": "https://divcomkonkan.gov.in/en/places-centres/tamhini-ghat/",
+    "source_type": "government_location_page",
+    "supports": "Modern location reference for Tamhini Ghat near Mulshi and Mangaon.",
+    "caveat": "Does not attest a premodern path or 1622 use."
+  },
+  {
+    "id": "source_user_forts_batch_02a",
+    "title": "Region Pack 01 Batch 02A — forts.json, site_updates.json and new_sites_needed.json",
+    "publisher": "User-supplied project material",
+    "date": "uploaded 2026-11-06",
+    "url": null,
+    "source_type": "project_input",
+    "supports": "Exact fort IDs, site IDs visible in fort references, regional IDs and supplied site additions.",
+    "caveat": "The separate 57-site v2 file was not present in the conversation attachments available for this batch."
+  }
+]

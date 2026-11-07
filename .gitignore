@@ -1,12 +1,7 @@
-# Godot generated/imported data
-.godot/
-
-# Blender autosave backup generated when rebuilding the source model
-*.blend1
-
-# macOS metadata
+.venv/
+node_modules/
+dist/
+__pycache__/
+*.pyc
 .DS_Store
-
-# Local editor settings and logs
-.vscode/
-*.log
+__MACOSX/

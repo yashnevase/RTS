@@ -1,0 +1,193 @@
+{
+  "type": "object",
+  "properties": {
+    "19th_century_attestation": {
+      "type": "object",
+      "properties": {
+        "class_meaning": {
+          "type": "string"
+        },
+        "established_by": {
+          "type": "string"
+        },
+        "service_class": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "class_meaning",
+        "established_by",
+        "service_class"
+      ],
+      "additionalProperties": false
+    },
+    "active_in_1622": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "contested",
+        "fictional",
+        "inferred"
+      ]
+    },
+    "connections": {
+      "type": "object",
+      "properties": {
+        "external_endpoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fort_ids": {
+          "type": "array",
+          "items": {}
+        },
+        "site_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "external_endpoints",
+        "fort_ids",
+        "site_ids"
+      ],
+      "additionalProperties": false
+    },
+    "controlling_fort_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "crossing_mechanism_attested_19c": {
+      "type": "string"
+    },
+    "crossing_type": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^crossing_[a-z0-9_]+$"
+    },
+    "locality": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "name_variants": {
+      "type": "array",
+      "items": {}
+    },
+    "notes": {
+      "type": "string"
+    },
+    "practical_army_class": {
+      "type": "object",
+      "properties": {
+        "basis": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "basis",
+        "class",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "record_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "road_alignment": {
+      "type": "string"
+    },
+    "season_availability": {
+      "type": "object",
+      "properties": {
+        "1622_service": {
+          "type": "string"
+        },
+        "19th_century_service": {
+          "type": "string"
+        },
+        "source_note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "1622_service",
+        "19th_century_service",
+        "source_note"
+      ],
+      "additionalProperties": false
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^source_"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "researched",
+        "reviewed",
+        "approved",
+        "fictional",
+        "deprecated",
+        "stub"
+      ]
+    },
+    "terrain_description": {
+      "type": "string"
+    },
+    "watercourse": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "19th_century_attestation",
+    "active_in_1622",
+    "confidence",
+    "connections",
+    "controlling_fort_id",
+    "crossing_mechanism_attested_19c",
+    "crossing_type",
+    "id",
+    "locality",
+    "name",
+    "name_variants",
+    "notes",
+    "practical_army_class",
+    "record_version",
+    "road_alignment",
+    "season_availability",
+    "source_ids",
+    "status",
+    "terrain_description",
+    "watercourse"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

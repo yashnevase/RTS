@@ -1,0 +1,440 @@
+{
+  "type": "object",
+  "properties": {
+    "attached_village_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "contested",
+        "fictional",
+        "inferred"
+      ]
+    },
+    "coordinate": {
+      "type": "object",
+      "required": [
+        "latitude",
+        "longitude"
+      ],
+      "properties": {
+        "latitude": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "longitude": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "game_x": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "game_y": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "development_tier": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "economy": {
+      "type": "object",
+      "properties": {
+        "food_stock": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "market_profile_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "production_profile_ids": {
+          "type": "array",
+          "items": {}
+        },
+        "prosperity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "storage_capacity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "tax_policy_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "water_security": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "food_stock",
+        "market_profile_id",
+        "production_profile_ids",
+        "prosperity",
+        "storage_capacity",
+        "tax_policy_id",
+        "water_security"
+      ],
+      "additionalProperties": false
+    },
+    "feature_ids": {
+      "type": "array",
+      "items": {}
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^site_[a-z0-9_]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "name_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "ownership": {
+      "type": "object",
+      "required": [
+        "sovereign_polity_id",
+        "controller_polity_id",
+        "owner_clan_id",
+        "governor_character_id",
+        "revenue_beneficiary_id",
+        "garrison_commander_id",
+        "overlord_polity_id"
+      ],
+      "properties": {
+        "sovereign_polity_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^polity_"
+        },
+        "controller_polity_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^polity_"
+        },
+        "owner_clan_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^clan_"
+        },
+        "governor_character_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^character_"
+        },
+        "revenue_beneficiary_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(family_|clan_)"
+        },
+        "garrison_commander_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^character_"
+        },
+        "overlord_polity_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^polity_"
+        }
+      },
+      "additionalProperties": false
+    },
+    "population": {
+      "type": "object",
+      "properties": {
+        "culture_shares": {
+          "type": "array",
+          "items": {}
+        },
+        "households": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "language_shares": {
+          "type": "array",
+          "items": {}
+        },
+        "population_profile_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "religion_shares": {
+          "type": "array",
+          "items": {}
+        },
+        "total": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "culture_shares",
+        "households",
+        "language_shares",
+        "population_profile_id",
+        "religion_shares",
+        "total"
+      ],
+      "additionalProperties": false
+    },
+    "record_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "region_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "route_node_id": {
+      "type": "string"
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "garrison_party_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "loyalty": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "protecting_fort_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "security": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unrest": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "garrison_party_id",
+        "loyalty",
+        "protecting_fort_ids",
+        "security",
+        "unrest"
+      ],
+      "additionalProperties": false
+    },
+    "site_type": {
+      "type": "string"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^source_"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "researched",
+        "reviewed",
+        "approved",
+        "fictional",
+        "deprecated",
+        "stub"
+      ]
+    },
+    "valid_from": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "valid_to": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "field_confidence": {
+      "type": "object",
+      "properties": {
+        "development_tier": {
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "contested",
+            "fictional",
+            "inferred"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "attached_village_ids",
+    "confidence",
+    "coordinate",
+    "development_tier",
+    "economy",
+    "feature_ids",
+    "id",
+    "name",
+    "name_variants",
+    "notes",
+    "ownership",
+    "population",
+    "record_version",
+    "region_id",
+    "route_node_id",
+    "security",
+    "site_type",
+    "source_ids",
+    "status",
+    "valid_from",
+    "valid_to"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

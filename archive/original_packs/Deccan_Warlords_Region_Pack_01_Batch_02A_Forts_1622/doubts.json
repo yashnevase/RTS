@@ -1,0 +1,87 @@
+[
+  {
+    "id": "D1",
+    "issue": "Cleaned Batch 1 file/IDs",
+    "verify": "The only Batch 1 file visible to me in this conversation is the earlier 58-record JSON; it uses site_ahilyanagar and site_chhatrapati_sambhajinagar and has no site_khed. Your prompt explicitly provides site_ahmadnagar, site_khirki and site_khed, so those IDs are used as instructed. Please verify the remaining site_* references against your cleaned 57-site file before merging."
+  },
+  {
+    "id": "D2",
+    "issue": "Ahmadnagar Fort in 1622",
+    "verify": "Malik Ambar is reported to have expelled Mughal forces from Ahmadnagar Fort in 1610. Confirm that the citadel and the settlement had the same Nizam Shahi controller in 1622 and identify the killedar if possible."
+  },
+  {
+    "id": "D3",
+    "issue": "Udgir Fort sovereignty/controller",
+    "verify": "Sources point to a pre-Bahmani fort, Barid Shahi-era assignment and contested 1635–36 claims/holdouts. Exact 1622 sovereignty and de facto command remain unproven; both ownership fields are null."
+  },
+  {
+    "id": "D4",
+    "issue": "Ausa Fort 1622 transfer",
+    "verify": "The Latur District page says Malik Ambar captured Ausa in 1014 AH and renamed it Ambarapur. Verify the Hijri-to-Gregorian conversion and whether Nizam Shahi command was still effective in 1622."
+  },
+  {
+    "id": "D5",
+    "issue": "Parenda/Paranda control chronology",
+    "verify": "The Maharashtra State Gazetteer calls Parenda the capital of the surviving Ahmadnagar state after 1600; district sources differ on whether Adil Shahi capture occurred in 1630 or later in the 1630s. Confirm exact transfer chronology and 1622 commandant."
+  },
+  {
+    "id": "D6",
+    "issue": "Torna Fort political controller",
+    "verify": "Torna existed before 1622 and is described as an Adil Shahi stronghold before 1646, but the consulted source does not date the exact transition. Sovereign/controller are left null."
+  },
+  {
+    "id": "D7",
+    "issue": "Murumbdev/Rajgad historical name and works",
+    "verify": "Use Murumbdev for the 1622 name. Maharashtra government material dates Haibatrao's Adil Shahi capture from Nizam Shahi to 1625. The major Rajgad fortification programme and Rajgad name belong to the post-1647 period and must not be backdated."
+  },
+  {
+    "id": "D8",
+    "issue": "Jivdhan, Hadsar and Chavand",
+    "verify": "The Marathi Vishwakosh places these with Shivneri in the old Nane Ghat/Malshej defensive complex, but exact 1622 political command, active garrison state and construction dates are not established. Hadsar and Chavand should remain inactive until further verification."
+  },
+  {
+    "id": "D9",
+    "issue": "Korlai Fort sovereignty/controller",
+    "verify": "UNESCO's tentative-list description says Burhan Nizamshah built Korlai opposite Portuguese Revdanda and also says both forts were in Portuguese control. Verify the date and legal/political sequence of Korlai's transfer before treating the 1622 controller as settled."
+  },
+  {
+    "id": "D10",
+    "issue": "Janjira Fort sovereignty and commander",
+    "verify": "Local records and the 2019 study identify Siddi Ambar Sanak as the commander/governor from 1621, while the UNESCO summary describes an Adil Shahi-to-Siddi transition during Ibrahim II's reign. Confirm whether 1622 suzerainty was Nizam Shahi, Adil Shahi or effectively Siddi autonomous. Confirm the character spelling before Batch 5."
+  },
+  {
+    "id": "D11",
+    "issue": "Dabhol as an active fort in 1622",
+    "verify": "The Konkan Gazetteer reports forts/redoubts in the sixteenth century, a 1615 account saying the Portuguese had a factory but no fort, a 1626 account mentioning an old castle, and 1639 fortifications in ruin. The 1622 fort's existence and readiness are unproven; do not activate this low-confidence record without evidence."
+  },
+  {
+    "id": "D12",
+    "issue": "Rajapuri land fort versus Janjira island fort",
+    "verify": "The 1489 Danda-Rajapuri wooden kot and the later island fortress are discussed in overlapping accounts. This batch represents the island fortress as fort_janjira and does not create a second fort_rajapuri record to avoid double-counting; verify whether a separate mainland fort existed in 1622."
+  },
+  {
+    "id": "D13",
+    "issue": "Panhala scope",
+    "verify": "Panhala is included as the southern Sahyadri edge of this pack. Confirm that your actual region boundary includes it; it is not in the visible Batch 1 site list, so site_panhala is listed as a new required site."
+  },
+  {
+    "id": "D14",
+    "issue": "Garrison sizes",
+    "verify": "All garrison_size_range values are inferred gameplay planning bands, not historical muster figures. Replace them if a dated fort muster or reliable contemporary account is found."
+  },
+  {
+    "id": "D15",
+    "issue": "Coordinates and elevation",
+    "verify": "Coordinates are approximate modern fort-centre locators. Elevation is null where a reliable value was not confirmed in the consulted sources; do not treat these as historic surveyed positions."
+  },
+  {
+    "id": "D16",
+    "issue": "Later forts excluded",
+    "verify": "Visapur (eighteenth-century construction/development), Pratapgad (mid-seventeenth-century construction) and Sindhudurg (1660s) are intentionally excluded from the 1622 records. Confirm any alternate evidence for a separate pre-existing fortification on those sites before adding them."
+  },
+  {
+    "id": "D17",
+    "issue": "No fort template in starter pack",
+    "verify": "The starter ZIP contains no fort.example.json. The records therefore use the settlement template's coordinate/ownership conventions and the field names explicitly requested in your prompt. Add a formal fort schema to the starter pack before code validation."
+  }
+]

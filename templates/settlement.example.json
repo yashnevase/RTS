@@ -1,0 +1,52 @@
+{
+  "id": "site_example_market_town",
+  "record_version": 1,
+  "name": "Example Market Town",
+  "name_variants": [],
+  "site_type": "market_town",
+  "coordinate": { "latitude": null, "longitude": null, "game_x": null, "game_y": null },
+  "region_id": "region_example_western_deccan",
+  "route_node_id": "node_example_market_town",
+  "development_tier": "B",
+  "ownership": {
+    "sovereign_polity_id": null,
+    "controller_polity_id": null,
+    "owner_clan_id": null,
+    "governor_character_id": null,
+    "revenue_beneficiary_id": null,
+    "garrison_commander_id": null,
+    "overlord_polity_id": null
+  },
+  "population": {
+    "total": null,
+    "households": null,
+    "population_profile_id": null,
+    "culture_shares": [],
+    "language_shares": [],
+    "religion_shares": []
+  },
+  "economy": {
+    "prosperity": 50,
+    "food_stock": 100,
+    "water_security": 50,
+    "storage_capacity": 500,
+    "production_profile_ids": [],
+    "market_profile_id": null,
+    "tax_policy_id": null
+  },
+  "security": {
+    "loyalty": 50,
+    "unrest": 0,
+    "security": 50,
+    "garrison_party_id": null,
+    "protecting_fort_ids": []
+  },
+  "attached_village_ids": [],
+  "feature_ids": [],
+  "valid_from": null,
+  "valid_to": null,
+  "source_ids": [],
+  "confidence": "inferred",
+  "status": "draft",
+  "notes": "Illustrative record; no historical town is being asserted."
+}

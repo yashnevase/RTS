@@ -1,0 +1,221 @@
+{
+  "type": "object",
+  "properties": {
+    "ancestral_seat_ids": {
+      "type": "array",
+      "items": {}
+    },
+    "branch_ids": {
+      "type": "array",
+      "items": {}
+    },
+    "cohesion": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "contested",
+        "fictional",
+        "inferred"
+      ]
+    },
+    "family_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "founding_year": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "holdings": {
+      "type": "array",
+      "items": {}
+    },
+    "home_region_ids": {
+      "type": "array",
+      "items": {}
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^clan_[a-z0-9_]+$"
+    },
+    "influence": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "leader_character_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "member_character_ids": {
+      "type": "array",
+      "items": {}
+    },
+    "name": {
+      "type": "string"
+    },
+    "name_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "party_ids": {
+      "type": "array",
+      "items": {}
+    },
+    "patronage_relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from_year": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "polity_id": {
+            "type": "string"
+          },
+          "relationship_type": {
+            "type": "string"
+          },
+          "terms_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "to_year": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "from_year",
+          "polity_id",
+          "relationship_type",
+          "terms_id",
+          "to_year"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "record_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "renown": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^source_"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "researched",
+        "reviewed",
+        "approved",
+        "fictional",
+        "deprecated",
+        "stub"
+      ]
+    },
+    "treasury": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "ancestral_seat_ids",
+    "branch_ids",
+    "cohesion",
+    "confidence",
+    "family_ids",
+    "founding_year",
+    "holdings",
+    "home_region_ids",
+    "id",
+    "influence",
+    "leader_character_id",
+    "member_character_ids",
+    "name",
+    "name_variants",
+    "notes",
+    "party_ids",
+    "patronage_relationships",
+    "record_version",
+    "renown",
+    "source_ids",
+    "status",
+    "treasury"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

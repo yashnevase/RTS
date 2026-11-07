@@ -1,0 +1,3579 @@
+[
+  {
+    "id": "site_ahilyanagar",
+    "record_version": 1,
+    "name": "Ahilyanagar",
+    "name_variants": [
+      "Ahmadnagar",
+      "Ahmednagar"
+    ],
+    "site_type": "city",
+    "coordinate": {
+      "latitude": 19.095,
+      "longitude": 74.748,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_ahmadnagar_core",
+    "route_node_id": "node_ahilyanagar",
+    "development_tier": "A",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_eaton_2005",
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator",
+      "source_maharashtra_city_renames_2023_2025"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Modern locator is Ahilyanagar; the historic city was Ahmadnagar. In 1622 the city and citadel may not have shared the same military controller; settlement-level control needs checking. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_bhingar",
+    "record_version": 1,
+    "name": "Bhingar",
+    "name_variants": [],
+    "site_type": "village",
+    "coordinate": {
+      "latitude": 19.091,
+      "longitude": 74.77,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_ahmadnagar_core",
+    "route_node_id": "node_bhingar",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_radhey_shyam_1968",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Historic locality adjacent to Ahmadnagar; its separate settlement status and exact 1622 administration are not yet established. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_chhatrapati_sambhajinagar",
+    "record_version": 1,
+    "name": "Chhatrapati Sambhajinagar",
+    "name_variants": [
+      "Khirki",
+      "Khadki",
+      "Aurangabad"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.876,
+      "longitude": 75.343,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_khirki_daulatabad",
+    "route_node_id": "node_chhatrapati_sambhajinagar",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_eaton_2005",
+      "source_radhey_shyam_1968",
+      "source_hcu_daulatabad_2025",
+      "source_osm_locator",
+      "source_maharashtra_city_renames_2023_2025"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "1622 locator corresponds to Khirki, founded by Malik Ambar and ravaged in the 1621 Mughal campaign; rebuilding and exact controller in 1622 are uncertain. Aurangabad is a later name. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_daulatabad",
+    "record_version": 1,
+    "name": "Daulatabad",
+    "name_variants": [
+      "Devagiri",
+      "Deogiri"
+    ],
+    "site_type": "city",
+    "coordinate": {
+      "latitude": 19.936,
+      "longitude": 75.222,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_khirki_daulatabad",
+    "route_node_id": "node_daulatabad",
+    "development_tier": "A",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_eaton_2005",
+      "source_radhey_shyam_1968",
+      "source_hcu_daulatabad_2025",
+      "source_osm_locator"
+    ],
+    "confidence": "high",
+    "status": "draft",
+    "notes": "Malik Ambar moved the Nizam Shahi court here around 1610; it was the Nizam Shahi royal centre in this period. The fort itself belongs in Batch 2. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_verul",
+    "record_version": 1,
+    "name": "Verul",
+    "name_variants": [
+      "Ellora"
+    ],
+    "site_type": "village",
+    "coordinate": {
+      "latitude": 20.026,
+      "longitude": 75.179,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_khirki_daulatabad",
+    "route_node_id": "node_verul",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_hcu_daulatabad_2025",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator for the Ellora settlement; a distinct 1622 village record and its local controller require verification. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_paithan",
+    "record_version": 1,
+    "name": "Paithan",
+    "name_variants": [
+      "Pratishthana",
+      "Paithan/Pratishthan"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.482,
+      "longitude": 75.386,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_godavari_paithan",
+    "route_node_id": "node_paithan",
+    "development_tier": "A",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Long-established Godavari urban and pilgrimage centre; precise 1622 pargana and local revenue holder are not identified here. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_jalna",
+    "record_version": 1,
+    "name": "Jalna",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.841,
+      "longitude": 75.886,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_marathwada_north",
+    "route_node_id": "node_jalna",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Appears within the Nizam Shahi territorial theatre on the period map; local command could have shifted during campaigns. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_kannad",
+    "record_version": 1,
+    "name": "Kannad",
+    "name_variants": [
+      "Kannara/Kannad"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 20.257,
+      "longitude": 75.137,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_khirki_daulatabad",
+    "route_node_id": "node_kannad",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Kannad is named in later accounts of the Bhosale pargana grant, but the exact extent and 1622 settlement status need verification. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_nevasa",
+    "record_version": 1,
+    "name": "Nevasa",
+    "name_variants": [
+      "Newasa"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.551,
+      "longitude": 74.928,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_ahmadnagar_east",
+    "route_node_id": "node_nevasa",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator retained; a 1622 market-town designation and direct political control need documentary confirmation. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_sangamner",
+    "record_version": 1,
+    "name": "Sangamner",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.568,
+      "longitude": 74.212,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_ahmadnagar_northwest",
+    "route_node_id": "node_sangamner",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_eaton_2005",
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Named in the seventeenth-century Deccan political geography; exact town controller on the 1622 snapshot is not separately documented here. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_junnar",
+    "record_version": 1,
+    "name": "Junnar",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.209,
+      "longitude": 73.875,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_junnar_sahyadri",
+    "route_node_id": "node_junnar",
+    "development_tier": "A",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_eaton_2005",
+      "source_pune_gazetteer_1984",
+      "source_radhey_shyam_1968",
+      "source_osm_locator"
+    ],
+    "confidence": "high",
+    "status": "draft",
+    "notes": "A former Malik Ambar headquarters before the court moved to Daulatabad; exact 1622 district command should be checked against a dated record. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_pune",
+    "record_version": 1,
+    "name": "Pune",
+    "name_variants": [
+      "Poona"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.52,
+      "longitude": 73.857,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_pune_plateau",
+    "route_node_id": "node_pune",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": "clan_bhosale",
+      "governor_character_id": null,
+      "revenue_beneficiary_id": "family_bhosale_main_line",
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_eaton_2005",
+      "source_pune_gazetteer_1984",
+      "source_house_of_shivaji",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Pune pargana was assigned to the Bhosale house under Nizam Shahi patronage; the precise succession year and village-by-village jagir limits require review. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_chakan",
+    "record_version": 1,
+    "name": "Chakan",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.76,
+      "longitude": 73.864,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_pune_plateau",
+    "route_node_id": "node_chakan",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": "clan_bhosale",
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_house_of_shivaji",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Recorded as a key Nizam Shahi/Bhosale-associated place; keep the fort and garrison as separate Batch 2 records. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_rajgurunagar",
+    "record_version": 1,
+    "name": "Rajgurunagar",
+    "name_variants": [
+      "Khed"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.843,
+      "longitude": 73.889,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_pune_plateau",
+    "route_node_id": "node_rajgurunagar",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator is Rajgurunagar; historic Khed identification is probable, but settlement rank and 1622 controller need confirmation. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_shirur",
+    "record_version": 1,
+    "name": "Shirur",
+    "name_variants": [
+      "Ghodnadi"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.827,
+      "longitude": 74.375,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_basin",
+    "route_node_id": "node_shirur",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern town locator; independent evidence for a named market settlement in 1622 is not yet attached. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_saswad",
+    "record_version": 1,
+    "name": "Saswad",
+    "name_variants": [
+      "Sasvad"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.344,
+      "longitude": 74.031,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_purandar_nira_basin",
+    "route_node_id": "node_saswad",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Established settlement in the Purandar corridor; date-specific revenue holder and relation to the fort garrison remain unknown. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_supe",
+    "record_version": 1,
+    "name": "Supe",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.477,
+      "longitude": 74.32,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_basin",
+    "route_node_id": "node_supe",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": "clan_bhosale",
+      "governor_character_id": null,
+      "revenue_beneficiary_id": "family_bhosale_main_line",
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_eaton_2005",
+      "source_house_of_shivaji",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Supe pargana was assigned to the Bhosale house under Nizam Shahi patronage; exact local holdings within the pargana need verification. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_baramati",
+    "record_version": 1,
+    "name": "Baramati",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.152,
+      "longitude": 74.578,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_basin",
+    "route_node_id": "node_baramati",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator included as a candidate Bhima-basin market site; separate 1622 documentary attestation and controller need verification. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_jejuri",
+    "record_version": 1,
+    "name": "Jejuri",
+    "name_variants": [],
+    "site_type": "pilgrimage_site",
+    "coordinate": {
+      "latitude": 18.277,
+      "longitude": 74.161,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_purandar_nira_basin",
+    "route_node_id": "node_jejuri",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_pune_gazetteer_1984",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Pilgrimage locality included for map coverage; its exact 1622 settlement scale and revenue authority are unverified. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_bhor",
+    "record_version": 1,
+    "name": "Bhor",
+    "name_variants": [
+      "Bhor region"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.148,
+      "longitude": 73.843,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_sahyadri_east",
+    "route_node_id": "node_bhor",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator lies in the Sahyadri corridor; do not treat the later Bhor princely-state boundaries as a 1622 polity. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_dehu",
+    "record_version": 1,
+    "name": "Dehu",
+    "name_variants": [],
+    "site_type": "village",
+    "coordinate": {
+      "latitude": 18.718,
+      "longitude": 73.768,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_pune_plateau",
+    "route_node_id": "node_dehu",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_eaton_2005",
+      "source_pune_gazetteer_1984",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "A village on the Indrayani is explicitly identified in the seventeenth-century narrative; local 1622 landlord and administrative status are unknown. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_alandi",
+    "record_version": 1,
+    "name": "Alandi",
+    "name_variants": [],
+    "site_type": "pilgrimage_site",
+    "coordinate": {
+      "latitude": 18.678,
+      "longitude": 73.897,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_pune_plateau",
+    "route_node_id": "node_alandi",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Religious settlement locator; its exact 1622 size, revenue status and controller need a dedicated source. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_theur",
+    "record_version": 1,
+    "name": "Theur",
+    "name_variants": [
+      "Thevoor"
+    ],
+    "site_type": "village",
+    "coordinate": {
+      "latitude": 18.524,
+      "longitude": 74.136,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_basin",
+    "route_node_id": "node_theur",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern village locator; avoid assuming its later temple prominence or settlement rank existed in 1622. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_loni_kalbhor",
+    "record_version": 1,
+    "name": "Loni Kalbhor",
+    "name_variants": [
+      "Loni"
+    ],
+    "site_type": "village",
+    "coordinate": {
+      "latitude": 18.484,
+      "longitude": 74.025,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_basin",
+    "route_node_id": "node_loni_kalbhor",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Candidate settlement on the Pune–Bhima corridor; 1622 name and village status need confirmation. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_daund",
+    "record_version": 1,
+    "name": "Daund",
+    "name_variants": [],
+    "site_type": "river_crossing",
+    "coordinate": {
+      "latitude": 18.466,
+      "longitude": 74.584,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_basin",
+    "route_node_id": "node_daund",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_maharashtra_in_maps",
+      "source_osm_locator"
+    ],
+    "confidence": "inferred",
+    "status": "draft",
+    "notes": "Mapped as a Bhima crossing candidate using the modern locator; a specific 1622 ford, ferry or bridge is not established. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_indapur",
+    "record_version": 1,
+    "name": "Indapur",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.116,
+      "longitude": 75.026,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_basin",
+    "route_node_id": "node_indapur",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_pune_gazetteer_1984",
+      "source_house_of_shivaji",
+      "source_osm_locator"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "Modern locator on the Bhima corridor; its precise 1622 alignment near the Nizam Shahi–Adil Shahi frontier needs verification. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_parner",
+    "record_version": 1,
+    "name": "Parner",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.003,
+      "longitude": 74.438,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_ahmadnagar_east",
+    "route_node_id": "node_parner",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Parner appears on the 1601–1626 Nizam Shahi territorial map; local landholder and exact 1622 command are not identified. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_shrigonda",
+    "record_version": 1,
+    "name": "Shrigonda",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.616,
+      "longitude": 74.698,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_basin",
+    "route_node_id": "node_shrigonda",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator within the western plateau; specific 1622 settlement rank and political control need verification. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_rahuri",
+    "record_version": 1,
+    "name": "Rahuri",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.39,
+      "longitude": 74.65,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_ahmadnagar_east",
+    "route_node_id": "node_rahuri",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator; the 1622 town/village status and local revenue holder are not yet substantiated. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_kopargaon",
+    "record_version": 1,
+    "name": "Kopargaon",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.882,
+      "longitude": 74.476,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_godavari_paithan",
+    "route_node_id": "node_kopargaon",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator on the Godavari basin; a distinct 1622 market settlement needs verification. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_karjat_ahilyanagar",
+    "record_version": 1,
+    "name": "Karjat",
+    "name_variants": [
+      "Karjat, Ahmadnagar district"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.55,
+      "longitude": 75.02,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_basin",
+    "route_node_id": "node_karjat_ahilyanagar",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Disambiguated from Karjat in Raigad; the present locator is useful but 1622 settlement status is unverified. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_pathardi",
+    "record_version": 1,
+    "name": "Pathardi",
+    "name_variants": [
+      "Pathard"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.172,
+      "longitude": 75.175,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_ahmadnagar_east",
+    "route_node_id": "node_pathardi",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "A Pathard/Pathardi label appears in period-region sources; exact modern-to-historic site identity should be checked. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_shevgaon",
+    "record_version": 1,
+    "name": "Shevgaon",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 19.35,
+      "longitude": 75.23,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_ahmadnagar_east",
+    "route_node_id": "node_shevgaon",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator; separate 1622 settlement evidence and local controller remain open. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_paranda",
+    "record_version": 1,
+    "name": "Paranda",
+    "name_variants": [
+      "Parenda",
+      "Parenda/Paranda"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.27,
+      "longitude": 75.455,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_marathwada_southwest",
+    "route_node_id": "node_paranda",
+    "development_tier": "A",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_eaton_2005",
+      "source_radhey_shyam_1968",
+      "source_paranda_dharashiv_gov",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Malik Ambar's headquarters in the early restoration period; captured by Adil Shahi in 1630 according to the district source. Fort is separate in Batch 2. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_beed",
+    "record_version": 1,
+    "name": "Beed",
+    "name_variants": [
+      "Bid"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.99,
+      "longitude": 75.76,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_marathwada_central",
+    "route_node_id": "node_beed",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Shown within the wider Nizam Shahi theatre on period maps; exact 1622 local command and name-form equivalence need review. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_dharashiv",
+    "record_version": 1,
+    "name": "Dharashiv",
+    "name_variants": [
+      "Osmanabad"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.186,
+      "longitude": 76.042,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_marathwada_southwest",
+    "route_node_id": "node_dharashiv",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_osm_locator",
+      "source_maharashtra_city_renames_2023_2025"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator formerly Osmanabad; no strong site-specific evidence for 1622 rank or controller included yet. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_tuljapur",
+    "record_version": 1,
+    "name": "Tuljapur",
+    "name_variants": [],
+    "site_type": "pilgrimage_site",
+    "coordinate": {
+      "latitude": 18.008,
+      "longitude": 76.071,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_marathwada_southwest",
+    "route_node_id": "node_tuljapur",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_ahmednagar_gazetteer_1976",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Pilgrimage site included as a regional locator; exact 1622 patronage, settlement size and controller need verification. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_kalamb",
+    "record_version": 1,
+    "name": "Kalamb",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.582,
+      "longitude": 76.0,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_marathwada_southwest",
+    "route_node_id": "node_kalamb",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator; do not infer a 1622 market-town status or local owner without a dated record. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_latur",
+    "record_version": 1,
+    "name": "Latur",
+    "name_variants": [
+      "Lattalur"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.408,
+      "longitude": 76.56,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_marathwada_south",
+    "route_node_id": "node_latur",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator and historic place-name association need to be reconciled before approval; 1622 administrative status is unknown. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_ausa",
+    "record_version": 1,
+    "name": "Ausa",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.247,
+      "longitude": 76.5,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_marathwada_south",
+    "route_node_id": "node_ausa",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Ausa appears in the Nizam Shahi regional theatre and later Mughal conquest chronology; exact 1622 local controller is not independently fixed. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_udgir",
+    "record_version": 1,
+    "name": "Udgir",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.393,
+      "longitude": 77.12,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_marathwada_south",
+    "route_node_id": "node_udgir",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Udgir is included in the 1601–1626 Nizam Shahi territorial frame; exact garrison and local revenue beneficiary need verification. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_naldurg",
+    "record_version": 1,
+    "name": "Naldurg",
+    "name_variants": [
+      "Naldrug",
+      "Nal-Durg"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 17.815,
+      "longitude": 76.282,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_solapur_frontier",
+    "route_node_id": "node_naldurg",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_adil_shahi",
+      "controller_polity_id": "polity_adil_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_naldurg_morelle_2022",
+      "source_maharashtra_tourism_naldurg",
+      "source_osm_locator"
+    ],
+    "confidence": "high",
+    "status": "draft",
+    "notes": "Adil Shahi control is documented from 1558; the fort's walls and garrison belong in Batch 2. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_solapur",
+    "record_version": 1,
+    "name": "Solapur",
+    "name_variants": [
+      "Sholapur"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 17.66,
+      "longitude": 75.906,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_solapur_frontier",
+    "route_node_id": "node_solapur",
+    "development_tier": "A",
+    "ownership": {
+      "sovereign_polity_id": "polity_adil_shahi",
+      "controller_polity_id": "polity_adil_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_solapur_gazetteer_1884",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Provisionally Adil Shahi in 1622; Malik Ambar's capture of the Solapur fort is dated 1625, so the pre-1625 control sequence needs checking. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_barshi",
+    "record_version": 1,
+    "name": "Barshi",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.234,
+      "longitude": 75.692,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_solapur_frontier",
+    "route_node_id": "node_barshi",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_solapur_gazetteer_1884",
+      "source_osm_locator"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "On a politically fluid frontier; no sufficiently precise 1622 sovereign/controller assignment found. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_pandharpur",
+    "record_version": 1,
+    "name": "Pandharpur",
+    "name_variants": [
+      "Pandharpur/Vitthalpur"
+    ],
+    "site_type": "pilgrimage_site",
+    "coordinate": {
+      "latitude": 17.679,
+      "longitude": 75.331,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_south",
+    "route_node_id": "node_pandharpur",
+    "development_tier": "A",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_maharashtra_in_maps",
+      "source_solapur_gazetteer_1884",
+      "source_osm_locator"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "Major pilgrimage node on traditional routes; exact 1622 sovereignty and local controller are not established by the route evidence. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_mangalwedha",
+    "record_version": 1,
+    "name": "Mangalwedha",
+    "name_variants": [
+      "Mangalvedha"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 17.516,
+      "longitude": 75.443,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_south",
+    "route_node_id": "node_mangalwedha",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_solapur_gazetteer_1884",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator; its 1622 political alignment on the Bijapur–Ahmadnagar frontier needs dated evidence. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_mohol",
+    "record_version": 1,
+    "name": "Mohol",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 17.816,
+      "longitude": 75.655,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_solapur_frontier",
+    "route_node_id": "node_mohol",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_solapur_gazetteer_1884",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator; exact 1622 settlement status and controller are unverified. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_karmala",
+    "record_version": 1,
+    "name": "Karmala",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 18.408,
+      "longitude": 75.194,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_south",
+    "route_node_id": "node_karmala",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_solapur_gazetteer_1884",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator; no specific c.1622 administrative evidence is attached. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_sangola",
+    "record_version": 1,
+    "name": "Sangola",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 17.44,
+      "longitude": 75.19,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_bhima_south",
+    "route_node_id": "node_sangola",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_solapur_gazetteer_1884",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator; the 1622 boundary and local lordship are not independently verified. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_akkalkot",
+    "record_version": 1,
+    "name": "Akkalkot",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 17.525,
+      "longitude": 76.205,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_solapur_frontier",
+    "route_node_id": "node_akkalkot",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_solapur_gazetteer_1884",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator near the Bijapur frontier; its later princely-state boundaries must not be projected backwards into 1622. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_phaltan",
+    "record_version": 1,
+    "name": "Phaltan",
+    "name_variants": [
+      "Phaltan/Phaltan"
+    ],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 17.982,
+      "longitude": 74.431,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_phaltan_south_plateau",
+    "route_node_id": "node_phaltan",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_satara_gazetteer_1963",
+      "source_eaton_2005",
+      "source_osm_locator"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "Nimbalkar-associated regional seat; exact 1622 sovereignty, patron and extent of local autonomy need a dated source. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_wai",
+    "record_version": 1,
+    "name": "Wai",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 17.952,
+      "longitude": 73.89,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_sahyadri_east",
+    "route_node_id": "node_wai",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_satara_gazetteer_1963",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Modern locator in the upper Krishna corridor; do not infer the later Wai taluka or state boundaries for 1622. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_mhaswad",
+    "record_version": 1,
+    "name": "Mhaswad",
+    "name_variants": [],
+    "site_type": "market_town",
+    "coordinate": {
+      "latitude": 17.636,
+      "longitude": 74.788,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_phaltan_south_plateau",
+    "route_node_id": "node_mhaswad",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_satara_gazetteer_1963",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "Mane-associated candidate locality; separate 1622 settlement evidence and political control are still needed. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_shingnapur",
+    "record_version": 1,
+    "name": "Shingnapur",
+    "name_variants": [
+      "Shambhu Mahadev Shingnapur"
+    ],
+    "site_type": "pilgrimage_site",
+    "coordinate": {
+      "latitude": 17.87,
+      "longitude": 74.59,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_phaltan_south_plateau",
+    "route_node_id": "node_shingnapur",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_house_of_shivaji",
+      "source_radhey_shyam_1968",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Maloji Bhosale's tank and patronage are associated with Shambhu Mahadev hill; this does not establish clan ownership or 1622 site administration. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_chaul",
+    "record_version": 1,
+    "name": "Chaul",
+    "name_variants": [],
+    "site_type": "port",
+    "coordinate": {
+      "latitude": 18.55,
+      "longitude": 72.93,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_konkan_north",
+    "route_node_id": "node_chaul",
+    "development_tier": "A",
+    "ownership": {
+      "sovereign_polity_id": "polity_nizam_shahi",
+      "controller_polity_id": "polity_nizam_shahi",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": "polity_portuguese",
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_eaton_2005",
+      "source_osm_locator"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "Malik Ambar granted the Portuguese a share of Chaul land revenue and a 1617 treaty regulated relations; this is a revenue privilege, not proof of Portuguese sovereignty over the whole port. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_revdanda",
+    "record_version": 1,
+    "name": "Revdanda",
+    "name_variants": [
+      "Lower Chaul"
+    ],
+    "site_type": "port",
+    "coordinate": {
+      "latitude": 18.553,
+      "longitude": 72.927,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_konkan_north",
+    "route_node_id": "node_revdanda",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": "polity_portuguese",
+      "controller_polity_id": "polity_portuguese",
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_osm_locator"
+    ],
+    "confidence": "medium",
+    "status": "draft",
+    "notes": "Portuguese fortified settlement associated with Chaul; the exact boundary between Portuguese and Nizam Shahi jurisdictions needs mapping. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_rajapuri",
+    "record_version": 1,
+    "name": "Rajapuri",
+    "name_variants": [
+      "Rajapuri creek"
+    ],
+    "site_type": "port",
+    "coordinate": {
+      "latitude": 18.292,
+      "longitude": 72.967,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_konkan_north",
+    "route_node_id": "node_rajapuri",
+    "development_tier": "C",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": null,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_osm_locator"
+    ],
+    "confidence": "low",
+    "status": "draft",
+    "notes": "A 1615 proposal to offer the port to the Dutch is recorded, but acceptance and 1622 sovereign/controller are not established. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  },
+  {
+    "id": "site_dabhol",
+    "record_version": 1,
+    "name": "Dabhol",
+    "name_variants": [
+      "Dabul"
+    ],
+    "site_type": "port",
+    "coordinate": {
+      "latitude": 17.59,
+      "longitude": 73.18,
+      "game_x": null,
+      "game_y": null
+    },
+    "region_id": "region_konkan_south",
+    "route_node_id": "node_dabhol",
+    "development_tier": "B",
+    "ownership": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null,
+      "owner_clan_id": null,
+      "governor_character_id": null,
+      "revenue_beneficiary_id": null,
+      "garrison_commander_id": null,
+      "overlord_polity_id": null
+    },
+    "population": {
+      "total": null,
+      "households": null,
+      "population_profile_id": null,
+      "culture_shares": [],
+      "language_shares": [],
+      "religion_shares": []
+    },
+    "economy": {
+      "prosperity": null,
+      "food_stock": null,
+      "water_security": null,
+      "storage_capacity": null,
+      "production_profile_ids": [],
+      "market_profile_id": null,
+      "tax_policy_id": null
+    },
+    "security": {
+      "loyalty": null,
+      "unrest": null,
+      "security": null,
+      "garrison_party_id": null,
+      "protecting_fort_ids": []
+    },
+    "attached_village_ids": [],
+    "feature_ids": [],
+    "valid_from": 1622,
+    "valid_to": null,
+    "source_ids": [
+      "source_radhey_shyam_1968",
+      "source_maharashtra_in_maps",
+      "source_osm_locator"
+    ],
+    "confidence": "contested",
+    "status": "draft",
+    "notes": "Important west-coast port; Malik Ambar's 1625 action is described, but the site's exact 1622 sovereign and controller need confirmation. Coordinates are approximate modern locator centres, not surveyed historic footprints."
+  }
+]

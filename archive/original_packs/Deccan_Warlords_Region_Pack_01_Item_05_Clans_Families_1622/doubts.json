@@ -1,0 +1,93 @@
+[
+  {
+    "id": "D1",
+    "priority": "high",
+    "issue": "Canonical 57-site v2 file is not available in the accessible attachments",
+    "verify": "The accessible attachments contain the starter pack and 23-fort file, and the prior item-1 output contains only eight additions. No canonical 57-site dataset was available for seat-ID matching. Seats such as Kari, Sindkhed, Phaltan, Javli, Malavdi, Mhasvad, Jath, Kapshi and Mudhol are therefore text-only; no site IDs were invented.",
+    "impact": "Before merge, map each textual seat to the exact canonical site ID or add a site record if absent."
+  },
+  {
+    "id": "D2",
+    "priority": "high",
+    "issue": "Jedhe patronage in 1622 is not established by the accessible chronicle catalogue",
+    "verify": "The published catalogue identifies the Jedhes as Kari Deshmukhs and the chronicle's coverage as 1618-1697, but the accessible metadata does not reveal a date-specific 1622 patronage act. Inspect the full chronicle and contemporary deeds before adding a patron.",
+    "impact": "The clan is registered as a documented local house, with patronage_relationships left empty."
+  },
+  {
+    "id": "D3",
+    "priority": "high",
+    "issue": "Jadhav service chronology and family genealogy require primary-source confirmation",
+    "verify": "Rawlinson identifies Lukaji/Lakhuji Jadhav Rao as a Nizam Shahi feudatory and the Sindkhed house, but the exact start year and complete branch succession are not established in the accessible text. Check Persian farmans, sanad collections and contemporary records for the family's local rights and 1622 head.",
+    "impact": "Only the Nizam Shahi tie is represented; the start year and genealogy are left open."
+  },
+  {
+    "id": "D4",
+    "priority": "high",
+    "issue": "Bhosle claimed Rajput/Chitor descent is disputed and excluded",
+    "verify": "Rawlinson treats the Chitor descent as an unverified family origin claim. The 1622 record is limited to Maloji's documented family and Shahaji's known service and assignments. Separate Bhosle branches should not be merged without a sourced genealogy.",
+    "impact": "No Rajput ancestry, unverified pedigree, hereditary ownership of forts or unrelated Bhosle branch is assigned."
+  },
+  {
+    "id": "D5",
+    "priority": "medium",
+    "issue": "Nimbalkar patronage status and Phaltan's legal relation to Bijapur need dated deeds",
+    "verify": "The Phaltan official ruler list places Vangoji II/Jagpalrao in office 1570-1630; the Satara Gazetteer places the family among Bijapur-era chiefs. The exact date, service terms and tribute status in 1622 should be checked against Phaltan sanad and Bijapur records.",
+    "impact": "The record is dated to Vangoji's tenure; the Adil Shahi relation is marked without fabricated start/end years."
+  },
+  {
+    "id": "D6",
+    "priority": "medium",
+    "issue": "More of Javli: 1622 head and exact appointment date unresolved",
+    "verify": "The Gazetteer places the founding/appointment under Yusuf Adil Shah (1490-1510), reports nominal tribute and seven generations of succession, but does not securely name the 1622 Chandrarao in this evidence set.",
+    "impact": "The More house is included with its broad date bracket; no invented personal head or exact founding date is added."
+  },
+  {
+    "id": "D7",
+    "priority": "high",
+    "issue": "Ghatge title grant is explicitly dated 1626, after the scenario year",
+    "verify": "The Gazetteer states that Nagoji Ghatge received the sardeshmukhi and Junjharrav titles from Ibrahim Adil Shah II in 1626. This cannot be backdated to 1622, and the text does not prove that Nagoji and the earlier named Junjharrav Ghatge are the same person.",
+    "impact": "The 1626 Adil Shahi relationship is stored as a later dated fact only; 1622 head and title status remain unresolved."
+  },
+  {
+    "id": "D8",
+    "priority": "medium",
+    "issue": "Mane and Daphle evidence gives offices and Bijapur ties without precise tenure dates",
+    "verify": "The Satara Gazetteer and state-published Ghorpade history identify Mane as Mhasvad deshmukh and Bijapur shiledars, and Daphle as Jath deshmukhs with a Bijapur command. Verify the relevant sanad dates and the names of the 1622 incumbents.",
+    "impact": "Their patron records have null start/end years, and no specific individual or fort is assigned."
+  },
+  {
+    "id": "D9",
+    "priority": "high",
+    "issue": "Ghorpade branches must remain distinct; claimed common Bhosle origin is a family legend",
+    "verify": "The Satara Gazetteer distinguishes Kapshi and Mudhol families. The Ghorpade family history itself presents Bhonsle descent as a family legend. Verify branch genealogies and their independent 1622 officeholders from sanad records.",
+    "impact": "Kapshi and Mudhol have separate clan/family IDs. No common founder, branch-parent edge or Bhonsle kinship is asserted."
+  },
+  {
+    "id": "D10",
+    "priority": "high",
+    "issue": "Shirke continuity from the fifteenth century into 1622 is unproven",
+    "verify": "A nineteenth-century journal account describes a Shirke chief in 1453; the Satara Gazetteer says the More chief dispossessed the Shirkes during Yusuf Adil Shah's reign. Later 17th-century family references do not identify which branch held what rights in 1622.",
+    "impact": "Shirke is a low-confidence legacy candidate with no 1622 patron, seat or holdings."
+  },
+  {
+    "id": "D11",
+    "priority": "high",
+    "issue": "Mohite references belong to different dates and cannot be merged into a single branch",
+    "verify": "The Satara Gazetteer gives an early-sixteenth-century Mohite reference; Vaidya discusses Sambhaji and Dharoji Mohite in a 10 January 1626 document and only suggests probable kinship with Shahaji's later wife's family. More primary-source genealogy is needed.",
+    "impact": "The Mohite entry is a low-confidence family-reference candidate; no 1622 seat, patron or marriage tie is asserted."
+  },
+  {
+    "id": "D12",
+    "priority": "high",
+    "issue": "Mahadik is only supported here by an early-sixteenth-century reference",
+    "verify": "The Satara Gazetteer lists Mahadik among local chiefs associated with Shirke's earlier depredations before/under Yusuf Adil Shah. It does not establish a continuous line, 1622 head, seat or patron.",
+    "impact": "Mahadik remains a low-confidence legacy candidate, not a confirmed 1622 political clan."
+  },
+  {
+    "id": "D13",
+    "priority": "medium",
+    "issue": "The clan template's gameplay fields are not historical facts",
+    "verify": "Treasury, influence, renown and cohesion are left null; holdings and member arrays remain empty unless directly evidenced. No personality scores, troops or game-balance data have been added.",
+    "impact": "These records are historical scaffolds only, with no simulated numbers filled in."
+  }
+]

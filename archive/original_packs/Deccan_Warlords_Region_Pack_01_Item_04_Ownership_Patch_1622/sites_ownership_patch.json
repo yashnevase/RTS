@@ -1,0 +1,139 @@
+[
+  {
+    "id": "site_panhala",
+    "ownership_patch": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null
+    },
+    "field_assessment": {
+      "sovereign_polity_id": "unknown",
+      "controller_polity_id": "unknown"
+    },
+    "confidence": "low",
+    "source_ids": [
+      "source_forts_maharashtra_panhala",
+      "source_incredible_india_panhala",
+      "source_project_input_batch02a"
+    ],
+    "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+  },
+  {
+    "id": "site_velhe",
+    "ownership_patch": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null
+    },
+    "field_assessment": {
+      "sovereign_polity_id": "unknown",
+      "controller_polity_id": "unknown"
+    },
+    "confidence": "low",
+    "source_ids": [
+      "source_project_input_batch02a"
+    ],
+    "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+  },
+  {
+    "id": "site_malavli",
+    "ownership_patch": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null
+    },
+    "field_assessment": {
+      "sovereign_polity_id": "unknown",
+      "controller_polity_id": "unknown"
+    },
+    "confidence": "low",
+    "source_ids": [
+      "source_project_input_batch02a"
+    ],
+    "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+  },
+  {
+    "id": "site_tikona_peth",
+    "ownership_patch": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null
+    },
+    "field_assessment": {
+      "sovereign_polity_id": "unknown",
+      "controller_polity_id": "unknown"
+    },
+    "confidence": "low",
+    "source_ids": [
+      "source_tikona_peth_trawell",
+      "source_project_input_batch02a"
+    ],
+    "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+  },
+  {
+    "id": "site_gunjavane",
+    "ownership_patch": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null
+    },
+    "field_assessment": {
+      "sovereign_polity_id": "unknown",
+      "controller_polity_id": "unknown"
+    },
+    "confidence": "low",
+    "source_ids": [
+      "source_census_2011_pune",
+      "source_project_input_batch02a"
+    ],
+    "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+  },
+  {
+    "id": "site_donaje",
+    "ownership_patch": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null
+    },
+    "field_assessment": {
+      "sovereign_polity_id": "unknown",
+      "controller_polity_id": "unknown"
+    },
+    "confidence": "low",
+    "source_ids": [
+      "source_pune_district_sinhagad",
+      "source_census_2011_pune",
+      "source_project_input_batch02a"
+    ],
+    "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+  },
+  {
+    "id": "site_korlai",
+    "ownership_patch": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null
+    },
+    "field_assessment": {
+      "sovereign_polity_id": "unknown",
+      "controller_polity_id": "unknown"
+    },
+    "confidence": "low",
+    "source_ids": [
+      "source_chaudenson_1997_korlai",
+      "source_hpip_korlai_village",
+      "source_project_input_batch02a"
+    ],
+    "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+  },
+  {
+    "id": "site_murud",
+    "ownership_patch": {
+      "sovereign_polity_id": null,
+      "controller_polity_id": null
+    },
+    "field_assessment": {
+      "sovereign_polity_id": "unknown",
+      "controller_polity_id": "unknown"
+    },
+    "confidence": "low",
+    "source_ids": [
+      "source_maharashtra_tourism_murud_janjira",
+      "source_project_input_batch02a"
+    ],
+    "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+  }
+]

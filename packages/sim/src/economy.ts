@@ -1,0 +1,112 @@
+export const goods = ['grain','wood'] as const;
+export type Good = typeof goods[number];
+export interface Market { stock: Record<Good,number>; target: Record<Good,number>; money:number }
+export interface Economy {
+  gold:number; inventory:Record<Good,number>; markets:Record<string,Market>;
+  quest: null | {due:number; status:'active'|'completed'|'failed'}; notice:string;
+}
+export function createEconomy():Economy {
+  return {gold:600,inventory:{grain:0,wood:0},quest:null,notice:'',
+    markets:{
+      site_pune:{stock:{grain:150,wood:30},target:{grain:100,wood:80},money:20000},
+      site_saswad:{stock:{grain:20,wood:100},target:{grain:100,wood:60},money:20000},
+      site_ahmadnagar:{stock:{grain:40,wood:150},target:{grain:120,wood:80},money:20000}
+    }};
+}
+export function price(market:Market,good:Good) {
+  const base=good==='grain'?6:8;
+  return Math.max(Math.ceil(base/2),Math.min(base*2,Math.round(base*2*market.target[good]/(market.target[good]+Math.max(0,market.stock[good])))));
+}
+export function purchasePrice(market:Market,good:Good,node:string,supplierRelation:number) {
+  const base=price(market,good);
+  return node==='site_saswad'&&supplierRelation>=15 ? Math.max(1,Math.floor(base*.9)) : base;
+}
+export function salePrice(market:Market,good:Good,node='',relation=0) {
+ return purchasePrice({...market,stock:{...market.stock,[good]:market.stock[good]+1}},good,node,relation);
+}
+
+export interface TradeLine { good: Good; buy: boolean; quantity: number }
+
+export function previewTrade(e:Economy,node:string,lines:TradeLine[],relation:number) {
+ const market=e.markets[node];
+ if(!market)return null;
+ const draft={...e,inventory:{...e.inventory},markets:{...e.markets,[node]:{...market,stock:{...market.stock}}}};
+ for(const line of [...lines].sort((a,b)=>Number(a.buy)-Number(b.buy))){
+   if(!trade(draft,node,line.good,line.buy,line.quantity,relation))return null;
+ }
+ return draft;
+}
+
+export function trade(e:Economy,node:string,good:Good,buy:boolean,quantity=1,supplierRelation=0) {
+ if(!goods.includes(good)||!Number.isSafeInteger(quantity)||quantity<1||quantity>100){e.notice='Choose a quantity between 1 and 100.';return;}
+ const market=e.markets[node];if(!market){e.notice='No market is available here.';return;}
+ const m={...market,stock:{...market.stock}},inventory={...e.inventory};
+ let gold=e.gold,total=0;
+ for(let i=0;i<quantity;i++){
+   const cost=buy ? purchasePrice(m,good,node,supplierRelation) :
+     salePrice(m,good,node,supplierRelation);
+   if(buy && m.stock[good]>0 && gold>=cost){m.stock[good]--;inventory[good]++;gold-=cost;m.money+=cost;}
+   else if(!buy && inventory[good]>0 && m.money>=cost && m.stock[good]<m.target[good]*3){m.stock[good]++;inventory[good]--;gold+=cost;m.money-=cost;}
+   else {e.notice='Insufficient stock or funds for this quantity.';return;}
+   total+=cost;
+ }
+ Object.assign(market,m);e.inventory=inventory;e.gold=gold;
+ e.notice=(buy?'Bought ':'Sold ')+quantity+' '+good+' for '+total+' coin.';
+ return true;
+}
+export function questAction(e:Economy,tick:number) {
+  if(!e.quest) { e.quest={due:tick+96,status:'active'};e.notice='Bring 20 grain and 50 wood here within four days. Reward 900.'; }
+  else if(e.quest.status==='active' && tick<=e.quest.due && e.inventory.grain>=20 && e.inventory.wood>=50) {
+    e.inventory.grain-=20;e.inventory.wood-=50;e.gold+=900;e.quest.status='completed';e.notice='Supplies delivered. You earned 900.';
+  } else e.notice='The requested supplies are not ready.';
+}
+export function deliverGrain(e:Economy,node:string,amount:number) {
+ const market=e.markets[node];
+ if(!market)return 0;
+ const delivered=Math.min(amount,Math.max(0,market.target.grain-market.stock.grain));
+ market.stock.grain+=delivered;
+ return delivered;
+}
+
+export function economyHour(e:Economy,tick:number) {
+  if(tick>0&&tick%24===0)for(const market of Object.values(e.markets)){
+    market.stock.grain=Math.max(0,market.stock.grain-Math.ceil(market.target.grain/20));
+  }
+  if(e.quest?.status==='active' && tick>e.quest.due) e.quest.status='failed';
+}
+
+export interface Merchant {gold:number; cargo:Record<Good,number>; destination:string|null; trades:number}
+export function merchantVisit(e:Economy,merchant:Merchant,node:string) {
+  const market=e.markets[node];if(!market)return;
+  for(const good of goods) {
+    while(merchant.cargo[good]>0 && market.stock[good]<market.target[good]*3 && market.money>=salePrice(market,good)) {
+      const cost=salePrice(market,good);market.money-=cost;merchant.gold+=cost;
+      merchant.cargo[good]--;market.stock[good]++;merchant.trades++;
+    }
+  }
+  let best: {good:Good; destination:string; profit:number}|null=null;
+  for(const [destination,other] of Object.entries(e.markets)) {
+    if(destination===node)continue;
+    for(const good of goods) {
+      const profit=salePrice(other,good)-price(market,good);
+      if(profit>1 && (!best||profit>best.profit))best={good,destination,profit};
+    }
+  }
+  if(!best){merchant.destination=null;return;}
+  const other=e.markets[best.destination];
+  let count=0;
+  while(count<20 && market.stock[best.good]>0 && merchant.gold>=price(market,best.good) &&
+    salePrice(other,best.good)>price(market,best.good)+1) {
+    const cost=price(market,best.good);market.stock[best.good]--;market.money+=cost;
+    merchant.gold-=cost;merchant.cargo[best.good]++;merchant.trades++;count++;
+  }
+  merchant.destination=count?best.destination:null;
+}
+
+export const caravanMarketId='caravan';
+
+export function caravanEconomy(e:Economy,merchant:Merchant):Economy {
+ return {...e,markets:{...e.markets,[caravanMarketId]:{
+   stock:{...merchant.cargo},target:{grain:15,wood:15},money:merchant.gold
+ }}};
+}

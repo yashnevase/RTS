@@ -1,0 +1,25 @@
+{
+  "id": "clan_example_household",
+  "record_version": 1,
+  "name": "Example Household Clan",
+  "name_variants": [],
+  "founding_year": 1570,
+  "leader_character_id": "character_example_sardar_001",
+  "family_ids": ["family_example_house"],
+  "branch_ids": ["branch_example_main"],
+  "member_character_ids": ["character_example_sardar_001"],
+  "home_region_ids": ["region_example_western_deccan"],
+  "ancestral_seat_ids": ["site_example_market_town"],
+  "patronage_relationships": [
+    { "polity_id": "polity_example_sultanate", "relationship_type": "service", "from_year": 1615, "to_year": null, "terms_id": "service_contract_example" }
+  ],
+  "holdings": [],
+  "party_ids": [],
+  "treasury": 500,
+  "influence": 20,
+  "renown": 10,
+  "cohesion": 65,
+  "source_ids": [],
+  "confidence": "fictional",
+  "status": "fictional_example"
+}

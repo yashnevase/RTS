@@ -1,0 +1,259 @@
+[
+  {
+    "file": "items/item04 (ownership patch)",
+    "content": [
+      {
+        "id": "fort_udgir",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "contested",
+        "source_ids": [
+          "source_indian_antiquary_nizam_history_1921",
+          "source_maharashtra_state_gazetteer_mughal_history_ch9",
+          "source_imperial_gazetteer_udgir_1908"
+        ],
+        "notes": "Do not fill either field for 1622. The historical sequence is contradictory: the Indian Antiquary account describes Udgir passing from the Barid Shahi line into Nizam Shahi possession under Murtaza I; the Maharashtra State Gazetteer in its 1636 narrative calls Udgir a fort of the former Ahmadnagar kingdom but says Bijapur nobles reinforced its commanders; the Imperial Gazetteer describes it as belonging to the Bijapur kings before its 1635 surrender to the Mughals. The sources do not establish which polity exercised sovereign title and which exercised day-to-day command specifically in 1622. The in-game polity list has no Barid Shahi entry, but that is not grounds to force a choice between Nizam Shahi and Adil Shahi."
+      },
+      {
+        "id": "fort_torna",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_maharashtra_state_gazetteer_torna_1646"
+        ],
+        "notes": "Unknown in 1622. The Maharashtra State Gazetteer says Shivaji gained Torna around 1646 by tricking its Adil Shahi commandant. That establishes an Adil Shahi commandant at the later capture date, not the fort's sovereign or controller in 1622. Do not backdate the 1646 status by 24 years without an intervening dated source."
+      },
+      {
+        "id": "fort_jivdhan",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_discovermh_jivdhan",
+          "source_junnar_forest_forts"
+        ],
+        "notes": "Unknown in 1622. The Discover Maharashtra article attributes Jivdhan's capture to Malik Ahmad in 1487 and describes later Nizam Shahi events, but its chronology for Shahaji's later Mughal treaty contains an apparent 1663 date that conflicts with the established 1636 end of the Nizam Shahi kingdom. The Junnar Forest Division identifies Jivdhan as a Nane Ghat route fort but does not date its 1622 command. Neither source securely establishes the 1622 sovereign/controller pair."
+      },
+      {
+        "id": "fort_hadsar",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_junnar_forest_forts"
+        ],
+        "notes": "Unknown in 1622. The Government of Maharashtra Junnar Forest Division page says Hadsar was included in Shahaji's 1637 treaty with the Mughals. This is a later event and is not sufficient to backdate either sovereign title or controller to 1622. Keep both fields null pending a pre-1622 or date-specific source."
+      },
+      {
+        "id": "fort_chavand",
+        "ownership_patch": {
+          "sovereign_polity_id": "polity_nizam_shahi",
+          "controller_polity_id": "polity_nizam_shahi"
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "proposed",
+          "controller_polity_id": "proposed"
+        },
+        "confidence": "medium",
+        "source_ids": [
+          "source_junnar_forest_chavand"
+        ],
+        "notes": "Propose Nizam Shahi for both fields in 1622. The Government of Maharashtra Junnar Forest Division's Chavand history says the Nizam Shahi founder, Nizam Ahmad, took the fort after the Bahmani breakup; it records Bahadur Shah's confinement there in 1594 and says the fort passed to the Mughals under the 1636 Nizam Shahi settlement. This dated before/after sequence brackets 1622 within Nizam Shahi possession. No separate local controller is documented, so controller is provisionally the same polity; this does not assign a governor, owner clan, or garrison commander."
+      },
+      {
+        "id": "fort_janjira",
+        "ownership_patch": {
+          "sovereign_polity_id": "polity_nizam_shahi",
+          "controller_polity_id": "polity_nizam_shahi"
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "proposed",
+          "controller_polity_id": "proposed"
+        },
+        "confidence": "high",
+        "source_ids": [
+          "source_sohoni_siddi_janjira_2019",
+          "source_kadiri_inscriptions_siddi_chiefs_1967"
+        ],
+        "notes": "Propose Nizam Shahi for both fields in 1622. Pushkar Sohoni's 2019 scholarly article identifies Janjira's Siddi fort commanders as appointments within the Ahmadnagar Sultanate: Malik Ambar appointed Siddi Surur in 1618, Siddi Yaqut in 1620, and Siddi Ambar Sanak after Yaqut's death in 1621; the Siddis declared autonomy only after the Nizam Shahi kingdom ended in 1636. This supports Nizam Shahi sovereign and polity control in 1622 while preserving the distinct Siddi Ambar Sanak governor/garrison-commander character fields already present in the fort record. Do not create a Janjira sovereign polity or alter the Siddi commander's separate role."
+      },
+      {
+        "id": "fort_dabhol",
+        "ownership_patch": {
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_bombay_gazetteer_konkan_dabhol",
+          "source_ratnagiri_gazetteer_dabhol"
+        ],
+        "notes": "Controller unknown in 1622; retain the existing sovereign_polity_id=polity_adil_shahi unchanged. The gazetteer evidence summarized in the supplied fort record identifies a walled port/castle in the early sixteenth century, two fortifications in 1547, a 1615 Portuguese factory but no Portuguese fort, a 1626 reference to an old castle, and ruined fortifications/batteries in 1639. This does not securely identify the controller of the specific fort asset in 1622, nor prove that the separate old-castle structure was an operational fort then. Do not infer a Portuguese controller from the factory."
+      },
+      {
+        "id": "site_panhala",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_forts_maharashtra_panhala",
+          "source_incredible_india_panhala",
+          "source_project_input_batch02a"
+        ],
+        "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+      },
+      {
+        "id": "site_velhe",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_project_input_batch02a"
+        ],
+        "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+      },
+      {
+        "id": "site_malavli",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_project_input_batch02a"
+        ],
+        "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+      },
+      {
+        "id": "site_tikona_peth",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_tikona_peth_trawell",
+          "source_project_input_batch02a"
+        ],
+        "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+      },
+      {
+        "id": "site_gunjavane",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_census_2011_pune",
+          "source_project_input_batch02a"
+        ],
+        "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+      },
+      {
+        "id": "site_donaje",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_pune_district_sinhagad",
+          "source_census_2011_pune",
+          "source_project_input_batch02a"
+        ],
+        "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+      },
+      {
+        "id": "site_korlai",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_chaudenson_1997_korlai",
+          "source_hpip_korlai_village",
+          "source_project_input_batch02a"
+        ],
+        "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+      },
+      {
+        "id": "site_murud",
+        "ownership_patch": {
+          "sovereign_polity_id": null,
+          "controller_polity_id": null
+        },
+        "field_assessment": {
+          "sovereign_polity_id": "unknown",
+          "controller_polity_id": "unknown"
+        },
+        "confidence": "low",
+        "source_ids": [
+          "source_maharashtra_tourism_murud_janjira",
+          "source_project_input_batch02a"
+        ],
+        "notes": "Unknown in 1622. The supplied sources establish a modern locator, a nearby fort, or settlement/name context, but do not document the sovereign title or actual controller of this distinct settlement in 1622. Do not copy the nearby fort's ownership onto the settlement without evidence, and do not infer village jurisdiction from modern district/sub-district boundaries."
+      }
+    ]
+  }
+]

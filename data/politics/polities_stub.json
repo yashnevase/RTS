@@ -1,0 +1,32 @@
+[
+  {
+    "id": "polity_nizam_shahi",
+    "record_version": 2,
+    "name": "Nizam Shahi (Ahmadnagar)",
+    "polity_type": "sultanate",
+    "status": "stub",
+    "confidence": "inferred",
+    "notes": "Stub so Batch 1 references resolve; details to be designed.",
+    "source_ids": []
+  },
+  {
+    "id": "polity_adil_shahi",
+    "record_version": 2,
+    "name": "Adil Shahi (Bijapur)",
+    "polity_type": "sultanate",
+    "status": "stub",
+    "confidence": "inferred",
+    "notes": "Stub so Batch 1 references resolve; details to be designed.",
+    "source_ids": []
+  },
+  {
+    "id": "polity_portuguese",
+    "record_version": 2,
+    "name": "Portuguese Estado da India",
+    "polity_type": "overseas_power",
+    "status": "stub",
+    "confidence": "inferred",
+    "notes": "Stub so Batch 1 references resolve; details to be designed.",
+    "source_ids": []
+  }
+]
