@@ -551,7 +551,7 @@ function Atlas() {
   {register&&<div className="places-drawer"><input aria-label="Find a place" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Find a place…"/><ul>{results.map(r=><li key={r.id}><button onClick={()=>{select(r);setOpenPlace(r);setRegister(false);}}>{r.name}</button></li>)}</ul></div>}
   {openPlace&&<div className="place-card"><button className="close" onClick={()=>setOpenPlace(null)}>×</button><p className="eyebrow">{openPlace.site_type||openPlace.fort_type}</p><h2>{openPlace.name}</h2><Authority record={openPlace}/><button onClick={()=>{send({type:'travel',to:openPlace.id});setOpenPlace(null);}}>Travel here</button><details><summary>Journal</summary><p>{openPlace.notes}</p></details></div>}
   <details className="world-events"><summary>World events{world.events?.length?' · '+world.events.length:''}</summary><ol>{world.events?.map(event=><li key={event.id}><time>Day {1+Math.floor((event.tick+6)/24)}</time> {event.text}</li>)}</ol></details>
-  <Screens world={world} send={send} arrival={arrival} dismissal={dismissal} onLocate={record=>{setRegister(false);select(record);setOpenPlace(record);}}/>
+  <Screens world={world} send={send} arrival={arrival} dismissal={dismissal} onLocate={record=>{setRegister(false);if(record.partyId){setLocate({id:record.partyId});setSelected(null);}else{select(record);setOpenPlace(record);}}}/>
   {world.started===false&&<Creation send={send}/>}
   </main>;
 }

@@ -1,9 +1,10 @@
+import {recordBalance} from '../../../packages/sim/src/ledger.ts';
 import {clanRoles,createClan,monthlyWages,returnTroops} from '../../../packages/sim/src/clan.ts';
 import { clearSegment, metres, route, travelEffort } from '../../../packages/sim/src/navigation.ts';
 import { createCompany, feedCompany, marchBudget, recruit, settlementServices, troops } from '../../../packages/sim/src/company.ts';
 import { createCampaign, advance, command } from '../../../packages/sim/src/travel.ts';
 
-import { createEconomy, restoreMarkets, goods, salePrice, trade, previewTrade, caravanEconomy, caravanMarketId, questAction, deliverGrain, economyHour, merchantVisit } from '../../../packages/sim/src/economy.ts';
+import { createEconomy, restoreMarkets, goods, purchasePrice, salePrice, trade, previewTrade, caravanEconomy, caravanMarketId, questAction, deliverGrain, economyHour, merchantVisit } from '../../../packages/sim/src/economy.ts';
 import { startMotion, position, advanceMotion, anchor } from '../../../packages/sim/src/movement.ts';
 import {changeRelation, raiderSite, resolveEncounter} from '../../../packages/sim/src/encounter.ts';
 import { campaignHourMs } from './campaign-clock.js';
@@ -15,6 +16,7 @@ world.encounter={guards:3,seed:1622,resolved:false,result:null};
 world.events=[];
 world.company=createCompany();
 world.clan=createClan();
+world.ledger=[];
 let eventId=0;
 let approach=null;
 const merchantHours=new Map();
@@ -71,6 +73,7 @@ function traffic() {
  }
 }
 function hourly(){
+ const beforeGold=world.economy.gold;
  for(const p of world.parties){
    p.trail=null;
    if(!p.motion || p.id==='player'&&world.waitUntil!==null)continue;
@@ -104,10 +107,14 @@ function hourly(){
    const owed=monthlyWages(world.encounter.guards-world.company.mounted,world.company.mounted,world.company.companions.length)+detached+world.clan.arrears;
    const paid=Math.min(world.economy.gold,owed);
    world.economy.gold-=paid;world.clan.arrears=owed-paid;world.clan.lastPayTick=world.tick;
+   for(const d of world.clan.detachments){
+     const amount=Math.min(world.economy.gold,d.allowance??10);
+     world.economy.gold-=amount;d.gold=(d.gold??0)+amount;
+   }
    event('Monthly wages · '+paid+' coin paid'+(world.clan.arrears?' · '+world.clan.arrears+' owed':''));
  }
  for(const d of world.clan.detachments){
-   if(world.tick%24===0&&world.economy.inventory.grain>0)world.economy.inventory.grain--;
+   if(world.tick%72===0&&d.food>0)d.food--;
  }
  if(world.tick%24===0){
    if(!feedCompany(world.company,world.encounter.guards,world.economy.inventory))
@@ -125,6 +132,7 @@ function hourly(){
    event('The Saswad supply agreement expired. Supplier relation −5.');
  }
  traffic();
+ world.ledger=recordBalance(world.ledger,world.tick,beforeGold,world.economy.gold,'Campaign upkeep and wages');
 }
 function updateApproach(){
  if(!approach)return;
@@ -157,11 +165,13 @@ function nextHour() {
 }
 self.onmessage = ({data}) => {
   const previousSpeed = world.speed;
+  const beforeGold=world.economy.gold;
   const player=world.parties[0];
   if(data.type==='restore'&&!world.started) {
     Object.assign(world,data.world,{speed:0,notice:'Campaign restored. Press Play to continue.'});
     world.company??=createCompany();
     world.clan??=createClan();
+    world.ledger??=[];
     world.company.health??=100;
     world.company.rationProgress??=0;
     world.company.starvingDays??=0;
@@ -217,16 +227,22 @@ self.onmessage = ({data}) => {
       const id='clan:'+leader;
       world.encounter.guards-=foot+mounted;world.company.mounted-=mounted;
       for(const role of clanRoles)if(world.clan.roles[role]===leader)delete world.clan.roles[role];
-      world.clan.detachments.push({id,leader,foot,mounted,task:'patrol',home:player.node});
+      const grant=Math.min(20,world.economy.gold),food=Math.min(3,world.economy.inventory.grain);
+      world.economy.gold-=grant;world.economy.inventory.grain-=food;
+      world.clan.detachments.push({id,leader,foot,mounted,task:'patrol',home:player.node,gold:grant,food,allowance:10,ambition:leader==='site_pune'?60:75,generosity:50,aggression:35,relations:{}});
       world.parties.push({...player,id,name:settlementServices[leader].meetingHouse.name+' company',point:{...player.point},motion:null,trail:null,path:[],stops:[]});
       traffic();event('A companion party departed on patrol.');
     }
+  } else if(data.type==='party-budget'&&world.started){
+    const d=world.clan.detachments.find(d=>d.id===data.id);
+    if(d&&Number.isSafeInteger(data.amount)&&data.amount>=5&&data.amount<=100)d.allowance=data.amount;
   } else if(data.type==='recall-party'&&world.started){
     const d=world.clan.detachments.find(d=>d.id===data.id);
     if(d)d.task='return';
   } else if(data.type==='merge-party'&&world.started){
     const d=world.clan.detachments.find(d=>d.id===data.id),party=world.parties.find(p=>p.id===data.id);
     if(d&&party&&metres(party.point,player.point)<=4000){
+      world.economy.gold+=d.gold??0;world.economy.inventory.grain+=d.food??0;
       world.encounter.guards+=d.foot+d.mounted;world.company.mounted+=d.mounted;
       world.clan.detachments=world.clan.detachments.filter(x=>x.id!==d.id);
       world.parties=world.parties.filter(p=>p.id!==d.id);
@@ -307,6 +323,9 @@ self.onmessage = ({data}) => {
     world.waitUntil=world.tick+data.hours;world.speed=world.speed||1;world.notice='Waiting.';
   } else if(data.type==='step') {world.speed=1;hourly();world.speed=0;}
   else if (data.type !== 'inspect') command(world, data);
+  if(!['restore','step'].includes(data.type))world.ledger=recordBalance(world.ledger,world.tick,beforeGold,world.economy.gold,{
+    'confirm-trade':'Market trade','recruit':'Enlistment','hire-companion':'Companion hire','ransom':'Prisoner ransom','return-troops':'Troop return','resolve-encounter':'Encounter proceeds'
+  }[data.type]??data.type);
   postMessage(world);
   schedule(previousSpeed);
 };
